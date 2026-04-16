@@ -252,17 +252,13 @@ static int pc_emit_literals(
     uint16_t pos = 0;
     while (pos < src_len) {
         uint16_t chunk = (uint16_t)(src_len - pos);
-        if (chunk > PC_LITERAL_EXT_MAX) {
-            chunk = PC_LITERAL_EXT_MAX;
+        if (chunk > PC_LITERAL_MAX) {
+            chunk = PC_LITERAL_MAX;
         }
         if ((uint32_t)(*op) + 1u + chunk > dst_cap) {
             return 0;
         }
-        if (chunk <= PC_LITERAL_MAX) {
-            dst[(*op)++] = (uint8_t)(chunk - 1u);           /* 0x00..0x3F */
-        } else {
-            dst[(*op)++] = (uint8_t)(0xE0u | (chunk - 65u)); /* 0xE0..0xFF */
-        }
+        dst[(*op)++] = (uint8_t)(chunk - 1u);               /* 0x00..0x3F */
         memcpy(dst + *op, src + pos, chunk);
         *op = (uint16_t)(*op + chunk);
         pos = (uint16_t)(pos + chunk);
@@ -282,6 +278,8 @@ static void pc_head_insert(
     head[0][hash] = pos;
 }
 
+#if PC_DICT_COUNT > 0
+
 typedef struct {
     const uint8_t *data;
     uint8_t len;
@@ -296,20 +294,20 @@ typedef struct {
  *   0xE0..0xFF  extended literal (len 65..96)
  * -------------------------------------------------------------------- */
 
-/* 0-3: single-byte ultra-common symbols */
-static const uint8_t pc_d00[] = "{";
-static const uint8_t pc_d01[] = "}";
-static const uint8_t pc_d02[] = ":";
-static const uint8_t pc_d03[] = ",";
-/* 4-7: two-byte common pairs */
-static const uint8_t pc_d04[] = { '\r', '\n' };
-static const uint8_t pc_d05[] = "id";
-static const uint8_t pc_d06[] = { '"', ':' };              /* ":   */
-static const uint8_t pc_d07[] = { ',', '"' };              /* ,"   */
+/* 0-3: high-value multi-byte patterns (replaced single-byte waste) */
+static const uint8_t pc_d00[] = { '"', ':', ' ', '"' };    /* ": "  JSON key-value */
+static const uint8_t pc_d01[] = { '}', ',', '\n', '"' };   /* },\n" JSON object sep */
+static const uint8_t pc_d02[] = { '<', '/', 'd', 'i', 'v' }; /* </div  HTML close */
+static const uint8_t pc_d03[] = "tion";
+/* 4-7: common English suffixes (4B, replacing 2B waste) */
+static const uint8_t pc_d04[] = "ment";
+static const uint8_t pc_d05[] = "ness";
+static const uint8_t pc_d06[] = "able";
+static const uint8_t pc_d07[] = "ight";
 /* 8-15: three-byte patterns */
 static const uint8_t pc_d08[] = { '"', ':', '"' };         /* ":"  ← JSON money pattern */
-static const uint8_t pc_d09[] = "000";
-static const uint8_t pc_d10[] = "ORD";
+static const uint8_t pc_d09[] = { '<', '/', 'd', 'i' };    /* </di  closing tag start */
+static const uint8_t pc_d10[] = { '=', '"', 'h', 't' };    /* ="ht  attr+http start */
 static const uint8_t pc_d11[] = "the";
 static const uint8_t pc_d12[] = "ing";
 static const uint8_t pc_d13[] = { ',', '"', ',' };         /* ","  JSON string separator */
@@ -320,10 +318,10 @@ static const uint8_t pc_d16[] = "ion";
 static const uint8_t pc_d17[] = "ent";
 static const uint8_t pc_d18[] = "ter";
 static const uint8_t pc_d19[] = "and";
-static const uint8_t pc_d20[] = "00";                      /* ASCII "00" */
+static const uint8_t pc_d20[] = { '/', '>', '\r', '\n' };  /* />\r\n self-close + CRLF */
 static const uint8_t pc_d21[] = { '"', '}', ',' };         /* "},  */
 static const uint8_t pc_d22[] = { '"', ']', ',' };         /* "],  */
-static const uint8_t pc_d23[] = "  ";                      /* double space */
+static const uint8_t pc_d23[] = "have";
 /* 24-39: four-byte */
 static const uint8_t pc_d24[] = { 'n','o','"',':' };       /* no": */
 static const uint8_t pc_d25[] = "true";
@@ -369,14 +367,51 @@ static const uint8_t pc_d60[] = { 'n','u','m','b','e','r','"',':' }; /* number":
 static const uint8_t pc_d61[] = "operator";
 static const uint8_t pc_d62[] = { 'h','t','t','p','s',':','/','/'}; /* https:// */
 static const uint8_t pc_d63[] = "response";
+/* 64-67: capitalized sentence starters (with leading ". " or " ") */
+static const uint8_t pc_d64[] = { '.', ' ', 'T', 'h', 'e', ' ' };  /* . The  */
+static const uint8_t pc_d65[] = { '.', ' ', 'I', 't', ' ' };        /* . It   */
+static const uint8_t pc_d66[] = { '.', ' ', 'T', 'h', 'i', 's', ' ' }; /* . This  */
+static const uint8_t pc_d67[] = { '.', ' ', 'A', ' ' };             /* . A    */
+/* 68-71: common capitalized terms */
+static const uint8_t pc_d68[] = { 'H', 'T', 'T', 'P' };            /* HTTP   */
+static const uint8_t pc_d69[] = { 'J', 'S', 'O', 'N' };            /* JSON   */
+static const uint8_t pc_d70[] = { 'T', 'h', 'e', ' ' };            /* The    */
+static const uint8_t pc_d71[] = { 'N', 'o', 'n', 'e' };            /* None   */
+/* 72-75: phoneme patterns (from generator — high freq English) */
+static const uint8_t pc_d72[] = "ment";
+static const uint8_t pc_d73[] = "ness";
+static const uint8_t pc_d74[] = "able";
+static const uint8_t pc_d75[] = "ight";
+/* 76-79: more phoneme / structural patterns */
+static const uint8_t pc_d76[] = "ation";
+static const uint8_t pc_d77[] = "ould ";                             /* would/could/should */
+static const uint8_t pc_d78[] = { '"', ':', ' ', '"' };             /* ": "  JSON kv */
+static const uint8_t pc_d79[] = { '"', ',', ' ', '"' };             /* ", "  JSON sep */
+/* 80-95: uppercase keyword primitives (BASIC/structured) */
+static const uint8_t pc_d80[] = "DIM";
+static const uint8_t pc_d81[] = "FOR";
+static const uint8_t pc_d82[] = "END";
+static const uint8_t pc_d83[] = "REL";
+static const uint8_t pc_d84[] = "EACH";
+static const uint8_t pc_d85[] = "LOAD";
+static const uint8_t pc_d86[] = "SAVE";
+static const uint8_t pc_d87[] = "CARD";
+static const uint8_t pc_d88[] = "JUMP";
+static const uint8_t pc_d89[] = "PRINT";
+static const uint8_t pc_d90[] = "INPUT";
+static const uint8_t pc_d91[] = "GOSUB";
+static const uint8_t pc_d92[] = "STREAM";
+static const uint8_t pc_d93[] = "RETURN";
+static const uint8_t pc_d94[] = "SWITCH";
+static const uint8_t pc_d95[] = "PROGRAM";
 
 static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
-    /* 0-3:  1B */  { pc_d00,1 }, { pc_d01,1 }, { pc_d02,1 }, { pc_d03,1 },
-    /* 4-7:  2B */  { pc_d04,2 }, { pc_d05,2 }, { pc_d06,2 }, { pc_d07,2 },
-    /* 8-15: 3B */  { pc_d08,3 }, { pc_d09,3 }, { pc_d10,3 }, { pc_d11,3 },
+    /* 0-3:  4-5B */ { pc_d00,4 }, { pc_d01,4 }, { pc_d02,5 }, { pc_d03,4 },
+    /* 4-7:  4B */  { pc_d04,4 }, { pc_d05,4 }, { pc_d06,4 }, { pc_d07,4 },
+    /* 8-15: 3-4B */{ pc_d08,3 }, { pc_d09,4 }, { pc_d10,4 }, { pc_d11,3 },
                     { pc_d12,3 }, { pc_d13,3 }, { pc_d14,3 }, { pc_d15,3 },
-    /* 16-23:3B */  { pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
-                    { pc_d20,2 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,2 },
+    /* 16-23:3-4B */{ pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
+                    { pc_d20,4 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,4 },
     /* 24-39:4B */  { pc_d24,4 }, { pc_d25,4 }, { pc_d26,4 }, { pc_d27,4 },
                     { pc_d28,4 }, { pc_d29,4 }, { pc_d30,4 }, { pc_d31,4 },
                     { pc_d32,4 }, { pc_d33,4 }, { pc_d34,4 }, { pc_d35,4 },
@@ -387,17 +422,34 @@ static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
                     { pc_d52,6 }, { pc_d53,6 }, { pc_d54,6 }, { pc_d55,6 },
     /* 56-59:7B */  { pc_d56,7 }, { pc_d57,7 }, { pc_d58,7 }, { pc_d59,7 },
     /* 60-63:8B */  { pc_d60,8 }, { pc_d61,8 }, { pc_d62,8 }, { pc_d63,8 },
+    /* 64-67: sentence starters */
+                    { pc_d64,6 }, { pc_d65,5 }, { pc_d66,7 }, { pc_d67,4 },
+    /* 68-71: capitalized terms */
+                    { pc_d68,4 }, { pc_d69,4 }, { pc_d70,4 }, { pc_d71,4 },
+    /* 72-75: phoneme */
+                    { pc_d72,4 }, { pc_d73,4 }, { pc_d74,4 }, { pc_d75,4 },
+    /* 76-79: phoneme + structural */
+                    { pc_d76,5 }, { pc_d77,5 }, { pc_d78,4 }, { pc_d79,4 },
+    /* 80-95: uppercase keywords (0xD0..0xDF tokens) */
+                    { pc_d80,3 }, { pc_d81,3 }, { pc_d82,3 }, { pc_d83,3 },
+                    { pc_d84,4 }, { pc_d85,4 }, { pc_d86,4 }, { pc_d87,4 },
+                    { pc_d88,4 }, { pc_d89,5 }, { pc_d90,5 }, { pc_d91,5 },
+                    { pc_d92,6 }, { pc_d93,6 }, { pc_d94,6 }, { pc_d95,7 },
 };
+
+#endif /* PC_DICT_COUNT > 0 */
 
 /* Find best savings among repeat-cache, dict, and LZ at a virtual position.
  * Order: repeat-cache → dictionary → hash-chain LZ.
  * good_match: threshold to stop probing early (adaptive per block region).
+ * skip_dict: when true, skip dictionary probing (self-disabled after probe window).
  * Returns net savings (bytes saved vs literal). Fills out_* params. */
 static int pc_find_best(
     const uint8_t *vbuf, uint16_t vbuf_len, uint16_t vpos,
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE],
     const uint16_t rep_offsets[PC_REPEAT_CACHE_SIZE],
     uint16_t good_match,
+    int skip_dict,
     uint16_t *out_len, uint16_t *out_off, uint16_t *out_dict,
     int *out_is_repeat
 ) {
@@ -429,8 +481,8 @@ static int pc_find_best(
             len = pc_match_len(vbuf + vpos - off, vbuf + vpos, max_rep);
             if (len < PC_MATCH_MIN) continue;
 
-            /* only slot 0 can use the cheap repeat token */
-            is_rep = (d == 0) ? 1 : 0;
+            /* only slot 0 can use the cheap repeat token (max len 17 with 4-bit field) */
+            is_rep = (d == 0 && len <= 17u) ? 1 : 0;
             token_cost = is_rep ? 1 : (off <= PC_OFFSET_SHORT_MAX ? 2 : 3);
             s = (int)len - token_cost;
 
@@ -447,7 +499,8 @@ static int pc_find_best(
 
     /* 2. Dictionary match (1-byte token → savings = len - 1).
      * First-byte filter + early bail on good-enough (idea #3, #10). */
-    {
+#if PC_DICT_COUNT > 0
+    if (!skip_dict) {
         uint8_t first_byte = vbuf[vpos];
         for (d = 0; d < (int)PC_DICT_COUNT; ++d) {
             uint8_t dlen = pc_static_dict[d].len;
@@ -465,6 +518,9 @@ static int pc_find_best(
             if (dlen >= good_match) return best_savings; /* #10 */
         }
     }
+#else
+    (void)skip_dict;
+#endif
 
     /* 3. LZ hash-chain match — with early reject (#9), offset scoring (#5),
      * good-enough bail (#10). */
@@ -558,6 +614,35 @@ static uint16_t pc_compress_block(
 
     anchor = hist_len;
     vpos = hist_len;
+
+    /* Self-disabling dictionary: check first bytes of the block.
+     * If byte[0] is a structured-data opener ({, [, <, BOM lead 0xEF)
+     * → keep dict active.  Otherwise, if any of the first 4 bytes is
+     * outside printable ASCII (0x20..0x7E) → binary data, skip dict.
+     * This is a single cheap check per block, not per position. */
+    {
+        int dict_skip = 0;
+#if PC_DICT_COUNT > 0
+        if (block_len >= 1u) {
+            uint8_t b0 = vbuf[hist_len];
+            if (b0 == '{' || b0 == '[' || b0 == '<' || b0 == 0xEFu) {
+                dict_skip = 0; /* structured data — keep dict */
+            } else {
+                /* check first 4 bytes for non-printable ASCII */
+                uint16_t check_len = block_len < 4u ? block_len : 4u;
+                uint16_t ci;
+                dict_skip = 0;
+                for (ci = 0; ci < check_len; ++ci) {
+                    uint8_t c = vbuf[hist_len + ci];
+                    if (c < 0x20u || c > 0x7Eu) {
+                        dict_skip = 1;
+                        break;
+                    }
+                }
+            }
+        }
+#endif
+
     while (vpos < vbuf_len) {
         uint16_t best_len, best_off, best_dict;
         int best_is_repeat, best_savings;
@@ -571,16 +656,12 @@ retry_pos:
 
         best_savings = pc_find_best(
             vbuf, vbuf_len, vpos, head, rep_offsets, PC_GOOD_MATCH,
+            dict_skip,
             &best_len, &best_off, &best_dict, &best_is_repeat);
 
         /* insert current position into hash table (needs 3 bytes) */
         if ((uint16_t)(vbuf_len - vpos) >= 3u) {
             pc_head_insert(head, pc_hash3(vbuf + vpos), (int16_t)vpos);
-        }
-
-        /* #3: short dict entries save a literal-header byte when standalone */
-        if (best_dict != UINT16_MAX && best_savings == 0 && anchor == vpos) {
-            best_savings = 1;
         }
 
         /* #7: literal run extension — skip weak matches (savings <= 1) when
@@ -602,6 +683,7 @@ retry_pos:
                     int n_rep;
                     int n_sav = pc_find_best(
                         vbuf, vbuf_len, npos, head, rep_offsets, PC_GOOD_MATCH,
+                        dict_skip,
                         &n_len, &n_off, &n_dict, &n_rep);
                     if (n_sav > best_savings) {
                         uint16_t s;
@@ -634,12 +716,18 @@ retry_pos:
 
             if (best_dict != UINT16_MAX) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
-                out[op++] = (uint8_t)(0x40u | (best_dict & 0x3Fu));
+                if (best_dict < 64u) {
+                    out[op++] = (uint8_t)(0x40u | (best_dict & 0x3Fu));
+                } else if (best_dict < 80u) {
+                    out[op++] = (uint8_t)(0xE0u | ((best_dict - 64u) & 0x0Fu));
+                } else {
+                    out[op++] = (uint8_t)(0xD0u | ((best_dict - 80u) & 0x0Fu));
+                }
                 PC_STAT_INC(stats, dict_hits);
                 PC_STAT_INC(stats, match_count);
             } else if (best_is_repeat) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
-                out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x1Fu));
+                out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x0Fu));
                 PC_STAT_INC(stats, repeat_hits);
                 PC_STAT_INC(stats, match_count);
             } else if (best_off <= PC_OFFSET_SHORT_MAX && best_len <= PC_MATCH_MAX) {
@@ -688,6 +776,8 @@ retry_pos:
             return UINT16_MAX;
         }
     }
+
+    } /* end dict_skip scope */
 
     return op;
 }
@@ -748,6 +838,7 @@ static pc_result pc_decompress_block(
 
         /* 0x40..0x7F: dictionary reference (0..63) */
         if (token < 0x80u) {
+#if PC_DICT_COUNT > 0
             uint16_t idx = (uint16_t)(token & 0x3Fu);
             uint8_t dlen;
             if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
@@ -756,6 +847,9 @@ static pc_result pc_decompress_block(
             memcpy(out + op, pc_static_dict[idx].data, dlen);
             op = (uint16_t)(op + dlen);
             continue;
+#else
+            return PC_ERR_CORRUPT; /* no dictionary compiled in */
+#endif
         }
 
         /* 0x80..0xBF: LZ match with explicit offset */
@@ -774,9 +868,9 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        /* 0xC0..0xDF: repeat-offset match */
-        if (token < 0xE0u) {
-            uint16_t match_len = (uint16_t)((token & 0x1Fu) + PC_MATCH_MIN);
+        /* 0xC0..0xCF: repeat-offset match (4-bit length) */
+        if (token < 0xD0u) {
+            uint16_t match_len = (uint16_t)((token & 0x0Fu) + PC_MATCH_MIN);
             if (last_offset == 0u) return PC_ERR_CORRUPT;
             if (last_offset > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
             if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
@@ -784,16 +878,36 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        /* 0xE0..0xEF: extended literal run (65..80) */
-        if (token < 0xF0u) {
-            uint16_t lit_len = (uint16_t)((token & 0x0Fu) + 65u);
-            if ((uint32_t)ip + lit_len > in_len || (uint32_t)op + lit_len > out_len) {
-                return PC_ERR_CORRUPT;
-            }
-            memcpy(out + op, in + ip, lit_len);
-            ip = (uint16_t)(ip + lit_len);
-            op = (uint16_t)(op + lit_len);
+        /* 0xD0..0xDF: dictionary keywords (entries 80..95) */
+        if (token < 0xE0u) {
+#if PC_DICT_COUNT > 80
+            uint16_t idx = (uint16_t)(80u + (token & 0x0Fu));
+            uint8_t dlen;
+            if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
+            dlen = pc_static_dict[idx].len;
+            if ((uint32_t)op + dlen > out_len) return PC_ERR_CORRUPT;
+            memcpy(out + op, pc_static_dict[idx].data, dlen);
+            op = (uint16_t)(op + dlen);
             continue;
+#else
+            return PC_ERR_CORRUPT;
+#endif
+        }
+
+        /* 0xE0..0xEF: dictionary overflow (entries 64..79) */
+        if (token < 0xF0u) {
+#if PC_DICT_COUNT > 64
+            uint16_t idx = (uint16_t)(64u + (token & 0x0Fu));
+            uint8_t dlen;
+            if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
+            dlen = pc_static_dict[idx].len;
+            if ((uint32_t)op + dlen > out_len) return PC_ERR_CORRUPT;
+            memcpy(out + op, pc_static_dict[idx].data, dlen);
+            op = (uint16_t)(op + dlen);
+            continue;
+#else
+            return PC_ERR_CORRUPT;
+#endif
         }
 
         /* 0xF0..0xFF: long-offset LZ match (3-byte token) */

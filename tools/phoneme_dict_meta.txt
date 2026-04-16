@@ -1,0 +1,70 @@
+# Phoneme dictionary metadata
+# Entries: 64
+# Total payload: 428 bytes
+
+  #  Pattern               Len    Freq       Score
+---  --------------------  ---  ------  ----------
+  0  ar                      2     354        4344
+  1  ed                      2     389        4944
+  2  re                      2     620        7440
+  3  road                    4       0        4584
+  4  ation                   5      74        5550
+  5  field                   5      63        4725
+  6  perat                   5      75        5625
+  7  atient                  6      75        8100
+  8  eading                  6      47        5076
+  9  empera                  6      44        4752
+ 10  eratur                  6      44        4752
+ 11  ercent                  6      63        6804
+ 12  escent                  6      39        4212
+ 13  ingham                  6      60        6480
+ 14  logged                  6      39        4212
+ 15  monito                  6      63        6804
+ 16  mperat                  6      44        4752
+ 17  onitor                  6      63        6804
+ 18  patien                  6      51        6804
+ 19  peratu                  6      44        4752
+ 20  percen                  6      63        6804
+ 21  rature                  6      44        4752
+ 22  readin                  6      47        5076
+ 23  record                  6      40        4320
+ 24  region                  6      41        4428
+ 25  report                  6      44        4752
+ 26  rescen                  6      40        4320
+ 27  sensor                  6      63        6804
+ 28  stable                  6      46        4968
+ 29  status                  6      42        4536
+ 30  tation                  6      40        4320
+ 31  temper                  6      44        4752
+ 32   Lane,                  7      57        4190
+ 33   Road,                  7     191       14038
+ 34   sensor                 7      63        4630
+ 35  0a20202020202020        8     142       13632
+ 36         "                8     142       13632
+ 37        "n                8      45        4320
+ 38     SKU-0                8      67        6432
+ 39    SKU-00                8      67        6432
+ 40   Road, L                8      58        5568
+ 41   SKU-000                8      67        6432
+ 42   Street,                8      65        6240
+ 43   monitor                8      63        6048
+ 44   patient                8      51        4896
+ 45   percent                8      63        6048
+ 46   reading                8      47        4512
+ 47   sensor                 8      44        4224
+ 48   tempera                8      44        4224
+ 49  222c0a2020202020        8      62        5952
+ 50  2c0a202020202020        8     146       14016
+ 51  KU-00000                8      67        6432
+ 52  SKU-0000                8      67        6432
+ 53  Street,                 8      65        6240
+ 54  emperatu                8      44        4224
+ 55  erature                 8      44        4224
+ 56  eu-west-                8      52        4992
+ 57  ingham,                 8      60        5760
+ 58  mperatur                8      44        4224
+ 59  perature                8      44        4224
+ 60  reading                 8      47        4512
+ 61  s Road,                 8      55        5280
+ 62  temperat                8      44        4224
+ 63  u-west-2                8      52        4992

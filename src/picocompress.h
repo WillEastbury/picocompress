@@ -13,7 +13,6 @@ extern "C" {
 #endif
 
 #define PC_LITERAL_MAX 64u
-#define PC_LITERAL_EXT_MAX 80u
 #define PC_MATCH_MIN 2u
 #define PC_MATCH_CODE_BITS 5u
 #define PC_MATCH_MAX (PC_MATCH_MIN + ((1u << PC_MATCH_CODE_BITS) - 1u))
@@ -22,8 +21,13 @@ extern "C" {
 #define PC_LONG_MATCH_MIN 2u
 #define PC_LONG_MATCH_MAX 17u
 #define PC_OFFSET_LONG_MAX 65535u
-#define PC_DICT_COUNT 64u
+#ifdef PC_NO_DICT
+#define PC_DICT_COUNT 0u
+#define PC_DICT_MAX_LEN 0u
+#else
+#define PC_DICT_COUNT 96u
 #define PC_DICT_MAX_LEN 8u
+#endif
 #define PC_BLOCK_MAX_COMPRESSED (PC_BLOCK_SIZE + (PC_BLOCK_SIZE / PC_LITERAL_MAX) + 16u)
 
 #ifndef PC_LAZY_STEPS
