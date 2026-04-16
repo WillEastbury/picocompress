@@ -117,31 +117,45 @@ For each block (default 508 bytes):
 ┌──────────────────────────────────────────────────┐
 │  Input position i                                │
 │                                                  │
-│  1. Try static dictionary (64 entries)           │
+│  1. Try repeat-offset cache (3 recent offsets)   │
+│     → first-byte + second-byte early reject      │
+│     → slot 0 = cheap 1-byte repeat token         │
+│     → slots 1-2 = scored as normal LZ            │
+│     → bail if match >= GOOD_MATCH (8)            │
+│                                                  │
+│  2. Try static dictionary (64 entries)           │
 │     → first-byte filter, then memcmp             │
 │     → savings = entry_len - 1  (1-byte token)    │
+│     → bail if match >= GOOD_MATCH                │
 │                                                  │
-│  2. Try LZ hash chain (depth=2, 9-bit hash)      │
+│  3. Try LZ hash chain (depth=2, 9-bit hash)      │
 │     → hash3(vbuf + i) → head[d][hash]            │
-│     → check offset ≤ 511, match ≥ 2 bytes        │
-│     → repeat-offset bonus: saves 1 extra byte    │
+│     → first-byte early reject before compare     │
+│     → short offset (≤511): 2-byte token          │
+│     → long offset (>511): 3-byte token           │
+│     → offset scoring: prefer nearer at equal len │
+│     → long-offset bonus: +2 bytes wins over near │
+│     → bail if match >= GOOD_MATCH                │
 │                                                  │
-│  3. Pick best savings across dict/LZ/repeat      │
+│  4. Pick best savings across repeat/dict/LZ      │
 │                                                  │
-│  4. Lazy evaluation: if (i+1) has better match,  │
-│     skip current position and advance            │
+│  5. Literal run extension: skip savings≤1 mid-run│
 │                                                  │
-│  5. Emit: dictionary ref / repeat-offset /       │
-│     new-offset LZ / literal run                  │
+│  6. Lazy evaluation: only if match < GOOD_MATCH  │
+│     → check (i+1)..(i+LAZY_STEPS) for better    │
+│     → skip current position if found             │
 │                                                  │
-│  6. Update hash chain for skipped positions       │
+│  7. Emit: dict ref / repeat-offset /             │
+│     short-offset LZ / long-offset LZ / literal   │
+│                                                  │
+│  8. Update repeat-offset cache + hash chain       │
 └──────────────────────────────────────────────────┘
 ```
 
 ## Cross-block history (soft chaining)
 
-The encoder maintains a 128-byte history buffer containing the tail of
-the previously compressed block. Before compressing a new block, it
+The encoder maintains a 504-byte history buffer (configurable) containing
+the tail of the previously compressed block. Before compressing a new block, it
 constructs a virtual buffer `[history | block]` and seeds the hash
 table from the history region. This allows matches that span the
 block boundary — the key to compressing multi-block payloads
@@ -198,13 +212,76 @@ encrypted/already-compressed data), the block is stored verbatim with
 only the 4-byte frame header. Expansion is bounded to +4 bytes per
 block worst case.
 
+### Repeat-offset cache
+
+The encoder maintains a 3-entry cache of recent LZ offsets. At each
+position, these are probed **before** the hash chain — with first-byte
+and second-byte early rejection. Only cache slot 0 (most recent) can
+emit the cheap 1-byte repeat-offset token; slots 1 and 2 are scored
+as normal LZ matches. This finds matches on recurring struct strides
+without any hash lookup at all.
+
 ### Repeat-offset detection
 
-The encoder tracks the last emitted LZ offset. When a new match has
-the same offset, it emits a 1-byte repeat-offset token instead of a
-2-byte LZ token. This fires heavily on structured data where fields
-repeat at fixed stride (packed structs, CSV columns, JSON arrays with
-uniform keys).
+When the best LZ match uses a new offset, it is pushed into the cache
+(shifting slots 1→2, 0→1). The decoder tracks only the most recent
+offset for the repeat-offset token — so the cache is encoder-only
+intelligence with zero decoder cost.
+
+### Good-enough threshold
+
+Once any match of 8+ bytes is found (repeat, dictionary, or LZ), the
+encoder stops probing immediately. Long matches are almost never
+beaten by further search — this saves significant CPU on repetitive
+data while preserving ratio.
+
+### Conditional lazy evaluation
+
+Lazy matching only fires when the current match is shorter than the
+good-enough threshold (8 bytes). Long matches are accepted immediately.
+This saves wasted probes on already-optimal matches while still
+improving short-match decisions by 2–5%.
+
+### Literal run extension
+
+Weak matches (savings ≤ 1 byte) are suppressed when the encoder is
+mid-literal-run. Breaking a literal run for a tiny match costs a
+literal-header byte that often negates the match savings.
+
+### Long-offset length bonus
+
+When a long-offset match (>511 bytes, 3-byte token) is 2+ bytes
+longer than the best short-offset match, it is preferred despite the
+extra token byte. This catches cross-block references that would
+otherwise be discarded.
+
+### Early reject
+
+Both the repeat-cache probe and LZ hash-chain probe check the first
+byte at the candidate position before calling `pc_match_len`. This
+eliminates the majority of non-matches without entering the compare
+loop.
+
+### Offset scoring
+
+At equal savings, the encoder prefers matches with shorter offsets —
+these are more likely to use the cheaper 2-byte short-offset token
+and keep the repeat-cache hot.
+
+### Boundary-boost history seeding
+
+After seeding the hash table from history, the encoder re-injects
+the last 64 history positions into hash slot 0. This ensures "just
+out of block" matches — the highest-value cross-block references —
+survive the full block scan instead of being buried by earlier
+history entries.
+
+### Hash function validation
+
+Six candidate hash functions were benchmarked (FNV-1a, shift-XOR,
+multiplicative, DJB2, MurmurHash3, and the current weighted-sum).
+The current hash (`a*251 + b*11 + c*3`) won on compression ratio
+and is near-fastest. See `src/hash_spike.c` for the full analysis.
 
 ## Memory budget
 
