@@ -252,17 +252,13 @@ static int pc_emit_literals(
     uint16_t pos = 0;
     while (pos < src_len) {
         uint16_t chunk = (uint16_t)(src_len - pos);
-        if (chunk > PC_LITERAL_EXT_MAX) {
-            chunk = PC_LITERAL_EXT_MAX;
+        if (chunk > PC_LITERAL_MAX) {
+            chunk = PC_LITERAL_MAX;
         }
         if ((uint32_t)(*op) + 1u + chunk > dst_cap) {
             return 0;
         }
-        if (chunk <= PC_LITERAL_MAX) {
-            dst[(*op)++] = (uint8_t)(chunk - 1u);           /* 0x00..0x3F */
-        } else {
-            dst[(*op)++] = (uint8_t)(0xE0u | (chunk - 65u)); /* 0xE0..0xFF */
-        }
+        dst[(*op)++] = (uint8_t)(chunk - 1u);               /* 0x00..0x3F */
         memcpy(dst + *op, src + pos, chunk);
         *op = (uint16_t)(*op + chunk);
         pos = (uint16_t)(pos + chunk);
@@ -371,6 +367,26 @@ static const uint8_t pc_d60[] = { 'n','u','m','b','e','r','"',':' }; /* number":
 static const uint8_t pc_d61[] = "operator";
 static const uint8_t pc_d62[] = { 'h','t','t','p','s',':','/','/'}; /* https:// */
 static const uint8_t pc_d63[] = "response";
+/* 64-67: capitalized sentence starters (with leading ". " or " ") */
+static const uint8_t pc_d64[] = { '.', ' ', 'T', 'h', 'e', ' ' };  /* . The  */
+static const uint8_t pc_d65[] = { '.', ' ', 'I', 't', ' ' };        /* . It   */
+static const uint8_t pc_d66[] = { '.', ' ', 'T', 'h', 'i', 's', ' ' }; /* . This  */
+static const uint8_t pc_d67[] = { '.', ' ', 'A', ' ' };             /* . A    */
+/* 68-71: common capitalized terms */
+static const uint8_t pc_d68[] = { 'H', 'T', 'T', 'P' };            /* HTTP   */
+static const uint8_t pc_d69[] = { 'J', 'S', 'O', 'N' };            /* JSON   */
+static const uint8_t pc_d70[] = { 'T', 'h', 'e', ' ' };            /* The    */
+static const uint8_t pc_d71[] = { 'N', 'o', 'n', 'e' };            /* None   */
+/* 72-75: phoneme patterns (from generator — high freq English) */
+static const uint8_t pc_d72[] = "ment";
+static const uint8_t pc_d73[] = "ness";
+static const uint8_t pc_d74[] = "able";
+static const uint8_t pc_d75[] = "ight";
+/* 76-79: more phoneme / structural patterns */
+static const uint8_t pc_d76[] = "ation";
+static const uint8_t pc_d77[] = "ould ";                             /* would/could/should */
+static const uint8_t pc_d78[] = { '"', ':', ' ', '"' };             /* ": "  JSON kv */
+static const uint8_t pc_d79[] = { '"', ',', ' ', '"' };             /* ", "  JSON sep */
 
 static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
     /* 0-3:  4-5B */ { pc_d00,4 }, { pc_d01,4 }, { pc_d02,5 }, { pc_d03,4 },
@@ -389,6 +405,14 @@ static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
                     { pc_d52,6 }, { pc_d53,6 }, { pc_d54,6 }, { pc_d55,6 },
     /* 56-59:7B */  { pc_d56,7 }, { pc_d57,7 }, { pc_d58,7 }, { pc_d59,7 },
     /* 60-63:8B */  { pc_d60,8 }, { pc_d61,8 }, { pc_d62,8 }, { pc_d63,8 },
+    /* 64-67: sentence starters */
+                    { pc_d64,6 }, { pc_d65,5 }, { pc_d66,7 }, { pc_d67,4 },
+    /* 68-71: capitalized terms */
+                    { pc_d68,4 }, { pc_d69,4 }, { pc_d70,4 }, { pc_d71,4 },
+    /* 72-75: phoneme */
+                    { pc_d72,4 }, { pc_d73,4 }, { pc_d74,4 }, { pc_d75,4 },
+    /* 76-79: phoneme + structural */
+                    { pc_d76,5 }, { pc_d77,5 }, { pc_d78,4 }, { pc_d79,4 },
 };
 
 #endif /* PC_DICT_COUNT > 0 */
@@ -670,7 +694,11 @@ retry_pos:
 
             if (best_dict != UINT16_MAX) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
-                out[op++] = (uint8_t)(0x40u | (best_dict & 0x3Fu));
+                if (best_dict < 64u) {
+                    out[op++] = (uint8_t)(0x40u | (best_dict & 0x3Fu));
+                } else {
+                    out[op++] = (uint8_t)(0xE0u | ((best_dict - 64u) & 0x0Fu));
+                }
                 PC_STAT_INC(stats, dict_hits);
                 PC_STAT_INC(stats, match_count);
             } else if (best_is_repeat) {
@@ -826,16 +854,20 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        /* 0xE0..0xEF: extended literal run (65..80) */
+        /* 0xE0..0xEF: dictionary overflow (entries 64..79) */
         if (token < 0xF0u) {
-            uint16_t lit_len = (uint16_t)((token & 0x0Fu) + 65u);
-            if ((uint32_t)ip + lit_len > in_len || (uint32_t)op + lit_len > out_len) {
-                return PC_ERR_CORRUPT;
-            }
-            memcpy(out + op, in + ip, lit_len);
-            ip = (uint16_t)(ip + lit_len);
-            op = (uint16_t)(op + lit_len);
+#if PC_DICT_COUNT > 64
+            uint16_t idx = (uint16_t)(64u + (token & 0x0Fu));
+            uint8_t dlen;
+            if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
+            dlen = pc_static_dict[idx].len;
+            if ((uint32_t)op + dlen > out_len) return PC_ERR_CORRUPT;
+            memcpy(out + op, pc_static_dict[idx].data, dlen);
+            op = (uint16_t)(op + dlen);
             continue;
+#else
+            return PC_ERR_CORRUPT;
+#endif
         }
 
         /* 0xF0..0xFF: long-offset LZ match (3-byte token) */
