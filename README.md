@@ -67,7 +67,13 @@ Any encoder config produces streams that **any decoder build can decompress**.
 Override at compile time with `-D`:
 
 ```powershell
-# Balanced default (~5K encode)
+# Micro (~1K encode, ~0.5K decode — fits in 2K SRAM total)
+cl /O2 /TC /DPC_BLOCK_SIZE=192u /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=64u src/picocompress.c ...
+
+# Minimal (~2K encode, ~0.7K decode)
+cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src/picocompress.c ...
+
+# Balanced default (~5K encode, ~1.5K decode)
 cl /O2 /TC src/picocompress.c ...
 
 # Aggressive ratio (~5K encode — deeper chain, same RAM)
@@ -85,7 +91,8 @@ cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src
 
 | Profile | Flags | Enc RAM | Dec RAM | Ratio | Speed |
 |---|---|---:|---:|---|---|
-| Minimal | `b8 d1 h128` | ~1.8 KB | ~0.7 KB | Baseline | Fastest |
+| Micro | `b192 b8 d1 h64` | ~1.0 KB | ~0.5 KB | ~60% of balanced | Fastest |
+| Minimal | `b8 d1 h128` | ~1.8 KB | ~0.7 KB | ~75% of balanced | Fast |
 | Balanced | (default) | ~4.6 KB | ~1.5 KB | Good | Good |
 | Aggressive | `b8 d4` | ~4.6 KB | ~1.5 KB | +10% | −15% |
 | Q3 | `b10 d2 h1024 lazy2` | ~7.7 KB | ~2.0 KB | +15% | −10% |
