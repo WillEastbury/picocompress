@@ -298,11 +298,11 @@ typedef struct {
  *   0xE0..0xFF  extended literal (len 65..96)
  * -------------------------------------------------------------------- */
 
-/* 0-3: single-byte ultra-common symbols */
-static const uint8_t pc_d00[] = "{";
-static const uint8_t pc_d01[] = "}";
-static const uint8_t pc_d02[] = ":";
-static const uint8_t pc_d03[] = ",";
+/* 0-3: high-value multi-byte patterns (replaced single-byte waste) */
+static const uint8_t pc_d00[] = { '"', ':', ' ', '"' };    /* ": "  JSON key-value */
+static const uint8_t pc_d01[] = { '}', ',', '\n', '"' };   /* },\n" JSON object sep */
+static const uint8_t pc_d02[] = { '<', '/', 'd', 'i', 'v' }; /* </div  HTML close */
+static const uint8_t pc_d03[] = "tion";
 /* 4-7: two-byte common pairs */
 static const uint8_t pc_d04[] = { '\r', '\n' };
 static const uint8_t pc_d05[] = "id";
@@ -373,11 +373,11 @@ static const uint8_t pc_d62[] = { 'h','t','t','p','s',':','/','/'}; /* https:// 
 static const uint8_t pc_d63[] = "response";
 
 static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
-    /* 0-3:  1B */  { pc_d00,1 }, { pc_d01,1 }, { pc_d02,1 }, { pc_d03,1 },
+    /* 0-3:  4-5B */ { pc_d00,4 }, { pc_d01,4 }, { pc_d02,5 }, { pc_d03,4 },
     /* 4-7:  2B */  { pc_d04,2 }, { pc_d05,2 }, { pc_d06,2 }, { pc_d07,2 },
-    /* 8-15: 3B */  { pc_d08,3 }, { pc_d09,3 }, { pc_d10,3 }, { pc_d11,3 },
+    /* 8-15: 3B */  { pc_d08,3 }, { pc_d09,2 }, { pc_d10,2 }, { pc_d11,3 },
                     { pc_d12,3 }, { pc_d13,3 }, { pc_d14,3 }, { pc_d15,3 },
-    /* 16-23:3B */  { pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
+    /* 16-23:2-3B */{ pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
                     { pc_d20,2 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,2 },
     /* 24-39:4B */  { pc_d24,4 }, { pc_d25,4 }, { pc_d26,4 }, { pc_d27,4 },
                     { pc_d28,4 }, { pc_d29,4 }, { pc_d30,4 }, { pc_d31,4 },
@@ -616,11 +616,6 @@ retry_pos:
         /* insert current position into hash table (needs 3 bytes) */
         if ((uint16_t)(vbuf_len - vpos) >= 3u) {
             pc_head_insert(head, pc_hash3(vbuf + vpos), (int16_t)vpos);
-        }
-
-        /* #3: short dict entries save a literal-header byte when standalone */
-        if (best_dict != UINT16_MAX && best_savings == 0 && anchor == vpos) {
-            best_savings = 1;
         }
 
         /* #7: literal run extension — skip weak matches (savings <= 1) when
