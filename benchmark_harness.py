@@ -62,6 +62,163 @@ def make_ascii_payload_254() -> bytes:
     return (base * 8)[:254].encode("ascii")
 
 
+# ---------------------------------------------------------------------------
+# Scaled payload generators — each returns exactly `size` bytes
+# ---------------------------------------------------------------------------
+
+def make_random(size: int) -> bytes:
+    rng = random.Random(42)
+    return bytes(rng.getrandbits(8) for _ in range(size))
+
+
+def make_sparse(size: int) -> bytes:
+    """Mostly zeros with occasional sensor-like spikes."""
+    rng = random.Random(99)
+    data = bytearray(size)
+    for i in range(size):
+        if rng.random() < 0.05:
+            data[i] = rng.randint(1, 255)
+    return bytes(data)
+
+
+def make_uint32_array(size: int) -> bytes:
+    """Packed little-endian uint32 counters with small deltas."""
+    rng = random.Random(77)
+    count = size // 4
+    vals = []
+    v = 1_000_000
+    for _ in range(count):
+        v += rng.randint(0, 15)
+        vals.append(v)
+    blob = struct.pack(f"<{count}I", *vals)
+    pad = size - len(blob)
+    return blob + b"\x00" * pad
+
+
+_UK_FIRST = [
+    "Oliver", "George", "Arthur", "Noah", "Muhammad", "Leo", "Oscar",
+    "Harry", "Alfie", "Jack", "Amelia", "Olivia", "Isla", "Ava",
+    "Mia", "Ivy", "Lily", "Isabella", "Rosie", "Sophia",
+]
+_UK_LAST = [
+    "Smith", "Jones", "Williams", "Taylor", "Brown", "Davies",
+    "Wilson", "Evans", "Thomas", "Roberts", "Johnson", "Walker",
+    "Wright", "Robinson", "Thompson", "White", "Hughes", "Edwards",
+    "Green", "Hall",
+]
+_UK_STREETS = [
+    "High Street", "Station Road", "Church Lane", "Mill Road",
+    "Park Avenue", "Victoria Road", "Green Lane", "Manor Road",
+    "Kings Road", "Queens Road", "The Crescent", "Elm Grove",
+    "Oakfield Road", "Bridge Street", "Market Square",
+]
+_UK_TOWNS = [
+    "London", "Birmingham", "Manchester", "Leeds", "Bristol",
+    "Sheffield", "Liverpool", "Nottingham", "Southampton", "Leicester",
+    "Coventry", "Bradford", "Cardiff", "Edinburgh", "Glasgow",
+]
+_UK_POSTCODES = [
+    "SW1A 1AA", "EC2R 8AH", "B1 1BB", "M1 1AE", "BS1 4DJ",
+    "S1 2BJ", "L1 8JQ", "NG1 5FW", "SO14 0YN", "LE1 6RN",
+    "CV1 1FY", "BD1 1HQ", "CF10 1EP", "EH1 1YZ", "G1 1DN",
+]
+
+
+def make_uk_names_addresses(size: int) -> bytes:
+    """Repeating UK name+address records in UTF-8."""
+    rng = random.Random(123)
+    lines: list[str] = []
+    while True:
+        first = rng.choice(_UK_FIRST)
+        last = rng.choice(_UK_LAST)
+        num = rng.randint(1, 200)
+        street = rng.choice(_UK_STREETS)
+        town = rng.choice(_UK_TOWNS)
+        pc = rng.choice(_UK_POSTCODES)
+        line = f"{first} {last}, {num} {street}, {town}, {pc}\n"
+        lines.append(line)
+        total = sum(len(l.encode("utf-8")) for l in lines)
+        if total >= size:
+            break
+    blob = "".join(lines).encode("utf-8")[:size]
+    if len(blob) < size:
+        blob += b" " * (size - len(blob))
+    return blob
+
+
+def make_utf8_prose(size: int) -> bytes:
+    """Repeating English-like prose typical of log/event messages."""
+    sentences = [
+        "The temperature sensor on ward 7 reported a value of 36.5 degrees Celsius at 14:32 UTC. ",
+        "Patient monitor device edge-ward-07 completed periodic sync; all vitals are stable. ",
+        "Alert level none: blood pressure reading 120/78 mmHg within normal range for operator night-shift. ",
+        "Telemetry profile active for region eu-west-2; next scheduled upload in 300 seconds. ",
+        "SpO2 reading 97 percent recorded by pulse oximeter sensor; no intervention required. ",
+        "Nurse station acknowledged status update from bed monitor; note=stable logged to record. ",
+        "Environmental sensor reports ambient temperature 22.1C, humidity 45 percent, CO2 412 ppm. ",
+        "Medication dispenser confirmed dose release: paracetamol 500mg at 08:15 GMT for patient 4072. ",
+        "Network gateway eu-west-2-gw03 heartbeat received; latency 12ms, packet loss 0.0 percent. ",
+        "Shift handover summary: 12 patients monitored, 0 critical alerts, 3 advisory notes logged. ",
+    ]
+    rng = random.Random(456)
+    parts: list[str] = []
+    while sum(len(s.encode("utf-8")) for s in parts) < size:
+        parts.append(rng.choice(sentences))
+    blob = "".join(parts).encode("utf-8")[:size]
+    if len(blob) < size:
+        blob += b" " * (size - len(blob))
+    return blob
+
+
+def make_order_positional(size: int) -> bytes:
+    """Fixed-width positional order records (order header + line items).
+
+    Header (80 bytes):
+      ORDER_ID(10) DATE(8) CUST_ID(10) CUST_NAME(30) STATUS(6) TOTAL(10) CURR(3) NL(1) PAD(2)
+    Line item (40 bytes):
+      LINE(4) SKU(12) DESC(10) QTY(4) UNIT_PRICE(8) NL(1) PAD(1)
+    """
+    rng = random.Random(789)
+    skus = [f"SKU-{i:07d}" for i in range(100)]
+    descs = [
+        "Widget    ", "Grommet   ", "Sprocket  ", "Bearing   ", "Gasket    ",
+        "Bracket   ", "Washer    ", "Bolt M6   ", "Nut M6    ", "Pin 3mm   ",
+    ]
+    statuses = ["OPEN  ", "HOLD  ", "SHIP  ", "DONE  ", "CANCL ", "BACKOD"]
+    names = [
+        f"{rng.choice(_UK_FIRST)} {rng.choice(_UK_LAST)}"
+        for _ in range(40)
+    ]
+
+    buf = bytearray()
+    order_id = 1000000
+    while len(buf) < size:
+        order_id += rng.randint(1, 5)
+        date = f"2024{rng.randint(1,12):02d}{rng.randint(1,28):02d}"
+        cust_id = f"C{rng.randint(100000,999999):06d}"
+        name = rng.choice(names)
+        status = rng.choice(statuses)
+        n_lines = rng.randint(1, 6)
+        total = 0.0
+        lines_buf = bytearray()
+        for ln in range(1, n_lines + 1):
+            sku = rng.choice(skus)
+            desc = rng.choice(descs)
+            qty = rng.randint(1, 50)
+            price = round(rng.uniform(0.50, 99.99), 2)
+            total += qty * price
+            line_rec = f"{ln:<4d}{sku:<12s}{desc:<10s}{qty:<4d}{price:>8.2f}\n "
+            lines_buf.extend(line_rec[:40].encode("ascii"))
+        header = (
+            f"{order_id:<10d}{date:<8s}{cust_id:<10s}{name:<30s}"
+            f"{status:<6s}{total:>10.2f}GBP\n  "
+        )
+        buf.extend(header[:80].encode("ascii"))
+        buf.extend(lines_buf)
+
+    return bytes(buf[:size])
+
+
 def timed_us(fn: Callable[[], None], min_seconds: float = 0.25) -> float:
     n = 1
     while True:
@@ -172,12 +329,26 @@ def main() -> None:
     args = parser.parse_args()
 
     pico = PicoCodec(args.dll)
+
+    SIZES = [1024, 2048, 4096, 8192, 16384, 32768, 131072, 524288, 1048576]
+
+    # Original small payloads
     report = [
         run_payload("pattern-508", make_pattern_payload_508(), pico),
         run_payload("utf8-int-508", make_utf8_plus_int_payload_508(), pico),
         run_payload("random-508", make_random_payload_508(), pico),
         run_payload("ascii-254", make_ascii_payload_254(), pico),
     ]
+
+    # Scaled payloads at each size
+    for sz in SIZES:
+        tag = f"{sz // 1024}K" if sz >= 1024 else str(sz)
+        report.append(run_payload(f"random-{tag}", make_random(sz), pico))
+        report.append(run_payload(f"sparse-{tag}", make_sparse(sz), pico))
+        report.append(run_payload(f"uint32-{tag}", make_uint32_array(sz), pico))
+        report.append(run_payload(f"utf8-prose-{tag}", make_utf8_prose(sz), pico))
+        report.append(run_payload(f"uk-addr-{tag}", make_uk_names_addresses(sz), pico))
+        report.append(run_payload(f"order-pos-{tag}", make_order_positional(sz), pico))
 
     print(json.dumps(report, indent=2))
     print()
