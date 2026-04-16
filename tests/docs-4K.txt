@@ -1,0 +1,101 @@
+# picocompress
+
+Tiny dependency-free C compression library for embedded targets.
+
+Runs on **Arduino**, **ESP32**, **Pico W/2W**, and **Raspberry Pi 3/4/5** — from 2K SRAM to Linux SBCs.
+
+## Features
+
+- **Streaming** encoder/decoder APIs (`pc_encoder_*`, `pc_decoder_*`)
+- **Buffer-based** convenience APIs (`pc_compress_buffer`, `pc_decompress_buffer`)
+- **Scalable RAM**: 1.0 KB encode (Micro) → 13.8 KB (Q4) — pick your profile
+- **Cross-block history**: up to 2048-byte sliding window across blocks
+- **64-entry static dictionary**: common JSON, CSV, HTTP, English, and binary patterns (ROM-resident)
+- **Repeat-offset cache**: 3-entry LRU for recurring struct strides (1-byte token)
+- **Hardware acceleration**: NEON (16B/cycle), CRC32 hash, CLZ match — auto-detected via `#ifdef`
+- **Hardware acceleration** via conditional compilation (NEON, MVE, RISC-V V, CRC32, CLZ/CTZ)
+- **Encoder instrumentation** counters (`-DPC_ENABLE_STATS`)
+- **CRC32 roundtrip verification** in all test paths
+- Tuned for short payloads (default block size: 508 bytes)
+- Cortex-M0 safe (no unaligned loads, pure portable fallback)
+
+## Token format (v3)
+
+| Range | Type | Size | Description |
+|---|---|---|---|
+| `0x00..0x3F` | Short literal | 1 + N | Run of 1–64 raw bytes |
+| `0x40..0x7F` | Dictionary ref | 1 | Emit predefined sequence (64 entries) |
+| `0x80..0xBF` | LZ match | 2 | 5-bit length + 9-bit offset |
+| `0xC0..0xDF` | Repeat-offset | 1 | Reuse last LZ offset |
+| `0xE0..0xEF` | Extended literal | 1 + N | Run of 65–80 raw bytes |
+| `0xF0..0xFF` | Long-offset LZ | 3 | 4-bit length + 16-bit offset |
+
+## Build and test (MSVC)
+
+```powershell
+cd src
+cl /nologo /O2 /W4 /TC picocompress.c test_picocompress.c /Fe:test_picocompress.exe
+.\test_picocompress.exe
+
+cl /nologo /O2 /W4 /TC picocompress.c test_picocompress_additional.c /Fe:test_picocompress_additional.exe
+.\test_picocompress_additional.exe
+```
+
+## Build and test (GCC / Clang)
+
+```sh
+cd src
+gcc -O2 -Wall -Wextra -std=c99 picocompress.c test_picocompress.c -o test_picocompress
+./test_picocompress
+
+gcc -O2 -Wall -Wextra -std=c99 picocompress.c test_picocompress_additional.c -o test_picocompress_additional
+./test_picocompress_additional
+
+# With encoder stats
+gcc -O2 -Wall -Wextra -std=c99 -DPC_ENABLE_STATS picocompress.c test_picocompress_stats.c -o test_stats
+./test_stats
+```
+
+Hardware acceleration is auto-detected. Override with `-DPC_NO_*` flags
+(see [`docs/PLATFORM_SUPPORT.md`](docs/PLATFORM_SUPPORT.md)).
+
+Both suites verify compress→decompress roundtrips with **CRC32 checksums**.
+
+## Benchmark harness
+
+```powershell
+python -m pip install brotli heatshrink2
+cd docs
+.\run_benchmarks.ps1 -JsonOut benchmark_results.json
+```
+
+Benchmarks picocompress against heatshrink and brotli (q1/q5/default) across:
+pattern, utf8+int, random, ASCII, JSON, lorem ipsum, RGB icon, JPEG,
+pretty/minified JSON, UK addresses, order records, sparse, uint32 arrays,
+and scaled sizes from 254 bytes to 1 MB.
+
+See [`docs/TEST_METHODS.md`](docs/TEST_METHODS.md) and [`docs/PERFORMANCE_SUMMARY.md`](docs/PERFORMANCE_SUMMARY.md) for methodology and results.
+Full data: [`docs/benchmark_results.json`](docs/benchmark_results.json) and [`docs/benchmark_tables.txt`](docs/benchmark_tables.txt).
+
+## Test fixtures
+
+The [`tests/`](tests/) directory contains all 64 deterministic payload files used by the benchmark harness (254 bytes to 1 MB).
+
+## Public API
+
+See [`src/picocompress.h`](src/picocompress.h) for all constants, result codes, and function signatures.
+
+## Configuration
+
+Hash and history parameters are **encoder-only** — the decoder never sees them.
+Any encoder config produces streams that **any decoder build can decompress**.
+Override at compile time with `-D`:
+
+```powershell
+# Micro (~1K encode, ~0.5K decode — fits in 2K SRAM total)
+cl /O2 /TC /DPC_BLOCK_SIZE=192u /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=64u src/picocompress.c ...
+
+# Minimal (~2K encode, ~0.7K decode)
+cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src/picocompress.c ...
+
+# Balanced default (~5K encod

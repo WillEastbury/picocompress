@@ -1,0 +1,122 @@
+#include "picocompress.h"
+
+#include <string.h>
+
+/* ================================================================
+ * Platform feature detection (private to this translation unit).
+ *
+ * Capability macros (auto-detected, user-overridable with PC_NO_*):
+ *   PC_HAS_HW_CRC32     — ARM CRC32 intrinsic (__crc32b)
+ *   PC_HAS_BITSCAN       — CLZ/CTZ bit-scan (word-at-a-time match)
+ *   PC_CAN_UNALIGNED     — safe unaligned word loads
+ *   PC_HAS_NEON          — ARM NEON 64/128-bit SIMD
+ *   PC_HAS_MVE           — ARM Helium (M-Profile Vector Extension)
+ *   PC_HAS_RVV           — RISC-V Vector extension
+ *
+ * Disable any path with -DPC_NO_HW_CRC32, -DPC_NO_BITSCAN, etc.
+ * ================================================================ */
+
+/* --- ARM CRC32 (Cortex-M33+, A-class with +crc) --- */
+#if !defined(PC_NO_HW_CRC32) && defined(__ARM_FEATURE_CRC32)
+#  include <arm_acle.h>
+#  define PC_HAS_HW_CRC32 1
+#else
+#  define PC_HAS_HW_CRC32 0
+#endif
+
+/* --- NEON (A-class, some R-class) --- */
+#if !defined(PC_NO_NEON) && defined(__ARM_NEON)
+#  include <arm_neon.h>
+#  define PC_HAS_NEON 1
+#else
+#  define PC_HAS_NEON 0
+#endif
+
+/* --- Helium / MVE (Cortex-M55+) --- */
+#if !defined(PC_NO_MVE) && defined(__ARM_FEATURE_MVE) && (__ARM_FEATURE_MVE >= 1)
+#  include <arm_mve.h>
+#  define PC_HAS_MVE 1
+#else
+#  define PC_HAS_MVE 0
+#endif
+
+/* --- RISC-V Vector --- */
+#if !defined(PC_NO_RVV) && defined(__riscv_vector)
+#  include <riscv_vector.h>
+#  define PC_HAS_RVV 1
+#else
+#  define PC_HAS_RVV 0
+#endif
+
+/* --- Bit-scan (CLZ/CTZ) for word-at-a-time matching --- */
+#if !defined(PC_NO_BITSCAN)
+#  if defined(__GNUC__) || defined(__clang__)
+#    define PC_HAS_BITSCAN 1
+#  elif defined(_MSC_VER)
+#    include <intrin.h>
+#    define PC_HAS_BITSCAN 1
+#  else
+#    define PC_HAS_BITSCAN 0
+#  endif
+#else
+#  define PC_HAS_BITSCAN 0
+#endif
+
+/* --- Unaligned word loads (safe on M3+, A-class, x86; NOT on M0) --- */
+#if !defined(PC_NO_UNALIGNED)
+#  if defined(__ARM_ARCH) && (__ARM_ARCH >= 7)
+#    define PC_CAN_UNALIGNED 1
+#  elif defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86)
+#    define PC_CAN_UNALIGNED 1
+#  elif defined(__aarch64__) || defined(_M_ARM64)
+#    define PC_CAN_UNALIGNED 1
+#  else
+#    define PC_CAN_UNALIGNED 0
+#  endif
+#else
+#  define PC_CAN_UNALIGNED 0
+#endif
+
+#define PC_HASH_SIZE (1u << PC_HASH_BITS)
+#define PC_INVALID_POS (-1)
+#define PC_GOOD_MATCH 8u
+#define PC_REPEAT_CACHE_SIZE 3u
+
+/* ---- Hash function --------------------------------------------------- */
+
+#if PC_HAS_HW_CRC32
+/* Hardware CRC32 hash — 1-cycle on M33+, excellent distribution. */
+static uint16_t pc_hash3(const uint8_t *p) {
+    uint32_t h = __crc32b(__crc32b(__crc32b(0u, p[0]), p[1]), p[2]);
+    return (uint16_t)(h & (PC_HASH_SIZE - 1u));
+}
+#else
+/* Portable multiply hash — good distribution, 3 multiplies. */
+static uint16_t pc_hash3(const uint8_t *p) {
+    uint32_t v = ((uint32_t)p[0] * 251u) + ((uint32_t)p[1] * 11u) + ((uint32_t)p[2] * 3u);
+    return (uint16_t)(v & (PC_HASH_SIZE - 1u));
+}
+#endif
+
+/* ---- Match length comparison ----------------------------------------- */
+
+/* Helper: count first-difference byte position in a 32-bit XOR word.
+ * Uses CTZ on little-endian, CLZ on big-endian. Never called with xor==0.
+ * Only used by the word-at-a-time match path (when no SIMD is available). */
+#if PC_HAS_BITSCAN && PC_CAN_UNALIGNED && !PC_HAS_NEON && !PC_HAS_MVE && !PC_HAS_RVV
+static uint16_t pc_first_diff_bytes(uint32_t xor_val) {
+#  if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+#    if defined(__GNUC__) || defined(__clang__)
+    return (uint16_t)((unsigned)__builtin_clz(xor_val) >> 3u);
+#    elif defined(_MSC_VER)
+    unsigned long idx;
+    _BitScanReverse(&idx, xor_val);
+    return (uint16_t)((31u - idx) >> 3u);
+#    endif
+#  else /* little-endian (default for ARM, x86, RISC-V) */
+#    if defined(__GNUC__) || defined(__clang__)
+    return (uint16_t)((unsigned)__builtin_ctz(xor_val) >> 3u);
+#    elif defined(_MSC_VER)
+    unsigned long idx;
+    _BitScanForward(&idx, xor_val);
+    return (uint16_t)
