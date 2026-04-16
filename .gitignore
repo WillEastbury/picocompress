@@ -1,0 +1,10 @@
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.asm
+*.log
+
+third_party/
