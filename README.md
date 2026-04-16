@@ -73,11 +73,11 @@ cl /O2 /TC src/picocompress.c ...
 # Aggressive ratio (~5K encode — deeper chain, same RAM)
 cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=4u src/picocompress.c ...
 
-# Super-aggressive 10K encode
-cl /O2 /TC /DPC_HASH_BITS=9u /DPC_HASH_CHAIN_DEPTH=7u src/picocompress.c ...
+# Super-aggressive 10K encode (Q3: wider hash + larger history + 2-step lazy)
+cl /O2 /TC /DPC_HASH_BITS=10u /DPC_HASH_CHAIN_DEPTH=2u /DPC_HISTORY_SIZE=1024u /DPC_LAZY_STEPS=2u src/picocompress.c ...
 
-# Ultra 15K encode
-cl /O2 /TC /DPC_HASH_BITS=10u /DPC_HASH_CHAIN_DEPTH=6u src/picocompress.c ...
+# Ultra 15K encode (Q4: widest hash + deepest history + 2-step lazy)
+cl /O2 /TC /DPC_HASH_BITS=11u /DPC_HASH_CHAIN_DEPTH=2u /DPC_HISTORY_SIZE=2048u /DPC_LAZY_STEPS=2u src/picocompress.c ...
 
 # Minimal RAM (~2K encode)
 cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src/picocompress.c ...
@@ -88,8 +88,8 @@ cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src
 | Minimal | `b8 d1 h128` | ~1.8 KB | ~0.7 KB | Baseline | Fastest |
 | Balanced | (default) | ~4.6 KB | ~1.5 KB | Good | Good |
 | Aggressive | `b8 d4` | ~4.6 KB | ~1.5 KB | +10% | −15% |
-| Super 10K | `b9 d7` | ~9.7 KB | ~1.5 KB | +20% | −20% |
-| Ultra 15K | `b10 d6` | ~14.8 KB | ~1.5 KB | +22% | −25% |
+| Q3 | `b10 d2 h1024 lazy2` | ~7.7 KB | ~2.0 KB | +15% | −10% |
+| Q4 | `b11 d2 h2048 lazy2` | ~13.8 KB | ~3.0 KB | +20% | −13% |
 
 ## Algorithm
 

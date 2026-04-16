@@ -206,24 +206,29 @@ static int pc_find_best(
     /* LZ match -- needs 3 bytes for hash */
     if (remaining >= 3u) {
         uint16_t hash = pc_hash3(vbuf + vpos);
-        uint16_t max_len = remaining > PC_MATCH_MAX ? PC_MATCH_MAX : remaining;
+        uint16_t max_len_short = remaining > PC_MATCH_MAX ? PC_MATCH_MAX : remaining;
+        uint16_t max_len_long = remaining > PC_LONG_MATCH_MAX ? PC_LONG_MATCH_MAX : remaining;
 
         for (d = 0; d < (int)PC_HASH_CHAIN_DEPTH; ++d) {
             int16_t prev = head[d][hash];
-            uint16_t prev_pos, off, len;
-            int is_rep, s;
+            uint16_t prev_pos, off, len, max_len;
+            int is_rep, s, token_cost;
 
             if (prev < 0) continue;
             prev_pos = (uint16_t)prev;
             if (prev_pos >= vpos) continue;
             off = (uint16_t)(vpos - prev_pos);
-            if (off > PC_OFFSET_MAX) continue;
+            if (off == 0u || off > PC_OFFSET_LONG_MAX) continue;
 
+            /* pick max match length based on which token can encode it */
+            max_len = (off <= PC_OFFSET_SHORT_MAX) ? max_len_short : max_len_long;
             len = pc_match_len(vbuf + prev_pos, vbuf + vpos, max_len);
             if (len < PC_MATCH_MIN) continue;
 
             is_rep = (off == last_offset && last_offset != 0) ? 1 : 0;
-            s = is_rep ? (int)len - 1 : (int)len - 2;
+            /* token cost: repeat=1, short-offset=2, long-offset=3 */
+            token_cost = is_rep ? 1 : (off <= PC_OFFSET_SHORT_MAX ? 2 : 3);
+            s = (int)len - token_cost;
 
             if (s > best_savings || (s == best_savings && len > *out_len)) {
                 best_savings = s;
@@ -267,9 +272,11 @@ static uint16_t pc_compress_block(
     anchor = hist_len;
     vpos = hist_len;
     while (vpos < vbuf_len) {
-        uint16_t best_len = 0, best_off = 0, best_dict = UINT16_MAX;
-        int best_is_repeat = 0;
-        int best_savings;
+        uint16_t best_len, best_off, best_dict;
+        int best_is_repeat, best_savings;
+retry_pos:
+        best_len = 0; best_off = 0; best_dict = UINT16_MAX;
+        best_is_repeat = 0;
 
         if ((uint16_t)(vbuf_len - vpos) < PC_MATCH_MIN) {
             break;
@@ -289,17 +296,33 @@ static uint16_t pc_compress_block(
             best_savings = 1;
         }
 
-        /* lazy matching: if next position is better, skip current */
-        if (best_savings > 0 && (uint16_t)(vpos + 1u) < vbuf_len
-            && (uint16_t)(vbuf_len - vpos - 1u) >= PC_MATCH_MIN) {
-            uint16_t n_len, n_off, n_dict;
-            int n_rep;
-            int n_sav = pc_find_best(
-                vbuf, vbuf_len, (uint16_t)(vpos + 1u), head, last_offset,
-                &n_len, &n_off, &n_dict, &n_rep);
-            if (n_sav > best_savings) {
-                ++vpos;
-                continue;
+        /* lazy matching: if a nearby position is better, skip current */
+        if (best_savings > 0) {
+            uint16_t step;
+            for (step = 1; step <= (uint16_t)PC_LAZY_STEPS; ++step) {
+                uint16_t npos = (uint16_t)(vpos + step);
+                if (npos >= vbuf_len || (uint16_t)(vbuf_len - npos) < PC_MATCH_MIN)
+                    break;
+                {
+                    uint16_t n_len, n_off, n_dict;
+                    int n_rep;
+                    int n_sav = pc_find_best(
+                        vbuf, vbuf_len, npos, head, last_offset,
+                        &n_len, &n_off, &n_dict, &n_rep);
+                    if (n_sav > best_savings) {
+                        /* insert positions we're skipping */
+                        {
+                            uint16_t s;
+                            for (s = 0; s < step; ++s) {
+                                uint16_t sp = (uint16_t)(vpos + s);
+                                if ((uint16_t)(vbuf_len - sp) >= 3u)
+                                    pc_head_insert(head, pc_hash3(vbuf + sp), (int16_t)sp);
+                            }
+                        }
+                        vpos = npos;
+                        goto retry_pos;
+                    }
+                }
             }
         }
 
@@ -318,7 +341,8 @@ static uint16_t pc_compress_block(
             } else if (best_is_repeat) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x1Fu));
-            } else {
+            } else if (best_off <= PC_OFFSET_SHORT_MAX && best_len <= PC_MATCH_MAX) {
+                /* short-offset LZ: 2-byte token */
                 if ((uint32_t)op + 2u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(
                     0x80u
@@ -326,6 +350,15 @@ static uint16_t pc_compress_block(
                     | ((best_off >> 8u) & 0x01u));
                 out[op++] = (uint8_t)(best_off & 0xFFu);
                 last_offset = best_off;
+            } else {
+                /* long-offset LZ: 3-byte token (0xF0..0xFF) */
+                uint16_t elen = best_len > PC_LONG_MATCH_MAX ? PC_LONG_MATCH_MAX : best_len;
+                if ((uint32_t)op + 3u > out_cap) return UINT16_MAX;
+                out[op++] = (uint8_t)(0xF0u | ((elen - PC_LONG_MATCH_MIN) & 0x0Fu));
+                out[op++] = (uint8_t)((best_off >> 8u) & 0xFFu);
+                out[op++] = (uint8_t)(best_off & 0xFFu);
+                last_offset = best_off;
+                best_len = elen; /* cap for hash-insert loop */
             }
 
             for (k = 1; k < best_len && (uint16_t)(vpos + k + 2u) < vbuf_len; ++k) {
@@ -440,15 +473,32 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        /* 0xE0..0xFF: extended literal run (65..96) */
-        {
-            uint16_t lit_len = (uint16_t)((token & 0x1Fu) + 65u);
+        /* 0xE0..0xEF: extended literal run (65..80) */
+        if (token < 0xF0u) {
+            uint16_t lit_len = (uint16_t)((token & 0x0Fu) + 65u);
             if ((uint32_t)ip + lit_len > in_len || (uint32_t)op + lit_len > out_len) {
                 return PC_ERR_CORRUPT;
             }
             memcpy(out + op, in + ip, lit_len);
             ip = (uint16_t)(ip + lit_len);
             op = (uint16_t)(op + lit_len);
+            continue;
+        }
+
+        /* 0xF0..0xFF: long-offset LZ match (3-byte token) */
+        {
+            uint16_t match_len = (uint16_t)((token & 0x0Fu) + PC_LONG_MATCH_MIN);
+            uint16_t off;
+            if ((uint32_t)ip + 2u > in_len) return PC_ERR_CORRUPT;
+            off = (uint16_t)(((uint16_t)in[ip] << 8u) | (uint16_t)in[ip + 1u]);
+            ip = (uint16_t)(ip + 2u);
+
+            if (off == 0u) return PC_ERR_CORRUPT;
+            if (off > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
+            if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
+
+            pc_copy_match(out, &op, hist, hist_len, off, match_len);
+            last_offset = off;
         }
     }
 

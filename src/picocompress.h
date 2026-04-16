@@ -13,18 +13,25 @@ extern "C" {
 #endif
 
 #define PC_LITERAL_MAX 64u
-#define PC_LITERAL_EXT_MAX 96u
+#define PC_LITERAL_EXT_MAX 80u
 #define PC_MATCH_MIN 2u
 #define PC_MATCH_CODE_BITS 5u
 #define PC_MATCH_MAX (PC_MATCH_MIN + ((1u << PC_MATCH_CODE_BITS) - 1u))
-#define PC_OFFSET_BITS 9u
-#define PC_OFFSET_MAX ((1u << PC_OFFSET_BITS) - 1u)
+#define PC_OFFSET_SHORT_BITS 9u
+#define PC_OFFSET_SHORT_MAX ((1u << PC_OFFSET_SHORT_BITS) - 1u)
+#define PC_LONG_MATCH_MIN 2u
+#define PC_LONG_MATCH_MAX 17u
+#define PC_OFFSET_LONG_MAX 65535u
 #define PC_DICT_COUNT 64u
 #define PC_DICT_MAX_LEN 8u
 #define PC_BLOCK_MAX_COMPRESSED (PC_BLOCK_SIZE + (PC_BLOCK_SIZE / PC_LITERAL_MAX) + 16u)
 
-#if PC_BLOCK_SIZE == 0u || PC_BLOCK_SIZE > PC_OFFSET_MAX
-#error "PC_BLOCK_SIZE must be in the range [1, PC_OFFSET_MAX]."
+#ifndef PC_LAZY_STEPS
+#define PC_LAZY_STEPS 1u
+#endif
+
+#if PC_BLOCK_SIZE == 0u || PC_BLOCK_SIZE > PC_OFFSET_SHORT_MAX
+#error "PC_BLOCK_SIZE must be in the range [1, PC_OFFSET_SHORT_MAX]."
 #endif
 
 #if PC_LITERAL_MAX > 64u
