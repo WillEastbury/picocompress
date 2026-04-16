@@ -1,0 +1,1 @@
+ts=1713000000,id=ward07,mode=active,alert=none,temp=36.5,pulse=72,spo2=97,bp=120/78,operator=night,region=eu-west-2,msg=stable;ts=1713000000,id=ward07,mode=active,alert=none,temp=36.5,pulse=72,spo2=97,bp=120/78,operator=night,region=eu-west-2,msg=stable;

@@ -1,0 +1,85 @@
+1000004   20240122C642604   George Roberts                OPEN     1578.36GBP
+  1   SKU-0000017 Gasket    12     81.76
+ 2   SKU-0000052 Bolt M6   18      9.41
+ 3   SKU-0000070 Bearing   14      4.51
+ 4   SKU-0000076 Sprocket  8      45.59
+ 1000006   20240422C162765   Isla Edwards                  DONE     5161.41GBP
+  1   SKU-0000015 Pin 3mm   2      97.47
+ 2   SKU-0000062 Bracket   48     27.97
+ 3   SKU-0000050 Pin 3mm   17      5.83
+ 4   SKU-0000095 Gasket    32     44.48
+ 5   SKU-0000020 Bracket   18     93.91
+ 6   SKU-0000051 Sprocket  13     31.62
+ 1000009   20241016C627072   Noah Walker                   HOLD     4427.51GBP
+  1   SKU-0000036 Nut M6    7       8.31
+ 2   SKU-0000040 Gasket    27     79.71
+ 3   SKU-0000017 Washer    7      38.25
+ 4   SKU-0000013 Bearing   12     94.63
+ 5   SKU-0000011 Bracket   16     33.14
+ 6   SKU-0000005 Bracket   3      94.54
+ 1000010   20240928C354888   Mia Hall                      DONE     6058.43GBP
+  1   SKU-0000059 Pin 3mm   49     71.84
+ 2   SKU-0000087 Washer    8      47.65
+ 3   SKU-0000090 Gasket    29     44.16
+ 4   SKU-0000057 Bolt M6   19     39.75
+ 5   SKU-0000087 Sprocket  2      40.55
+ 6   SKU-0000035 Bolt M6   24      1.67
+ 1000014   20241016C115091   Jack Roberts                  HOLD     6160.96GBP
+  1   SKU-0000043 Nut M6    46     64.36
+ 2   SKU-0000078 Bracket   30     70.24
+ 3   SKU-0000087 Nut M6    8      56.27
+ 4   SKU-0000049 Bearing   29      5.96
+ 5   SKU-0000062 Widget    4      53.89
+ 6   SKU-0000025 Sprocket  24     10.61
+ 1000015   20241008C273750   Lily Smith                    BACKOD   6439.45GBP
+  1   SKU-0000036 Pin 3mm   5      71.72
+ 2   SKU-0000099 Grommet   1      89.65
+ 3   SKU-0000049 Washer    45     78.50
+ 4   SKU-0000054 Bolt M6   46     53.45
+ 1000019   20240819C376455   Ivy Johnson                   SHIP     1341.75GBP
+  1   SKU-0000005 Bearing   3      64.77
+ 2   SKU-0000044 Bolt M6   21     54.64
+ 1000024   20240219C579195   Mia Williams                  OPEN     2430.71GBP
+  1   SKU-0000030 Pin 3mm   39      5.20
+ 2   SKU-0000081 Sprocket  50     23.10
+ 3   SKU-0000055 Sprocket  17     62.75
+ 4   SKU-0000064 Sprocket  2       3.08
+ 1000026   20240913C260251   George Roberts                BACKOD   7499.65GBP
+  1   SKU-0000082 Grommet   22     67.97
+ 2   SKU-0000060 Widget    37     69.79
+ 3   SKU-0000037 Bolt M6   25      7.57
+ 4   SKU-0000074 Bearing   27     78.43
+ 5   SKU-0000006 Sprocket  40     25.91
+ 6   SKU-0000097 Nut M6    2      39.41
+ 1000027   20240327C282625   Ivy Taylor                    DONE      923.94GBP
+  1   SKU-0000092 Bolt M6   29     31.86
+ 1000030   20240401C660611   Isabella Smith                CANCL    2228.66GBP
+  1   SKU-0000079 Bracket   1      58.12
+ 2   SKU-0000083 Grommet   26      2.45
+ 3   SKU-0000014 Bracket   19     59.72
+ 4   SKU-0000097 Bracket   28     34.72
+ 1000031   20241018C622458   Jack Hughes                   CANCL    2980.53GBP
+  1   SKU-0000044 Widget    42     60.99
+ 2   SKU-0000049 Washer    21     19.95
+ 1000035   20240821C935848   Ivy Brown                     BACKOD   2640.34GBP
+  1   SKU-0000006 Bolt M6   7      52.84
+ 2   SKU-0000084 Nut M6    19     60.76
+ 3   SKU-0000098 Washer    4      87.19
+ 4   SKU-0000046 Gasket    13     59.02
+ 1000037   20241021C773428   Ava Evans                     HOLD     3404.42GBP
+  1   SKU-0000057 Washer    41     81.06
+ 2   SKU-0000013 Washer    4      20.24
+ 1000039   20240910C196499   Mia Williams                  BACKOD   7597.15GBP
+  1   SKU-0000076 Pin 3mm   44     56.17
+ 2   SKU-0000015 Bearing   36     62.93
+ 3   SKU-0000037 Gasket    29     86.51
+ 4   SKU-0000070 Grommet   4      87.85
+ 1000044   20240227C774717   Ivy Hughes                    CANCL    1179.39GBP
+  1   SKU-0000070 Gasket    18     30.24
+ 2   SKU-0000000 Bolt M6   22     12.48
+ 3   SKU-0000057 Washer    23      5.94
+ 4   SKU-0000000 Nut M6    3      74.63
+ 1000049   20240405C432505   Rosie Wright                  DONE     2981.09GBP
+  1   SKU-0000050 Grommet   37     80.57
+ 1000052   20240118C836960   Mia Williams                  DONE     1484.90GBP
+  1   SKU-0000065 

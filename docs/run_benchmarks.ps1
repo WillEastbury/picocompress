@@ -22,14 +22,16 @@ if (-not (Test-Path $devcmd)) {
     throw "VsDevCmd.bat not found."
 }
 
-$cmd = '"' + $devcmd + '" -arch=x64 -host_arch=x64 >nul && cd /d ' + $PSScriptRoot +
+$srcDir = Join-Path $PSScriptRoot "..\src"
+
+$cmd = '"' + $devcmd + '" -arch=x64 -host_arch=x64 >nul && cd /d ' + $srcDir +
     ' && cl /nologo /O2 /LD /TC picocompress.c /link /OUT:picocompress.dll /EXPORT:pc_compress_bound /EXPORT:pc_compress_buffer /EXPORT:pc_decompress_buffer'
 cmd /c $cmd
 if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
-$args = @("benchmark_harness.py", "--dll", (Join-Path $PSScriptRoot "picocompress.dll"))
+$args = @("benchmark_harness.py", "--dll", (Join-Path $srcDir "picocompress.dll"))
 if ($JsonOut) {
     $args += @("--json-out", $JsonOut)
 }

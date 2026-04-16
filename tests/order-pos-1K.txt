@@ -1,0 +1,22 @@
+1000004   20240122C642604   George Roberts                OPEN     1578.36GBP
+  1   SKU-0000017 Gasket    12     81.76
+ 2   SKU-0000052 Bolt M6   18      9.41
+ 3   SKU-0000070 Bearing   14      4.51
+ 4   SKU-0000076 Sprocket  8      45.59
+ 1000006   20240422C162765   Isla Edwards                  DONE     5161.41GBP
+  1   SKU-0000015 Pin 3mm   2      97.47
+ 2   SKU-0000062 Bracket   48     27.97
+ 3   SKU-0000050 Pin 3mm   17      5.83
+ 4   SKU-0000095 Gasket    32     44.48
+ 5   SKU-0000020 Bracket   18     93.91
+ 6   SKU-0000051 Sprocket  13     31.62
+ 1000009   20241016C627072   Noah Walker                   HOLD     4427.51GBP
+  1   SKU-0000036 Nut M6    7       8.31
+ 2   SKU-0000040 Gasket    27     79.71
+ 3   SKU-0000017 Washer    7      38.25
+ 4   SKU-0000013 Bearing   12     94.63
+ 5   SKU-0000011 Bracket   16     33.14
+ 6   SKU-0000005 Bracket   3      94.54
+ 1000010   20240928C354888   Mia Hall                      DONE     6058.43GBP
+  1   SKU-0000059 Pin 3mm   49     71.84
+ 2   SKU-0000087 Washer  

@@ -1,0 +1,2675 @@
+1000004   20240122C642604   George Roberts                OPEN     1578.36GBP
+  1   SKU-0000017 Gasket    12     81.76
+ 2   SKU-0000052 Bolt M6   18      9.41
+ 3   SKU-0000070 Bearing   14      4.51
+ 4   SKU-0000076 Sprocket  8      45.59
+ 1000006   20240422C162765   Isla Edwards                  DONE     5161.41GBP
+  1   SKU-0000015 Pin 3mm   2      97.47
+ 2   SKU-0000062 Bracket   48     27.97
+ 3   SKU-0000050 Pin 3mm   17      5.83
+ 4   SKU-0000095 Gasket    32     44.48
+ 5   SKU-0000020 Bracket   18     93.91
+ 6   SKU-0000051 Sprocket  13     31.62
+ 1000009   20241016C627072   Noah Walker                   HOLD     4427.51GBP
+  1   SKU-0000036 Nut M6    7       8.31
+ 2   SKU-0000040 Gasket    27     79.71
+ 3   SKU-0000017 Washer    7      38.25
+ 4   SKU-0000013 Bearing   12     94.63
+ 5   SKU-0000011 Bracket   16     33.14
+ 6   SKU-0000005 Bracket   3      94.54
+ 1000010   20240928C354888   Mia Hall                      DONE     6058.43GBP
+  1   SKU-0000059 Pin 3mm   49     71.84
+ 2   SKU-0000087 Washer    8      47.65
+ 3   SKU-0000090 Gasket    29     44.16
+ 4   SKU-0000057 Bolt M6   19     39.75
+ 5   SKU-0000087 Sprocket  2      40.55
+ 6   SKU-0000035 Bolt M6   24      1.67
+ 1000014   20241016C115091   Jack Roberts                  HOLD     6160.96GBP
+  1   SKU-0000043 Nut M6    46     64.36
+ 2   SKU-0000078 Bracket   30     70.24
+ 3   SKU-0000087 Nut M6    8      56.27
+ 4   SKU-0000049 Bearing   29      5.96
+ 5   SKU-0000062 Widget    4      53.89
+ 6   SKU-0000025 Sprocket  24     10.61
+ 1000015   20241008C273750   Lily Smith                    BACKOD   6439.45GBP
+  1   SKU-0000036 Pin 3mm   5      71.72
+ 2   SKU-0000099 Grommet   1      89.65
+ 3   SKU-0000049 Washer    45     78.50
+ 4   SKU-0000054 Bolt M6   46     53.45
+ 1000019   20240819C376455   Ivy Johnson                   SHIP     1341.75GBP
+  1   SKU-0000005 Bearing   3      64.77
+ 2   SKU-0000044 Bolt M6   21     54.64
+ 1000024   20240219C579195   Mia Williams                  OPEN     2430.71GBP
+  1   SKU-0000030 Pin 3mm   39      5.20
+ 2   SKU-0000081 Sprocket  50     23.10
+ 3   SKU-0000055 Sprocket  17     62.75
+ 4   SKU-0000064 Sprocket  2       3.08
+ 1000026   20240913C260251   George Roberts                BACKOD   7499.65GBP
+  1   SKU-0000082 Grommet   22     67.97
+ 2   SKU-0000060 Widget    37     69.79
+ 3   SKU-0000037 Bolt M6   25      7.57
+ 4   SKU-0000074 Bearing   27     78.43
+ 5   SKU-0000006 Sprocket  40     25.91
+ 6   SKU-0000097 Nut M6    2      39.41
+ 1000027   20240327C282625   Ivy Taylor                    DONE      923.94GBP
+  1   SKU-0000092 Bolt M6   29     31.86
+ 1000030   20240401C660611   Isabella Smith                CANCL    2228.66GBP
+  1   SKU-0000079 Bracket   1      58.12
+ 2   SKU-0000083 Grommet   26      2.45
+ 3   SKU-0000014 Bracket   19     59.72
+ 4   SKU-0000097 Bracket   28     34.72
+ 1000031   20241018C622458   Jack Hughes                   CANCL    2980.53GBP
+  1   SKU-0000044 Widget    42     60.99
+ 2   SKU-0000049 Washer    21     19.95
+ 1000035   20240821C935848   Ivy Brown                     BACKOD   2640.34GBP
+  1   SKU-0000006 Bolt M6   7      52.84
+ 2   SKU-0000084 Nut M6    19     60.76
+ 3   SKU-0000098 Washer    4      87.19
+ 4   SKU-0000046 Gasket    13     59.02
+ 1000037   20241021C773428   Ava Evans                     HOLD     3404.42GBP
+  1   SKU-0000057 Washer    41     81.06
+ 2   SKU-0000013 Washer    4      20.24
+ 1000039   20240910C196499   Mia Williams                  BACKOD   7597.15GBP
+  1   SKU-0000076 Pin 3mm   44     56.17
+ 2   SKU-0000015 Bearing   36     62.93
+ 3   SKU-0000037 Gasket    29     86.51
+ 4   SKU-0000070 Grommet   4      87.85
+ 1000044   20240227C774717   Ivy Hughes                    CANCL    1179.39GBP
+  1   SKU-0000070 Gasket    18     30.24
+ 2   SKU-0000000 Bolt M6   22     12.48
+ 3   SKU-0000057 Washer    23      5.94
+ 4   SKU-0000000 Nut M6    3      74.63
+ 1000049   20240405C432505   Rosie Wright                  DONE     2981.09GBP
+  1   SKU-0000050 Grommet   37     80.57
+ 1000052   20240118C836960   Mia Williams                  DONE     1484.90GBP
+  1   SKU-0000065 Pin 3mm   31     47.90
+ 1000053   20241128C859618   Isabella Smith                BACKOD   4392.30GBP
+  1   SKU-0000036 Washer    46     93.21
+ 2   SKU-0000035 Washer    3      34.88
+ 1000054   20240908C123261   Ava Evans                     CANCL    3880.49GBP
+  1   SKU-0000097 Pin 3mm   27     24.46
+ 2   SKU-0000090 Grommet   16     63.91
+ 3   SKU-0000013 Widget    19     33.04
+ 4   SKU-0000044 Bolt M6   35     44.85
+ 1000057   20241010C283932   Noah Walker                   HOLD     3782.51GBP
+  1   SKU-0000045 Bolt M6   37     71.78
+ 2   SKU-0000011 Gasket    19      6.41
+ 3   SKU-0000010 Gasket    20      3.22
+ 4   SKU-0000054 Sprocket  1      95.90
+ 5   SKU-0000086 Gasket    46     18.36
+ 1000058   20241216C456545   Olivia Wilson                 SHIP     3406.74GBP
+  1   SKU-0000067 Grommet   14     54.81
+ 2   SKU-0000067 Gasket    27     46.08
+ 3   SKU-0000001 Gasket    18     62.00
+ 4   SKU-0000046 Widget    13     21.48
+ 1000062   20240225C453169   Ivy Brown                     BACKOD   6830.28GBP
+  1   SKU-0000038 Bolt M6   36     71.91
+ 2   SKU-0000063 Bearing   6      28.52
+ 3   SKU-0000042 Pin 3mm   48     84.80
+ 1000067   20240207C438058   Noah Walker                   CANCL    2202.30GBP
+  1   SKU-0000066 Nut M6    43     48.28
+ 2   SKU-0000076 Gasket    28      4.16
+ 3   SKU-0000016 Bearing   2       4.89
+ 1000071   20240102C590103   Ivy Jones                     CANCL     280.07GBP
+  1   SKU-0000004 Sprocket  7      40.01
+ 1000075   20241207C366659   Harry Wright                  SHIP     1045.20GBP
+  1   SKU-0000068 Bearing   12     87.10
+ 1000078   20240821C488591   Mia Hall                      SHIP     6643.30GBP
+  1   SKU-0000097 Gasket    14     85.31
+ 2   SKU-0000015 Bracket   35     32.07
+ 3   SKU-0000035 Bearing   35     36.98
+ 4   SKU-0000008 Sprocket  7      23.42
+ 5   SKU-0000009 Sprocket  29     63.63
+ 6   SKU-0000007 Sprocket  12     85.25
+ 1000083   20240626C753460   Olivia Edwards                CANCL    6919.04GBP
+  1   SKU-0000098 Gasket    4      38.94
+ 2   SKU-0000049 Nut M6    45     68.27
+ 3   SKU-0000057 Bracket   27     42.90
+ 4   SKU-0000000 Grommet   47     53.89
+ 1000088   20241002C574788   Jack Green                    SHIP      722.88GBP
+  1   SKU-0000008 Widget    5      86.17
+ 2   SKU-0000032 Bolt M6   29     10.07
+ 1000092   20240304C932049   Muhammad Wilson               CANCL    2030.27GBP
+  1   SKU-0000004 Bracket   6       7.08
+ 2   SKU-0000088 Sprocket  33     29.74
+ 3   SKU-0000027 Pin 3mm   6      51.88
+ 4   SKU-0000094 Washer    10     49.04
+ 5   SKU-0000048 Grommet   7       9.84
+ 6   SKU-0000070 Bearing   3      45.27
+ 1000094   20240927C155293   Sophia Taylor                 SHIP    11984.35GBP
+  1   SKU-0000065 Bearing   34     82.10
+ 2   SKU-0000065 Bolt M6   36     43.40
+ 3   SKU-0000005 Gasket    40     98.04
+ 4   SKU-0000038 Gasket    25     85.82
+ 5   SKU-0000070 Nut M6    48     19.61
+ 6   SKU-0000092 Bolt M6   31     20.07
+ 1000099   20241210C388480   Arthur Hughes                 BACKOD   6050.51GBP
+  1   SKU-0000006 Nut M6    37     67.24
+ 2   SKU-0000077 Washer    37     74.89
+ 3   SKU-0000028 Sprocket  26     30.45
+ 1000103   20240602C112859   Jack Hughes                   OPEN     4706.45GBP
+  1   SKU-0000085 Washer    22     48.19
+ 2   SKU-0000032 Pin 3mm   33      3.92
+ 3   SKU-0000014 Bearing   13     87.13
+ 4   SKU-0000079 Gasket    27     45.14
+ 5   SKU-0000052 Nut M6    16     72.84
+ 1000106   20241028C867546   Mia Hall                      HOLD     5615.75GBP
+  1   SKU-0000016 Pin 3mm   30     54.06
+ 2   SKU-0000082 Washer    47     68.05
+ 3   SKU-0000012 Washer    10     79.56
+ 1000109   20241102C646373   Ivy Jones                     OPEN     5332.25GBP
+  1   SKU-0000068 Grommet   21     59.65
+ 2   SKU-0000052 Sprocket  16     54.91
+ 3   SKU-0000016 Pin 3mm   17     95.66
+ 4   SKU-0000030 Bracket   1      24.81
+ 5   SKU-0000020 Sprocket  21     50.56
+ 6   SKU-0000081 Sprocket  35     13.95
+ 1000112   20240123C547313   Alfie Edwards                 HOLD     2129.16GBP
+  1   SKU-0000027 Pin 3mm   33     64.52
+ 1000114   20240220C165971   Jack Walker                   BACKOD   3283.54GBP
+  1   SKU-0000022 Bracket   23     44.40
+ 2   SKU-0000018 Nut M6    8      48.00
+ 3   SKU-0000023 Bearing   19     98.86
+ 1000115   20240313C647784   Isla Edwards                  BACKOD   2484.65GBP
+  1   SKU-0000060 Washer    8      28.09
+ 2   SKU-0000072 Pin 3mm   21     32.11
+ 3   SKU-0000076 Sprocket  9       0.66
+ 4   SKU-0000044 Nut M6    48     32.91
+ 1000117   20241113C654934   Ivy Jones                     HOLD     7360.62GBP
+  1   SKU-0000080 Bearing   46     67.40
+ 2   SKU-0000042 Washer    32     56.09
+ 3   SKU-0000085 Sprocket  34     72.51
+ 1000118   20240501C583165   Ivy Jones                     SHIP    11067.72GBP
+  1   SKU-0000029 Sprocket  28     80.53
+ 2   SKU-0000055 Sprocket  12     84.38
+ 3   SKU-0000041 Pin 3mm   40     73.98
+ 4   SKU-0000050 Gasket    11     63.62
+ 5   SKU-0000083 Washer    49     83.14
+ 6   SKU-0000057 Widget    2      33.72
+ 1000122   20241111C294471   Rosie Wright                  HOLD      608.65GBP
+  1   SKU-0000055 Washer    7      86.95
+ 1000124   20241118C886559   Oscar Walker                  SHIP     1683.50GBP
+  1   SKU-0000010 Pin 3mm   25     67.34
+ 1000129   20240128C449644   Mia Green                     SHIP     1717.88GBP
+  1   SKU-0000076 Bolt M6   18     19.44
+ 2   SKU-0000045 Bearing   22     62.18
+ 1000133   20241215C143362   Sophia Johnson                CANCL    1449.23GBP
+  1   SKU-0000003 Nut M6    46      9.73
+ 2   SKU-0000082 Grommet   13     77.05
+ 1000135   20240620C242581   Harry Wright                  DONE    11710.20GBP
+  1   SKU-0000022 Bracket   47     81.75
+ 2   SKU-0000002 Bolt M6   33     10.50
+ 3   SKU-0000033 Grommet   50     30.03
+ 4   SKU-0000019 Bracket   46     61.73
+ 5   SKU-0000099 Bolt M6   41     77.57
+ 1000137   20240824C235451   Olivia Wilson                 OPEN     2712.51GBP
+  1   SKU-0000011 Bearing   16     35.58
+ 2   SKU-0000061 Grommet   5       2.13
+ 3   SKU-0000073 Washer    25     51.24
+ 4   SKU-0000079 Bolt M6   19     44.82
+ 1000139   20240315C376110   Ivy Jones                     OPEN     2398.42GBP
+  1   SKU-0000079 Nut M6    29      8.71
+ 2   SKU-0000044 Washer    15     78.50
+ 3   SKU-0000046 Bolt M6   3       2.54
+ 4   SKU-0000024 Pin 3mm   23     41.77
+ 1000144   20240826C836474   Alfie Edwards                 DONE     5134.96GBP
+  1   SKU-0000084 Bracket   27     30.90
+ 2   SKU-0000073 Widget    22     42.49
+ 3   SKU-0000025 Washer    43     69.32
+ 4   SKU-0000042 Widget    4      96.28
+ 1000149   20240628C832440   Rosie Wright                  BACKOD   4512.27GBP
+  1   SKU-0000016 Grommet   7      43.04
+ 2   SKU-0000041 Washer    49     47.76
+ 3   SKU-0000018 Sprocket  25     74.83
+ 1000154   20240501C924552   Ivy Taylor                    DONE     3128.58GBP
+  1   SKU-0000079 Grommet   4      60.60
+ 2   SKU-0000010 Pin 3mm   12     74.78
+ 3   SKU-0000095 Bracket   27     73.66
+ 1000156   20240524C105027   Harry Wright                  SHIP     7767.16GBP
+  1   SKU-0000027 Nut M6    3      57.44
+ 2   SKU-0000095 Bracket   26     92.51
+ 3   SKU-0000033 Gasket    45     90.66
+ 4   SKU-0000092 Bracket   18     45.46
+ 5   SKU-0000000 Washer    36      8.10
+ 1000161   20240918C139733   Noah Walker                   BACKOD   8300.79GBP
+  1   SKU-0000095 Widget    13     87.09
+ 2   SKU-0000077 Nut M6    3      20.19
+ 3   SKU-0000030 Washer    22     27.73
+ 4   SKU-0000006 Nut M6    49     79.28
+ 5   SKU-0000021 Nut M6    18     69.84
+ 6   SKU-0000046 Pin 3mm   15     90.41
+ 1000162   20240515C369821   Ava Evans                     BACKOD   1969.86GBP
+  1   SKU-0000074 Sprocket  46     16.71
+ 2   SKU-0000007 Sprocket  2       7.56
+ 3   SKU-0000021 Pin 3mm   16     74.13
+ 1000166   20240117C568045   Harry Wright                  DONE     1714.42GBP
+  1   SKU-0000047 Gasket    19     50.38
+ 2   SKU-0000054 Widget    18      9.08
+ 3   SKU-0000085 Pin 3mm   20      7.34
+ 4   SKU-0000022 Gasket    1      53.93
+ 5   SKU-0000003 Widget    11     35.73
+ 1000167   20241014C664326   Mia Green                     HOLD     2399.10GBP
+  1   SKU-0000008 Bracket   2      18.15
+ 2   SKU-0000060 Bracket   30     78.76
+ 1000172   20240228C979239   Ivy Taylor                    HOLD     1487.48GBP
+  1   SKU-0000083 Pin 3mm   15     15.88
+ 2   SKU-0000054 Widget    15      2.21
+ 3   SKU-0000087 Bracket   37     15.41
+ 4   SKU-0000026 Bearing   21     30.76
+ 1000173   20241019C253499   Noah Walker                   BACKOD   2437.32GBP
+  1   SKU-0000043 Widget    25     13.15
+ 2   SKU-0000024 Pin 3mm   35      6.58
+ 3   SKU-0000084 Pin 3mm   29     25.28
+ 4   SKU-0000071 Sprocket  11      2.35
+ 5   SKU-0000077 Bearing   15     74.62
+ 1000174   20240514C440628   Jack Taylor                   BACKOD   5316.11GBP
+  1   SKU-0000063 Widget    43     21.10
+ 2   SKU-0000096 Bolt M6   25     98.72
+ 3   SKU-0000089 Bolt M6   49     32.99
+ 4   SKU-0000090 Nut M6    6      54.05
+ 1000176   20240706C582149   Jack Roberts                  HOLD     5281.78GBP
+  1   SKU-0000059 Bearing   17     10.79
+ 2   SKU-0000076 Bolt M6   30     80.23
+ 3   SKU-0000048 Nut M6    45     59.81
+ 1000179   20241118C411632   Ivy Jones                     OPEN     6228.10GBP
+  1   SKU-0000063 Nut M6    13     95.79
+ 2   SKU-0000014 Bearing   50     83.28
+ 3   SKU-0000033 Grommet   19     31.01
+ 4   SKU-0000088 Grommet   4      57.41
+ 1000181   20241016C285437   Mia Williams                  HOLD     5380.18GBP
+  1   SKU-0000086 Sprocket  46     15.70
+ 2   SKU-0000096 Nut M6    15     87.68
+ 3   SKU-0000074 Grommet   28     25.62
+ 4   SKU-0000086 Gasket    47     55.86
+ 1000186   20240704C595260   Ava Evans                     SHIP     8041.41GBP
+  1   SKU-0000027 Widget    43     99.38
+ 2   SKU-0000092 Gasket    43     55.41
+ 3   SKU-0000074 Bracket   28     49.48
+ 1000188   20240224C444791   Sophia Taylor                 DONE     7234.22GBP
+  1   SKU-0000081 Nut M6    15     88.74
+ 2   SKU-0000027 Nut M6    17     88.58
+ 3   SKU-0000076 Grommet   49     89.74
+ 1000193   20240907C842591   Ivy Jones                     HOLD     3987.35GBP
+  1   SKU-0000086 Sprocket  26     60.80
+ 2   SKU-0000097 Bearing   21     22.25
+ 3   SKU-0000053 Gasket    22     88.15
+ 1000195   20241110C894624   Rosie Hughes                  BACKOD   6459.25GBP
+  1   SKU-0000043 Bracket   43     12.43
+ 2   SKU-0000078 Gasket    43     85.02
+ 3   SKU-0000089 Grommet   4      46.20
+ 4   SKU-0000059 Gasket    1       6.22
+ 5   SKU-0000055 Widget    41     50.68
+ 1000200   20240901C350329   Ava Williams                  OPEN     6685.54GBP
+  1   SKU-0000032 Grommet   38     30.29
+ 2   SKU-0000048 Gasket    18     63.05
+ 3   SKU-0000016 Sprocket  47      1.66
+ 4   SKU-0000012 Bearing   40     64.41
+ 5   SKU-0000098 Widget    20     87.26
+ 1000201   20240311C186388   Amelia Brown                  CANCL    3532.67GBP
+  1   SKU-0000039 Grommet   14     93.46
+ 2   SKU-0000075 Bolt M6   15     98.17
+ 3   SKU-0000009 Bearing   9      83.52
+ 1000204   20240620C917195   Noah Walker                   OPEN     5965.43GBP
+  1   SKU-0000061 Bracket   21     55.72
+ 2   SKU-0000027 Sprocket  45     29.27
+ 3   SKU-0000038 Sprocket  39     40.63
+ 4   SKU-0000011 Gasket    23     82.33
+ 1000206   20240417C338363   Jack Roberts                  CANCL    7851.87GBP
+  1   SKU-0000063 Pin 3mm   17     72.66
+ 2   SKU-0000027 Grommet   35      5.78
+ 3   SKU-0000029 Bearing   42     61.97
+ 4   SKU-0000023 Grommet   11     65.71
+ 5   SKU-0000060 Washer    33     93.60
+ 1000211   20240608C749530   Jack Roberts                  SHIP     3020.49GBP
+  1   SKU-0000010 Bolt M6   29      2.62
+ 2   SKU-0000059 Sprocket  38     19.59
+ 3   SKU-0000086 Grommet   19     34.09
+ 4   SKU-0000014 Nut M6    17     81.93
+ 5   SKU-0000068 Bolt M6   3      53.19
+ 1000214   20240825C938084   Amelia Brown                  CANCL    7969.72GBP
+  1   SKU-0000022 Sprocket  44     98.41
+ 2   SKU-0000053 Bearing   44     82.72
+ 1000218   20241021C735077   Olivia Wilson                 DONE     5613.78GBP
+  1   SKU-0000018 Bearing   48     95.65
+ 2   SKU-0000072 Bearing   19     53.82
+ 1000220   20240112C531233   Lily Smith                    HOLD     6315.66GBP
+  1   SKU-0000070 Bolt M6   38     96.42
+ 2   SKU-0000002 Sprocket  38     68.67
+ 3   SKU-0000096 Bracket   24      1.76
+ 1000225   20240725C826225   Oscar Walker                  BACKOD   6199.83GBP
+  1   SKU-0000072 Bracket   31     78.39
+ 2   SKU-0000099 Pin 3mm   32     29.01
+ 3   SKU-0000065 Washer    46     61.77
+ 1000228   20241105C708488   Mia Hall                      HOLD     1924.28GBP
+  1   SKU-0000052 Bolt M6   15      4.72
+ 2   SKU-0000024 Washer    4      94.48
+ 3   SKU-0000065 Bolt M6   37     39.88
+ 1000230   20241216C799533   Jack Walker                   HOLD     4009.74GBP
+  1   SKU-0000025 Pin 3mm   19     80.46
+ 2   SKU-0000024 Bracket   50     49.62
+ 1000232   20241204C567308   Oscar Walker                  SHIP     4809.30GBP
+  1   SKU-0000005 Bracket   30     91.82
+ 2   SKU-0000032 Widget    33     52.88
+ 3   SKU-0000028 Bearing   3      50.50
+ 4   SKU-0000048 Grommet   8      19.77
+ 1000234   20240924C926604   Noah Walker                   SHIP     4081.76GBP
+  1   SKU-0000019 Grommet   25     82.92
+ 2   SKU-0000065 Widget    26     77.26
+ 1000236   20240808C602409   Oscar Thompson                CANCL    2227.79GBP
+  1   SKU-0000024 Nut M6    7      79.97
+ 2   SKU-0000032 Bolt M6   40     41.70
+ 1000241   20240415C334253   Lily Wilson                   DONE     1179.42GBP
+  1   SKU-0000091 Pin 3mm   33     35.74
+ 1000245   20240313C175532   Lily Smith                    BACKOD   2650.05GBP
+  1   SKU-0000027 Washer    45     48.23
+ 2   SKU-0000002 Sprocket  18     26.65
+ 1000247   20241201C492114   Olivia Edwards                DONE     9839.54GBP
+  1   SKU-0000036 Gasket    28     56.93
+ 2   SKU-0000086 Widget    38     53.63
+ 3   SKU-0000086 Sprocket  13     44.83
+ 4   SKU-0000056 Bracket   17     75.81
+ 5   SKU-0000005 Pin 3mm   50     86.72
+ 1000250   20241201C749857   Amelia Brown                  BACKOD   7156.63GBP
+  1   SKU-0000042 Bearing   31     40.84
+ 2   SKU-0000095 Bracket   36     23.98
+ 3   SKU-0000061 Bolt M6   27     85.56
+ 4   SKU-0000016 Grommet   27     80.27
+ 5   SKU-0000048 Washer    26     21.15
+ 1000252   20241004C129946   Jack Walker                   HOLD     1111.36GBP
+  1   SKU-0000094 Grommet   14     50.54
+ 2   SKU-0000090 Washer    12     33.65
+ 1000257   20240828C917412   Ivy Taylor                    CANCL    6364.50GBP
+  1   SKU-0000042 Washer    18     87.18
+ 2   SKU-0000004 Bolt M6   23     68.38
+ 3   SKU-0000063 Grommet   17     93.24
+ 4   SKU-0000025 Bracket   4      61.54
+ 5   SKU-0000080 Pin 3mm   17     81.84
+ 1000261   20240912C231450   Ava Williams                  HOLD      353.70GBP
+  1   SKU-0000035 Widget    15     23.58
+ 1000266   20241220C826538   George Roberts                BACKOD   4204.45GBP
+  1   SKU-0000016 Bearing   23     62.70
+ 2   SKU-0000040 Sprocket  46     59.02
+ 3   SKU-0000072 Widget    17      2.79
+ 1000268   20241108C921518   Jack Taylor                   DONE     1550.99GBP
+  1   SKU-0000061 Nut M6    29      1.43
+ 2   SKU-0000028 Gasket    26      8.19
+ 3   SKU-0000017 Sprocket  14     88.77
+ 4   SKU-0000058 Nut M6    20      2.69
+ 1000273   20240824C299702   Ava Evans                     OPEN     3033.81GBP
+  1   SKU-0000049 Pin 3mm   6      66.68
+ 2   SKU-0000003 Nut M6    33     79.81
+ 1000276   20241016C755103   Arthur Hughes                 HOLD     1495.92GBP
+  1   SKU-0000003 Nut M6    46     32.52
+ 1000279   20240527C207737   Rosie Wright                  BACKOD   1018.14GBP
+  1   SKU-0000013 Grommet   38      2.61
+ 2   SKU-0000013 Gasket    14     57.30
+ 3   SKU-0000055 Washer    2      58.38
+ 1000281   20240320C445541   George Roberts                BACKOD   3966.37GBP
+  1   SKU-0000023 Bolt M6   39     88.07
+ 2   SKU-0000014 Widget    22     12.82
+ 3   SKU-0000089 Widget    39      6.40
+ 1000282   20240107C720234   Lily Smith                    BACKOD   4626.06GBP
+  1   SKU-0000061 Bracket   13     22.18
+ 2   SKU-0000017 Gasket    50     56.40
+ 3   SKU-0000049 Nut M6    8      42.37
+ 4   SKU-0000061 Widget    47     25.08
+ 1000284   20240704C307996   Jack Taylor                   BACKOD   1907.50GBP
+  1   SKU-0000077 Bracket   25     76.30
+ 1000288   20240225C339413   Ivy Johnson                   CANCL    3114.90GBP
+  1   SKU-0000007 Gasket    45     69.22
+ 1000291   20240120C397411   Mia Green                     HOLD       95.37GBP
+  1   SKU-0000040 Bracket   1      95.37
+ 1000292   20240710C423647   Lily Green                    DONE     7791.21GBP
+  1   SKU-0000084 Bolt M6   30     39.53
+ 2   SKU-0000001 Widget    49     70.32
+ 3   SKU-0000043 Pin 3mm   32     64.69
+ 4   SKU-0000099 Gasket    3      85.88
+ 5   SKU-0000077 Bolt M6   23     36.17
+ 1000297   20240410C128891   Amelia Brown                  DONE     2620.04GBP
+  1   SKU-0000019 Bracket   2      68.36
+ 2   SKU-0000004 Pin 3mm   22     46.81
+ 3   SKU-0000000 Bolt M6   15     96.90
+ 1000298   20240118C523941   Lily Smith                    OPEN     1801.80GBP
+  1   SKU-0000028 Bearing   15     63.89
+ 2   SKU-0000037 Washer    21     39.91
+ 3   SKU-0000013 Bolt M6   1       5.34
+ 1000302   20241018C135204   Olivia Wilson                 BACKOD    575.60GBP
+  1   SKU-0000056 Nut M6    40     14.39
+ 1000306   20241121C758213   Ava Williams                  BACKOD   7300.29GBP
+  1   SKU-0000034 Bracket   2      17.25
+ 2   SKU-0000011 Bearing   45     34.77
+ 3   SKU-0000063 Gasket    32     19.08
+ 4   SKU-0000003 Bracket   47     73.26
+ 5   SKU-0000062 Grommet   48     34.32
+ 1000307   20240303C801774   Ava Evans                     BACKOD   7087.82GBP
+  1   SKU-0000019 Gasket    21     19.34
+ 2   SKU-0000016 Grommet   28     37.37
+ 3   SKU-0000085 Bracket   37     99.00
+ 4   SKU-0000047 Bearing   21     93.92
+ 1000308   20240508C839319   Jack Taylor                   DONE     7969.96GBP
+  1   SKU-0000019 Widget    19     75.82
+ 2   SKU-0000005 Bearing   12     25.39
+ 3   SKU-0000092 Gasket    24     61.19
+ 4   SKU-0000041 Bearing   48     17.37
+ 5   SKU-0000072 Bearing   38     30.59
+ 6   SKU-0000035 Sprocket  28     98.57
+ 1000312   20240328C137624   Jack Hughes                   CANCL    2497.45GBP
+  1   SKU-0000033 Gasket    1      68.19
+ 2   SKU-0000018 Washer    13     37.22
+ 3   SKU-0000050 Pin 3mm   20     97.27
+ 1000316   20240720C444501   Ivy Hughes                    OPEN     2414.60GBP
+  1   SKU-0000055 Bearing   6      95.23
+ 2   SKU-0000078 Widget    23     80.14
+ 1000318   20240121C557923   Rosie Wright                  HOLD     2866.98GBP
+  1   SKU-0000022 Sprocket  8      31.51
+ 2   SKU-0000074 Nut M6    25      0.70
+ 3   SKU-0000008 Nut M6    34     67.50
+ 4   SKU-0000024 Bolt M6   21     14.40
+ 1000322   20240917C100032   Isabella Smith                HOLD      227.61GBP
+  1   SKU-0000064 Bracket   27      8.43
+ 1000324   20240519C604367   Lily Wilson                   DONE     4449.63GBP
+  1   SKU-0000092 Bolt M6   25     10.20
+ 2   SKU-0000068 Bracket   30     84.21
+ 3   SKU-0000056 Bolt M6   26     54.58
+ 4   SKU-0000062 Bearing   5      49.85
+ 1000329   20240721C892019   Olivia Edwards                DONE     8459.33GBP
+  1   SKU-0000062 Grommet   43     85.59
+ 2   SKU-0000080 Sprocket  7      70.48
+ 3   SKU-0000083 Gasket    1      42.07
+ 4   SKU-0000015 Bolt M6   1      10.61
+ 5   SKU-0000035 Pin 3mm   43     98.44
+ 1000331   20240419C680246   Ivy Taylor                    HOLD     3400.58GBP
+  1   SKU-0000084 Washer    46     23.62
+ 2   SKU-0000043 Washer    6      89.69
+ 3   SKU-0000000 Nut M6    26     11.92
+ 4   SKU-0000065 Bracket   50     29.32
+ 1000334   20240406C587969   Ivy Brown                     OPEN     6039.44GBP
+  1   SKU-0000057 Bearing   36     63.43
+ 2   SKU-0000056 Gasket    29     15.51
+ 3   SKU-0000094 Bracket   33     47.33
+ 4   SKU-0000067 Sprocket  30     17.86
+ 5   SKU-0000027 Bearing   16     75.53
+ 1000336   20241118C203223   Isla Edwards                  SHIP     9213.21GBP
+  1   SKU-0000070 Bolt M6   34     83.12
+ 2   SKU-0000002 Gasket    39     62.46
+ 3   SKU-0000099 Gasket    7      18.32
+ 4   SKU-0000000 Bearing   15      1.31
+ 5   SKU-0000061 Washer    40     58.97
+ 6   SKU-0000031 Grommet   30     48.15
+ 1000337   20240421C754217   Isla Edwards                  BACKOD   4691.84GBP
+  1   SKU-0000023 Bolt M6   29      7.53
+ 2   SKU-0000016 Bearing   31     28.05
+ 3   SKU-0000067 Washer    28     74.00
+ 4   SKU-0000087 Pin 3mm   26     58.92
+ 1000342   20241113C534386   Sophia Taylor                 CANCL    6264.10GBP
+  1   SKU-0000032 Grommet   16      4.32
+ 2   SKU-0000087 Bearing   44     47.55
+ 3   SKU-0000063 Bearing   25     29.22
+ 4   SKU-0000052 Bearing   30     32.43
+ 5   SKU-0000025 Bolt M6   34     70.57
+ 1000343   20240707C830644   Ava Evans                     SHIP     6776.03GBP
+  1   SKU-0000024 Pin 3mm   45     14.29
+ 2   SKU-0000084 Grommet   12     20.53
+ 3   SKU-0000031 Bearing   48     82.14
+ 4   SKU-0000095 Gasket    19     98.72
+ 5   SKU-0000064 Widget    18      3.79
+ 1000348   20241117C985144   Sophia Taylor                 CANCL    4501.77GBP
+  1   SKU-0000074 Nut M6    6      81.31
+ 2   SKU-0000027 Grommet   45     84.39
+ 3   SKU-0000025 Gasket    36      6.01
+ 1000352   20240403C508370   Ivy Brown                     SHIP      776.00GBP
+  1   SKU-0000043 Bracket   25     31.04
+ 1000354   20240323C239670   Noah Walker                   SHIP     7458.07GBP
+  1   SKU-0000061 Sprocket  43     25.09
+ 2   SKU-0000045 Washer    18     94.45
+ 3   SKU-0000025 Sprocket  46     89.00
+ 4   SKU-0000050 Bracket   14     21.45
+ 5   SKU-0000052 Washer    4      71.20
+ 1000357   20240907C876021   Ivy Jones                     CANCL    8044.53GBP
+  1   SKU-0000072 Bracket   32     33.01
+ 2   SKU-0000020 Washer    33     80.18
+ 3   SKU-0000095 Gasket    9      29.10
+ 4   SKU-0000074 Bolt M6   9      84.33
+ 5   SKU-0000032 Sprocket  27     68.28
+ 6   SKU-0000073 Bolt M6   28     52.78
+ 1000359   20240326C231282   Ivy Taylor                    HOLD     3523.14GBP
+  1   SKU-0000026 Nut M6    24     96.38
+ 2   SKU-0000080 Grommet   14     86.43
+ 1000360   20240721C397826   Ava Evans                     SHIP     8926.46GBP
+  1   SKU-0000099 Bolt M6   27     70.14
+ 2   SKU-0000047 Sprocket  38     70.90
+ 3   SKU-0000050 Bracket   26     66.67
+ 4   SKU-0000018 Washer    15     71.42
+ 5   SKU-0000011 Bearing   16     95.86
+ 1000364   20241020C903219   Isla Taylor                   CANCL     910.88GBP
+  1   SKU-0000018 Bearing   16     56.93
+ 1000369   20241011C580684   Ava Evans                     HOLD      951.63GBP
+  1   SKU-0000015 Bracket   14      1.59
+ 2   SKU-0000069 Grommet   13     71.49
+ 1000371   20240524C175701   Ivy Johnson                   OPEN     4755.79GBP
+  1   SKU-0000006 Widget    21     80.05
+ 2   SKU-0000062 Widget    11     37.90
+ 3   SKU-0000048 Bearing   12     89.54
+ 4   SKU-0000080 Washer    16     98.96
+ 1000373   20240614C453573   Jack Roberts                  BACKOD   8479.34GBP
+  1   SKU-0000080 Bolt M6   8      98.30
+ 2   SKU-0000051 Nut M6    11     82.38
+ 3   SKU-0000078 Bearing   43     44.88
+ 4   SKU-0000036 Sprocket  6      72.40
+ 5   SKU-0000029 Washer    45     78.63
+ 6   SKU-0000072 Bearing   17     52.01
+ 1000376   20241211C524831   Sophia Johnson                CANCL    5862.94GBP
+  1   SKU-0000087 Washer    38     29.71
+ 2   SKU-0000007 Nut M6    49     60.78
+ 3   SKU-0000095 Washer    31     18.71
+ 4   SKU-0000059 Gasket    40     12.87
+ 5   SKU-0000093 Sprocket  5      95.87
+ 6   SKU-0000057 Pin 3mm   7      25.94
+ 1000377   20240126C188599   Mia Green                     OPEN     2378.93GBP
+  1   SKU-0000001 Bracket   13     92.57
+ 2   SKU-0000071 Widget    4      27.82
+ 3   SKU-0000007 Bracket   1      53.56
+ 4   SKU-0000036 Widget    25     38.75
+ 5   SKU-0000078 Pin 3mm   7       5.99
+ 1000378   20241016C687576   Sophia Taylor                 SHIP     5488.41GBP
+  1   SKU-0000007 Nut M6    47     45.70
+ 2   SKU-0000087 Gasket    43     57.07
+ 3   SKU-0000061 Sprocket  9      98.50
+ 1000383   20240101C856002   Ivy Jones                     OPEN     6921.88GBP
+  1   SKU-0000048 Washer    10     68.92
+ 2   SKU-0000039 Bearing   13     83.88
+ 3   SKU-0000008 Grommet   40     55.46
+ 4   SKU-0000090 Sprocket  32     80.49
+ 5   SKU-0000001 Grommet   34     10.24
+ 1000387   20240603C272878   Jack Taylor                   HOLD     4777.70GBP
+  1   SKU-0000060 Washer    50     49.21
+ 2   SKU-0000024 Pin 3mm   36     50.05
+ 3   SKU-0000054 Washer    15     34.36
+ 1000392   20240625C785348   Sophia Taylor                 OPEN     4655.12GBP
+  1   SKU-0000078 Nut M6    38     91.96
+ 2   SKU-0000020 Bearing   16     72.54
+ 1000394   20240604C784153   Jack Walker                   BACKOD   7831.42GBP
+  1   SKU-0000010 Pin 3mm   32     55.89
+ 2   SKU-0000092 Bearing   10     27.82
+ 3   SKU-0000001 Gasket    48     70.48
+ 4   SKU-0000086 Nut M6    34     70.05
+ 1000395   20240918C437292   Ivy Hughes                    DONE     2471.41GBP
+  1   SKU-0000040 Bolt M6   20     97.24
+ 2   SKU-0000022 Gasket    32     16.21
+ 3   SKU-0000024 Widget    1       7.89
+ 1000399   20240308C629119   George Roberts                CANCL      72.88GBP
+  1   SKU-0000097 Bearing   8       9.11
+ 1000404   20240423C999081   Isabella Smith                SHIP     2090.84GBP
+  1   SKU-0000064 Bolt M6   29     63.80
+ 2   SKU-0000072 Bolt M6   4      60.16
+ 1000406   20240317C638409   Rosie Hughes                  HOLD     4103.31GBP
+  1   SKU-0000076 Pin 3mm   33     75.13
+ 2   SKU-0000005 Widget    38     32.15
+ 3   SKU-0000079 Grommet   8      50.29
+ 1000409   20240428C225118   Lily Smith                    BACKOD   3528.82GBP
+  1   SKU-0000083 Bearing   16     42.90
+ 2   SKU-0000097 Pin 3mm   19     72.43
+ 3   SKU-0000061 Washer    23     63.75
+ 1000411   20240217C297638   Jack Green                    CANCL    3422.60GBP
+  1   SKU-0000052 Bracket   50     51.16
+ 2   SKU-0000056 Widget    4      23.34
+ 3   SKU-0000086 Bearing   12     64.27
+ 1000415   20240604C659412   Noah Walker                   DONE    11060.57GBP
+  1   SKU-0000031 Bearing   49     75.19
+ 2   SKU-0000029 Gasket    17     39.05
+ 3   SKU-0000054 Washer    27     98.07
+ 4   SKU-0000072 Bolt M6   12     21.26
+ 5   SKU-0000074 Sprocket  42     90.70
+ 1000419   20241009C319129   Harry Wilson                  HOLD      478.50GBP
+  1   SKU-0000004 Widget    22     21.75
+ 1000424   20240923C907015   Alfie Edwards                 OPEN     9142.67GBP
+  1   SKU-0000069 Bearing   22     76.69
+ 2   SKU-0000013 Gasket    36     59.48
+ 3   SKU-0000018 Pin 3mm   6      77.40
+ 4   SKU-0000030 Bracket   11     27.35
+ 5   SKU-0000026 Pin 3mm   13     64.32
+ 6   SKU-0000027 Bolt M6   48     77.35
+ 1000429   20241009C745649   Alfie Edwards                 DONE    10479.13GBP
+  1   SKU-0000082 Washer    50     78.37
+ 2   SKU-0000068 Widget    18     12.02
+ 3   SKU-0000006 Washer    26     91.36
+ 4   SKU-0000083 Bracket   43     88.92
+ 5   SKU-0000093 Washer    19      7.65
+ 1000432   20240124C854095   Lily Green                    SHIP     3272.98GBP
+  1   SKU-0000005 Gasket    27      5.65
+ 2   SKU-0000023 Widget    22     58.97
+ 3   SKU-0000070 Sprocket  14     47.84
+ 4   SKU-0000031 Bearing   41     28.13
+ 1000433   20240216C611659   Lily Smith                    SHIP     8281.79GBP
+  1   SKU-0000072 Widget    22     97.00
+ 2   SKU-0000095 Pin 3mm   27     66.87
+ 3   SKU-0000041 Gasket    19      2.15
+ 4   SKU-0000095 Washer    13     55.27
+ 5   SKU-0000066 Washer    46     77.89
+ 1000438   20241004C883147   Mia Green                     OPEN     9446.13GBP
+  1   SKU-0000013 Pin 3mm   40     65.70
+ 2   SKU-0000000 Bolt M6   23     78.23
+ 3   SKU-0000048 Grommet   44      4.24
+ 4   SKU-0000026 Nut M6    24     93.37
+ 5   SKU-0000061 Bearing   42     61.70
+ 1000440   20240122C497102   Ava Evans                     DONE      132.57GBP
+  1   SKU-0000076 Gasket    27      4.91
+ 1000445   20240126C120654   Lily Davies                   BACKOD    665.40GBP
+  1   SKU-0000084 Bracket   20     33.27
+ 1000450   20240113C202194   Ivy Hughes                    CANCL    1548.64GBP
+  1   SKU-0000026 Sprocket  16     71.73
+ 2   SKU-0000014 Pin 3mm   32     12.53
+ 1000453   20241104C523196   Oscar Walker                  SHIP     2269.98GBP
+  1   SKU-0000088 Washer    22     27.07
+ 2   SKU-0000095 Widget    19     63.56
+ 3   SKU-0000086 Grommet   27     11.85
+ 4   SKU-0000067 Sprocket  5      29.37
+ 1000458   20240422C797289   Alfie Edwards                 HOLD     5159.32GBP
+  1   SKU-0000023 Sprocket  34     54.80
+ 2   SKU-0000050 Bracket   19     78.12
+ 3   SKU-0000084 Grommet   28     36.32
+ 4   SKU-0000090 Sprocket  8      99.36
+ 1000460   20240120C905343   Oscar Thompson                DONE     3688.54GBP
+  1   SKU-0000096 Sprocket  3      20.02
+ 2   SKU-0000095 Sprocket  1      66.49
+ 3   SKU-0000031 Pin 3mm   41     40.69
+ 4   SKU-0000046 Bracket   46     40.51
+ 5   SKU-0000037 Grommet   27      1.12
+ 1000463   20240407C990803   Amelia Brown                  HOLD     5681.47GBP
+  1   SKU-0000081 Sprocket  25     57.59
+ 2   SKU-0000098 Grommet   10     97.21
+ 3   SKU-0000050 Nut M6    30     11.84
+ 4   SKU-0000021 Grommet   13      6.31
+ 5   SKU-0000074 Washer    33     60.81
+ 6   SKU-0000054 Bracket   11     75.06
+ 1000467   20241226C331597   Rosie Wright                  CANCL    3090.49GBP
+  1   SKU-0000046 Washer    14     61.58
+ 2   SKU-0000064 Pin 3mm   43      1.75
+ 3   SKU-0000059 Bracket   49      7.95
+ 4   SKU-0000082 Nut M6    38     34.74
+ 5   SKU-0000088 Grommet   5      63.07
+ 6   SKU-0000057 Nut M6    15      8.54
+ 1000468   20240920C502255   Ivy Brown                     OPEN     1017.98GBP
+  1   SKU-0000059 Bearing   46     22.13
+ 1000471   20240610C947774   Harry Wilson                  HOLD     1392.33GBP
+  1   SKU-0000064 Sprocket  4      77.13
+ 2   SKU-0000023 Sprocket  21     51.61
+ 1000476   20240910C550085   Jack Green                    CANCL    7050.99GBP
+  1   SKU-0000006 Nut M6    9       2.00
+ 2   SKU-0000092 Nut M6    28     11.48
+ 3   SKU-0000044 Widget    22     63.21
+ 4   SKU-0000017 Bolt M6   19     45.34
+ 5   SKU-0000080 Bracket   36     99.59
+ 6   SKU-0000027 Bracket   23     38.01
+ 1000479   20240820C692955   Ivy Johnson                   SHIP     3928.77GBP
+  1   SKU-0000089 Bolt M6   3      92.40
+ 2   SKU-0000086 Grommet   39     93.63
+ 1000482   20240804C545646   Isla Taylor                   OPEN     6573.09GBP
+  1   SKU-0000013 Bracket   22     57.79
+ 2   SKU-0000029 Widget    16     13.86
+ 3   SKU-0000018 Sprocket  18     13.69
+ 4   SKU-0000000 Grommet   23     92.72
+ 5   SKU-0000007 Nut M6    19     56.83
+ 6   SKU-0000024 Bracket   35     46.32
+ 1000485   20241116C605355   Jack Taylor                   CANCL    5117.33GBP
+  1   SKU-0000000 Grommet   8      48.94
+ 2   SKU-0000020 Bearing   27     62.69
+ 3   SKU-0000058 Nut M6    8      64.59
+ 4   SKU-0000096 Nut M6    30     68.72
+ 5   SKU-0000059 Bearing   18     25.27
+ 1000487   20240122C202344   Mia Williams                  HOLD     1485.32GBP
+  1   SKU-0000068 Pin 3mm   8      98.05
+ 2   SKU-0000016 Pin 3mm   48      2.74
+ 3   SKU-0000062 Washer    10     56.94
+ 1000488   20240718C740891   Isla Taylor                   DONE     2422.16GBP
+  1   SKU-0000074 Sprocket  20     85.96
+ 2   SKU-0000083 Bearing   8      87.87
+ 1000489   20240822C510603   Alfie Edwards                 DONE    10709.57GBP
+  1   SKU-0000052 Gasket    32     91.72
+ 2   SKU-0000007 Bolt M6   43      3.45
+ 3   SKU-0000070 Grommet   36     49.94
+ 4   SKU-0000015 Widget    41     85.68
+ 5   SKU-0000063 Pin 3mm   16     67.62
+ 6   SKU-0000010 Sprocket  21     58.74
+ 1000493   20240709C988422   Mia Williams                  HOLD     6197.30GBP
+  1   SKU-0000006 Widget    6      66.86
+ 2   SKU-0000075 Bracket   19     76.57
+ 3   SKU-0000036 Grommet   16     52.81
+ 4   SKU-0000081 Bolt M6   13     42.43
+ 5   SKU-0000061 Widget    26     42.97
+ 6   SKU-0000029 Bolt M6   22     83.07
+ 1000498   20240619C901815   Ivy Jones                     BACKOD   1278.76GBP
+  1   SKU-0000068 Sprocket  18      5.90
+ 2   SKU-0000005 Bearing   6       1.57
+ 3   SKU-0000083 Pin 3mm   32     33.27
+ 4   SKU-0000050 Grommet   1      98.50
+ 1000501   20240304C580256   Sophia Johnson                BACKOD    438.44GBP
+  1   SKU-0000080 Grommet   6      23.70
+ 2   SKU-0000021 Sprocket  46      6.44
+ 1000506   20241116C632761   Alfie Edwards                 OPEN     8492.39GBP
+  1   SKU-0000062 Gasket    44     66.66
+ 2   SKU-0000092 Bearing   22     68.27
+ 3   SKU-0000096 Nut M6    34     20.56
+ 4   SKU-0000009 Grommet   46     63.74
+ 5   SKU-0000042 Bearing   28      5.67
+ 6   SKU-0000084 Gasket    3      89.19
+ 1000507   20240708C419850   Ivy Jones                     HOLD     5048.82GBP
+  1   SKU-0000053 Bolt M6   8      37.29
+ 2   SKU-0000007 Washer    1      73.73
+ 3   SKU-0000039 Bolt M6   32     95.74
+ 4   SKU-0000099 Grommet   4      28.68
+ 5   SKU-0000050 Pin 3mm   36      7.11
+ 6   SKU-0000003 Pin 3mm   19     65.39
+ 1000511   20240522C559575   Jack Taylor                   BACKOD   5047.49GBP
+  1   SKU-0000035 Bracket   9      66.44
+ 2   SKU-0000049 Pin 3mm   7      86.74
+ 3   SKU-0000064 Gasket    11     13.29
+ 4   SKU-0000029 Widget    45     61.61
+ 5   SKU-0000051 Grommet   16     45.34
+ 6   SKU-0000017 Gasket    9      22.03
+ 1000513   20240804C447689   Ivy Jones                     BACKOD  13670.32GBP
+  1   SKU-0000006 Grommet   42     69.97
+ 2   SKU-0000094 Bearing   47     60.70
+ 3   SKU-0000059 Gasket    44     93.25
+ 4   SKU-0000017 Pin 3mm   46     82.08
+ 1000517   20240618C261724   Jack Roberts                  OPEN     6834.12GBP
+  1   SKU-0000055 Washer    27     52.41
+ 2   SKU-0000040 Gasket    5      75.94
+ 3   SKU-0000016 Gasket    21     16.64
+ 4   SKU-0000027 Widget    29     27.59
+ 5   SKU-0000069 Grommet   46     61.16
+ 6   SKU-0000020 Sprocket  17     63.32
+ 1000521   20240805C913145   Amelia Brown                  BACKOD    188.82GBP
+  1   SKU-0000051 Grommet   2      94.41
+ 1000522   20240922C253236   Mia Hall                      DONE     1060.50GBP
+  1   SKU-0000006 Sprocket  42     25.25
+ 1000527   20240312C784105   Ivy Taylor                    SHIP     6806.45GBP
+  1   SKU-0000025 Bearing   19     51.65
+ 2   SKU-0000043 Sprocket  41     70.09
+ 3   SKU-0000049 Gasket    21     73.74
+ 4   SKU-0000078 Gasket    43     10.63
+ 5   SKU-0000045 Bolt M6   18     34.21
+ 6   SKU-0000058 Pin 3mm   11     30.00
+ 1000529   20240903C884192   Noah Walker                   HOLD      751.50GBP
+  1   SKU-0000092 Nut M6    18     41.75
+ 1000532   20240911C518122   Mia Green                     OPEN    10736.85GBP
+  1   SKU-0000018 Nut M6    44     55.25
+ 2   SKU-0000049 Bolt M6   6      17.62
+ 3   SKU-0000049 Sprocket  10     70.33
+ 4   SKU-0000084 Gasket    50     85.12
+ 5   SKU-0000057 Sprocket  37     87.59
+ 1000535   20241019C716450   Harry Wilson                  SHIP     4147.04GBP
+  1   SKU-0000063 Sprocket  26     13.42
+ 2   SKU-0000027 Grommet   39     40.63
+ 3   SKU-0000033 Bolt M6   19     67.66
+ 4   SKU-0000001 Gasket    5      51.47
+ 5   SKU-0000048 Sprocket  44      7.60
+ 6   SKU-0000067 Nut M6    34      9.89
+ 1000539   20240504C330847   Ivy Brown                     DONE     1008.42GBP
+  1   SKU-0000083 Nut M6    42     24.01
+ 1000544   20240811C774715   Ivy Johnson                   CANCL    4494.07GBP
+  1   SKU-0000077 Pin 3mm   18     36.80
+ 2   SKU-0000091 Bracket   15      2.07
+ 3   SKU-0000084 Bearing   50     41.07
+ 4   SKU-0000039 Sprocket  5       8.48
+ 5   SKU-0000064 Bracket   26      7.62
+ 6   SKU-0000067 Bolt M6   18     83.70
+ 1000547   20240623C201833   Sophia Taylor                 HOLD     2850.25GBP
+  1   SKU-0000033 Grommet   32     20.24
+ 2   SKU-0000019 Bearing   27     53.76
+ 3   SKU-0000095 Widget    15     50.07
+ 1000548   20241123C632863   Amelia Brown                  DONE     3879.31GBP
+  1   SKU-0000068 Grommet   44     14.08
+ 2   SKU-0000035 Grommet   45     59.22
+ 3   SKU-0000054 Pin 3mm   31     19.19
+ 1000553   20240615C887477   Ivy Jones                     DONE     4102.12GBP
+  1   SKU-0000039 Bearing   24     92.41
+ 2   SKU-0000087 Grommet   2      52.58
+ 3   SKU-0000067 Pin 3mm   42     42.36
+ 1000557   20240221C569113   Ivy Johnson                   SHIP     5007.94GBP
+  1   SKU-0000065 Pin 3mm   14     49.56
+ 2   SKU-0000002 Grommet   46     92.79
+ 3   SKU-0000023 Sprocket  26      1.76
+ 1000560   20240320C619224   Rosie Wright                  BACKOD   9498.56GBP
+  1   SKU-0000084 Nut M6    8      43.32
+ 2   SKU-0000095 Sprocket  36     68.71
+ 3   SKU-0000014 Grommet   48     87.63
+ 4   SKU-0000067 Washer    47     52.60
+ 1000563   20240623C907269   Sophia Johnson                HOLD     1481.85GBP
+  1   SKU-0000067 Widget    15     98.79
+ 1000564   20240602C509666   Harry Wilson                  HOLD     2904.53GBP
+  1   SKU-0000063 Bracket   20     54.47
+ 2   SKU-0000088 Gasket    22     21.70
+ 3   SKU-0000005 Sprocket  10     67.05
+ 4   SKU-0000064 Widget    23     29.01
+ 1000565   20240906C736930   Lily Davies                   DONE     4797.12GBP
+  1   SKU-0000007 Widget    14     92.80
+ 2   SKU-0000002 Sprocket  38     56.69
+ 3   SKU-0000004 Gasket    25     19.36
+ 4   SKU-0000078 Washer    10     85.97
+ 1000568   20241121C483116   Oscar Davies                  OPEN     1301.40GBP
+  1   SKU-0000093 Washer    45     28.92
+ 1000569   20240707C921462   Sophia Johnson                HOLD     4374.93GBP
+  1   SKU-0000059 Bearing   33     95.32
+ 2   SKU-0000032 Pin 3mm   47     25.59
+ 3   SKU-0000089 Bolt M6   8       3.33
+ 1000574   20240814C981993   Sophia Taylor                 OPEN     3544.45GBP
+  1   SKU-0000099 Sprocket  43      1.09
+ 2   SKU-0000013 Sprocket  9      64.15
+ 3   SKU-0000024 Gasket    40     28.08
+ 4   SKU-0000036 Grommet   41     43.83
+ 1000575   20240120C315646   Oscar Thompson                CANCL    8989.92GBP
+  1   SKU-0000057 Bracket   29     75.96
+ 2   SKU-0000076 Nut M6    18     84.51
+ 3   SKU-0000054 Washer    22     40.76
+ 4   SKU-0000066 Widget    44     93.51
+ 5   SKU-0000099 Bracket   47      5.42
+ 1000578   20240407C972229   Jack Green                    SHIP      145.60GBP
+  1   SKU-0000009 Sprocket  5      29.12
+ 1000579   20241016C211624   Ava Williams                  BACKOD   3447.25GBP
+  1   SKU-0000000 Widget    5      91.26
+ 2   SKU-0000000 Widget    41     72.95
+ 1000580   20241216C718750   Ivy Taylor                    BACKOD   6480.95GBP
+  1   SKU-0000051 Bolt M6   49     37.71
+ 2   SKU-0000093 Sprocket  14     21.50
+ 3   SKU-0000094 Washer    30     70.88
+ 4   SKU-0000016 Bolt M6   8      29.51
+ 5   SKU-0000066 Grommet   29     67.92
+ 1000582   20240324C488591   Arthur Hughes                 CANCL    2839.17GBP
+  1   SKU-0000091 Washer    50      7.77
+ 2   SKU-0000032 Gasket    2      21.56
+ 3   SKU-0000037 Nut M6    39      8.07
+ 4   SKU-0000032 Widget    41     35.92
+ 5   SKU-0000066 Bearing   9      68.90
+ 1000587   20240910C374709   George Roberts                CANCL    6783.33GBP
+  1   SKU-0000093 Gasket    37     55.86
+ 2   SKU-0000039 Grommet   14     38.19
+ 3   SKU-0000052 Gasket    20     43.29
+ 4   SKU-0000078 Gasket    45     73.69
+ 1000590   20240917C973205   Mia Green                     DONE     2194.51GBP
+  1   SKU-0000087 Bracket   17     62.71
+ 2   SKU-0000037 Bearing   6       9.18
+ 3   SKU-0000059 Washer    30     27.71
+ 4   SKU-0000032 Bearing   14     17.29
+ 1000593   20240124C497019   Sophia Johnson                OPEN     8039.34GBP
+  1   SKU-0000011 Nut M6    46     90.17
+ 2   SKU-0000035 Bolt M6   35     13.10
+ 3   SKU-0000089 Widget    39     47.28
+ 4   SKU-0000048 Bearing   30     52.97
+ 1000598   20241106C231800   Lily Davies                   OPEN     2043.95GBP
+  1   SKU-0000054 Widget    40     24.59
+ 2   SKU-0000004 Pin 3mm   3      13.53
+ 3   SKU-0000022 Pin 3mm   6      84.56
+ 4   SKU-0000002 Washer    8      64.05
+ 1000599   20241205C691056   Olivia Wilson                 DONE     9460.94GBP
+  1   SKU-0000012 Bracket   30     25.01
+ 2   SKU-0000014 Sprocket  35     88.44
+ 3   SKU-0000006 Bracket   14     53.11
+ 4   SKU-0000098 Bearing   15     22.80
+ 5   SKU-0000056 Widget    45     77.62
+ 6   SKU-0000076 Grommet   36     28.80
+ 1000603   20241216C913254   Harry Wright                  OPEN     4655.37GBP
+  1   SKU-0000049 Bracket   13     10.84
+ 2   SKU-0000008 Widget    48     82.37
+ 3   SKU-0000007 Grommet   13     43.13
+ 1000607   20240708C550487   Jack Hughes                   DONE     4581.60GBP
+  1   SKU-0000061 Gasket    46     99.60
+ 1000610   20241023C372314   Isla Taylor                   HOLD    10828.06GBP
+  1   SKU-0000009 Pin 3mm   45     62.83
+ 2   SKU-0000088 Pin 3mm   22     43.31
+ 3   SKU-0000083 Grommet   36     65.66
+ 4   SKU-0000071 Grommet   7      60.43
+ 5   SKU-0000013 Grommet   40     77.35
+ 6   SKU-0000062 Nut M6    36     32.42
+ 1000614   20241205C592415   Rosie Hughes                  DONE     8079.08GBP
+  1   SKU-0000077 Bearing   19     64.28
+ 2   SKU-0000078 Sprocket  30     19.19
+ 3   SKU-0000040 Sprocket  15     97.54
+ 4   SKU-0000039 Washer    49     64.96
+ 5   SKU-0000053 Bracket   24     67.88
+ 6   SKU-0000012 Grommet   4       1.70
+ 1000615   20240406C163298   Ava Williams                  CANCL     460.80GBP
+  1   SKU-0000034 Bracket   32     14.40
+ 1000616   20241106C499552   Isla Taylor                   CANCL    4744.14GBP
+  1   SKU-0000044 Washer    14     11.42
+ 2   SKU-0000075 Nut M6    21     66.72
+ 3   SKU-0000020 Gasket    47     17.89
+ 4   SKU-0000098 Pin 3mm   11     37.05
+ 5   SKU-0000036 Grommet   21     35.08
+ 6   SKU-0000025 Sprocket  26     46.08
+ 1000618   20241207C491159   Amelia Brown                  HOLD     7635.20GBP
+  1   SKU-0000038 Bolt M6   27     86.80
+ 2   SKU-0000005 Bearing   28     95.30
+ 3   SKU-0000018 Bearing   3      77.42
+ 4   SKU-0000011 Bolt M6   9      11.29
+ 5   SKU-0000064 Pin 3mm   27     84.79
+ 1000619   20240711C297495   Oscar Walker                  DONE       21.60GBP
+  1   SKU-0000082 Widget    9       2.40
+ 1000620   20241026C623307   Rosie Wright                  DONE     5564.97GBP
+  1   SKU-0000079 Washer    40      6.96
+ 2   SKU-0000089 Bearing   13     29.19
+ 3   SKU-0000024 Washer    18     76.79
+ 4   SKU-0000068 Nut M6    38     92.76
+ 1000624   20240125C660060   Harry Wilson                  DONE     2943.90GBP
+  1   SKU-0000001 Nut M6    30     63.15
+ 2   SKU-0000075 Grommet   45     23.32
+ 1000627   20240102C145033   Mia Green                     DONE     6311.81GBP
+  1   SKU-0000072 Bearing   5       6.35
+ 2   SKU-0000092 Nut M6    31     15.92
+ 3   SKU-0000073 Washer    38     92.31
+ 4   SKU-0000005 Sprocket  44     51.79
+ 1000631   20240313C899396   Rosie Hughes                  DONE     7505.54GBP
+  1   SKU-0000022 Sprocket  44     89.14
+ 2   SKU-0000042 Nut M6    24     73.20
+ 3   SKU-0000021 Sprocket  7      39.30
+ 4   SKU-0000086 Bearing   21     73.88
+ 1000632   20241209C973161   Ivy Taylor                    CANCL   10101.30GBP
+  1   SKU-0000011 Washer    23     75.64
+ 2   SKU-0000092 Widget    40     51.38
+ 3   SKU-0000078 Pin 3mm   36     49.70
+ 4   SKU-0000063 Pin 3mm   30     45.41
+ 5   SKU-0000040 Pin 3mm   42     73.77
+ 6   SKU-0000077 Widget    2      28.27
+ 1000636   20241216C256926   Jack Taylor                   CANCL    2394.50GBP
+  1   SKU-0000073 Widget    25     95.78
+ 1000637   20240417C686349   Harry Wilson                  SHIP      396.09GBP
+  1   SKU-0000016 Nut M6    27     14.67
+ 1000642   20240615C552539   Noah Walker                   HOLD      648.70GBP
+  1   SKU-0000079 Bracket   10     64.87
+ 1000646   20240525C268737   Jack Taylor                   HOLD     4242.49GBP
+  1   SKU-0000087 Widget    13     41.55
+ 2   SKU-0000036 Gasket    39     16.55
+ 3   SKU-0000002 Nut M6    38     61.55
+ 4   SKU-0000014 Sprocket  21     34.19
+ 1000650   20240606C677968   Mia Williams                  HOLD     1629.38GBP
+  1   SKU-0000091 Sprocket  23     67.68
+ 2   SKU-0000033 Gasket    1      72.74
+ 1000654   20240424C369093   Oscar Davies                  SHIP      170.44GBP
+  1   SKU-0000059 Bearing   4      27.50
+ 2   SKU-0000097 Bolt M6   1      60.44
+ 1000656   20240116C767566   Ava Evans                     SHIP      610.56GBP
+  1   SKU-0000095 Widget    36     16.96
+ 1000658   20240603C191578   Ivy Jones                     HOLD     3313.68GBP
+  1   SKU-0000076 Nut M6    27     71.60
+ 2   SKU-0000040 Sprocket  36     37.70
+ 3   SKU-0000039 Bracket   1      23.28
+ 1000660   20241023C871272   Jack Green                    HOLD     3768.35GBP
+  1   SKU-0000093 Washer    5      91.61
+ 2   SKU-0000032 Pin 3mm   2      82.60
+ 3   SKU-0000020 Bracket   48     53.03
+ 4   SKU-0000054 Gasket    43      6.83
+ 5   SKU-0000028 Bearing   3      93.59
+ 6   SKU-0000088 Bracket   10      2.52
+ 1000663   20241205C514543   Jack Roberts                  BACKOD   1848.32GBP
+  1   SKU-0000084 Sprocket  32     57.76
+ 1000666   20241119C382497   Lily Smith                    DONE     1579.18GBP
+  1   SKU-0000027 Bearing   9      59.40
+ 2   SKU-0000048 Pin 3mm   29     36.02
+ 1000671   20240827C738026   Amelia Brown                  CANCL    2498.76GBP
+  1   SKU-0000085 Washer    44     56.79
+ 1000676   20240223C381185   Rosie Wright                  OPEN     4885.51GBP
+  1   SKU-0000032 Widget    49     14.53
+ 2   SKU-0000015 Bolt M6   21     76.21
+ 3   SKU-0000090 Bracket   41     32.12
+ 4   SKU-0000070 Sprocket  3      71.43
+ 5   SKU-0000059 Nut M6    16     65.12
+ 1000677   20240927C677084   Mia Green                     DONE     2033.10GBP
+  1   SKU-0000049 Pin 3mm   5      35.08
+ 2   SKU-0000019 Widget    13     95.74
+ 3   SKU-0000099 Widget    9      68.12
+ 1000680   20240317C443318   Oscar Davies                  HOLD     1564.33GBP
+  1   SKU-0000087 Bolt M6   19     32.47
+ 2   SKU-0000088 Bearing   15     63.16
+ 1000684   20240717C123501   Mia Hall                      DONE     1191.13GBP
+  1   SKU-0000010 Gasket    3      17.63
+ 2   SKU-0000095 Grommet   32     35.57
+ 1000686   20240912C544482   Lily Green                    SHIP     6109.42GBP
+  1   SKU-0000068 Gasket    35     46.55
+ 2   SKU-0000036 Nut M6    47     17.83
+ 3   SKU-0000099 Bearing   29     40.43
+ 4   SKU-0000012 Bracket   18     24.12
+ 5   SKU-0000026 Sprocket  21     96.93
+ 1000687   20240523C641422   Oscar Walker                  CANCL    9073.17GBP
+  1   SKU-0000087 Pin 3mm   44     53.87
+ 2   SKU-0000028 Nut M6    33     50.44
+ 3   SKU-0000028 Nut M6    35     25.97
+ 4   SKU-0000004 Pin 3mm   46     89.77
+ 1000692   20240826C689155   Jack Hughes                   CANCL   11267.00GBP
+  1   SKU-0000019 Grommet   6      76.22
+ 2   SKU-0000053 Gasket    49     64.88
+ 3   SKU-0000037 Sprocket  41     72.09
+ 4   SKU-0000072 Nut M6    25     36.17
+ 5   SKU-0000032 Washer    35     90.58
+ 6   SKU-0000037 Bolt M6   28     21.44
+ 1000694   20240721C648371   Ivy Taylor                    SHIP     8550.62GBP
+  1   SKU-0000020 Bracket   29     48.38
+ 2   SKU-0000099 Nut M6    36     46.64
+ 3   SKU-0000030 Gasket    30     71.59
+ 4   SKU-0000092 Nut M6    29     27.60
+ 5   SKU-0000036 Pin 3mm   16     64.81
+ 6   SKU-0000057 Sprocket  15     98.90
+ 1000697   20240102C138541   Lily Smith                    BACKOD   3350.73GBP
+  1   SKU-0000091 Gasket    46     39.76
+ 2   SKU-0000016 Widget    4      93.76
+ 3   SKU-0000001 Grommet   30     16.29
+ 4   SKU-0000073 Gasket    7      80.18
+ 5   SKU-0000079 Washer    1      96.77
+ 1000701   20240924C982501   Jack Taylor                   BACKOD   4149.80GBP
+  1   SKU-0000012 Nut M6    35     36.22
+ 2   SKU-0000010 Bracket   44     43.05
+ 3   SKU-0000019 Bearing   37     26.70
+ 1000706   20241111C779156   Ivy Johnson                   HOLD     8873.79GBP
+  1   SKU-0000063 Bearing   42     91.72
+ 2   SKU-0000085 Bolt M6   24     11.14
+ 3   SKU-0000062 Pin 3mm   50     36.78
+ 4   SKU-0000052 Sprocket  26     11.04
+ 5   SKU-0000069 Bearing   36     56.60
+ 6   SKU-0000005 Nut M6    31     19.05
+ 1000709   20241027C527347   Jack Hughes                   SHIP     7395.74GBP
+  1   SKU-0000019 Nut M6    46     58.66
+ 2   SKU-0000065 Gasket    20     77.91
+ 3   SKU-0000066 Widget    38     82.61
+ 1000711   20240515C594913   Oscar Walker                  SHIP     5731.75GBP
+  1   SKU-0000068 Sprocket  30     92.04
+ 2   SKU-0000092 Pin 3mm   23     88.51
+ 3   SKU-0000094 Sprocket  38     11.55
+ 4   SKU-0000096 Bearing   36      2.70
+ 5   SKU-0000099 Gasket    4      99.68
+ 1000712   20240203C489210   Jack Roberts                  OPEN     1644.19GBP
+  1   SKU-0000027 Nut M6    19     73.73
+ 2   SKU-0000038 Pin 3mm   22     11.06
+ 1000716   20240527C830418   Jack Taylor                   DONE     7760.91GBP
+  1   SKU-0000024 Bracket   48     37.53
+ 2   SKU-0000003 Nut M6    41     43.19
+ 3   SKU-0000095 Bolt M6   32     92.29
+ 4   SKU-0000065 Gasket    20     61.77
+ 1000721   20241008C557541   Jack Taylor                   OPEN     9205.32GBP
+  1   SKU-0000020 Pin 3mm   35     44.66
+ 2   SKU-0000017 Sprocket  17     51.08
+ 3   SKU-0000041 Gasket    29     49.67
+ 4   SKU-0000062 Sprocket  49     58.00
+ 5   SKU-0000022 Pin 3mm   15     94.99
+ 6   SKU-0000024 Grommet   17     62.74
+ 1000722   20240703C656634   Jack Walker                   HOLD     7210.91GBP
+  1   SKU-0000070 Washer    43     22.30
+ 2   SKU-0000077 Gasket    6      16.69
+ 3   SKU-0000065 Nut M6    40     90.91
+ 4   SKU-0000038 Sprocket  5      17.13
+ 5   SKU-0000096 Nut M6    23     79.62
+ 6   SKU-0000062 Washer    43     13.92
+ 1000725   20241219C191761   Jack Walker                   HOLD     3245.80GBP
+  1   SKU-0000093 Nut M6    16     14.21
+ 2   SKU-0000060 Nut M6    13     17.18
+ 3   SKU-0000066 Nut M6    43     52.80
+ 4   SKU-0000079 Widget    6      87.45
+ 1000727   20241114C881892   Oscar Walker                  HOLD     4697.65GBP
+  1   SKU-0000032 Nut M6    21     74.87
+ 2   SKU-0000098 Widget    48     38.24
+ 3   SKU-0000096 Pin 3mm   26     49.61
+ 1000732   20240905C728943   Noah Walker                   CANCL    4942.79GBP
+  1   SKU-0000099 Widget    19     25.36
+ 2   SKU-0000067 Sprocket  24     56.69
+ 3   SKU-0000070 Bracket   7      43.55
+ 4   SKU-0000067 Widget    8      15.83
+ 5   SKU-0000025 Bolt M6   28     84.75
+ 6   SKU-0000088 Washer    11     26.90
+ 1000737   20240701C601352   Amelia Brown                  CANCL    3719.69GBP
+  1   SKU-0000084 Widget    36     50.85
+ 2   SKU-0000021 Grommet   18      8.06
+ 3   SKU-0000015 Bearing   11      0.92
+ 4   SKU-0000064 Gasket    41     42.29
+ 1000740   20241124C148274   Lily Davies                   HOLD     6617.02GBP
+  1   SKU-0000014 Nut M6    8      61.30
+ 2   SKU-0000013 Gasket    38     95.59
+ 3   SKU-0000099 Washer    36     61.23
+ 4   SKU-0000026 Washer    6      48.32
+ 1000743   20240403C719547   Lily Smith                    DONE      126.45GBP
+  1   SKU-0000079 Pin 3mm   15      8.43
+ 1000748   20241103C486204   Noah Walker                   HOLD     9346.47GBP
+  1   SKU-0000083 Washer    27     91.47
+ 2   SKU-0000084 Sprocket  30     74.36
+ 3   SKU-0000025 Washer    5      77.68
+ 4   SKU-0000013 Gasket    50     71.09
+ 5   SKU-0000008 Grommet   14     50.22
+ 1000753   20240502C725953   Ivy Hughes                    OPEN     4718.27GBP
+  1   SKU-0000002 Bracket   25     60.60
+ 2   SKU-0000017 Grommet   7      39.02
+ 3   SKU-0000007 Washer    45     51.77
+ 4   SKU-0000081 Widget    11     37.07
+ 5   SKU-0000036 Nut M6    7      27.53
+ 1000756   20240810C775447   Sophia Johnson                HOLD     2475.50GBP
+  1   SKU-0000058 Bearing   11     47.19
+ 2   SKU-0000069 Washer    31     63.11
+ 1000758   20240103C798485   Jack Hughes                   SHIP     4772.74GBP
+  1   SKU-0000022 Bolt M6   22     67.18
+ 2   SKU-0000054 Widget    33     94.90
+ 3   SKU-0000056 Sprocket  36      4.53
+ 1000759   20240818C817800   Olivia Wilson                 HOLD     7633.48GBP
+  1   SKU-0000064 Nut M6    29     18.81
+ 2   SKU-0000087 Pin 3mm   19     55.30
+ 3   SKU-0000058 Pin 3mm   45     41.73
+ 4   SKU-0000075 Gasket    42     89.40
+ 5   SKU-0000056 Grommet   8      50.58
+ 1000764   20241107C180166   Ivy Brown                     DONE    10706.39GBP
+  1   SKU-0000043 Bolt M6   23     61.67
+ 2   SKU-0000052 Washer    43     62.86
+ 3   SKU-0000073 Bearing   45     85.82
+ 4   SKU-0000080 Bracket   3      54.71
+ 5   SKU-0000092 Grommet   46     50.80
+ 6   SKU-0000041 Widget    13     17.09
+ 1000766   20240426C326872   Alfie Edwards                 OPEN     1997.33GBP
+  1   SKU-0000077 Bearing   49     29.65
+ 2   SKU-0000005 Pin 3mm   3      93.44
+ 3   SKU-0000071 Grommet   26     10.16
+ 1000767   20240607C194458   Rosie Hughes                  BACKOD   3964.77GBP
+  1   SKU-0000052 Bolt M6   44     17.84
+ 2   SKU-0000010 Bolt M6   32     16.89
+ 3   SKU-0000004 Grommet   15     62.91
+ 4   SKU-0000046 Bracket   42     38.80
+ 5   SKU-0000066 Sprocket  14      4.72
+ 1000772   20241218C830392   Ivy Taylor                    SHIP     3420.44GBP
+  1   SKU-0000069 Bearing   34     31.31
+ 2   SKU-0000071 Grommet   6      58.95
+ 3   SKU-0000092 Bearing   20     94.11
+ 4   SKU-0000094 Bolt M6   2      60.00
+ 1000777   20240713C592760   Mia Williams                  SHIP     4533.05GBP
+  1   SKU-0000070 Widget    49     57.53
+ 2   SKU-0000075 Bolt M6   4      64.73
+ 3   SKU-0000004 Bolt M6   15     63.32
+ 4   SKU-0000039 Grommet   8      63.17
+ 1000782   20240725C823762   Ivy Jones                     SHIP     9333.53GBP
+  1   SKU-0000007 Bracket   31     83.01
+ 2   SKU-0000009 Sprocket  41     75.36
+ 3   SKU-0000027 Gasket    3      19.62
+ 4   SKU-0000083 Gasket    32     86.30
+ 5   SKU-0000055 Washer    50     17.00
+ 1000783   20240304C476321   Jack Roberts                  OPEN     5756.48GBP
+  1   SKU-0000060 Nut M6    44     84.17
+ 2   SKU-0000062 Bracket   2      81.36
+ 3   SKU-0000044 Bearing   6      34.87
+ 4   SKU-0000075 Bracket   23     67.42
+ 5   SKU-0000055 Grommet   8      16.30
+ 1000785   20241208C672682   Rosie Hughes                  OPEN     1926.32GBP
+  1   SKU-0000014 Sprocket  46     10.94
+ 2   SKU-0000052 Bearing   36     39.53
+ 1000789   20240817C964008   Ava Williams                  DONE     6021.38GBP
+  1   SKU-0000012 Bracket   26     44.67
+ 2   SKU-0000000 Pin 3mm   30     28.67
+ 3   SKU-0000040 Pin 3mm   12     50.98
+ 4   SKU-0000070 Gasket    34     99.65
+ 1000790   20240220C873572   Isabella Smith                BACKOD   4564.88GBP
+  1   SKU-0000089 Nut M6    36     35.16
+ 2   SKU-0000051 Bearing   44     70.93
+ 3   SKU-0000047 Gasket    44      4.05
+ 1000793   20241121C906006   Harry Wilson                  SHIP     1069.46GBP
+  1   SKU-0000062 Bracket   14     76.39
+ 1000796   20240122C139922   Arthur Hughes                 CANCL      77.16GBP
+  1   SKU-0000053 Nut M6    6      12.86
+ 1000801   20240722C734476   Oscar Thompson                OPEN     3519.99GBP
+  1   SKU-0000091 Gasket    42     34.93
+ 2   SKU-0000079 Pin 3mm   44     28.06
+ 3   SKU-0000027 Widget    11     74.39
+ 1000803   20241113C986348   Mia Green                     OPEN     1820.76GBP
+  1   SKU-0000000 Bracket   16     60.93
+ 2   SKU-0000036 Widget    28     30.21
+ 1000805   20241014C227721   Lily Wilson                   OPEN     3373.66GBP
+  1   SKU-0000045 Pin 3mm   37     91.18
+ 1000809   20240823C381517   Lily Wilson                   DONE     3860.52GBP
+  1   SKU-0000084 Gasket    44     55.40
+ 2   SKU-0000047 Bolt M6   16     40.36
+ 3   SKU-0000025 Bearing   6      13.43
+ 4   SKU-0000033 Bracket   25     27.55
+ 5   SKU-0000050 Widget    9       0.87
+ 1000812   20240504C597712   Ivy Hughes                    BACKOD   3108.36GBP
+  1   SKU-0000044 Washer    14     55.83
+ 2   SKU-0000065 Pin 3mm   26     49.92
+ 3   SKU-0000063 Bolt M6   26     39.57
+ 1000815   20240122C922428   Ava Williams                  DONE      593.95GBP
+  1   SKU-0000088 Grommet   35     16.97
+ 1000816   20240703C161912   Sophia Taylor                 BACKOD   6889.61GBP
+  1   SKU-0000089 Pin 3mm   50     12.13
+ 2   SKU-0000026 Washer    1       8.65
+ 3   SKU-0000066 Bracket   39     66.80
+ 4   SKU-0000029 Bearing   28     75.91
+ 5   SKU-0000013 Washer    34     44.41
+ 6   SKU-0000003 Bolt M6   1      33.84
+ 1000819   20241204C630567   Alfie Edwards                 CANCL    4759.92GBP
+  1   SKU-0000013 Bolt M6   38     83.82
+ 2   SKU-0000023 Nut M6    44     34.36
+ 3   SKU-0000094 Bearing   22      2.86
+ 1000821   20240510C527347   Jack Taylor                   SHIP     9785.94GBP
+  1   SKU-0000021 Bearing   47     78.30
+ 2   SKU-0000025 Gasket    24     90.93
+ 3   SKU-0000093 Washer    32     22.81
+ 4   SKU-0000093 Bolt M6   45     51.98
+ 5   SKU-0000031 Bracket   10     85.45
+ 1000825   20241227C282906   Mia Green                     DONE     3326.89GBP
+  1   SKU-0000064 Grommet   6      93.01
+ 2   SKU-0000034 Bearing   17     42.43
+ 3   SKU-0000016 Sprocket  15     69.28
+ 4   SKU-0000076 Sprocket  20     25.86
+ 5   SKU-0000063 Pin 3mm   9      31.76
+ 6   SKU-0000074 Grommet   16     12.83
+ 1000830   20240826C713000   Sophia Taylor                 OPEN     1230.39GBP
+  1   SKU-0000016 Washer    31     39.69
+ 1000834   20241027C904526   Ava Evans                     CANCL    1877.18GBP
+  1   SKU-0000081 Bearing   47     39.94
+ 1000839   20240606C468433   Harry Wright                  BACKOD   5232.42GBP
+  1   SKU-0000064 Pin 3mm   5      90.80
+ 2   SKU-0000039 Nut M6    27     61.24
+ 3   SKU-0000059 Pin 3mm   33     42.33
+ 4   SKU-0000030 Washer    11     12.41
+ 5   SKU-0000019 Gasket    17     93.62
+ 1000841   20240904C876713   Olivia Edwards                OPEN     5057.28GBP
+  1   SKU-0000059 Bolt M6   22     20.39
+ 2   SKU-0000063 Bearing   4      32.77
+ 3   SKU-0000082 Gasket    49     91.38
+ 1000845   20240419C646234   Lily Green                    OPEN      197.64GBP
+  1   SKU-0000043 Washer    9      21.96
+ 1000847   20240407C372297   Oscar Thompson                BACKOD   2388.32GBP
+  1   SKU-0000048 Grommet   46     17.15
+ 2   SKU-0000034 Washer    46     34.77
+ 1000848   20240624C376212   Oscar Walker                  SHIP     3260.02GBP
+  1   SKU-0000033 Gasket    46     70.87
+ 1000849   20240512C630506   Sophia Taylor                 BACKOD  10551.50GBP
+  1   SKU-0000099 Grommet   5      54.83
+ 2   SKU-0000083 Bearing   46     92.13
+ 3   SKU-0000070 Bearing   38     85.40
+ 4   SKU-0000048 Pin 3mm   25     61.14
+ 5   SKU-0000036 Bolt M6   19     13.43
+ 6   SKU-0000074 Bracket   25     40.42
+ 1000853   20240120C719915   Lily Davies                   HOLD     4339.78GBP
+  1   SKU-0000051 Bolt M6   8      26.35
+ 2   SKU-0000044 Bracket   31     58.68
+ 3   SKU-0000048 Widget    6      23.28
+ 4   SKU-0000096 Sprocket  34     63.83
+ 1000856   20240204C477545   Lily Davies                   CANCL     728.24GBP
+  1   SKU-0000095 Bearing   8      91.03
+ 1000859   20241105C854274   Ivy Brown                     HOLD      933.60GBP
+  1   SKU-0000064 Gasket    10     93.36
+ 1000863   20240107C203430   Ivy Jones                     SHIP     8195.93GBP
+  1   SKU-0000087 Bearing   27     81.83
+ 2   SKU-0000017 Washer    47      8.53
+ 3   SKU-0000066 Sprocket  47     69.57
+ 4   SKU-0000004 Bolt M6   30     67.47
+ 5   SKU-0000080 Sprocket  6      48.62
+ 1000864   20240325C504269   Oscar Davies                  HOLD     2415.06GBP
+  1   SKU-0000050 Bearing   19     56.88
+ 2   SKU-0000094 Bolt M6   21     63.54
+ 1000868   20240819C389875   Oscar Thompson                CANCL    7193.34GBP
+  1   SKU-0000009 Bearing   40     78.73
+ 2   SKU-0000047 Pin 3mm   39     43.81
+ 3   SKU-0000068 Gasket    2      42.15
+ 4   SKU-0000004 Grommet   25     90.05
+ 1000871   20240224C851870   Ivy Brown                     DONE     3779.24GBP
+  1   SKU-0000091 Widget    43     27.94
+ 2   SKU-0000052 Sprocket  26      9.77
+ 3   SKU-0000017 Pin 3mm   30     77.46
+ 1000872   20240312C451924   Ivy Jones                     SHIP     3369.30GBP
+  1   SKU-0000072 Washer    5      66.30
+ 2   SKU-0000065 Sprocket  43     57.72
+ 3   SKU-0000097 Sprocket  36     15.44
+ 1000875   20240907C240487   Ivy Taylor                    HOLD     2113.08GBP
+  1   SKU-0000019 Sprocket  29     28.50
+ 2   SKU-0000044 Nut M6    41     31.38
+ 1000878   20240915C775895   Sophia Johnson                SHIP     1796.50GBP
+  1   SKU-0000016 Grommet   50     35.93
+ 1000880   20240622C422804   Muhammad Wilson               BACKOD   7847.66GBP
+  1   SKU-0000083 Pin 3mm   42     95.19
+ 2   SKU-0000025 Bolt M6   12     22.76
+ 3   SKU-0000083 Sprocket  22     97.58
+ 4   SKU-0000078 Grommet   12     85.81
+ 5   SKU-0000025 Gasket    24     16.67
+ 1000881   20241023C629597   Ivy Johnson                   HOLD     6928.90GBP
+  1   SKU-0000069 Gasket    2      58.85
+ 2   SKU-0000054 Bearing   38     97.99
+ 3   SKU-0000056 Sprocket  47     19.14
+ 4   SKU-0000009 Widget    50     43.76
+ 1000884   20240801C533509   Ivy Hughes                    OPEN     1159.40GBP
+  1   SKU-0000002 Grommet   44     26.35
+ 1000889   20240212C953464   Arthur Hughes                 BACKOD  11517.89GBP
+  1   SKU-0000007 Bolt M6   49     34.87
+ 2   SKU-0000070 Washer    13     79.48
+ 3   SKU-0000075 Nut M6    14     15.45
+ 4   SKU-0000012 Grommet   31     82.78
+ 5   SKU-0000010 Gasket    48     87.08
+ 6   SKU-0000064 Grommet   35     51.82
+ 1000890   20241119C231695   Muhammad Wilson               SHIP     4647.80GBP
+  1   SKU-0000011 Sprocket  33     41.57
+ 2   SKU-0000040 Bracket   31     35.73
+ 3   SKU-0000044 Bearing   6      64.78
+ 4   SKU-0000021 Sprocket  49     36.32
+ 1000893   20240105C592007   Isla Edwards                  DONE     6916.33GBP
+  1   SKU-0000004 Sprocket  43     29.07
+ 2   SKU-0000053 Bolt M6   19     27.21
+ 3   SKU-0000070 Bracket   9      55.20
+ 4   SKU-0000005 Sprocket  18     84.23
+ 5   SKU-0000033 Gasket    19     35.06
+ 6   SKU-0000082 Widget    41     60.25
+ 1000896   20240601C306906   Jack Taylor                   OPEN     5934.74GBP
+  1   SKU-0000074 Nut M6    21     69.21
+ 2   SKU-0000041 Gasket    12     22.96
+ 3   SKU-0000020 Pin 3mm   42     25.35
+ 4   SKU-0000075 Nut M6    6      53.34
+ 5   SKU-0000007 Bearing   5      69.99
+ 6   SKU-0000000 Washer    34     72.68
+ 1000898   20240110C114871   Oscar Thompson                BACKOD    583.94GBP
+  1   SKU-0000030 Pin 3mm   14     41.71
+ 1000901   20240301C785859   Isla Taylor                   HOLD      275.20GBP
+  1   SKU-0000029 Bearing   40      6.88
+ 1000902   20240110C547115   Isla Taylor                   DONE    12590.35GBP
+  1   SKU-0000044 Washer    13     71.55
+ 2   SKU-0000025 Bolt M6   26     53.57
+ 3   SKU-0000089 Widget    41     40.96
+ 4   SKU-0000002 Bearing   50     95.32
+ 5   SKU-0000090 Gasket    35     47.06
+ 6   SKU-0000055 Nut M6    44     49.43
+ 1000904   20240925C637412   Amelia Brown                  HOLD     2818.20GBP
+  1   SKU-0000079 Pin 3mm   32     44.43
+ 2   SKU-0000078 Gasket    20     63.39
+ 3   SKU-0000060 Washer    24      5.36
+ 1000907   20240605C768075   Olivia Edwards                DONE      884.78GBP
+  1   SKU-0000071 Bearing   26     34.03
+ 1000910   20240802C238526   Alfie Edwards                 CANCL    7897.24GBP
+  1   SKU-0000061 Widget    28     50.85
+ 2   SKU-0000097 Bracket   41     65.37
+ 3   SKU-0000058 Grommet   7      30.52
+ 4   SKU-0000076 Grommet   3      19.05
+ 5   SKU-0000054 Sprocket  39     90.32
+ 1000913   20240802C373617   Rosie Hughes                  CANCL    5137.07GBP
+  1   SKU-0000072 Washer    5      36.73
+ 2   SKU-0000092 Nut M6    8      49.32
+ 3   SKU-0000022 Pin 3mm   4      63.38
+ 4   SKU-0000020 Gasket    11     70.40
+ 5   SKU-0000064 Pin 3mm   21     54.34
+ 6   SKU-0000028 Gasket    28     85.35
+ 1000914   20240417C762216   Ivy Jones                     BACKOD   8168.14GBP
+  1   SKU-0000071 Pin 3mm   28     80.78
+ 2   SKU-0000004 Bearing   50     79.47
+ 3   SKU-0000068 Nut M6    20     96.64
+ 1000918   20240809C790279   Noah Walker                   HOLD     2097.00GBP
+  1   SKU-0000020 Bearing   14     95.10
+ 2   SKU-0000036 Grommet   12     27.62
+ 3   SKU-0000071 Sprocket  24     18.09
+ 1000919   20241024C327079   Isabella Smith                CANCL    7630.60GBP
+  1   SKU-0000059 Bolt M6   48     92.71
+ 2   SKU-0000057 Washer    9      97.03
+ 3   SKU-0000082 Bearing   13     90.62
+ 4   SKU-0000027 Sprocket  2      56.96
+ 5   SKU-0000038 Widget    13     67.99
+ 6   SKU-0000039 Nut M6    45      2.92
+ 1000921   20240202C139651   Jack Green                    OPEN     1126.06GBP
+  1   SKU-0000093 Grommet   13     86.62
+ 1000926   20240520C569742   Isabella Smith                HOLD      823.08GBP
+  1   SKU-0000036 Widget    38     21.66
+ 1000930   20241119C826821   Harry Wilson                  HOLD     6911.29GBP
+  1   SKU-0000071 Bearing   1      65.81
+ 2   SKU-0000056 Pin 3mm   42     72.94
+ 3   SKU-0000074 Washer    40     94.55
+ 1000931   20240816C609579   Ivy Hughes                    CANCL    2807.52GBP
+  1   SKU-0000016 Pin 3mm   48     58.49
+ 1000934   20240403C191352   Olivia Wilson                 CANCL    1736.52GBP
+  1   SKU-0000031 Gasket    14      5.24
+ 2   SKU-0000094 Bracket   20     44.75
+ 3   SKU-0000032 Widget    18     38.29
+ 4   SKU-0000042 Grommet   2      39.47
+ 1000935   20241115C717794   Oscar Thompson                BACKOD   5002.65GBP
+  1   SKU-0000042 Nut M6    42     63.31
+ 2   SKU-0000033 Pin 3mm   3      34.33
+ 3   SKU-0000018 Widget    48     46.68
+ 1000940   20240307C968679   Isla Edwards                  HOLD      759.36GBP
+  1   SKU-0000073 Bolt M6   12     63.28
+ 1000943   20240803C363104   Mia Hall                      CANCL    7531.73GBP
+  1   SKU-0000085 Grommet   44     12.42
+ 2   SKU-0000022 Grommet   35     47.07
+ 3   SKU-0000030 Grommet   4      45.47
+ 4   SKU-0000076 Bolt M6   45     95.53
+ 5   SKU-0000027 Widget    11     73.69
+ 6   SKU-0000077 Washer    4      11.62
+ 1000946   20240311C470868   Ava Williams                  CANCL    6368.06GBP
+  1   SKU-0000054 Gasket    33     28.29
+ 2   SKU-0000068 Pin 3mm   10     32.54
+ 3   SKU-0000022 Bearing   37     79.17
+ 4   SKU-0000009 Washer    45     48.44
+ 1000947   20240307C602929   Ivy Johnson                   DONE     2894.47GBP
+  1   SKU-0000060 Bearing   7      11.02
+ 2   SKU-0000070 Nut M6    49     56.97
+ 3   SKU-0000067 Nut M6    1      21.30
+ 4   SKU-0000077 Gasket    1       4.50
+ 1000952   20241115C618985   Jack Roberts                  CANCL    8994.48GBP
+  1   SKU-0000027 Widget    14     87.78
+ 2   SKU-0000099 Washer    29     42.32
+ 3   SKU-0000045 Bracket   40     29.65
+ 4   SKU-0000035 Sprocket  28     93.40
+ 5   SKU-0000020 Sprocket  34     68.64
+ 6   SKU-0000049 Bolt M6   12     33.61
+ 1000956   20240326C673625   Jack Hughes                   HOLD     2260.16GBP
+  1   SKU-0000029 Widget    45     37.15
+ 2   SKU-0000077 Washer    9      58.73
+ 3   SKU-0000084 Pin 3mm   17      3.52
+ 1000958   20240123C869378   Arthur Hughes                 OPEN      606.24GBP
+  1   SKU-0000050 Pin 3mm   18     33.68
+ 1000959   20240717C506113   Mia Williams                  BACKOD    179.18GBP
+  1   SKU-0000007 Gasket    4      19.55
+ 2   SKU-0000073 Bolt M6   17      5.94
+ 1000963   20240106C301541   Oscar Thompson                BACKOD   6589.82GBP
+  1   SKU-0000059 Bolt M6   6      91.55
+ 2   SKU-0000037 Widget    36     79.23
+ 3   SKU-0000049 Pin 3mm   44     72.46
+ 1000967   20240201C631125   Ava Williams                  CANCL    2546.25GBP
+  1   SKU-0000048 Widget    10     42.40
+ 2   SKU-0000058 Sprocket  18     21.15
+ 3   SKU-0000020 Pin 3mm   18     69.31
+ 4   SKU-0000012 Bearing   47     10.51
+ 1000969   20240919C995236   Sophia Johnson                BACKOD   1483.50GBP
+  1   SKU-0000048 Bolt M6   43     34.50
+ 1000973   20240504C706901   Ivy Brown                     DONE      364.64GBP
+  1   SKU-0000063 Bearing   43      8.48
+ 1000975   20240208C604145   Ivy Johnson                   SHIP     9304.75GBP
+  1   SKU-0000024 Washer    27     94.71
+ 2   SKU-0000008 Grommet   31      1.58
+ 3   SKU-0000049 Pin 3mm   48     87.77
+ 4   SKU-0000012 Grommet   10     40.52
+ 5   SKU-0000050 Sprocket  22     59.37
+ 6   SKU-0000067 Gasket    10     77.43
+ 1000977   20240404C995163   Lily Wilson                   DONE    10040.62GBP
+  1   SKU-0000001 Gasket    30     59.34
+ 2   SKU-0000092 Washer    31     73.11
+ 3   SKU-0000070 Bearing   7      43.81
+ 4   SKU-0000010 Gasket    50     72.43
+ 5   SKU-0000075 Gasket    49     42.16
+ 1000981   20240622C659662   Ivy Jones                     OPEN     4265.83GBP
+  1   SKU-0000069 Sprocket  23     40.09
+ 2   SKU-0000091 Grommet   25     60.64
+ 3   SKU-0000063 Sprocket  3      65.40
+ 4   SKU-0000062 Nut M6    28     58.27
+ 1000985   20240111C717806   Oscar Thompson                HOLD     2452.15GBP
+  1   SKU-0000006 Bolt M6   1      79.01
+ 2   SKU-0000076 Bolt M6   13     10.90
+ 3   SKU-0000034 Bracket   14     43.30
+ 4   SKU-0000044 Bearing   41     39.64
+ 1000988   20241103C234354   Arthur Hughes                 SHIP     1965.84GBP
+  1   SKU-0000050 Widget    50     34.50
+ 2   SKU-0000024 Bearing   9      26.76
+ 1000992   20241216C771471   Isabella Smith                OPEN     5641.32GBP
+  1   SKU-0000004 Gasket    50     59.52
+ 2   SKU-0000069 Bolt M6   38     70.14
+ 1000997   20241222C274312   Ava Williams                  OPEN     9794.80GBP
+  1   SKU-0000031 Grommet   48     57.77
+ 2   SKU-0000080 Grommet   39     75.35
+ 3   SKU-0000092 Nut M6    41     99.59
+ 1000998   20240713C283557   Isabella Smith                HOLD     6888.44GBP
+  1   SKU-0000041 Bolt M6   31     31.21
+ 2   SKU-0000041 Bolt M6   36     48.61
+ 3   SKU-0000032 Washer    42     51.85
+ 4   SKU-0000035 Pin 3mm   47     42.41
+ 1001001   20240201C212559   Muhammad Wilson               DONE     3938.31GBP
+  1   SKU-0000013 Grommet   29     43.60
+ 2   SKU-0000030 Nut M6    48     13.62
+ 3   SKU-0000037 Widget    5       4.57
+ 4   SKU-0000040 Washer    38     51.05
+ 5   SKU-0000020 Pin 3mm   20      2.87
+ 1001002   20240517C670761   Sophia Taylor                 SHIP     4585.67GBP
+  1   SKU-0000087 Washer    45     96.83
+ 2   SKU-0000019 Bracket   8      28.54
+ 1001004   20240701C636424   Isabella Smith                HOLD     9234.88GBP
+  1   SKU-0000063 Bolt M6   39     82.97
+ 2   SKU-0000055 Nut M6    10     88.81
+ 3   SKU-0000099 Nut M6    38     32.00
+ 4   SKU-0000075 Gasket    10     41.05
+ 5   SKU-0000028 Widget    25     59.66
+ 6   SKU-0000095 Widget    23     86.65
+ 1001006   20240213C649431   George Roberts                CANCL    8219.92GBP
+  1   SKU-0000072 Washer    49     34.48
+ 2   SKU-0000025 Bolt M6   28     14.65
+ 3   SKU-0000077 Gasket    40     29.65
+ 4   SKU-0000098 Nut M6    22     83.88
+ 5   SKU-0000094 Bolt M6   31     99.64
+ 1001011   20240428C655017   Jack Green                    SHIP     5826.68GBP
+  1   SKU-0000070 Gasket    37     75.44
+ 2   SKU-0000051 Widget    40     40.52
+ 3   SKU-0000030 Widget    44     32.15
+ 1001015   20241226C130879   Jack Hughes                   SHIP     8605.34GBP
+  1   SKU-0000040 Widget    45     82.70
+ 2   SKU-0000074 Gasket    48     88.45
+ 3   SKU-0000039 Washer    16     39.89
+ 1001020   20240327C895861   Isla Edwards                  BACKOD   2975.18GBP
+  1   SKU-0000020 Bolt M6   35     53.29
+ 2   SKU-0000055 Widget    28     34.26
+ 3   SKU-0000065 Pin 3mm   9      16.75
+ 1001024   20241219C145183   Jack Walker                   CANCL    1159.70GBP
+  1   SKU-0000016 Bolt M6   13      8.50
+ 2   SKU-0000085 Grommet   2      51.76
+ 3   SKU-0000081 Sprocket  42      9.84
+ 4   SKU-0000059 Bracket   10     53.24
+ 1001025   20240304C980400   Mia Williams                  HOLD     1201.44GBP
+  1   SKU-0000085 Bolt M6   48     25.03
+ 1001030   20240501C936110   Jack Taylor                   HOLD     3487.17GBP
+  1   SKU-0000068 Sprocket  38      5.81
+ 2   SKU-0000058 Pin 3mm   17     16.65
+ 3   SKU-0000052 Sprocket  29     39.65
+ 4   SKU-0000089 Washer    13     57.53
+ 5   SKU-0000034 Widget    20     54.28
+ 1001031   20241011C279578   Ivy Jones                     BACKOD   9269.01GBP
+  1   SKU-0000070 Widget    50     92.22
+ 2   SKU-0000087 Bearing   21     33.01
+ 3   SKU-0000059 Gasket    40     99.12
+ 1001036   20240713C966129   George Roberts                OPEN     2956.41GBP
+  1   SKU-0000022 Bolt M6   1      33.67
+ 2   SKU-0000013 Sprocket  16     90.76
+ 3   SKU-0000018 Gasket    31     45.94
+ 4   SKU-0000060 Bearing   27      1.72
+ 1001037   20240803C253092   Lily Wilson                   HOLD     8420.56GBP
+  1   SKU-0000043 Grommet   33     84.94
+ 2   SKU-0000056 Washer    46     93.28
+ 3   SKU-0000070 Widget    21     50.88
+ 4   SKU-0000027 Nut M6    4      62.58
+ 5   SKU-0000011 Sprocket  6       1.31
+ 1001038   20240808C529866   Harry Wilson                  BACKOD   2849.56GBP
+  1   SKU-0000077 Nut M6    49      4.74
+ 2   SKU-0000029 Gasket    35     74.78
+ 1001039   20240511C514370   Lily Wilson                   HOLD     6516.35GBP
+  1   SKU-0000064 Bolt M6   16     31.12
+ 2   SKU-0000004 Nut M6    29     25.24
+ 3   SKU-0000019 Gasket    32     48.41
+ 4   SKU-0000012 Widget    37     83.17
+ 5   SKU-0000030 Widget    18     36.67
+ 1001042   20240419C699865   Isabella Smith                CANCL    3165.92GBP
+  1   SKU-0000064 Bolt M6   47     67.36
+ 1001045   20240806C109918   Ivy Johnson                   BACKOD   8162.08GBP
+  1   SKU-0000097 Sprocket  26     24.52
+ 2   SKU-0000075 Sprocket  6      23.91
+ 3   SKU-0000078 Sprocket  48     56.59
+ 4   SKU-0000007 Washer    23     70.54
+ 5   SKU-0000027 Grommet   44     58.32
+ 6   SKU-0000066 Sprocket  12     39.69
+ 1001048   20241202C130454   Jack Roberts                  OPEN     3768.43GBP
+  1   SKU-0000055 Gasket    9      23.15
+ 2   SKU-0000030 Sprocket  11     73.98
+ 3   SKU-0000072 Widget    29     78.22
+ 4   SKU-0000041 Widget    16     29.87
+ 1001052   20240401C186398   Ava Williams                  HOLD     3824.23GBP
+  1   SKU-0000032 Widget    27     53.44
+ 2   SKU-0000098 Gasket    1       5.99
+ 3   SKU-0000048 Washer    32     23.95
+ 4   SKU-0000046 Bolt M6   32     50.28
+ 1001054   20240319C139867   Rosie Wright                  HOLD     6643.15GBP
+  1   SKU-0000059 Bearing   23      1.54
+ 2   SKU-0000012 Widget    10     85.32
+ 3   SKU-0000064 Grommet   42     89.56
+ 4   SKU-0000071 Sprocket  41     48.61
+ 1001055   20240303C971008   Lily Wilson                   HOLD     2798.97GBP
+  1   SKU-0000044 Pin 3mm   36     41.10
+ 2   SKU-0000083 Bracket   4      48.85
+ 3   SKU-0000026 Bracket   41      9.52
+ 4   SKU-0000065 Pin 3mm   15     48.91
+ 1001057   20241022C564563   Jack Hughes                   CANCL    3312.32GBP
+  1   SKU-0000079 Gasket    44     75.28
+ 1001058   20240707C391935   Isla Taylor                   DONE     4214.03GBP
+  1   SKU-0000029 Nut M6    31     81.43
+ 2   SKU-0000036 Sprocket  33      0.65
+ 3   SKU-0000041 Bracket   19     14.25
+ 4   SKU-0000092 Sprocket  25     55.90
+ 1001063   20241125C127260   Rosie Hughes                  OPEN     2049.63GBP
+  1   SKU-0000098 Bolt M6   33     62.11
+ 1001068   20240216C656247   Oscar Walker                  OPEN     5142.40GBP
+  1   SKU-0000093 Nut M6    27     55.40
+ 2   SKU-0000021 Grommet   10     33.91
+ 3   SKU-0000074 Washer    50     66.15
+ 1001071   20240304C572571   Oscar Davies                  CANCL    7031.85GBP
+  1   SKU-0000017 Washer    28     78.69
+ 2   SKU-0000093 Washer    42     86.98
+ 3   SKU-0000073 Sprocket  29     40.53
+ 1001072   20240225C885795   Isabella Smith                SHIP     4696.19GBP
+  1   SKU-0000063 Grommet   24      8.08
+ 2   SKU-0000062 Bearing   15     51.60
+ 3   SKU-0000009 Sprocket  19     12.07
+ 4   SKU-0000019 Sprocket  41     85.34
+ 1001073   20240523C207165   Mia Green                     OPEN     5352.44GBP
+  1   SKU-0000042 Nut M6    46     64.12
+ 2   SKU-0000055 Pin 3mm   32      8.19
+ 3   SKU-0000080 Washer    46     46.54
+ 1001074   20240920C702862   Oscar Thompson                BACKOD   9578.84GBP
+  1   SKU-0000017 Gasket    5      30.76
+ 2   SKU-0000059 Bracket   24     50.73
+ 3   SKU-0000019 Gasket    40     82.31
+ 4   SKU-0000096 Bolt M6   36     95.92
+ 5   SKU-0000090 Gasket    43     34.00
+ 1001077   20240124C472174   Rosie Wright                  DONE      780.48GBP
+  1   SKU-0000021 Grommet   36     21.68
+ 1001081   20241206C560571   Olivia Wilson                 SHIP     7962.16GBP
+  1   SKU-0000041 Bearing   5      62.62
+ 2   SKU-0000088 Nut M6    46     89.41
+ 3   SKU-0000016 Washer    37     35.61
+ 4   SKU-0000015 Widget    31     35.33
+ 5   SKU-0000090 Bracket   21     16.33
+ 6   SKU-0000028 Pin 3mm   17     45.91
+ 1001082   20240923C454576   Isla Edwards                  HOLD     2670.22GBP
+  1   SKU-0000031 Washer    42     24.91
+ 2   SKU-0000091 Washer    25     64.96
+ 1001085   20240924C337626   Harry Wilson                  SHIP     7602.07GBP
+  1   SKU-0000004 Widget    24     69.69
+ 2   SKU-0000062 Washer    43      4.07
+ 3   SKU-0000006 Bearing   40     52.36
+ 4   SKU-0000074 Washer    23      8.15
+ 5   SKU-0000033 Gasket    45     77.17
+ 1001087   20241205C983599   Mia Hall                      HOLD     3956.77GBP
+  1   SKU-0000048 Grommet   25     10.61
+ 2   SKU-0000054 Grommet   18     85.04
+ 3   SKU-0000046 Bracket   40     53.33
+ 4   SKU-0000072 Bearing   40      0.69
+ 1001089   20240918C353622   Ivy Jones                     HOLD     4558.74GBP
+  1   SKU-0000002 Gasket    28     92.58
+ 2   SKU-0000064 Pin 3mm   23     85.50
+ 1001090   20240505C813939   Harry Wright                  CANCL    6515.00GBP
+  1   SKU-0000008 Washer    50     45.39
+ 2   SKU-0000060 Bracket   5      79.87
+ 3   SKU-0000045 Bearing   33     94.20
+ 4   SKU-0000021 Pin 3mm   11     67.05
+ 1001092   20240816C800645   Amelia Brown                  CANCL    5022.31GBP
+  1   SKU-0000052 Gasket    30     54.62
+ 2   SKU-0000000 Bolt M6   35      0.58
+ 3   SKU-0000044 Grommet   27     78.73
+ 4   SKU-0000058 Pin 3mm   18     20.63
+ 5   SKU-0000026 Sprocket  11     78.76
+ 1001095   20240104C419596   Jack Walker                   BACKOD   6392.97GBP
+  1   SKU-0000089 Nut M6    38     32.23
+ 2   SKU-0000092 Grommet   40     82.27
+ 3   SKU-0000078 Grommet   12     12.49
+ 4   SKU-0000078 Bolt M6   33     52.35
+ 1001097   20240827C188752   Ivy Jones                     DONE     6802.70GBP
+  1   SKU-0000023 Nut M6    5      64.47
+ 2   SKU-0000093 Pin 3mm   24     94.48
+ 3   SKU-0000007 Washer    34     38.87
+ 4   SKU-0000095 Washer    45     64.25
+ 1001099   20240124C613503   Ivy Jones                     CANCL    1713.41GBP
+  1   SKU-0000049 Sprocket  2      33.00
+ 2   SKU-0000091 Sprocket  17     78.88
+ 3   SKU-0000089 Grommet   15     20.43
+ 1001103   20241216C979185   Isla Edwards                  HOLD     2293.20GBP
+  1   SKU-0000095 Bolt M6   30     76.44
+ 1001106   20240716C678645   Rosie Hughes                  CANCL    2185.40GBP
+  1   SKU-0000021 Bearing   28     78.05
+ 1001107   20240714C327302   Jack Walker                   OPEN     4671.92GBP
+  1   SKU-0000047 Gasket    14     25.33
+ 2   SKU-0000055 Washer    50     62.26
+ 3   SKU-0000035 Pin 3mm   40     30.07
+ 4   SKU-0000067 Pin 3mm   2       0.75
+ 1001109   20240223C101324   Mia Hall                      BACKOD   7632.14GBP
+  1   SKU-0000026 Grommet   41     89.99
+ 2   SKU-0000064 Widget    23     61.84
+ 3   SKU-0000014 Washer    41     37.81
+ 4   SKU-0000047 Washer    2      69.36
+ 5   SKU-0000045 Washer    15     37.62
+ 6   SKU-0000085 Grommet   25     10.68
+ 1001110   20241124C507893   Olivia Wilson                 DONE     4700.16GBP
+  1   SKU-0000007 Widget    6      54.11
+ 2   SKU-0000048 Sprocket  50     87.51
+ 1001112   20240217C675499   Jack Roberts                  HOLD      824.78GBP
+  1   SKU-0000072 Bracket   11     74.98
+ 1001116   20240606C807137   Ivy Hughes                    SHIP      983.70GBP
+  1   SKU-0000028 Gasket    15     65.58
+ 1001120   20240623C407264   Oscar Walker                  OPEN     1000.10GBP
+  1   SKU-0000092 Bracket   1      47.00
+ 2   SKU-0000076 Bolt M6   45     21.18
+ 1001121   20241108C576615   George Roberts                DONE     4352.50GBP
+  1   SKU-0000016 Nut M6    7      73.09
+ 2   SKU-0000084 Pin 3mm   20     42.36
+ 3   SKU-0000087 Widget    31     77.97
+ 4   SKU-0000081 Grommet   31     18.60
+ 1001125   20241022C746973   Ava Williams                  OPEN     7733.98GBP
+  1   SKU-0000027 Grommet   28     42.61
+ 2   SKU-0000042 Grommet   6      44.21
+ 3   SKU-0000078 Bolt M6   19     95.32
+ 4   SKU-0000087 Gasket    45     94.60
+ 5   SKU-0000038 Bolt M6   23      8.20
+ 6   SKU-0000095 Widget    1      18.96
+ 1001127   20240717C892521   Rosie Wright                  OPEN     4273.01GBP
+  1   SKU-0000061 Pin 3mm   38     83.63
+ 2   SKU-0000028 Pin 3mm   22     27.73
+ 3   SKU-0000079 Sprocket  25     14.93
+ 4   SKU-0000065 Bolt M6   8      13.97
+ 1001129   20240907C280483   Lily Davies                   DONE     6854.48GBP
+  1   SKU-0000005 Sprocket  21     61.07
+ 2   SKU-0000027 Widget    23     59.10
+ 3   SKU-0000067 Washer    43     97.97
+ 1001130   20240617C436014   Muhammad Wilson               SHIP     2709.19GBP
+  1   SKU-0000087 Bracket   1      88.68
+ 2   SKU-0000053 Pin 3mm   37     11.48
+ 3   SKU-0000053 Bracket   25     87.83
+ 1001134   20241012C351635   Ivy Jones                     SHIP     4712.53GBP
+  1   SKU-0000046 Bracket   42     39.59
+ 2   SKU-0000046 Nut M6    37     46.73
+ 3   SKU-0000019 Sprocket  12     14.14
+ 4   SKU-0000036 Sprocket  2      61.07
+ 5   SKU-0000057 Gasket    10     40.70
+ 6   SKU-0000027 Bolt M6   46     13.52
+ 1001139   20240319C692304   Rosie Hughes                  HOLD     1626.31GBP
+  1   SKU-0000060 Gasket    49     33.19
+ 1001140   20241219C543253   Oscar Thompson                DONE     2647.23GBP
+  1   SKU-0000041 Widget    27     37.28
+ 2   SKU-0000040 Widget    8      95.20
+ 3   SKU-0000043 Bolt M6   17     51.71
+ 1001143   20241125C204981   Amelia Brown                  CANCL    4664.83GBP
+  1   SKU-0000058 Bearing   39     26.23
+ 2   SKU-0000025 Gasket    22     96.12
+ 3   SKU-0000074 Washer    14     40.65
+ 4   SKU-0000054 Gasket    49      7.48
+ 5   SKU-0000015 Washer    10     59.16
+ 1001147   20240615C859482   Mia Green                     DONE     3392.90GBP
+  1   SKU-0000098 Bracket   30     61.78
+ 2   SKU-0000049 Bolt M6   10     84.54
+ 3   SKU-0000087 Nut M6    10     69.41
+ 1001152   20240424C845254   Arthur Hughes                 SHIP      444.39GBP
+  1   SKU-0000030 Sprocket  25     15.33
+ 2   SKU-0000030 Bracket   2      30.57
+ 1001157   20241002C644064   Rosie Hughes                  CANCL   10067.83GBP
+  1   SKU-0000076 Widget    28     41.30
+ 2   SKU-0000023 Bearing   25     90.95
+ 3   SKU-0000095 Bracket   19     96.24
+ 4   SKU-0000019 Pin 3mm   32     76.35
+ 5   SKU-0000070 Nut M6    18     40.42
+ 6   SKU-0000055 Grommet   37     44.28
+ 1001159   20240606C126698   Jack Roberts                  CANCL    3355.18GBP
+  1   SKU-0000046 Grommet   8      64.59
+ 2   SKU-0000040 Washer    22     86.14
+ 3   SKU-0000074 Gasket    18     52.41
+ 1001164   20240620C595049   Isla Edwards                  SHIP     2092.16GBP
+  1   SKU-0000094 Bracket   20     19.09
+ 2   SKU-0000016 Pin 3mm   25     57.08
+ 3   SKU-0000046 Bracket   8      35.42
+ 1001166   20240311C888429   Sophia Taylor                 OPEN     5064.96GBP
+  1   SKU-0000042 Gasket    2      21.80
+ 2   SKU-0000033 Widget    50     85.95
+ 3   SKU-0000052 Sprocket  34     21.29
+ 1001170   20241110C317352   Alfie Edwards                 HOLD     6114.01GBP
+  1   SKU-0000056 Bracket   13     87.72
+ 2   SKU-0000044 Bearing   46     30.69
+ 3   SKU-0000079 Bolt M6   34     11.92
+ 4   SKU-0000014 Grommet   18     89.06
+ 5   SKU-0000086 Widget    11     91.78
+ 6   SKU-0000027 Sprocket  7      77.71
+ 1001174   20240505C777389   Sophia Johnson                HOLD     1175.34GBP
+  1   SKU-0000061 Nut M6    25      4.22
+ 2   SKU-0000098 Bracket   47      1.91
+ 3   SKU-0000096 Bearing   13     75.39
+ 1001175   20240327C268748   Lily Davies                   DONE    11499.96GBP
+  1   SKU-0000002 Bracket   47     47.70
+ 2   SKU-0000012 Pin 3mm   25     58.14
+ 3   SKU-0000088 Sprocket  44     75.56
+ 4   SKU-0000033 Bracket   40     50.96
+ 5   SKU-0000009 Gasket    36     67.82
+ 1001176   20240816C967313   Mia Williams                  OPEN     7193.42GBP
+  1   SKU-0000049 Widget    10     39.41
+ 2   SKU-0000061 Bracket   49     79.21
+ 3   SKU-0000058 Bearing   31     91.18
+ 4   SKU-0000076 Nut M6    31      2.95
+ 1001177   20240410C255728   Sophia Taylor                 BACKOD   1605.10GBP
+  1   SKU-0000079 Nut M6    22     65.55
+ 2   SKU-0000026 Sprocket  25      6.52
+ 1001179   20241014C149588   Jack Hughes                   DONE     5872.56GBP
+  1   SKU-0000042 Sprocket  48     98.78
+ 2   SKU-0000052 Sprocket  18     62.84
+ 1001180   20241212C335614   Lily Davies                   CANCL    4778.38GBP
+  1   SKU-0000046 Widget    23     23.79
+ 2   SKU-0000093 Grommet   4      96.23
+ 3   SKU-0000034 Bearing   12     14.51
+ 4   SKU-0000098 Bearing   23     91.97
+ 5   SKU-0000052 Nut M6    17     91.58
+ 1001185   20240228C262635   Harry Wright                  BACKOD   1101.44GBP
+  1   SKU-0000008 Bracket   32     34.42
+ 1001189   20241120C758175   Noah Walker                   SHIP     3670.53GBP
+  1   SKU-0000024 Gasket    44     56.74
+ 2   SKU-0000002 Washer    31     37.87
+ 1001190   20240121C411116   Mia Green                     CANCL    5096.96GBP
+  1   SKU-0000046 Washer    30     22.72
+ 2   SKU-0000077 Pin 3mm   21     42.58
+ 3   SKU-0000012 Bearing   33     40.70
+ 4   SKU-0000092 Widget    20     69.71
+ 5   SKU-0000020 Gasket    11     47.16
+ 6   SKU-0000024 Grommet   8      33.14
+ 1001191   20241014C170411   Ivy Hughes                    OPEN     2382.84GBP
+  1   SKU-0000007 Pin 3mm   13     88.32
+ 2   SKU-0000021 Gasket    32     18.38
+ 3   SKU-0000075 Washer    14     46.18
+ 1001194   20240923C897035   Muhammad Wilson               SHIP     3300.35GBP
+  1   SKU-0000086 Widget    22     53.17
+ 2   SKU-0000062 Bearing   17     87.70
+ 3   SKU-0000081 Pin 3mm   8       3.88
+ 4   SKU-0000054 Sprocket  9      67.63
+ 1001197   20240219C937609   Ivy Hughes                    CANCL    3814.53GBP
+  1   SKU-0000021 Grommet   43     88.71
+ 1001198   20240220C302361   Lily Davies                   HOLD    10544.77GBP
+  1   SKU-0000033 Bearing   42     51.87
+ 2   SKU-0000085 Nut M6    32     60.28
+ 3   SKU-0000045 Gasket    25     96.45
+ 4   SKU-0000008 Pin 3mm   47     85.66
+ 1001201   20240618C687302   Lily Wilson                   BACKOD   5856.08GBP
+  1   SKU-0000093 Bracket   17     60.86
+ 2   SKU-0000091 Bolt M6   33     89.06
+ 3   SKU-0000012 Widget    30     23.68
+ 4   SKU-0000092 Bracket   23     50.96
+ 1001203   20240419C833979   Jack Hughes                   DONE     4233.24GBP
+  1   SKU-0000017 Widget    35     16.76
+ 2   SKU-0000001 Gasket    15     65.85
+ 3   SKU-0000035 Gasket    23     87.22
+ 4   SKU-0000028 Bearing   47     13.89
+ 1001205   20240810C251427   Mia Hall                      SHIP     7826.53GBP
+  1   SKU-0000064 Sprocket  14     37.08
+ 2   SKU-0000003 Nut M6    50     27.74
+ 3   SKU-0000099 Sprocket  49     86.49
+ 4   SKU-0000040 Grommet   48     35.05
+ 1001210   20240423C740804   Ivy Jones                     SHIP     1487.70GBP
+  1   SKU-0000097 Widget    15     99.18
+ 1001213   20241014C661912   Ivy Jones                     DONE     2203.09GBP
+  1   SKU-0000018 Bearing   13     69.25
+ 2   SKU-0000070 Bracket   21     62.04
+ 1001218   20240625C562823   Ava Evans                     DONE     5349.34GBP
+  1   SKU-0000038 Washer    1      13.39
+ 2   SKU-0000041 Grommet   1      60.13
+ 3   SKU-0000070 Sprocket  15     73.69
+ 4   SKU-0000099 Gasket    37     94.46
+ 5   SKU-0000058 Nut M6    9      75.05
+ 1001223   20240307C894606   Jack Walker                   CANCL    5012.54GBP
+  1   SKU-0000064 Bolt M6   16     83.78
+ 2   SKU-0000068 Bearing   49     74.94
+ 1001224   20240426C739508   Mia Hall                      CANCL    4749.86GBP
+  1   SKU-0000043 Grommet   22      9.47
+ 2   SKU-0000031 Bolt M6   33     90.45
+ 3   SKU-0000034 Gasket    2      57.96
+ 4   SKU-0000025 Widget    15     96.05
+ 1001229   20240107C771533   Oscar Walker                  DONE      205.38GBP
+  1   SKU-0000086 Bearing   21      9.78
+ 1001231   20240411C579224   Olivia Wilson                 BACKOD   8230.74GBP
+  1   SKU-0000001 Bolt M6   41      6.37
+ 2   SKU-0000058 Nut M6    11     39.64
+ 3   SKU-0000025 Widget    1      28.23
+ 4   SKU-0000061 Bolt M6   41     14.46
+ 5   SKU-0000076 Sprocket  36     89.37
+ 6   SKU-0000019 Bracket   38     97.24
+ 1001234   20240228C387321   Oscar Walker                  HOLD     1340.62GBP
+  1   SKU-0000008 Pin 3mm   25     24.65
+ 2   SKU-0000057 Bearing   32      8.41
+ 3   SKU-0000039 Bracket   25     18.21
+ 1001238   20241008C677710   Lily Davies                   OPEN     3881.76GBP
+  1   SKU-0000085 Nut M6    27      3.93
+ 2   SKU-0000052 Sprocket  28     67.98
+ 3   SKU-0000036 Gasket    24     73.65
+ 4   SKU-0000078 Gasket    11      9.51
+ 1001240   20240827C971837   Jack Taylor                   DONE     2400.07GBP
+  1   SKU-0000001 Gasket    36      4.57
+ 2   SKU-0000086 Bolt M6   37     57.67
+ 3   SKU-0000024 Washer    24      4.24
+ 1001244   20240221C336588   Arthur Hughes                 DONE     5863.58GBP
+  1   SKU-0000097 Bolt M6   30     24.19
+ 2   SKU-0000009 Gasket    28     17.59
+ 3   SKU-0000014 Bolt M6   49      2.27
+ 4   SKU-0000020 Widget    4      28.93
+ 5   SKU-0000056 Washer    35     84.56
+ 6   SKU-0000028 Sprocket  27     54.03
+ 1001249   20240717C301102   Ivy Jones                     OPEN     8421.16GBP
+  1   SKU-0000032 Bracket   33     78.13
+ 2   SKU-0000045 Bracket   12     24.27
+ 3   SKU-0000006 Sprocket  36     74.57
+ 4   SKU-0000061 Bolt M6   27     81.02
+ 5   SKU-0000028 Washer    48     12.29
+ 6   SKU-0000011 Gasket    11      8.15
+ 1001253   20240320C841860   Harry Wilson                  HOLD     1823.89GBP
+  1   SKU-0000030 Bracket   17     44.84
+ 2   SKU-0000003 Bearing   10     88.17
+ 3   SKU-0000053 Grommet   9      19.99
+ 1001255   20240303C436989   Amelia Brown                  OPEN     9530.53GBP
+  1   SKU-0000018 Widget    43     91.11
+ 2   SKU-0000019 Pin 3mm   28     28.31
+ 3   SKU-0000014 Sprocket  24     91.13
+ 4   SKU-0000068 Bolt M6   15     38.87
+ 5   SKU-0000014 Bolt M6   27     26.17
+ 6   SKU-0000060 Bearing   16     83.96
+ 1001257   20241119C243397   Ivy Jones                     DONE     8337.50GBP
+  1   SKU-0000078 Nut M6    13     38.42
+ 2   SKU-0000010 Widget    24     31.63
+ 3   SKU-0000084 Grommet   17     60.29
+ 4   SKU-0000018 Nut M6    14     49.49
+ 5   SKU-0000038 Widget    37     83.53
+ 6   SKU-0000001 Pin 3mm   42     54.06
+ 1001261   20241005C971774   Alfie Edwards                 BACKOD    912.24GBP
+  1   SKU-0000027 Nut M6    33      9.52
+ 2   SKU-0000022 Bracket   28     21.36
+ 1001264   20240813C726193   Ivy Jones                     SHIP     6342.64GBP
+  1   SKU-0000012 Pin 3mm   43     66.38
+ 2   SKU-0000075 Nut M6    13     48.32
+ 3   SKU-0000013 Washer    45      7.50
+ 4   SKU-0000061 Widget    45     54.64
+ 5   SKU-0000050 Bracket   1      63.84
+ 1001269   20240616C115635   Ivy Jones                     CANCL    8245.56GBP
+  1   SKU-0000077 Nut M6    32     53.72
+ 2   SKU-0000036 Bearing   43     90.95
+ 3   SKU-0000020 Pin 3mm   33      3.07
+ 4   SKU-0000084 Bolt M6   46     54.66
+ 1001270   20241013C670337   Jack Walker                   DONE     6702.94GBP
+  1   SKU-0000042 Washer    36     72.25
+ 2   SKU-0000098 Gasket    25     95.60
+ 3   SKU-0000093 Gasket    23     40.41
+ 4   SKU-0000079 Grommet   28     23.37
+ 5   SKU-0000072 Bracket   11     11.65
+ 1001273   20240311C130958   Jack Walker                   DONE     4276.16GBP
+  1   SKU-0000030 Grommet   46     92.96
+ 1001276   20240110C362147   Ivy Jones                     OPEN     7922.14GBP
+  1   SKU-0000034 Bracket   17     74.66
+ 2   SKU-0000044 Gasket    30     89.93
+ 3   SKU-0000019 Nut M6    14     74.45
+ 4   SKU-0000039 Gasket    46     63.32
+ 1001278   20241128C845988   Harry Wright                  SHIP     4376.24GBP
+  1   SKU-0000009 Bearing   34      9.79
+ 2   SKU-0000011 Sprocket  9      69.56
+ 3   SKU-0000040 Grommet   34     21.26
+ 4   SKU-0000061 Bolt M6   3       2.24
+ 5   SKU-0000071 Bracket   8      75.19
+ 6   SKU-0000004 Bolt M6   33     63.22
+ 1001283   20240703C997675   Lily Green                    CANCL    6871.47GBP
+  1   SKU-0000034 Washer    11     38.79
+ 2   SKU-0000005 Bolt M6   20     90.49
+ 3   SKU-0000077 Bracket   40     80.37
+ 4   SKU-0000098 Gasket    34     41.77
+ 1001285   20241022C831259   Jack Roberts                  DONE      101.95GBP
+  1   SKU-0000025 Washer    5      20.39
+ 1001290   20240213C249478   George Roberts                DONE      884.60GBP
+  1   SKU-0000084 Bracket   4      52.38
+ 2   SKU-0000091 Widget    4      79.53
+ 3   SKU-0000077 Bracket   46      7.76
+ 1001292   20240102C226492   Muhammad Wilson               BACKOD   6233.48GBP
+  1   SKU-0000089 Widget    44     76.72
+ 2   SKU-0000003 Bolt M6   44     64.95
+ 1001294   20240907C967722   Ivy Brown                     CANCL    6594.93GBP
+  1   SKU-0000094 Washer    15     42.89
+ 2   SKU-0000099 Sprocket  27     33.23
+ 3   SKU-0000062 Grommet   5      70.69
+ 4   SKU-0000002 Bearing   48     95.84
+ 5   SKU-0000064 Bearing   26      0.94
+ 6   SKU-0000066 Gasket    16      4.76
+ 1001298   20240127C466139   Ivy Jones                     BACKOD   5112.18GBP
+  1   SKU-0000069 Grommet   21     58.80
+ 2   SKU-0000077 Sprocket  19     70.02
+ 3   SKU-0000058 Grommet   34     41.34
+ 4   SKU-0000063 Washer    32     35.67
+ 1001299   20241204C398390   Ivy Johnson                   DONE     7572.37GBP
+  1   SKU-0000025 Nut M6    26     99.37
+ 2   SKU-0000028 Washer    41     45.49
+ 3   SKU-0000019 Gasket    2      87.76
+ 4   SKU-0000034 Bearing   50     24.27
+ 5   SKU-0000009 Widget    16     12.37
+ 6   SKU-0000053 Gasket    19     80.88
+ 1001304   20240302C281403   Ava Evans                     CANCL    2373.29GBP
+  1   SKU-0000061 Sprocket  24     48.06
+ 2   SKU-0000027 Washer    33     35.43
+ 3   SKU-0000074 Sprocket  2      25.33
+ 1001308   20240716C557265   Rosie Wright                  SHIP     3379.35GBP
+  1   SKU-0000013 Bolt M6   41     30.53
+ 2   SKU-0000019 Pin 3mm   22     96.71
+ 1001312   20240706C838955   Harry Wright                  BACKOD   1212.30GBP
+  1   SKU-0000031 Washer    15     80.82
+ 1001313   20240515C222411   Rosie Wright                  DONE      199.20GBP
+  1   SKU-0000045 Bracket   5      39.84
+ 1001317   20240920C414791   Ava Evans                     BACKOD     61.28GBP
+  1   SKU-0000034 Gasket    4      15.32
+ 1001318   20240622C816043   Jack Green                    OPEN     1653.34GBP
+  1   SKU-0000079 Pin 3mm   4      11.98
+ 2   SKU-0000049 Bearing   27     59.46
+ 1001323   20241118C455095   Amelia Brown                  SHIP     6850.65GBP
+  1   SKU-0000057 Bracket   13     56.45
+ 2   SKU-0000014 Bolt M6   32     37.38
+ 3   SKU-0000059 Sprocket  9      92.18
+ 4   SKU-0000081 Bracket   19     40.98
+ 5   SKU-0000021 Bearing   35     94.64
+ 1001327   20241024C425683   Lily Wilson                   DONE     1425.33GBP
+  1   SKU-0000051 Widget    27     52.79
+ 1001328   20240609C279446   Lily Green                    OPEN      666.71GBP
+  1   SKU-0000002 Bracket   11     60.61
+ 1001330   20240619C762443   Mia Williams                  BACKOD     36.30GBP
+  1   SKU-0000001 Grommet   30      1.21
+ 1001332   20240720C355429   Ivy Hughes                    OPEN     3375.70GBP
+  1   SKU-0000011 Bolt M6   40     67.33
+ 2   SKU-0000097 Bolt M6   7      97.50
+ 1001333   20240226C809604   Ivy Jones                     OPEN     3269.88GBP
+  1   SKU-0000080 Bolt M6   4      20.43
+ 2   SKU-0000034 Bracket   38     28.01
+ 3   SKU-0000061 Sprocket  12     28.63
+ 4   SKU-0000010 Bracket   19     76.94
+ 5   SKU-0000024 Bearing   21     15.16
+ 1001335   20240517C572622   George Roberts                BACKOD   5820.75GBP
+  1   SKU-0000084 Pin 3mm   46     39.10
+ 2   SKU-0000050 Bolt M6   48     69.85
+ 3   SKU-0000092 Nut M6    11     60.85
+ 1001340   20240517C995009   Ava Evans                     OPEN     1674.33GBP
+  1   SKU-0000066 Washer    21     79.73
+ 1001343   20240908C651328   Rosie Hughes                  DONE     4302.95GBP
+  1   SKU-0000000 Grommet   49     30.46
+ 2   SKU-0000035 Sprocket  14      2.81
+ 3   SKU-0000015 Nut M6    39     45.11
+ 4   SKU-0000098 Sprocket  14     72.27
+ 1001347   20240507C611798   Rosie Hughes                  HOLD     6393.94GBP
+  1   SKU-0000009 Washer    24     49.28
+ 2   SKU-0000091 Gasket    28     55.94
+ 3   SKU-0000036 Nut M6    26     36.95
+ 4   SKU-0000041 Bearing   30     66.98
+ 5   SKU-0000074 Bearing   10     67.48
+ 1001351   20240304C416194   Lily Davies                   DONE     2943.02GBP
+  1   SKU-0000073 Widget    13     55.72
+ 2   SKU-0000088 Pin 3mm   4      77.55
+ 3   SKU-0000035 Bearing   24      0.92
+ 4   SKU-0000072 Gasket    43     14.58
+ 5   SKU-0000022 Bracket   28     44.98
+ 1001356   20240301C741684   Oscar Thompson                HOLD     4181.51GBP
+  1   SKU-0000083 Bracket   30      2.83
+ 2   SKU-0000038 Grommet   6      85.92
+ 3   SKU-0000055 Bearing   33     89.05
+ 4   SKU-0000095 Bracket   45      8.18
+ 5   SKU-0000017 Bracket   43      6.38
+ 1001357   20241202C616980   Ivy Jones                     BACKOD  11676.18GBP
+  1   SKU-0000045 Washer    28     47.61
+ 2   SKU-0000021 Grommet   46     92.23
+ 3   SKU-0000021 Nut M6    32     93.14
+ 4   SKU-0000074 Pin 3mm   7      43.68
+ 5   SKU-0000090 Nut M6    46     61.18
+ 1001360   20240710C688281   Ivy Johnson                   SHIP     3335.66GBP
+  1   SKU-0000062 Sprocket  3      17.34
+ 2   SKU-0000030 Widget    5      68.20
+ 3   SKU-0000058 Bracket   41     68.85
+ 4   SKU-0000012 Widget    33      3.63
+ 1001365   20241201C879096   Ivy Hughes                    SHIP      616.32GBP
+  1   SKU-0000015 Gasket    24     25.68
+ 1001369   20240614C817493   Jack Walker                   SHIP      759.86GBP
+  1   SKU-0000083 Widget    47     15.52
+ 2   SKU-0000011 Washer    26      1.17
+ 1001370   20240917C315388   Ivy Jones                     DONE     3703.58GBP
+  1   SKU-0000060 Sprocket  26     85.76
+ 2   SKU-0000059 Bolt M6   12     63.61
+ 3   SKU-0000070 Nut M6    10     71.05
+ 1001372   20240912C368476   Lily Wilson                   DONE     6197.25GBP
+  1   SKU-0000070 Bearing   31      7.35
+ 2   SKU-0000019 Pin 3mm   38     16.90
+ 3   SKU-0000036 Sprocket  5      28.97
+ 4   SKU-0000035 Bracket   37     54.88
+ 5   SKU-0000031 Gasket    31     69.59
+ 6   SKU-0000097 Sprocket  10     99.45
+ 1001373   20241003C835993   Isla Edwards                  BACKOD   2448.96GBP
+  1   SKU-0000075 Nut M6    18     91.65
+ 2   SKU-0000076 Pin 3mm   6      11.32
+ 3   SKU-0000070 Widget    17     43.02
+ 1001375   20240425C464252   Olivia Edwards                OPEN     2915.97GBP
+  1   SKU-0000095 Washer    34     14.35
+ 2   SKU-0000062 Grommet   28     39.94
+ 3   SKU-0000099 Widget    31     42.25
+ 1001379   20240605C945550   Jack Hughes                   CANCL    2344.97GBP
+  1   SKU-0000047 Widget    41     27.23
+ 2   SKU-0000034 Bearing   19     64.66
+ 1001381   20240410C623948   Jack Walker                   HOLD     4219.49GBP
+  1   SKU-0000095 Widget    36     32.08
+ 2   SKU-0000002 Bracket   43     71.27
+ 1001385   20240803C578050   Muhammad Wilson               DONE     4314.77GBP
+  1   SKU-0000025 Grommet   6      33.63
+ 2   SKU-0000018 Bolt M6   11     42.72
+ 3   SKU-0000001 Grommet   43      5.27
+ 4   SKU-0000047 Sprocket  29     42.66
+ 5   SKU-0000092 Washer    44     49.53
+ 1001390   20240913C687979   Jack Hughes                   BACKOD    989.52GBP
+  1   SKU-0000015 Gasket    28     35.34
+ 1001392   20241211C233574   Olivia Wilson                 OPEN      174.30GBP
+  1   SKU-0000049 Washer    2      87.15
+ 1001395   20241227C248100   Rosie Wright                  SHIP      352.16GBP
+  1   SKU-0000038 Pin 3mm   16     22.01
+ 1001400   20240412C731074   Amelia Brown                  CANCL    5354.31GBP
+  1   SKU-0000059 Widget    43     53.59
+ 2   SKU-0000060 Pin 3mm   26     13.49
+ 3   SKU-0000010 Bracket   15     32.50
+ 4   SKU-0000071 Widget    22     60.67
+ 5   SKU-0000078 Gasket    9      97.44
+ 1001401   20240812C280877   Oscar Walker                  DONE     3261.66GBP
+  1   SKU-0000037 Bearing   1      79.80
+ 2   SKU-0000037 Washer    38     23.37
+ 3   SKU-0000006 Washer    44      5.49
+ 4   SKU-0000006 Bolt M6   50      1.70
+ 5   SKU-0000055 Nut M6    22     89.42
+ 1001406   20240510C400388   Ivy Johnson                   OPEN     7357.22GBP
+  1   SKU-0000022 Widget    13     87.42
+ 2   SKU-0000071 Grommet   30     10.76
+ 3   SKU-0000001 Bolt M6   32     29.41
+ 4   SKU-0000038 Grommet   19     63.44
+ 5   SKU-0000006 Nut M6    50     49.82
+ 6   SKU-0000018 Bolt M6   39     32.32
+ 1001409   20240611C790806   Amelia Brown                  BACKOD   2761.96GBP
+  1   SKU-0000017 Sprocket  5      54.93
+ 2   SKU-0000049 Bearing   4      39.62
+ 3   SKU-0000078 Sprocket  11     65.81
+ 4   SKU-0000087 Widget    40     10.39
+ 5   SKU-0000072 Washer    17     69.96
+ 1001413   20240922C779852   Oscar Davies                  BACKOD    377.84GBP
+  1   SKU-0000029 Pin 3mm   2      47.45
+ 2   SKU-0000008 Bracket   47      6.02
+ 1001417   20240903C554531   Jack Green                    HOLD     3122.59GBP
+  1   SKU-0000018 Widget    40     66.53
+ 2   SKU-0000052 Bracket   43     10.73
+ 1001422   20241004C983608   Mia Hall                      OPEN     3515.95GBP
+  1   SKU-0000064 Washer    40     67.32
+ 2   SKU-0000054 Bearing   23     19.58
+ 3   SKU-0000079 Bearing   24      3.10
+ 4   SKU-0000099 Pin 3mm   21     14.21
+ 1001423   20240824C512753   Ava Evans                     CANCL    3408.99GBP
+  1   SKU-0000011 Washer    29     43.83
+ 2   SKU-0000028 Grommet   48     44.54
+ 1001428   20241122C293165   Isla Edwards                  BACKOD   3848.63GBP
+  1   SKU-0000053 Widget    12     72.78
+ 2   SKU-0000057 Bolt M6   32     36.11
+ 3   SKU-0000042 Grommet   25     72.79
+ 1001431   20240103C991800   Noah Walker                   HOLD     3155.26GBP
+  1   SKU-0000093 Bolt M6   10      8.59
+ 2   SKU-0000077 Widget    49     62.64
+ 1001434   20240121C633730   Isabella Smith                CANCL     102.24GBP
+  1   SKU-0000067 Bolt M6   8      12.78
+ 1001438   20241212C544656   Ivy Brown                     OPEN     3633.24GBP
+  1   SKU-0000067 Bearing   20     35.33
+ 2   SKU-0000051 Gasket    23     78.93
+ 3   SKU-0000050 Nut M6    25     44.45
+ 1001439   20241014C401789   Oscar Davies                  BACKOD   2602.40GBP
+  1   SKU-0000077 Pin 3mm   40     65.06
+ 1001444   20240605C994112   Jack Hughes                   DONE     1082.24GBP
+  1   SKU-0000031 Nut M6    32     33.82
+ 1001445   20240106C612999   Jack Taylor                   BACKOD   3041.22GBP
+  1   SKU-0000028 Bolt M6   42     72.41
+ 1001449   20241128C713529   Sophia Taylor                 SHIP     8787.73GBP
+  1   SKU-0000030 Grommet   40     92.18
+ 2   SKU-0000097 Gasket    20     56.48
+ 3   SKU-0000054 Sprocket  15     18.90
+ 4   SKU-0000009 Nut M6    48     68.56
+ 5   SKU-0000061 Grommet   35     11.33
+ 1001450   20240808C650113   Lily Smith                    BACKOD    961.48GBP
+  1   SKU-0000040 Bearing   26     36.98
+ 1001453   20240206C924643   Harry Wright                  SHIP     8087.08GBP
+  1   SKU-0000049 Bearing   33     87.57
+ 2   SKU-0000049 Sprocket  29     54.39
+ 3   SKU-0000007 Widget    7      99.04
+ 4   SKU-0000098 Sprocket  39     68.25
+ 5   SKU-0000024 Gasket    3      88.31
+ 1001454   20241217C412402   Ava Williams                  CANCL    3252.16GBP
+  1   SKU-0000013 Gasket    36     56.44
+ 2   SKU-0000069 Pin 3mm   30      5.24
+ 3   SKU-0000035 Bracket   21      7.98
+ 4   SKU-0000002 Washer    42     12.05
+ 5   SKU-0000094 Widget    16     24.34
+ 1001457   20240118C596002   Noah Walker                   CANCL    4038.82GBP
+  1   SKU-0000066 Sprocket  8      93.02
+ 2   SKU-0000058 Grommet   43     76.62
+ 1001459   20240614C224689   Oscar Thompson                OPEN     4151.59GBP
+  1   SKU-0000098 Washer    14     39.04
+ 2   SKU-0000049 Gasket    9      17.46
+ 3   SKU-0000059 Widget    12     30.14
+ 4   SKU-0000040 Pin 3mm   13     96.63
+ 5   SKU-0000096 Widget    16     75.85
+ 6   SKU-0000094 Bolt M6   37     16.66
+ 1001464   20241124C195274   Ivy Jones                     DONE     8529.87GBP
+  1   SKU-0000075 Bolt M6   31     38.75
+ 2   SKU-0000092 Nut M6    40     65.86
+ 3   SKU-0000097 Nut M6    23     51.38
+ 4   SKU-0000017 Grommet   37     63.77
+ 5   SKU-0000082 Gasket    23     50.13
+ 1001466   20241117C691162   Ivy Jones                     BACKOD   1821.04GBP
+  1   SKU-0000082 Pin 3mm   4      91.46
+ 2   SKU-0000043 Widget    46     27.98
+ 3   SKU-0000028 Nut M6    45      1.21
+ 4   SKU-0000049 Sprocket  27      4.21
+ 1001471   20240527C204957   Ivy Brown                     OPEN     4711.17GBP
+  1   SKU-0000093 Sprocket  9      39.74
+ 2   SKU-0000016 Bolt M6   35     87.95
+ 3   SKU-0000095 Pin 3mm   5       9.10
+ 4   SKU-0000002 Gasket    18     68.32
+ 1001476   20240210C867892   Jack Green                    OPEN     7124.05GBP
+  1   SKU-0000050 Grommet   16     60.12
+ 2   SKU-0000029 Sprocket  14     67.50
+ 3   SKU-0000057 Widget    13     19.34
+ 4   SKU-0000044 Sprocket  28     63.07
+ 5   SKU-0000003 Bracket   37     78.67
+ 6   SKU-0000055 Bearing   14     20.64
+ 1001479   20240425C133362   Mia Hall                      DONE     6596.17GBP
+  1   SKU-0000027 Washer    32      9.38
+ 2   SKU-0000037 Sprocket  49     54.56
+ 3   SKU-0000044 Grommet   7      43.81
+ 4   SKU-0000044 Sprocket  12     67.18
+ 5   SKU-0000006 Widget    34     70.01
+ 6   SKU-0000028 Pin 3mm   2      64.70
+ 1001482   20240123C285948   Sophia Johnson                DONE     4061.19GBP
+  1   SKU-0000048 Nut M6    37     88.11
+ 2   SKU-0000035 Bearing   24     33.38
+ 1001483   20240319C939653   Arthur Hughes                 CANCL    1951.45GBP
+  1   SKU-0000051 Bracket   13     61.25
+ 2   SKU-0000086 Gasket    33     20.35
+ 3   SKU-0000052 Grommet   16     19.43
+ 4   SKU-0000093 Washer    39      4.43
+ 1001484   20240904C104830   Rosie Wright                  DONE     3969.71GBP
+  1   SKU-0000018 Widget    21     44.63
+ 2   SKU-0000044 Gasket    48      5.07
+ 3   SKU-0000087 Pin 3mm   16     78.10
+ 4   SKU-0000042 Gasket    41     37.33
+ 5   SKU-0000018 Widget    1       8.99
+ 1001488   20241115C620977   Oscar Davies                  SHIP     2257.74GBP
+  1   SKU-0000068 Nut M6    42     16.38
+ 2   SKU-0000011 Bracket   19     82.62
+ 1001492   20240825C587268   Oscar Thompson                HOLD     6070.83GBP
+  1   SKU-0000005 Sprocket  32     95.34
+ 2   SKU-0000016 Widget    9      43.90
+ 3   SKU-0000038 Bearing   45     58.33
+ 1001496   20240705C364332   Ivy Brown                     SHIP     1603.69GBP
+  1   SKU-0000099 Widget    13     18.43
+ 2   SKU-0000056 Washer    30     45.47
+ 1001501   20241121C150924   Olivia Edwards                DONE     2956.55GBP
+  1   SKU-0000020 Sprocket  7      37.77
+ 2   SKU-0000043 Washer    32     84.13
+ 1001504   20241023C423423   Ivy Hughes                    DONE     4797.71GBP
+  1   SKU-0000094 Bearing   1       1.71
+ 2   SKU-0000089 Widget    50     38.59
+ 3   SKU-0000089 Grommet   39     73.50
+ 1001509   20240508C890618   Lily Green                    DONE     7702.85GBP
+  1   SKU-0000028 Gasket    38     25.18
+ 2   SKU-0000051 Pin 3mm   28     71.32
+ 3   SKU-0000004 Bearing   15     23.44
+ 4   SKU-0000034 Pin 3mm   16     80.64
+ 5   SKU-0000033 Grommet   43     34.58
+ 6   SKU-0000086 Bracket   17     95.31
+ 1001510   20240901C111737   Jack Walker                   BACKOD   5995.81GBP
+  1   SKU-0000046 Bearing   2      15.79
+ 2   SKU-0000057 Gasket    19     98.46
+ 3   SKU-0000000 Bearing   19     63.54
+ 4   SKU-0000087 Widget    12     36.49
+ 5   SKU-0000098 Bracket   25     33.39
+ 6   SKU-0000020 Washer    20     80.68
+ 1001515   20241023C745929   Harry Wilson                  OPEN    13436.89GBP
+  1   SKU-0000076 Nut M6    44     85.28
+ 2   SKU-0000082 Bracket   44     82.93
+ 3   SKU-0000002 Sprocket  24     50.75
+ 4   SKU-0000054 Pin 3mm   48     80.95
+ 5   SKU-0000083 Bearing   35     26.63
+ 1001518   20240505C507721   Noah Walker                   OPEN     2990.01GBP
+  1   SKU-0000013 Bearing   45     52.95
+ 2   SKU-0000073 Bracket   12     37.84
+ 3   SKU-0000032 Washer    46      3.33
+ 1001519   20240310C859476   Oscar Davies                  CANCL    5448.70GBP
+  1   SKU-0000076 Bracket   45     71.75
+ 2   SKU-0000006 Pin 3mm   29     76.55
+ 1001523   20240822C954058   Rosie Hughes                  DONE     4188.73GBP
+  1   SKU-0000027 Widget    6      71.51
+ 2   SKU-0000064 Nut M6    35     29.65
+ 3   SKU-0000045 Nut M6    32     85.06
+ 1001526   20240712C933506   Oscar Walker                  OPEN     5829.82GBP
+  1   SKU-0000054 Widget    16     74.08
+ 2   SKU-0000061 Bracket   47     98.82
+ 1001527   20240719C496105   Ava Evans                     SHIP     4064.95GBP
+  1   SKU-0000006 Bracket   22     74.60
+ 2   SKU-0000087 Washer    7      54.23
+ 3   SKU-0000080 Bracket   36      7.52
+ 4   SKU-0000042 Bearing   9      15.30
+ 5   SKU-0000098 Sprocket  33     42.52
+ 6   SKU-0000056 Bolt M6   6      38.76
+ 1001531   20240926C309720   Mia Williams                  SHIP     8342.02GBP
+  1   SKU-0000032 Grommet   32     89.24
+ 2   SKU-0000056 Widget    21     69.32
+ 3   SKU-0000066 Nut M6    36     47.87
+ 4   SKU-0000018 Nut M6    8      54.00
+ 5   SKU-0000052 Gasket    19     98.70
+ 1001534   20240405C966900   Ivy Jones                     CANCL    1431.17GBP
+  1   SKU-0000086 Sprocket  3      42.04
+ 2   SKU-0000075 Widget    2      54.97
+ 3   SKU-0000023 Washer    21     56.91
+ 1001537   20240803C909830   Ava Evans                     BACKOD   6522.66GBP
+  1   SKU-0000037 Washer    43     10.95
+ 2   SKU-0000009 Nut M6    28     70.51
+ 3   SKU-0000086 Grommet   32     18.61
+ 4   SKU-0000023 Nut M6    42     80.21
+ 5   SKU-0000052 Nut M6    7      16.17
+ 1001540   20240718C138334   Mia Hall                      BACKOD   4913.02GBP
+  1   SKU-0000023 Bolt M6   35     67.20
+ 2   SKU-0000071 Bracket   8      14.07
+ 3   SKU-0000081 Bearing   21     20.42
+ 4   SKU-0000097 Bolt M6   28     72.13
+ 1001544   20240619C103670   Lily Green                    CANCL    4177.47GBP
+  1   SKU-0000003 Bolt M6   41     71.07
+ 2   SKU-0000094 Bolt M6   14     22.78
+ 3   SKU-0000011 Widget    38     24.86
+ 1001546   20240112C471626   Lily Green                    OPEN     9885.57GBP
+  1   SKU-0000056 Widget    45     65.23
+ 2   SKU-0000091 Nut M6    9      77.71
+ 3   SKU-0000094 Gasket    41     64.93
+ 4   SKU-0000041 Bracket   3      94.90
+ 5   SKU-0000002 Bracket   40     82.60
+ 1001549   20240425C832654   George Roberts                CANCL    3120.66GBP
+  1   SKU-0000092 Gasket    24     79.04
+ 2   SKU-0000017 Grommet   15     81.58
+ 1001550   20240826C509432   Ava Williams                  CANCL    1257.82GBP
+  1   SKU-0000049 Bolt M6   14     71.70
+ 2   SKU-0000051 Pin 3mm   26      9.77
+ 1001554   20240427C137287   Olivia Edwards                CANCL    3253.58GBP
+  1   SKU-0000030 Pin 3mm   46     70.73
+ 1001559   20240321C436146   Harry Wilson                  OPEN    10565.27GBP
+  1   SKU-0000015 Sprocket  16     20.53
+ 2   SKU-0000020 Bracket   45     78.79
+ 3   SKU-0000065 Gasket    23     83.39
+ 4   SKU-0000084 Pin 3mm   37     97.86
+ 5   SKU-0000045 Washer    45     25.61
+ 1001562   20240413C155052   Muhammad Wilson               OPEN     4348.08GBP
+  1   SKU-0000086 Sprocket  3      22.83
+ 2   SKU-0000066 Sprocket  1      48.92
+ 3   SKU-0000014 Widget    4      52.94
+ 4   SKU-0000022 Bearing   18     86.15
+ 5   SKU-0000019 Widget    47      1.07
+ 6   SKU-0000088 Sprocket  32     75.56
+ 1001565   20241019C122009   Alfie Edwards                 DONE     8427.48GBP
+  1   SKU-0000096 Bearing   40     24.58
+ 2   SKU-0000036 Nut M6    32     84.48
+ 3   SKU-0000059 Pin 3mm   10     63.98
+ 4   SKU-0000041 Gasket    33     92.20
+ 5   SKU-0000043 Widget    12     88.21
+ 1001570   20240421C429735   Ivy Brown                     CANCL    2271.06GBP
+  1   SKU-0000069 Bolt M6   28     28.41
+ 2   SKU-0000024 Nut M6    39     33.30
+ 3   SKU-0000026 Washer    24      7.37
+ 1001574   20240308C522640   Olivia Wilson                 DONE     2236.88GBP
+  1   SKU-0000073 Pin 3mm   2      72.05
+ 2   SKU-0000079 Widget    31      4.43
+ 3   SKU-0000014 Nut M6    47      9.02
+ 4   SKU-0000029 Nut M6    21      6.81
+ 5   SKU-0000029 Washer    50     27.77
+ 1001579   20240705C463632   Isabella Smith                HOLD     4217.11GBP
+  1   SKU-0000055 Bracket   19     20.58
+ 2   SKU-0000061 Bearing   10     23.62
+ 3   SKU-0000097 Pin 3mm   34     87.15
+ 4   SKU-0000005 Washer    17     36.87
+ 1001580   20241209C116256   Ava Williams                  HOLD      549.98GBP
+  1   SKU-0000055 Bolt M6   23     15.22
+ 2   SKU-0000003 Bolt M6   2      99.96
+ 1001583   20240904C119669   Ivy Brown                     OPEN      382.59GBP
+  1   SKU-0000057 Sprocket  27     14.17
+ 1001585   20240821C499232   Olivia Wilson                 OPEN     6770.03GBP
+  1   SKU-0000055 Washer    19     83.14
+ 2   SKU-0000012 Washer    44     67.65
+ 3   SKU-0000075 Bearing   29     75.09
+ 4   SKU-0000049 Gasket    4       9.04
+ 1001588   20240703C338893   Ivy Hughes                    OPEN     2217.22GBP
+  1   SKU-0000096 Bolt M6   28     77.20
+ 2   SKU-0000066 Gasket    1      55.62
+ 1001590   20240902C127159   Isla Edwards                  BACKOD   5872.88GBP
+  1   SKU-0000049 Nut M6    28     62.76
+ 2   SKU-0000090 Nut M6    40     65.94
+ 3   SKU-0000031 Pin 3mm   14     34.88
+ 4   SKU-0000046 Washer    6      92.80
+ 5   SKU-0000048 Bolt M6   8      54.11
+ 1001595   20240302C425947   Ava Evans                     SHIP     8166.16GBP
+  1   SKU-0000000 Bearing   39     42.34
+ 2   SKU-0000001 Bolt M6   49     44.44
+ 3   SKU-0000007 Bracket   46     94.29
+ 1001597   20241203C236605   Lily Davies                   HOLD     2626.90GBP
+  1   SKU-0000075 Pin 3mm   23     74.66
+ 2   SKU-0000041 Bearing   10     30.51
+ 3   SKU-0000013 Bearing   14      1.47
+ 4   SKU-0000012 Bearing   6      97.34
+ 1001601   20240514C899853   Harry Wright                  HOLD    10095.02GBP
+  1   SKU-0000036 Sprocket  40     91.37
+ 2   SKU-0000087 Bracket   38     24.60
+ 3   SKU-0000052 Widget    42     34.56
+ 4   SKU-0000051 Bolt M6   24     89.29
+ 5   SKU-0000093 Gasket    20     85.53
+ 6   SKU-0000081 Widget    6      33.39
+ 1001603   20240712C815394   Arthur Hughes                 OPEN     5306.29GBP
+  1   SKU-0000006 Bearing   45      9.42
+ 2   SKU-0000073 Grommet   15     72.53
+ 3   SKU-0000055 Grommet   26     62.99
+ 4   SKU-0000095 Widget    26     82.95
+ 1001606   20240225C552826   Oscar Davies                  CANCL    2275.73GBP
+  1   SKU-0000002 Sprocket  13     10.28
+ 2   SKU-0000064 Sprocket  9      58.15
+ 3   SKU-0000003 Bearing   34     47.61
+ 1001609   20240806C103933   Jack Roberts                  HOLD     7887.41GBP
+  1   SKU-0000047 Sprocket  23     59.56
+ 2   SKU-0000025 Pin 3mm   31     63.04
+ 3   SKU-0000060 Bolt M6   23     54.75
+ 4   SKU-0000089 Bracket   31     43.99
+ 5   SKU-0000040 Nut M6    37     50.34
+ 6   SKU-0000068 Grommet   1      77.77
+ 1001612   20240905C679341   Sophia Taylor                 HOLD     2016.75GBP
+  1   SKU-0000063 Pin 3mm   41     20.76
+ 2   SKU-0000095 Washer    19     55.05
+ 3   SKU-0000055 Gasket    3      39.88
+ 1001617   20241011C431372   Noah Walker                   SHIP     8271.08GBP
+  1   SKU-0000084 Widget    42     20.63
+ 2   SKU-0000098 Bearing   25     97.10
+ 3   SKU-0000018 Sprocket  42     25.78
+ 4   SKU-0000026 Grommet   46     84.66
+ 1001621   20240917C701273   Jack Hughes                   DONE     1075.00GBP
+  1   SKU-0000057 Washer    50     21.50
+ 1001625   20240824C515992   Rosie Wright                  DONE      112.53GBP
+  1   SKU-0000014 Sprocket  33      3.41
+ 1001628   20240104C815838   Jack Hughes                   OPEN      163.32GBP
+  1   SKU-0000090 Bracket   6      27.22
+ 1001630   20240523C743039   Jack Roberts                  BACKOD   4093.40GBP
+  1   SKU-0000031 Widget    10     86.11
+ 2   SKU-0000018 Grommet   18     52.29
+ 3   SKU-0000013 Sprocket  18     47.30
+ 4   SKU-0000031 Bearing   13     27.84
+ 5   SKU-0000030 Bolt M6   16     67.36
+ 1001634   20240728C759984   Isla Edwards                  OPEN      571.48GBP
+  1   SKU-0000005 Bearing   13     43.96
+ 1001635   20240807C398057   Harry Wilson                  SHIP     1914.78GBP
+  1   SKU-0000092 Grommet   46      3.99
+ 2   SKU-0000042 Nut M6    42     41.22
+ 1001638   20241027C526836   Mia Williams                  CANCL     131.43GBP
+  1   SKU-0000025 Washer    39      3.37
+ 1001643   20240304C296492   George Roberts                HOLD     4287.79GBP
+  1   SKU-0000058 Bearing   24     70.32
+ 2   SKU-0000065 Sprocket  35     15.26
+ 3   SKU-0000060 Bracket   13     28.73
+ 4   SKU-0000043 Sprocket  17     99.56
+ 1001648   20240510C249882   Oscar Walker                  OPEN     6244.46GBP
+  1   SKU-0000064 Gasket    12     52.36
+ 2   SKU-0000028 Bracket   17     80.40
+ 3   SKU-0000098 Grommet   46     47.98
+ 4   SKU-0000098 Gasket    24     51.93
+ 5   SKU-0000013 Pin 3mm   34     23.41
+ 1001652   20240216C625572   Ivy Jones                     OPEN     3616.52GBP
+  1   SKU-0000066 Nut M6    24     10.87
+ 2   SKU-0000027 Washer    25     13.28
+ 3   SKU-0000028 Bolt M6   37     81.72
+ 1001656   20240826C266536   Ivy Johnson                   BACKOD   6138.14GBP
+  1   SKU-0000035 Bolt M6   50     53.29
+ 2   SKU-0000051 Widget    34     79.22
+ 3   SKU-0000023 Sprocket  23     33.92
+ 1001658   20240310C224198   Lily Davies                   OPEN      669.60GBP
+  1   SKU-0000094 Gasket    18     37.20
+ 1001661   20240405C471657   Lily Green                    CANCL    6372.56GBP
+  1   SKU-0000067 Bearing   27     10.54
+ 2   SKU-0000074 Bracket   19     67.54
+ 3   SKU-0000038 Widget    22     65.78
+ 4   SKU-0000011 Pin 3mm   45     43.13
+ 5   SKU-0000086 Bearing   31     28.81
+ 6   SKU-0000081 Pin 3mm   34     15.40
+ 1001664   20240427C380250   Ivy Jones                     HOLD     6942.28GBP
+  1   SKU-0000012 Grommet   17     64.80
+ 2   SKU-0000046 Bearing   26     52.64
+ 3   SKU-0000027 Bracket   35     26.16
+ 4   SKU-0000072 Bearing   38     67.88
+ 5   SKU-0000004 Widget    23      3.28
+ 6   SKU-0000083 Washer    44     20.49
+ 1001669   20240915C657440   Isabella Smith                SHIP     3542.38GBP
+  1   SKU-0000013 Sprocket  31     85.28
+ 2   SKU-0000050 Washer    10      1.16
+ 3   SKU-0000040 Bearing   10     88.71
+ 1001670   20240820C342803   Olivia Edwards                OPEN      258.72GBP
+  1   SKU-0000045 Bolt M6   8      32.34
+ 1001673   20241102C269997   Lily Green                    OPEN     2152.19GBP
+  1   SKU-0000092 Gasket    31     29.09
+ 2   SKU-0000017 Bearing   16     78.15
+ 1001678   20240813C575073   Arthur Hughes                 OPEN     3223.27GBP
+  1   SKU-0000073 Nut M6    17     93.03
+ 2   SKU-0000094 Grommet   31     52.96
+ 1001679   20240822C557802   Oscar Davies                  SHIP     2298.01GBP
+  1   SKU-0000042 Bolt M6   26     19.24
+ 2   SKU-0000093 Bolt M6   33     31.89
+ 3   SKU-0000089 Bolt M6   4      84.09
+ 4   SKU-0000039 Grommet   2      31.76
+ 5   SKU-0000009 Sprocket  8      43.19
+ 1001683   20241216C218044   Mia Williams                  CANCL    3542.79GBP
+  1   SKU-0000005 Sprocket  7      45.18
+ 2   SKU-0000044 Gasket    9      22.71
+ 3   SKU-0000054 Bracket   28     96.86
+ 4   SKU-0000064 Bearing   2      41.36
+ 5   SKU-0000025 Bearing   3      75.78
+ 1001687   20241211C552769   Lily Davies                   CANCL    5833.14GBP
+  1   SKU-0000021 Nut M6    47     97.14
+ 2   SKU-0000084 Sprocket  18     70.42
+ 1001691   20241105C372804   Ava Williams                  SHIP     4976.78GBP
+  1   SKU-0000080 Sprocket  3      39.61
+ 2   SKU-0000069 Bearing   25     64.12
+ 3   SKU-0000041 Nut M6    35     86.78
+ 4   SKU-0000085 Bracket   3      72.55
+ 1001693   20240420C862855   Mia Green                     OPEN     4049.53GBP
+  1   SKU-0000045 Pin 3mm   30     15.86
+ 2   SKU-0000092 Widget    43     83.11
+ 1001696   20241204C291514   George Roberts                HOLD     9512.74GBP
+  1   SKU-0000053 Nut M6    50     31.21
+ 2   SKU-0000075 Pin 3mm   20     70.17
+ 3   SKU-0000060 Bearing   30     66.62
+ 4   SKU-0000053 Widget    4      26.95
+ 5   SKU-0000018 Nut M6    47     94.52
+ 1001697   20241013C803082   Olivia Wilson                 BACKOD   3368.92GBP
+  1   SKU-0000014 Nut M6    50     18.13
+ 2   SKU-0000095 Sprocket  9      74.92
+ 3   SKU-0000032 Washer    4      27.66
+ 4   SKU-0000002 Bearing   22      0.71
+ 5   SKU-0000053 Grommet   44     37.77
+ 1001700   20240327C928613   Ivy Hughes                    HOLD     9379.15GBP
+  1   SKU-0000050 Gasket    19     46.15
+ 2   SKU-0000013 Gasket    37     54.20
+ 3   SKU-0000042 Bolt M6   40     84.01
+ 4   SKU-0000015 Grommet   34     92.25
+ 1001705   20240606C712515   Jack Taylor                   SHIP     1140.38GBP
+  1   SKU-0000030 Washer    38     30.01
+ 1001707   20240508C114190   Lily Wilson                   OPEN     3632.99GBP
+  1   SKU-0000099 Washer    7       4.68
+ 2   SKU-0000008 Bracket   16     24.98
+ 3   SKU-0000054 Bearing   12     13.47
+ 4   SKU-0000013 Grommet   34     50.90
+ 5   SKU-0000015 Bracket   41     31.91
+ 1001711   20241120C963763   Oscar Thompson                SHIP     2835.31GBP
+  1   SKU-0000025 Widget    31     90.11
+ 2   SKU-0000002 Widget    1      41.90
+ 1001716   20240212C762663   Mia Williams                  OPEN     2717.05GBP
+  1   SKU-0000045 Washer    35     77.63
+ 1001717   20240616C568206   Jack Roberts                  CANCL      47.40GBP
+  1   SKU-0000091 Widget    6       7.90
+ 1001722   20241206C349424   Jack Taylor                   DONE     4554.83GBP
+  1   SKU-0000044 Bearing   15      0.70
+ 2   SKU-0000016 Gasket    44     32.62
+ 3   SKU-0000097 Grommet   47     66.15
+ 1001726   20240804C442395   Jack Taylor                   DONE     3412.42GBP
+  1   SKU-0000057 Bracket   17     50.27
+ 2   SKU-0000068 Nut M6    29     24.46
+ 3   SKU-0000040 Grommet   28      0.91
+ 4   SKU-0000089 Gasket    19     42.21
+ 5   SKU-0000021 Bolt M6   21     48.62
+ 1001729   20240514C682864   Olivia Edwards                OPEN     4872.76GBP
+  1   SKU-0000092 Bearing   30     19.98
+ 2   SKU-0000038 Pin 3mm   42     14.97
+ 3   SKU-0000065 Pin 3mm   49     74.38
+ 1001731   20240607C643815   Lily Smith                    DONE     5092.61GBP
+  1   SKU-0000023 Sprocket  17     41.75
+ 2   SKU-0000040 Grommet   15     26.16
+ 3   SKU-0000048 Bolt M6   13     78.27
+ 4   SKU-0000053 Bracket   37     80.35
+ 1001736   20240312C686674   Mia Williams                  CANCL    8910.54GBP
+  1   SKU-0000031 Bracket   50     81.27
+ 2   SKU-0000023 Sprocket  17     46.22
+ 3   SKU-0000042 Nut M6    32     10.00
+ 4   SKU-0000067 Widget    24     88.71
+ 5   SKU-0000060 Widget    42     20.03
+ 6   SKU-0000058 Bolt M6   50     15.42
+ 1001740   20240907C554166   Ivy Jones                     DONE     4072.49GBP
+  1   SKU-0000060 Pin 3mm   29     20.37
+ 2   SKU-0000082 Pin 3mm   47     74.08
+ 1001745   20240607C747139   Oscar Davies                  OPEN     7432.02GBP
+  1   SKU-0000050 Gasket    5      96.71
+ 2   SKU-0000095 Widget    6      61.06
+ 3   SKU-0000024 Sprocket  35     42.26
+ 4   SKU-0000079 Washer    23     61.91
+ 5   SKU-0000041 Sprocket  46     79.98
+ 1001750   20240702C572523   Oscar Davies                  BACKOD     73.26GBP
+  1   SKU-0000094 Washer    11      6.66
+ 1001755   20241017C539062   Amelia Brown                  SHIP     3518.67GBP
+  1   SKU-0000055 Bolt M6   42     82.66
+ 2   SKU-0000096 Gasket    3      15.65
+ 1001758   20240105C603802   Lily Davies                   BACKOD   5848.11GBP
+  1   SKU-0000090 Grommet   12     98.77
+ 2   SKU-0000041 Pin 3mm   47     99.21
+ 1001760   20240606C870857   Sophia Taylor                 DONE     2779.35GBP
+  1   SKU-0000035 Sprocket  20     74.70
+ 2   SKU-0000020 Washer    33     38.95
+ 1001763   20240524C173271   Mia Green                     CANCL    8619.57GBP
+  1   SKU-0000049 Gasket    24     31.26
+ 2   SKU-0000087 Bracket   2      97.11
+ 3   SKU-0000052 Pin 3mm   24     65.31
+ 4   SKU-0000073 Sprocket  39     64.78
+ 5   SKU-0000061 Washer    27     56.91
+ 6   SKU-0000097 Gasket    44     46.47
+ 1001768   20240928C358644   Jack Green                    BACKOD   6453.27GBP
+  1   SKU-0000067 Nut M6    30     64.25
+ 2   SKU-0000051 Sprocket  33     16.11
+ 3   SKU-0000016 Pin 3mm   21     80.99
+ 4   SKU-0000068 Bolt M6   37     23.75
+ 5   SKU-0000002 Nut M6    22     64.30
+ 1001771   20240507C282250   Alfie Edwards                 DONE     4164.24GBP
+  1   SKU-0000077 Gasket    26     43.34
+ 2   SKU-0000083 Grommet   7      28.80
+ 3   SKU-0000071 Bolt M6   45     57.47
+ 4   SKU-0000049 Nut M6    9      20.23
+ 5   SKU-0000097 Bracket   31      2.18
+ 1001774   20240408C491493   Lily Wilson                   DONE     5772.49GBP
+  1   SKU-0000020 Sprocket  16     27.89
+ 2   SKU-0000050 Gasket    10      2.83
+ 3   SKU-0000082 Grommet   1      42.79
+ 4   SKU-0000017 Widget    42     43.42
+ 5   SKU-0000012 Pin 3mm   48     71.49
+ 1001776   20240218C606564   Oscar Davies                  HOLD      696.93GBP
+  1   SKU-0000068 Gasket    13     53.61
+ 1001780   20240710C439345   Ivy Jones                     HOLD     1249.52GBP
+  1   SKU-0000020 Bolt M6   38     26.49
+ 2   SKU-0000072 Grommet   5      48.58
+ 1001785   20241001C355603   Ivy Taylor                    DONE     8611.79GBP
+  1   SKU-0000042 Pin 3mm   37     75.91
+ 2   SKU-0000004 Bearing   1      82.59
+ 3   SKU-0000063 Bolt M6   28     17.02
+ 4   SKU-0000007 Bracket   33     42.73
+ 5   SKU-0000024 Bearing   43     89.16
+ 1001790   20241117C672727   Amelia Brown                  OPEN     4773.39GBP
+  1   SKU-0000042 Sprocket  43     49.90
+ 2   SKU-0000081 Grommet   42     39.47
+ 3   SKU-0000026 Sprocket  19     51.05
+ 1001793   20240917C176371   Harry Wilson                  DONE     2875.37GBP
+  1   SKU-0000080 Pin 3mm   29      8.40
+ 2   SKU-0000051 Bearing   41     31.32
+ 3   SKU-0000083 Bolt M6   7      40.50
+ 4   SKU-0000021 Grommet   17     34.79
+ 5   SKU-0000025 Bearing   8      59.09
+ 1001798   20241023C633035   Sophia Taylor                 OPEN     2164.72GBP
+  1   SKU-0000027 Washer    21      0.91
+ 2   SKU-0000069 Washer    44      5.44
+ 3   SKU-0000081 Washer    9      66.87
+ 4   SKU-0000046 Sprocket  9      68.02
+ 5   SKU-0000052 Grommet   8      86.53
+ 1001801   20240110C445558   Harry Wright                  HOLD      519.31GBP
+  1   SKU-0000050 Washer    11     47.21
+ 1001804   20240122C122427   Arthur Hughes                 OPEN     2466.42GBP
+  1   SKU-0000000 Nut M6    37     61.52
+ 2   SKU-0000006 Sprocket  37      5.14
+ 1001805   20241002C629990   Olivia Wilson                 DONE    10202.59GBP
+  1   SKU-0000072 Bearing   41     38.45
+ 2   SKU-0000019 Gasket    13     83.64
+ 3   SKU-0000046 Grommet   40     78.95
+ 4   SKU-0000088 Grommet   32     83.95
+ 5   SKU-0000002 Washer    19     89.18
+ 1001806   20240610C668677   Lily Green                    BACKOD     33.00GBP
+  1   SKU-0000073 Sprocket  50    

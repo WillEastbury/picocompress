@@ -6,7 +6,7 @@ Machine-readable results: [`benchmark_results.json`](benchmark_results.json)
 Markdown tables: [`benchmark_tables.txt`](benchmark_tables.txt)
 Test methodology: [`TEST_METHODS.md`](TEST_METHODS.md)
 
-All roundtrips are **CRC32-verified** (see [`test_picocompress.c`](test_picocompress.c) and [`test_picocompress_additional.c`](test_picocompress_additional.c)).
+All roundtrips are **CRC32-verified** (see [`src/test_picocompress.c`](../src/test_picocompress.c) and [`src/test_picocompress_additional.c`](../src/test_picocompress_additional.c)).
 
 ## Memory footprint (current defaults)
 

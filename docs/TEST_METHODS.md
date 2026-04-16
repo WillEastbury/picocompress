@@ -13,6 +13,7 @@ Primary smoke and regression test:
 Build/run:
 
 ```powershell
+cd src
 cl /nologo /O2 /W4 /TC picocompress.c test_picocompress.c /Fe:test_picocompress.exe
 .\test_picocompress.exe
 ```
@@ -30,6 +31,7 @@ Edge and robustness coverage:
 Build/run:
 
 ```powershell
+cd src
 cl /nologo /O2 /W4 /TC picocompress.c test_picocompress_additional.c /Fe:test_picocompress_additional.exe
 .\test_picocompress_additional.exe
 ```

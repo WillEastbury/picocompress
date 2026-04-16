@@ -26,6 +26,7 @@ Tiny dependency-free C compression library for embedded targets.
 ## Build and test (MSVC)
 
 ```powershell
+cd src
 cl /nologo /O2 /W4 /TC picocompress.c test_picocompress.c /Fe:test_picocompress.exe
 .\test_picocompress.exe
 
@@ -39,6 +40,7 @@ Both suites verify compress→decompress roundtrips with **CRC32 checksums**.
 
 ```powershell
 python -m pip install brotli heatshrink2
+cd docs
 .\run_benchmarks.ps1 -JsonOut benchmark_results.json
 ```
 
@@ -47,9 +49,18 @@ pattern, utf8+int, random, ASCII, JSON, lorem ipsum, RGB icon, JPEG,
 pretty/minified JSON, UK addresses, order records, sparse, uint32 arrays,
 and scaled sizes from 254 bytes to 1 MB.
 
-See [`TEST_METHODS.md`](TEST_METHODS.md) and [`PERFORMANCE_SUMMARY.md`](PERFORMANCE_SUMMARY.md) for methodology and results.
-Full data: [`benchmark_results.json`](benchmark_results.json) and [`benchmark_tables.txt`](benchmark_tables.txt).
+See [`docs/TEST_METHODS.md`](docs/TEST_METHODS.md) and [`docs/PERFORMANCE_SUMMARY.md`](docs/PERFORMANCE_SUMMARY.md) for methodology and results.
+Full data: [`docs/benchmark_results.json`](docs/benchmark_results.json) and [`docs/benchmark_tables.txt`](docs/benchmark_tables.txt).
+
+## Test fixtures
+
+The [`tests/`](tests/) directory contains all 64 deterministic payload files used by the benchmark harness (254 bytes to 1 MB).
 
 ## Public API
 
-See `picocompress.h` for all constants, result codes, and function signatures.
+See [`src/picocompress.h`](src/picocompress.h) for all constants, result codes, and function signatures.
+
+## Algorithm
+
+See [`docs/ALGORITHM.md`](docs/ALGORITHM.md) for a detailed description of the compression
+pipeline, token format, cross-block history, static dictionary, and performance tricks.
