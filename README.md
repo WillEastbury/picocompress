@@ -2,14 +2,17 @@
 
 Tiny dependency-free C compression library for embedded targets.
 
+Runs on **Arduino**, **ESP32**, **Pico W/2W**, and **Raspberry Pi 3/4/5** — from 2K SRAM to Linux SBCs.
+
 ## Features
 
 - **Streaming** encoder/decoder APIs (`pc_encoder_*`, `pc_decoder_*`)
 - **Buffer-based** convenience APIs (`pc_compress_buffer`, `pc_decompress_buffer`)
-- **Small fixed memory**: ~3.1 KB encode, ~1.2 KB decode (no dynamic allocation)
-- **Cross-block history**: 128-byte sliding window across blocks for improved multi-block ratio
+- **Scalable RAM**: 1.0 KB encode (Micro) → 13.8 KB (Q4) — pick your profile
+- **Cross-block history**: up to 2048-byte sliding window across blocks
 - **64-entry static dictionary**: common JSON, CSV, HTTP, English, and binary patterns (ROM-resident)
-- **Repeat-offset tokens**: 1-byte match for recurring struct strides
+- **Repeat-offset cache**: 3-entry LRU for recurring struct strides (1-byte token)
+- **Hardware acceleration**: NEON (16B/cycle), CRC32 hash, CLZ match — auto-detected via `#ifdef`
 - **Hardware acceleration** via conditional compilation (NEON, MVE, RISC-V V, CRC32, CLZ/CTZ)
 - **Encoder instrumentation** counters (`-DPC_ENABLE_STATS`)
 - **CRC32 roundtrip verification** in all test paths

@@ -3,6 +3,53 @@
 picocompress uses **conditional compilation** to exploit hardware acceleration
 when available, with a portable C fallback that runs everywhere.
 
+## Target platforms
+
+| Board | CPU | Arch | RAM | Profile | HW acceleration |
+|---|---|---|---|---|---|
+| Arduino Uno/Nano | ATmega328P | AVR 8-bit | 2K SRAM | Micro | Portable only (8-bit ALU) |
+| Arduino Mega | ATmega2560 | AVR 8-bit | 8K SRAM | Minimal | Portable only (8-bit ALU) |
+| ESP32 | Xtensa LX6 | 32-bit dual | 520K SRAM | Q4 | HW multiply, no ARM SIMD |
+| ESP32-S3 | Xtensa LX7 | 32-bit dual | 512K SRAM | Q4 | Vector-like extensions |
+| ESP32-C3 | RISC-V RV32 | 32-bit single | 400K SRAM | Q3 | No vector ext |
+| **Pico W** | RP2040 | **Cortex-M0+ dual** | 264K SRAM | Balanced | No unaligned, no barrel shifter |
+| **Pico 2W** | RP2350 | **Cortex-M33 dual** | 520K SRAM | Q4 | CRC32 HW hash, CLZ, unaligned |
+| **Pi 3B+** | BCM2837B0 | **Cortex-A53 quad** | 1G | Q4 | NEON 16B match, CRC32 hash |
+| **Pi 4/400** | BCM2711 | **Cortex-A72 quad** | 1-8G | Q4 | NEON 16B match, CRC32 hash, OoO |
+| **Pi 5** | BCM2712 | **Cortex-A76 quad** | 4-8G | Q4 | NEON 16B match, CRC32 hash, big caches |
+
+### Build examples
+
+```sh
+# Arduino (AVR) — Micro profile
+avr-gcc -mmcu=atmega328p -Os \
+    -DPC_BLOCK_SIZE=192u -DPC_HASH_BITS=8u \
+    -DPC_HASH_CHAIN_DEPTH=1u -DPC_HISTORY_SIZE=64u \
+    picocompress.c ...
+
+# ESP32 (Xtensa) — Q4 profile
+xtensa-esp32-elf-gcc -O2 \
+    -DPC_HASH_BITS=11u -DPC_HASH_CHAIN_DEPTH=2u \
+    -DPC_HISTORY_SIZE=2048u -DPC_LAZY_STEPS=2u \
+    picocompress.c ...
+
+# Pico W (RP2040, Cortex-M0+) — Balanced default
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O2 \
+    picocompress.c ...
+
+# Pico 2W (RP2350, Cortex-M33) — Q4 + CRC32 hash + CLZ match
+arm-none-eabi-gcc -mcpu=cortex-m33 -mthumb -O2 -march=armv8-m.main+crc \
+    -DPC_HASH_BITS=11u -DPC_HASH_CHAIN_DEPTH=2u \
+    -DPC_HISTORY_SIZE=2048u -DPC_LAZY_STEPS=2u \
+    picocompress.c ...
+
+# Pi 3/4/5 (AArch64) — Q4 + NEON + CRC32
+aarch64-linux-gnu-gcc -O2 -march=armv8-a+crc \
+    -DPC_HASH_BITS=11u -DPC_HASH_CHAIN_DEPTH=2u \
+    -DPC_HISTORY_SIZE=2048u -DPC_LAZY_STEPS=2u \
+    picocompress.c ...
+```
+
 ## Capability detection
 
 All detection is private to `picocompress.c` — the public API (`picocompress.h`)
