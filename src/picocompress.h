@@ -25,7 +25,7 @@ extern "C" {
 #define PC_DICT_COUNT 0u
 #define PC_DICT_MAX_LEN 0u
 #else
-#define PC_DICT_COUNT 80u
+#define PC_DICT_COUNT 96u
 #define PC_DICT_MAX_LEN 8u
 #endif
 #define PC_BLOCK_MAX_COMPRESSED (PC_BLOCK_SIZE + (PC_BLOCK_SIZE / PC_LITERAL_MAX) + 16u)

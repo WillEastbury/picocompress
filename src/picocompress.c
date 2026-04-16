@@ -299,15 +299,15 @@ static const uint8_t pc_d00[] = { '"', ':', ' ', '"' };    /* ": "  JSON key-val
 static const uint8_t pc_d01[] = { '}', ',', '\n', '"' };   /* },\n" JSON object sep */
 static const uint8_t pc_d02[] = { '<', '/', 'd', 'i', 'v' }; /* </div  HTML close */
 static const uint8_t pc_d03[] = "tion";
-/* 4-7: two-byte common pairs */
-static const uint8_t pc_d04[] = { '\r', '\n' };
-static const uint8_t pc_d05[] = "id";
-static const uint8_t pc_d06[] = { '"', ':' };              /* ":   */
-static const uint8_t pc_d07[] = { ',', '"' };              /* ,"   */
+/* 4-7: common English suffixes (4B, replacing 2B waste) */
+static const uint8_t pc_d04[] = "ment";
+static const uint8_t pc_d05[] = "ness";
+static const uint8_t pc_d06[] = "able";
+static const uint8_t pc_d07[] = "ight";
 /* 8-15: three-byte patterns */
 static const uint8_t pc_d08[] = { '"', ':', '"' };         /* ":"  ← JSON money pattern */
-static const uint8_t pc_d09[] = { '<', '/' };              /* </  closing tag */
-static const uint8_t pc_d10[] = { '=', '"' };              /* ="  attribute value */
+static const uint8_t pc_d09[] = { '<', '/', 'd', 'i' };    /* </di  closing tag start */
+static const uint8_t pc_d10[] = { '=', '"', 'h', 't' };    /* ="ht  attr+http start */
 static const uint8_t pc_d11[] = "the";
 static const uint8_t pc_d12[] = "ing";
 static const uint8_t pc_d13[] = { ',', '"', ',' };         /* ","  JSON string separator */
@@ -318,10 +318,10 @@ static const uint8_t pc_d16[] = "ion";
 static const uint8_t pc_d17[] = "ent";
 static const uint8_t pc_d18[] = "ter";
 static const uint8_t pc_d19[] = "and";
-static const uint8_t pc_d20[] = { '/', '>' };              /* />  self-closing tag */
+static const uint8_t pc_d20[] = { '/', '>', '\r', '\n' };  /* />\r\n self-close + CRLF */
 static const uint8_t pc_d21[] = { '"', '}', ',' };         /* "},  */
 static const uint8_t pc_d22[] = { '"', ']', ',' };         /* "],  */
-static const uint8_t pc_d23[] = "  ";                      /* double space */
+static const uint8_t pc_d23[] = "have";
 /* 24-39: four-byte */
 static const uint8_t pc_d24[] = { 'n','o','"',':' };       /* no": */
 static const uint8_t pc_d25[] = "true";
@@ -387,14 +387,31 @@ static const uint8_t pc_d76[] = "ation";
 static const uint8_t pc_d77[] = "ould ";                             /* would/could/should */
 static const uint8_t pc_d78[] = { '"', ':', ' ', '"' };             /* ": "  JSON kv */
 static const uint8_t pc_d79[] = { '"', ',', ' ', '"' };             /* ", "  JSON sep */
+/* 80-95: uppercase keyword primitives (BASIC/structured) */
+static const uint8_t pc_d80[] = "DIM";
+static const uint8_t pc_d81[] = "FOR";
+static const uint8_t pc_d82[] = "END";
+static const uint8_t pc_d83[] = "REL";
+static const uint8_t pc_d84[] = "EACH";
+static const uint8_t pc_d85[] = "LOAD";
+static const uint8_t pc_d86[] = "SAVE";
+static const uint8_t pc_d87[] = "CARD";
+static const uint8_t pc_d88[] = "JUMP";
+static const uint8_t pc_d89[] = "PRINT";
+static const uint8_t pc_d90[] = "INPUT";
+static const uint8_t pc_d91[] = "GOSUB";
+static const uint8_t pc_d92[] = "STREAM";
+static const uint8_t pc_d93[] = "RETURN";
+static const uint8_t pc_d94[] = "SWITCH";
+static const uint8_t pc_d95[] = "PROGRAM";
 
 static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
     /* 0-3:  4-5B */ { pc_d00,4 }, { pc_d01,4 }, { pc_d02,5 }, { pc_d03,4 },
-    /* 4-7:  2B */  { pc_d04,2 }, { pc_d05,2 }, { pc_d06,2 }, { pc_d07,2 },
-    /* 8-15: 3B */  { pc_d08,3 }, { pc_d09,2 }, { pc_d10,2 }, { pc_d11,3 },
+    /* 4-7:  4B */  { pc_d04,4 }, { pc_d05,4 }, { pc_d06,4 }, { pc_d07,4 },
+    /* 8-15: 3-4B */{ pc_d08,3 }, { pc_d09,4 }, { pc_d10,4 }, { pc_d11,3 },
                     { pc_d12,3 }, { pc_d13,3 }, { pc_d14,3 }, { pc_d15,3 },
-    /* 16-23:2-3B */{ pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
-                    { pc_d20,2 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,2 },
+    /* 16-23:3-4B */{ pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
+                    { pc_d20,4 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,4 },
     /* 24-39:4B */  { pc_d24,4 }, { pc_d25,4 }, { pc_d26,4 }, { pc_d27,4 },
                     { pc_d28,4 }, { pc_d29,4 }, { pc_d30,4 }, { pc_d31,4 },
                     { pc_d32,4 }, { pc_d33,4 }, { pc_d34,4 }, { pc_d35,4 },
@@ -413,6 +430,11 @@ static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
                     { pc_d72,4 }, { pc_d73,4 }, { pc_d74,4 }, { pc_d75,4 },
     /* 76-79: phoneme + structural */
                     { pc_d76,5 }, { pc_d77,5 }, { pc_d78,4 }, { pc_d79,4 },
+    /* 80-95: uppercase keywords (0xD0..0xDF tokens) */
+                    { pc_d80,3 }, { pc_d81,3 }, { pc_d82,3 }, { pc_d83,3 },
+                    { pc_d84,4 }, { pc_d85,4 }, { pc_d86,4 }, { pc_d87,4 },
+                    { pc_d88,4 }, { pc_d89,5 }, { pc_d90,5 }, { pc_d91,5 },
+                    { pc_d92,6 }, { pc_d93,6 }, { pc_d94,6 }, { pc_d95,7 },
 };
 
 #endif /* PC_DICT_COUNT > 0 */
@@ -459,8 +481,8 @@ static int pc_find_best(
             len = pc_match_len(vbuf + vpos - off, vbuf + vpos, max_rep);
             if (len < PC_MATCH_MIN) continue;
 
-            /* only slot 0 can use the cheap repeat token */
-            is_rep = (d == 0) ? 1 : 0;
+            /* only slot 0 can use the cheap repeat token (max len 17 with 4-bit field) */
+            is_rep = (d == 0 && len <= 17u) ? 1 : 0;
             token_cost = is_rep ? 1 : (off <= PC_OFFSET_SHORT_MAX ? 2 : 3);
             s = (int)len - token_cost;
 
@@ -696,14 +718,16 @@ retry_pos:
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
                 if (best_dict < 64u) {
                     out[op++] = (uint8_t)(0x40u | (best_dict & 0x3Fu));
-                } else {
+                } else if (best_dict < 80u) {
                     out[op++] = (uint8_t)(0xE0u | ((best_dict - 64u) & 0x0Fu));
+                } else {
+                    out[op++] = (uint8_t)(0xD0u | ((best_dict - 80u) & 0x0Fu));
                 }
                 PC_STAT_INC(stats, dict_hits);
                 PC_STAT_INC(stats, match_count);
             } else if (best_is_repeat) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
-                out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x1Fu));
+                out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x0Fu));
                 PC_STAT_INC(stats, repeat_hits);
                 PC_STAT_INC(stats, match_count);
             } else if (best_off <= PC_OFFSET_SHORT_MAX && best_len <= PC_MATCH_MAX) {
@@ -844,14 +868,30 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        /* 0xC0..0xDF: repeat-offset match */
-        if (token < 0xE0u) {
-            uint16_t match_len = (uint16_t)((token & 0x1Fu) + PC_MATCH_MIN);
+        /* 0xC0..0xCF: repeat-offset match (4-bit length) */
+        if (token < 0xD0u) {
+            uint16_t match_len = (uint16_t)((token & 0x0Fu) + PC_MATCH_MIN);
             if (last_offset == 0u) return PC_ERR_CORRUPT;
             if (last_offset > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
             if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
             pc_copy_match(out, &op, hist, hist_len, last_offset, match_len);
             continue;
+        }
+
+        /* 0xD0..0xDF: dictionary keywords (entries 80..95) */
+        if (token < 0xE0u) {
+#if PC_DICT_COUNT > 80
+            uint16_t idx = (uint16_t)(80u + (token & 0x0Fu));
+            uint8_t dlen;
+            if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
+            dlen = pc_static_dict[idx].len;
+            if ((uint32_t)op + dlen > out_len) return PC_ERR_CORRUPT;
+            memcpy(out + op, pc_static_dict[idx].data, dlen);
+            op = (uint16_t)(op + dlen);
+            continue;
+#else
+            return PC_ERR_CORRUPT;
+#endif
         }
 
         /* 0xE0..0xEF: dictionary overflow (entries 64..79) */
