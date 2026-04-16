@@ -28,13 +28,17 @@ static int pc_emit_literals(
     uint16_t pos = 0;
     while (pos < src_len) {
         uint16_t chunk = (uint16_t)(src_len - pos);
-        if (chunk > PC_LITERAL_MAX) {
-            chunk = PC_LITERAL_MAX;
+        if (chunk > PC_LITERAL_EXT_MAX) {
+            chunk = PC_LITERAL_EXT_MAX;
         }
         if ((uint32_t)(*op) + 1u + chunk > dst_cap) {
             return 0;
         }
-        dst[(*op)++] = (uint8_t)(chunk - 1u);
+        if (chunk <= PC_LITERAL_MAX) {
+            dst[(*op)++] = (uint8_t)(chunk - 1u);           /* 0x00..0x3F */
+        } else {
+            dst[(*op)++] = (uint8_t)(0xE0u | (chunk - 65u)); /* 0xE0..0xFF */
+        }
         memcpy(dst + *op, src + pos, chunk);
         *op = (uint16_t)(*op + chunk);
         pos = (uint16_t)(pos + chunk);
@@ -59,62 +63,106 @@ typedef struct {
     uint8_t len;
 } pc_dict_entry_t;
 
-/* ---- general-purpose static dictionary (32 entries, ROM/flash) ----
- *  0- 3: single-byte ultra-common symbols (JSON/CSV/code)
- *  4- 7: two-byte common pairs
- *  8-11: three-byte patterns
- * 12-19: four-byte common words/fields
- * 20-25: five-six byte common words
- * 26-31: long high-value entries                                     */
+/* ---- general-purpose static dictionary (64 entries, ROM/flash) --------
+ * Token format v3 — clean 2-bit type prefix:
+ *   0x00..0x3F  short literal   (len 1..64)
+ *   0x40..0x7F  dictionary ref  (index 0..63)
+ *   0x80..0xBF  LZ match        (5-bit len + 1-bit offset_hi)
+ *   0xC0..0xDF  repeat-offset   (5-bit len)
+ *   0xE0..0xFF  extended literal (len 65..96)
+ * -------------------------------------------------------------------- */
 
-/* 0-3: single-byte symbols */
+/* 0-3: single-byte ultra-common symbols */
 static const uint8_t pc_d00[] = "{";
 static const uint8_t pc_d01[] = "}";
 static const uint8_t pc_d02[] = ":";
 static const uint8_t pc_d03[] = ",";
-/* 4-7: two-byte pairs */
+/* 4-7: two-byte common pairs */
 static const uint8_t pc_d04[] = { '\r', '\n' };
 static const uint8_t pc_d05[] = "id";
-static const uint8_t pc_d06[] = { '"', ':' };              /* ":  JSON key→value */
-static const uint8_t pc_d07[] = { ',', '"' };              /* ,"  JSON separator */
-/* 8-11: three-byte */
-static const uint8_t pc_d08[] = "000";
-static const uint8_t pc_d09[] = "ORD";
-static const uint8_t pc_d10[] = "the";
-static const uint8_t pc_d11[] = "ing";
-/* 12-19: four-byte words/fields */
-static const uint8_t pc_d12[] = { 'n','o','"',':' };       /* no":  */
-static const uint8_t pc_d13[] = "true";
-static const uint8_t pc_d14[] = "null";
-static const uint8_t pc_d15[] = "name";
-static const uint8_t pc_d16[] = "data";
-static const uint8_t pc_d17[] = "time";
-static const uint8_t pc_d18[] = "type";
-static const uint8_t pc_d19[] = "mode";
-/* 20-25: five-six byte */
-static const uint8_t pc_d20[] = "false";
-static const uint8_t pc_d21[] = "error";
-static const uint8_t pc_d22[] = "value";
-static const uint8_t pc_d23[] = "state";
-static const uint8_t pc_d24[] = "status";
-static const uint8_t pc_d25[] = "number";
-/* 26-31: long high-value entries */
-static const uint8_t pc_d26[] = "active";
-static const uint8_t pc_d27[] = "device";
-static const uint8_t pc_d28[] = "message";
-static const uint8_t pc_d29[] = { 'n','u','m','b','e','r','"',':' }; /* number": */
-static const uint8_t pc_d30[] = "operator";
-static const uint8_t pc_d31[] = "https://";
+static const uint8_t pc_d06[] = { '"', ':' };              /* ":   */
+static const uint8_t pc_d07[] = { ',', '"' };              /* ,"   */
+/* 8-15: three-byte patterns */
+static const uint8_t pc_d08[] = { '"', ':', '"' };         /* ":"  ← JSON money pattern */
+static const uint8_t pc_d09[] = "000";
+static const uint8_t pc_d10[] = "ORD";
+static const uint8_t pc_d11[] = "the";
+static const uint8_t pc_d12[] = "ing";
+static const uint8_t pc_d13[] = { ',', '"', '\0' };        /* reuse: ,"  with NUL guard */
+static const uint8_t pc_d14[] = { '"', ':', '{' };         /* ":{  nested obj  */
+static const uint8_t pc_d15[] = { '"', ':', '[' };         /* ":[  nested arr  */
+/* 16-23: more three-byte */
+static const uint8_t pc_d16[] = "ion";
+static const uint8_t pc_d17[] = "ent";
+static const uint8_t pc_d18[] = "ter";
+static const uint8_t pc_d19[] = "and";
+static const uint8_t pc_d20[] = "for";
+static const uint8_t pc_d21[] = { '"', '}', ',' };         /* "},  */
+static const uint8_t pc_d22[] = { '"', ']', ',' };         /* "],  */
+static const uint8_t pc_d23[] = "ble";
+/* 24-39: four-byte */
+static const uint8_t pc_d24[] = { 'n','o','"',':' };       /* no": */
+static const uint8_t pc_d25[] = "true";
+static const uint8_t pc_d26[] = "null";
+static const uint8_t pc_d27[] = "name";
+static const uint8_t pc_d28[] = "data";
+static const uint8_t pc_d29[] = "time";
+static const uint8_t pc_d30[] = "type";
+static const uint8_t pc_d31[] = "mode";
+static const uint8_t pc_d32[] = "http";
+static const uint8_t pc_d33[] = "tion";
+static const uint8_t pc_d34[] = "code";
+static const uint8_t pc_d35[] = "size";
+static const uint8_t pc_d36[] = "ment";
+static const uint8_t pc_d37[] = "list";
+static const uint8_t pc_d38[] = "item";
+static const uint8_t pc_d39[] = "text";
+/* 40-47: five-byte */
+static const uint8_t pc_d40[] = "false";
+static const uint8_t pc_d41[] = "error";
+static const uint8_t pc_d42[] = "value";
+static const uint8_t pc_d43[] = "state";
+static const uint8_t pc_d44[] = "alert";
+static const uint8_t pc_d45[] = "input";
+static const uint8_t pc_d46[] = "ation";
+static const uint8_t pc_d47[] = "order";
+/* 48-55: six-byte */
+static const uint8_t pc_d48[] = "status";
+static const uint8_t pc_d49[] = "number";
+static const uint8_t pc_d50[] = "active";
+static const uint8_t pc_d51[] = "device";
+static const uint8_t pc_d52[] = "region";
+static const uint8_t pc_d53[] = "string";
+static const uint8_t pc_d54[] = "result";
+static const uint8_t pc_d55[] = "length";
+/* 56-59: seven-byte */
+static const uint8_t pc_d56[] = "message";
+static const uint8_t pc_d57[] = "content";
+static const uint8_t pc_d58[] = "request";
+static const uint8_t pc_d59[] = "default";
+/* 60-63: eight-byte */
+static const uint8_t pc_d60[] = { 'n','u','m','b','e','r','"',':' }; /* number": */
+static const uint8_t pc_d61[] = "operator";
+static const uint8_t pc_d62[] = { 'h','t','t','p','s',':','/','/'}; /* https:// */
+static const uint8_t pc_d63[] = "response";
 
 static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
-    { pc_d00, 1 }, { pc_d01, 1 }, { pc_d02, 1 }, { pc_d03, 1 },
-    { pc_d04, 2 }, { pc_d05, 2 }, { pc_d06, 2 }, { pc_d07, 2 },
-    { pc_d08, 3 }, { pc_d09, 3 }, { pc_d10, 3 }, { pc_d11, 3 },
-    { pc_d12, 4 }, { pc_d13, 4 }, { pc_d14, 4 }, { pc_d15, 4 },
-    { pc_d16, 4 }, { pc_d17, 4 }, { pc_d18, 4 }, { pc_d19, 4 },
-    { pc_d20, 5 }, { pc_d21, 5 }, { pc_d22, 5 }, { pc_d23, 5 },
-    { pc_d24, 6 }, { pc_d25, 6 }, { pc_d26, 6 }, { pc_d27, 6 },
-    { pc_d28, 7 }, { pc_d29, 8 }, { pc_d30, 8 }, { pc_d31, 8 },
+    /* 0-3:  1B */  { pc_d00,1 }, { pc_d01,1 }, { pc_d02,1 }, { pc_d03,1 },
+    /* 4-7:  2B */  { pc_d04,2 }, { pc_d05,2 }, { pc_d06,2 }, { pc_d07,2 },
+    /* 8-15: 3B */  { pc_d08,3 }, { pc_d09,3 }, { pc_d10,3 }, { pc_d11,3 },
+                    { pc_d12,3 }, { pc_d13,2 }, { pc_d14,3 }, { pc_d15,3 },
+    /* 16-23:3B */  { pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
+                    { pc_d20,3 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,3 },
+    /* 24-39:4B */  { pc_d24,4 }, { pc_d25,4 }, { pc_d26,4 }, { pc_d27,4 },
+                    { pc_d28,4 }, { pc_d29,4 }, { pc_d30,4 }, { pc_d31,4 },
+                    { pc_d32,4 }, { pc_d33,4 }, { pc_d34,4 }, { pc_d35,4 },
+                    { pc_d36,4 }, { pc_d37,4 }, { pc_d38,4 }, { pc_d39,4 },
+    /* 40-47:5B */  { pc_d40,5 }, { pc_d41,5 }, { pc_d42,5 }, { pc_d43,5 },
+                    { pc_d44,5 }, { pc_d45,5 }, { pc_d46,5 }, { pc_d47,5 },
+    /* 48-55:6B */  { pc_d48,6 }, { pc_d49,6 }, { pc_d50,6 }, { pc_d51,6 },
+                    { pc_d52,6 }, { pc_d53,6 }, { pc_d54,6 }, { pc_d55,6 },
+    /* 56-59:7B */  { pc_d56,7 }, { pc_d57,7 }, { pc_d58,7 }, { pc_d59,7 },
+    /* 60-63:8B */  { pc_d60,8 }, { pc_d61,8 }, { pc_d62,8 }, { pc_d63,8 },
 };
 
 /* Find best savings among dict, LZ, and repeat-offset at a virtual position.
@@ -266,7 +314,7 @@ static uint16_t pc_compress_block(
 
             if (best_dict != UINT16_MAX) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
-                out[op++] = (uint8_t)(0xE0u | (best_dict & 0x1Fu));
+                out[op++] = (uint8_t)(0x40u | (best_dict & 0x3Fu));
             } else if (best_is_repeat) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x1Fu));
@@ -342,9 +390,9 @@ static pc_result pc_decompress_block(
     while (ip < in_len) {
         uint8_t token = in[ip++];
 
-        /* 0x00..0x7F: literal run */
-        if ((token & 0x80u) == 0u) {
-            uint16_t lit_len = (uint16_t)((token & 0x7Fu) + 1u);
+        /* 0x00..0x3F: short literal run (1..64) */
+        if (token < 0x40u) {
+            uint16_t lit_len = (uint16_t)((token & 0x3Fu) + 1u);
             if ((uint32_t)ip + lit_len > in_len || (uint32_t)op + lit_len > out_len) {
                 return PC_ERR_CORRUPT;
             }
@@ -354,9 +402,9 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        /* 0xE0..0xFF: dictionary reference */
-        if ((token & 0xE0u) == 0xE0u) {
-            uint16_t idx = (uint16_t)(token & 0x1Fu);
+        /* 0x40..0x7F: dictionary reference (0..63) */
+        if (token < 0x80u) {
+            uint16_t idx = (uint16_t)(token & 0x3Fu);
             uint8_t dlen;
             if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
             dlen = pc_static_dict[idx].len;
@@ -366,8 +414,24 @@ static pc_result pc_decompress_block(
             continue;
         }
 
+        /* 0x80..0xBF: LZ match with explicit offset */
+        if (token < 0xC0u) {
+            uint16_t match_len, off;
+            if (ip >= in_len) return PC_ERR_CORRUPT;
+            match_len = (uint16_t)(((token >> 1u) & 0x1Fu) + PC_MATCH_MIN);
+            off = (uint16_t)(((uint16_t)(token & 0x01u) << 8u) | (uint16_t)in[ip++]);
+
+            if (off == 0u) return PC_ERR_CORRUPT;
+            if (off > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
+            if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
+
+            pc_copy_match(out, &op, hist, hist_len, off, match_len);
+            last_offset = off;
+            continue;
+        }
+
         /* 0xC0..0xDF: repeat-offset match */
-        if ((token & 0xE0u) == 0xC0u) {
+        if (token < 0xE0u) {
             uint16_t match_len = (uint16_t)((token & 0x1Fu) + PC_MATCH_MIN);
             if (last_offset == 0u) return PC_ERR_CORRUPT;
             if (last_offset > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
@@ -376,18 +440,15 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        /* 0x80..0xBF: LZ match with explicit offset */
-        if (ip >= in_len) return PC_ERR_CORRUPT;
+        /* 0xE0..0xFF: extended literal run (65..96) */
         {
-            uint16_t match_len = (uint16_t)(((token >> 1u) & 0x1Fu) + PC_MATCH_MIN);
-            uint16_t off = (uint16_t)(((uint16_t)(token & 0x01u) << 8u) | (uint16_t)in[ip++]);
-
-            if (off == 0u) return PC_ERR_CORRUPT;
-            if (off > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
-            if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
-
-            pc_copy_match(out, &op, hist, hist_len, off, match_len);
-            last_offset = off;
+            uint16_t lit_len = (uint16_t)((token & 0x1Fu) + 65u);
+            if ((uint32_t)ip + lit_len > in_len || (uint32_t)op + lit_len > out_len) {
+                return PC_ERR_CORRUPT;
+            }
+            memcpy(out + op, in + ip, lit_len);
+            ip = (uint16_t)(ip + lit_len);
+            op = (uint16_t)(op + lit_len);
         }
     }
 

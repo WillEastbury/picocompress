@@ -231,6 +231,159 @@ def timed_us(fn: Callable[[], None], min_seconds: float = 0.25) -> float:
         n *= 2
 
 
+# ---------------------------------------------------------------------------
+# Realistic file-type payloads
+# ---------------------------------------------------------------------------
+
+def make_json_508() -> bytes:
+    """Realistic 508-byte JSON API response."""
+    doc = json.dumps({
+        "id": 42,
+        "name": "Oliver Smith",
+        "number": 1001,
+        "type": "order",
+        "status": "active",
+        "created": "2024-04-16T09:00:00Z",
+        "region": "eu-west-2",
+        "data": {
+            "value": 36.5,
+            "error": False,
+            "state": "normal",
+            "mode": "auto",
+            "time": "2024-04-16T09:00:00Z",
+            "message": "all clear",
+            "operator": "night",
+        },
+        "items": [
+            {"id": 1, "name": "Widget", "number": 100, "value": 12.50},
+            {"id": 2, "name": "Grommet", "number": 200, "value": 8.75},
+            {"id": 3, "name": "Sprocket", "number": 150, "value": 15.00},
+        ],
+    }, indent=2).encode("utf-8")
+    return doc[:508].ljust(508)
+
+
+def make_json_4k_pretty() -> bytes:
+    """4K pretty-printed JSON with realistic structure."""
+    rng = random.Random(900)
+    items = []
+    for i in range(30):
+        items.append({
+            "id": 1000 + i,
+            "name": rng.choice(["Widget", "Grommet", "Sprocket", "Bearing",
+                                "Gasket", "Bracket", "Washer", "Bolt"]),
+            "number": rng.randint(100, 9999),
+            "status": rng.choice(["active", "inactive", "pending"]),
+            "value": round(rng.uniform(1.0, 99.99), 2),
+            "type": rng.choice(["standard", "premium", "bulk"]),
+            "region": rng.choice(["eu-west-2", "us-east-1", "ap-south-1"]),
+        })
+    doc = json.dumps({
+        "request": "list_items",
+        "status": "active",
+        "message": "operation completed",
+        "data": {"items": items, "total": len(items), "error": False},
+    }, indent=2).encode("utf-8")
+    return doc[:4096].ljust(4096)
+
+
+def make_json_4k_minified() -> bytes:
+    """Same logical content as make_json_4k_pretty but minified."""
+    rng = random.Random(900)
+    items = []
+    for i in range(30):
+        items.append({
+            "id": 1000 + i,
+            "name": rng.choice(["Widget", "Grommet", "Sprocket", "Bearing",
+                                "Gasket", "Bracket", "Washer", "Bolt"]),
+            "number": rng.randint(100, 9999),
+            "status": rng.choice(["active", "inactive", "pending"]),
+            "value": round(rng.uniform(1.0, 99.99), 2),
+            "type": rng.choice(["standard", "premium", "bulk"]),
+            "region": rng.choice(["eu-west-2", "us-east-1", "ap-south-1"]),
+        })
+    doc = json.dumps({
+        "request": "list_items",
+        "status": "active",
+        "message": "operation completed",
+        "data": {"items": items, "total": len(items), "error": False},
+    }, separators=(",", ":")).encode("utf-8")
+    return doc[:4096].ljust(4096)
+
+
+def make_lorem_508() -> bytes:
+    """Classic lorem ipsum text, 508 bytes."""
+    text = (
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do "
+        "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim "
+        "ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "
+        "aliquip ex ea commodo consequat. Duis aute irure dolor in "
+        "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
+        "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "
+        "culpa qui officia deserunt mollit anim id est laborum. Sed ut "
+        "perspiciatis unde omnis iste natus error sit voluptatem."
+    ).encode("utf-8")
+    return text[:508].ljust(508)
+
+
+def _rgb_pixel(r: int, g: int, b: int) -> bytes:
+    return bytes([r, g, b])
+
+
+def make_rgb_icon_508() -> bytes:
+    """Tiny 13x13 uncompressed RGB icon (~507 bytes of pixel data + 1 pad).
+
+    Simple gradient pattern with a coloured border — representative of a
+    small sprite or status icon on an embedded display.
+    """
+    w, h = 13, 13
+    pixels = bytearray()
+    for y in range(h):
+        for x in range(w):
+            if x == 0 or x == w - 1 or y == 0 or y == h - 1:
+                pixels += _rgb_pixel(0, 120, 215)       # blue border
+            elif x == 1 or x == w - 2 or y == 1 or y == h - 2:
+                pixels += _rgb_pixel(255, 255, 255)      # white inner border
+            else:
+                r = int(255 * x / w)
+                g = int(255 * y / h)
+                b = 128
+                pixels += _rgb_pixel(r, g, b)
+    return bytes(pixels[:508].ljust(508))
+
+
+def make_tiny_jpeg_508() -> bytes:
+    """Synthetic but valid-structure JPEG-like blob.
+
+    Real JPEG headers + quantisation tables + entropy-coded noise.
+    Not a decodable image, but byte-distribution matches real JPEGs:
+    high-entropy with periodic marker bytes (0xFF).
+    """
+    rng = random.Random(7777)
+    # SOI + APP0 header (20 bytes)
+    header = bytes([
+        0xFF, 0xD8,                         # SOI
+        0xFF, 0xE0, 0x00, 0x10,             # APP0 length=16
+        0x4A, 0x46, 0x49, 0x46, 0x00,       # JFIF\0
+        0x01, 0x01, 0x00,                    # version 1.1, aspect
+        0x00, 0x01, 0x00, 0x01, 0x00, 0x00, # 1x1 pixel density
+    ])
+    # DQT marker + 65-byte quant table
+    dqt = bytes([0xFF, 0xDB, 0x00, 0x43, 0x00]) + bytes(
+        min(255, 16 + i * 3) for i in range(64)
+    )
+    # Fill rest with entropy-like data (high entropy, occasional 0xFF)
+    remaining = 508 - len(header) - len(dqt) - 2  # -2 for EOI
+    entropy = bytearray()
+    for _ in range(remaining):
+        b = rng.randint(0, 255)
+        if b == 0xFF and rng.random() > 0.05:
+            b = 0xFE  # avoid accidental markers
+        entropy.append(b)
+    eoi = bytes([0xFF, 0xD9])
+    return (header + dqt + bytes(entropy) + eoi)[:508]
+
+
 class PicoCodec:
     def __init__(self, dll_path: str):
         self.lib = ctypes.CDLL(dll_path)
@@ -371,6 +524,16 @@ def main() -> None:
         run_payload("utf8-int-508", make_utf8_plus_int_payload_508(), pico),
         run_payload("random-508", make_random_payload_508(), pico),
         run_payload("ascii-254", make_ascii_payload_254(), pico),
+    ]
+
+    # Realistic file-type payloads
+    report += [
+        run_payload("json-508", make_json_508(), pico),
+        run_payload("lorem-508", make_lorem_508(), pico),
+        run_payload("rgb-icon-508", make_rgb_icon_508(), pico),
+        run_payload("jpeg-508", make_tiny_jpeg_508(), pico),
+        run_payload("json-4K-pretty", make_json_4k_pretty(), pico),
+        run_payload("json-4K-minified", make_json_4k_minified(), pico),
     ]
 
     # Scaled payloads at each size
