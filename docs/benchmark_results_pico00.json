@@ -1,0 +1,3586 @@
+[
+  {
+    "payload": "pattern-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 107,
+        "ratio": 4.747663551401869,
+        "saved_bytes": 401,
+        "compress_us": 5.998562179421185,
+        "decompress_us": 13.493876465098253,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 143,
+        "ratio": 3.5524475524475525,
+        "saved_bytes": 365,
+        "compress_us": 6.102655731421436,
+        "decompress_us": 3.6357593538038913,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 169,
+        "ratio": 3.0059171597633134,
+        "saved_bytes": 339,
+        "compress_us": 4.8405734709433546,
+        "decompress_us": 2.370378967331277,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 121,
+        "ratio": 4.198347107438017,
+        "saved_bytes": 387,
+        "compress_us": 414.98682617202576,
+        "decompress_us": 2.564529579140995,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 119,
+        "ratio": 4.26890756302521,
+        "saved_bytes": 389,
+        "compress_us": 674.4937128928541,
+        "decompress_us": 2.6178268583976205,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-int-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 441,
+        "ratio": 1.1519274376417235,
+        "saved_bytes": 67,
+        "compress_us": 16.096859008385422,
+        "decompress_us": 13.466057769306872,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 460,
+        "ratio": 1.1043478260869566,
+        "saved_bytes": 48,
+        "compress_us": 102.95809423865876,
+        "decompress_us": 5.076735809517174,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 391,
+        "ratio": 1.29923273657289,
+        "saved_bytes": 117,
+        "compress_us": 6.5127873383197254,
+        "decompress_us": 3.6766950226585493,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 334,
+        "ratio": 1.5209580838323353,
+        "saved_bytes": 174,
+        "compress_us": 20.03461517219307,
+        "decompress_us": 3.163454933119425,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 298,
+        "ratio": 1.7046979865771812,
+        "saved_bytes": 210,
+        "compress_us": 701.6144824092407,
+        "decompress_us": 5.66412051394849,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 17.522579833340046,
+        "decompress_us": 13.266240753040393,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 572,
+        "ratio": 0.8881118881118881,
+        "saved_bytes": -64,
+        "compress_us": 18.020642638560957,
+        "decompress_us": 5.760057754322645,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 9.526804260140409,
+        "decompress_us": 0.3793845577138022,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 513,
+        "ratio": 0.9902534113060428,
+        "saved_bytes": -5,
+        "compress_us": 15.62417028821983,
+        "decompress_us": 0.38079599473661574,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 1104.164222624604,
+        "decompress_us": 0.38072153854540325,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "ascii-254",
+    "payload_bytes": 254,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 136,
+        "ratio": 1.8676470588235294,
+        "saved_bytes": 118,
+        "compress_us": 6.405141342202825,
+        "decompress_us": 7.516235504212432,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 156,
+        "ratio": 1.6282051282051282,
+        "saved_bytes": 98,
+        "compress_us": 5.768701233144213,
+        "decompress_us": 3.045207656704463,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 127,
+        "ratio": 2.0,
+        "saved_bytes": 127,
+        "compress_us": 3.639579216008215,
+        "decompress_us": 2.055024307168196,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 104,
+        "ratio": 2.4423076923076925,
+        "saved_bytes": 150,
+        "compress_us": 11.572882324450973,
+        "decompress_us": 1.8579870452173353,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 91,
+        "ratio": 2.791208791208791,
+        "saved_bytes": 163,
+        "compress_us": 350.1214599737068,
+        "decompress_us": 1.8405075836724905,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "json-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 332,
+        "ratio": 1.5301204819277108,
+        "saved_bytes": 176,
+        "compress_us": 12.957404449842613,
+        "decompress_us": 13.540530181543886,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 312,
+        "ratio": 1.6282051282051282,
+        "saved_bytes": 196,
+        "compress_us": 10.43790499899444,
+        "decompress_us": 4.407261215089164,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 303,
+        "ratio": 1.6765676567656767,
+        "saved_bytes": 205,
+        "compress_us": 6.2205322572950195,
+        "decompress_us": 3.552559211694728,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 248,
+        "ratio": 2.0483870967741935,
+        "saved_bytes": 260,
+        "compress_us": 17.978836670096143,
+        "decompress_us": 3.028278350747371,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 225,
+        "ratio": 2.2577777777777777,
+        "saved_bytes": 283,
+        "compress_us": 699.1250605210553,
+        "decompress_us": 4.259982101295634,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "lorem-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 459,
+        "ratio": 1.1067538126361656,
+        "saved_bytes": 49,
+        "compress_us": 16.531038268041698,
+        "decompress_us": 13.490762695411718,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 448,
+        "ratio": 1.1339285714285714,
+        "saved_bytes": 60,
+        "compress_us": 16.158990906234294,
+        "decompress_us": 4.998631484731675,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 317,
+        "ratio": 1.6025236593059937,
+        "saved_bytes": 191,
+        "compress_us": 6.00138186657162,
+        "decompress_us": 3.481371398939004,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 308,
+        "ratio": 1.6493506493506493,
+        "saved_bytes": 200,
+        "compress_us": 20.885372132184443,
+        "decompress_us": 3.424941307006435,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 299,
+        "ratio": 1.6989966555183946,
+        "saved_bytes": 209,
+        "compress_us": 528.6061601736947,
+        "decompress_us": 5.408221084746145,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "rgb-icon-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 271,
+        "ratio": 1.8745387453874538,
+        "saved_bytes": 237,
+        "compress_us": 11.114834137515572,
+        "decompress_us": 13.510106384728715,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 301,
+        "ratio": 1.6877076411960132,
+        "saved_bytes": 207,
+        "compress_us": 23.774967162992766,
+        "decompress_us": 4.231789108022355,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 178,
+        "ratio": 2.853932584269663,
+        "saved_bytes": 330,
+        "compress_us": 5.075449142299959,
+        "decompress_us": 2.7859393691986867,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 115,
+        "ratio": 4.417391304347826,
+        "saved_bytes": 393,
+        "compress_us": 13.83509158259244,
+        "decompress_us": 2.5630354842931524,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 111,
+        "ratio": 4.576576576576577,
+        "saved_bytes": 397,
+        "compress_us": 517.6988710786645,
+        "decompress_us": 3.497604522895159,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "jpeg-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 17.450933471607755,
+        "decompress_us": 13.24951806669361,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 571,
+        "ratio": 0.8896672504378283,
+        "saved_bytes": -63,
+        "compress_us": 64.46025854245363,
+        "decompress_us": 7.536393005214137,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 10.789939574706864,
+        "decompress_us": 0.5806685485776342,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 513,
+        "ratio": 0.9902534113060428,
+        "saved_bytes": -5,
+        "compress_us": 22.56141021739211,
+        "decompress_us": 0.5821984005449643,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 1673.8124569428692,
+        "decompress_us": 0.5838745822939195,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "json-4K-pretty",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1037,
+        "ratio": 3.9498553519768564,
+        "saved_bytes": 3059,
+        "compress_us": 59.45412951646745,
+        "decompress_us": 126.627222655884,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 916,
+        "ratio": 4.471615720524017,
+        "saved_bytes": 3180,
+        "compress_us": 96.77255004447716,
+        "decompress_us": 21.18898388658863,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1233,
+        "ratio": 3.321978913219789,
+        "saved_bytes": 2863,
+        "compress_us": 27.106669739040967,
+        "decompress_us": 15.147002532245324,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 559,
+        "ratio": 7.32737030411449,
+        "saved_bytes": 3537,
+        "compress_us": 49.85719042949199,
+        "decompress_us": 6.314527984496721,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 465,
+        "ratio": 8.808602150537634,
+        "saved_bytes": 3631,
+        "compress_us": 5581.739906574512,
+        "decompress_us": 7.530585128812106,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "json-4K-minified",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1108,
+        "ratio": 3.696750902527076,
+        "saved_bytes": 2988,
+        "compress_us": 62.34942114247133,
+        "decompress_us": 126.70010889337391,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1039,
+        "ratio": 3.9422521655437923,
+        "saved_bytes": 3057,
+        "compress_us": 79.0706252473683,
+        "decompress_us": 22.142057433782725,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1252,
+        "ratio": 3.2715654952076676,
+        "saved_bytes": 2844,
+        "compress_us": 26.465142576981293,
+        "decompress_us": 16.222991943593,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 629,
+        "ratio": 6.511923688394277,
+        "saved_bytes": 3467,
+        "compress_us": 50.19950231854864,
+        "decompress_us": 7.717312164423618,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 557,
+        "ratio": 7.353680430879713,
+        "saved_bytes": 3539,
+        "compress_us": 4447.09146859168,
+        "decompress_us": 9.406663574296203,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-1K",
+    "payload_bytes": 1024,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1036,
+        "ratio": 0.9884169884169884,
+        "saved_bytes": -12,
+        "compress_us": 51.56492871094542,
+        "decompress_us": 32.86975866600983,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1152,
+        "ratio": 0.8888888888888888,
+        "saved_bytes": -128,
+        "compress_us": 44.47970702869952,
+        "decompress_us": 12.898772553171511,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1028,
+        "ratio": 0.9961089494163424,
+        "saved_bytes": -4,
+        "compress_us": 14.354364075153114,
+        "decompress_us": 0.6035185851627212,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1029,
+        "ratio": 0.9951409135082604,
+        "saved_bytes": -5,
+        "compress_us": 27.778940246747652,
+        "decompress_us": 0.6381414336953384,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1028,
+        "ratio": 0.9961089494163424,
+        "saved_bytes": -4,
+        "compress_us": 2139.7383593466657,
+        "decompress_us": 0.6195894871052765,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-1K",
+    "payload_bytes": 1024,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 234,
+        "ratio": 4.3760683760683765,
+        "saved_bytes": 790,
+        "compress_us": 17.23407745402028,
+        "decompress_us": 33.991584714954115,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 231,
+        "ratio": 4.432900432900433,
+        "saved_bytes": 793,
+        "compress_us": 299.6795146543718,
+        "decompress_us": 6.727179687526785,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 254,
+        "ratio": 4.031496062992126,
+        "saved_bytes": 770,
+        "compress_us": 7.794003479055789,
+        "decompress_us": 5.01969654864709,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 172,
+        "ratio": 5.953488372093023,
+        "saved_bytes": 852,
+        "compress_us": 26.402788146029366,
+        "decompress_us": 3.818137649602704,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 169,
+        "ratio": 6.059171597633136,
+        "saved_bytes": 855,
+        "compress_us": 1930.0001991950921,
+        "decompress_us": 4.310608703761432,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-1K",
+    "payload_bytes": 1024,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 773,
+        "ratio": 1.3247089262613196,
+        "saved_bytes": 251,
+        "compress_us": 44.621671019484666,
+        "decompress_us": 34.76424535975298,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 758,
+        "ratio": 1.3509234828496042,
+        "saved_bytes": 266,
+        "compress_us": 69.95442699775367,
+        "decompress_us": 12.418333679597993,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 684,
+        "ratio": 1.4970760233918128,
+        "saved_bytes": 340,
+        "compress_us": 13.118611968288008,
+        "decompress_us": 7.961896270280988,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 310,
+        "ratio": 3.303225806451613,
+        "saved_bytes": 714,
+        "compress_us": 35.4844728995829,
+        "decompress_us": 6.769273284579214,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 316,
+        "ratio": 3.240506329113924,
+        "saved_bytes": 708,
+        "compress_us": 1011.7358398247234,
+        "decompress_us": 6.676332946931041,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-1K",
+    "payload_bytes": 1024,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 592,
+        "ratio": 1.7297297297297298,
+        "saved_bytes": 432,
+        "compress_us": 22.670046508466157,
+        "decompress_us": 25.28492925968351,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 616,
+        "ratio": 1.6623376623376624,
+        "saved_bytes": 408,
+        "compress_us": 28.54313214051274,
+        "decompress_us": 7.25311198390699,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 436,
+        "ratio": 2.3486238532110093,
+        "saved_bytes": 588,
+        "compress_us": 7.01304911832068,
+        "decompress_us": 4.070009399281815,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 382,
+        "ratio": 2.680628272251309,
+        "saved_bytes": 642,
+        "compress_us": 24.623085632669017,
+        "decompress_us": 4.147974639767682,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 343,
+        "ratio": 2.9854227405247813,
+        "saved_bytes": 681,
+        "compress_us": 1009.424644507817,
+        "decompress_us": 4.9365997312200705,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-1K",
+    "payload_bytes": 1024,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 649,
+        "ratio": 1.5778120184899846,
+        "saved_bytes": 375,
+        "compress_us": 24.260292052602495,
+        "decompress_us": 25.343732787064255,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 603,
+        "ratio": 1.6981757877280266,
+        "saved_bytes": 421,
+        "compress_us": 20.302572265151753,
+        "decompress_us": 7.0927770843276505,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 530,
+        "ratio": 1.9320754716981132,
+        "saved_bytes": 494,
+        "compress_us": 8.268443756342947,
+        "decompress_us": 4.711962539705183,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 485,
+        "ratio": 2.111340206185567,
+        "saved_bytes": 539,
+        "compress_us": 26.752195372736765,
+        "decompress_us": 4.328734084957375,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 434,
+        "ratio": 2.359447004608295,
+        "saved_bytes": 590,
+        "compress_us": 837.4683632723645,
+        "decompress_us": 6.186362106141985,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-1K",
+    "payload_bytes": 1024,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 560,
+        "ratio": 1.8285714285714285,
+        "saved_bytes": 464,
+        "compress_us": 22.472817137852985,
+        "decompress_us": 25.545457214448675,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 530,
+        "ratio": 1.9320754716981132,
+        "saved_bytes": 494,
+        "compress_us": 33.05795666719291,
+        "decompress_us": 6.801948547519032,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 456,
+        "ratio": 2.245614035087719,
+        "saved_bytes": 568,
+        "compress_us": 7.959559753523138,
+        "decompress_us": 4.900382354566801,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 384,
+        "ratio": 2.6666666666666665,
+        "saved_bytes": 640,
+        "compress_us": 26.34332971140907,
+        "decompress_us": 4.220737609639258,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 369,
+        "ratio": 2.7750677506775068,
+        "saved_bytes": 655,
+        "compress_us": 984.0199764994395,
+        "decompress_us": 6.302762023846498,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-2K",
+    "payload_bytes": 2048,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 2068,
+        "ratio": 0.9903288201160542,
+        "saved_bytes": -20,
+        "compress_us": 67.49271386752298,
+        "decompress_us": 48.36997350921024,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 2304,
+        "ratio": 0.8888888888888888,
+        "saved_bytes": -256,
+        "compress_us": 62.07663207646874,
+        "decompress_us": 19.614683836266522,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 2055,
+        "ratio": 0.9965936739659368,
+        "saved_bytes": -7,
+        "compress_us": 23.68163739063789,
+        "decompress_us": 0.5739834899598506,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 2053,
+        "ratio": 0.997564539698003,
+        "saved_bytes": -5,
+        "compress_us": 33.29220458780924,
+        "decompress_us": 0.5130762863458926,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 2052,
+        "ratio": 0.9980506822612085,
+        "saved_bytes": -4,
+        "compress_us": 2285.441898266072,
+        "decompress_us": 0.4799393806265151,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-2K",
+    "payload_bytes": 2048,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 442,
+        "ratio": 4.633484162895928,
+        "saved_bytes": 1606,
+        "compress_us": 21.48097039800234,
+        "decompress_us": 50.04242578365847,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 437,
+        "ratio": 4.68649885583524,
+        "saved_bytes": 1611,
+        "compress_us": 467.29375097243064,
+        "decompress_us": 9.400410644566648,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 490,
+        "ratio": 4.179591836734694,
+        "saved_bytes": 1558,
+        "compress_us": 12.419751464598505,
+        "decompress_us": 7.930720642868039,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 289,
+        "ratio": 7.086505190311419,
+        "saved_bytes": 1759,
+        "compress_us": 30.228697447398645,
+        "decompress_us": 4.737917572050776,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 281,
+        "ratio": 7.288256227758007,
+        "saved_bytes": 1767,
+        "compress_us": 2677.6586873893393,
+        "decompress_us": 8.11969280967162,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-2K",
+    "payload_bytes": 2048,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1519,
+        "ratio": 1.34825543120474,
+        "saved_bytes": 529,
+        "compress_us": 59.92465331772223,
+        "decompress_us": 51.009076418750965,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1497,
+        "ratio": 1.3680694722778892,
+        "saved_bytes": 551,
+        "compress_us": 89.41670727580231,
+        "decompress_us": 15.725380615450035,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1362,
+        "ratio": 1.5036710719530102,
+        "saved_bytes": 686,
+        "compress_us": 19.89771527100004,
+        "decompress_us": 12.980066925294409,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 588,
+        "ratio": 3.4829931972789114,
+        "saved_bytes": 1460,
+        "compress_us": 39.25626745626687,
+        "decompress_us": 7.662351928949818,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 592,
+        "ratio": 3.4594594594594597,
+        "saved_bytes": 1456,
+        "compress_us": 1145.100503890717,
+        "decompress_us": 10.988380096499384,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-2K",
+    "payload_bytes": 2048,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1134,
+        "ratio": 1.8059964726631392,
+        "saved_bytes": 914,
+        "compress_us": 41.824709473559096,
+        "decompress_us": 48.76657482810742,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 923,
+        "ratio": 2.218851570964247,
+        "saved_bytes": 1125,
+        "compress_us": 65.05854296534608,
+        "decompress_us": 11.651903777831762,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 937,
+        "ratio": 2.185699039487727,
+        "saved_bytes": 1111,
+        "compress_us": 13.920949309742525,
+        "decompress_us": 8.395415924233873,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 635,
+        "ratio": 3.2251968503937007,
+        "saved_bytes": 1413,
+        "compress_us": 34.14460497808136,
+        "decompress_us": 6.009782943738884,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 458,
+        "ratio": 4.471615720524017,
+        "saved_bytes": 1590,
+        "compress_us": 1895.0115976394954,
+        "decompress_us": 6.114364456077936,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-2K",
+    "payload_bytes": 2048,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1237,
+        "ratio": 1.6556184316895715,
+        "saved_bytes": 811,
+        "compress_us": 44.681084961695205,
+        "decompress_us": 49.082457156401915,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 924,
+        "ratio": 2.2164502164502164,
+        "saved_bytes": 1124,
+        "compress_us": 45.08771252531574,
+        "decompress_us": 11.436613402970863,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1097,
+        "ratio": 1.8669097538742023,
+        "saved_bytes": 951,
+        "compress_us": 16.09366094967868,
+        "decompress_us": 9.181928619206303,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 804,
+        "ratio": 2.5472636815920398,
+        "saved_bytes": 1244,
+        "compress_us": 36.36263525308436,
+        "decompress_us": 6.4312306977676315,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 693,
+        "ratio": 2.9552669552669553,
+        "saved_bytes": 1355,
+        "compress_us": 1644.9446601427553,
+        "decompress_us": 8.56718380681798,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-2K",
+    "payload_bytes": 2048,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1062,
+        "ratio": 1.9284369114877589,
+        "saved_bytes": 986,
+        "compress_us": 41.113096923339754,
+        "decompress_us": 49.380849119984305,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 929,
+        "ratio": 2.2045209903121634,
+        "saved_bytes": 1119,
+        "compress_us": 86.86192821727445,
+        "decompress_us": 11.507069275218385,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 938,
+        "ratio": 2.183368869936034,
+        "saved_bytes": 1110,
+        "compress_us": 15.417044920695844,
+        "decompress_us": 9.305996917952086,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 659,
+        "ratio": 3.1077389984825494,
+        "saved_bytes": 1389,
+        "compress_us": 36.23200097635504,
+        "decompress_us": 5.8807969054441855,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 605,
+        "ratio": 3.3851239669421487,
+        "saved_bytes": 1443,
+        "compress_us": 1865.0862616595987,
+        "decompress_us": 8.901933044036525,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-4K",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 4132,
+        "ratio": 0.9912875121006777,
+        "saved_bytes": -36,
+        "compress_us": 135.16298925253523,
+        "decompress_us": 93.4173583999609,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 4608,
+        "ratio": 0.8888888888888888,
+        "saved_bytes": -512,
+        "compress_us": 135.76365135747892,
+        "decompress_us": 38.49085485896353,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 4109,
+        "ratio": 0.9968362131905573,
+        "saved_bytes": -13,
+        "compress_us": 46.28694531305655,
+        "decompress_us": 0.7613303260600723,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 4101,
+        "ratio": 0.9987807851743478,
+        "saved_bytes": -5,
+        "compress_us": 50.53251269515613,
+        "decompress_us": 0.5784677467035593,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 4100,
+        "ratio": 0.9990243902439024,
+        "saved_bytes": -4,
+        "compress_us": 4237.00357805501,
+        "decompress_us": 0.523233215310448,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-4K",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 812,
+        "ratio": 5.044334975369458,
+        "saved_bytes": 3284,
+        "compress_us": 37.755247682014215,
+        "decompress_us": 98.0793508347233,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 822,
+        "ratio": 4.982968369829684,
+        "saved_bytes": 3274,
+        "compress_us": 806.2926210641308,
+        "decompress_us": 16.800022155649685,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 918,
+        "ratio": 4.461873638344227,
+        "saved_bytes": 3178,
+        "compress_us": 23.017950072201643,
+        "decompress_us": 14.932257323962972,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 496,
+        "ratio": 8.258064516129032,
+        "saved_bytes": 3600,
+        "compress_us": 43.79747387517341,
+        "decompress_us": 7.897502563025682,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 477,
+        "ratio": 8.58700209643606,
+        "saved_bytes": 3619,
+        "compress_us": 5088.0509529633855,
+        "decompress_us": 9.291343689099563,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-4K",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 3014,
+        "ratio": 1.3589913735899137,
+        "saved_bytes": 1082,
+        "compress_us": 118.04776513457682,
+        "decompress_us": 100.2258681666035,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 2976,
+        "ratio": 1.3763440860215055,
+        "saved_bytes": 1120,
+        "compress_us": 153.78130615317787,
+        "decompress_us": 30.065310790305944,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 2744,
+        "ratio": 1.4927113702623906,
+        "saved_bytes": 1352,
+        "compress_us": 39.31261059264557,
+        "decompress_us": 26.124299315810617,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1147,
+        "ratio": 3.5710549258936357,
+        "saved_bytes": 2949,
+        "compress_us": 63.127352291303396,
+        "decompress_us": 14.134694732881314,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1146,
+        "ratio": 3.574171029668412,
+        "saved_bytes": 2950,
+        "compress_us": 2145.9167421653547,
+        "decompress_us": 19.44214819360468,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-4K",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 2017,
+        "ratio": 2.030738720872583,
+        "saved_bytes": 2079,
+        "compress_us": 73.98180639484053,
+        "decompress_us": 95.65569556002629,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1195,
+        "ratio": 3.427615062761506,
+        "saved_bytes": 2901,
+        "compress_us": 92.17615746592855,
+        "decompress_us": 18.600416199276992,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1801,
+        "ratio": 2.2742920599666854,
+        "saved_bytes": 2295,
+        "compress_us": 26.353197082329416,
+        "decompress_us": 15.491619141272395,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1122,
+        "ratio": 3.6506238859180034,
+        "saved_bytes": 2974,
+        "compress_us": 50.990734131062254,
+        "decompress_us": 9.02003765901327,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 502,
+        "ratio": 8.159362549800797,
+        "saved_bytes": 3594,
+        "compress_us": 3757.0353204046114,
+        "decompress_us": 6.673394043144043,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-4K",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 2365,
+        "ratio": 1.7319238900634248,
+        "saved_bytes": 1731,
+        "compress_us": 83.68952416759612,
+        "decompress_us": 96.00990283331612,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1471,
+        "ratio": 2.7845003399048265,
+        "saved_bytes": 2625,
+        "compress_us": 86.3741428247522,
+        "decompress_us": 19.06756085112704,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 2232,
+        "ratio": 1.8351254480286738,
+        "saved_bytes": 1864,
+        "compress_us": 31.468035402326677,
+        "decompress_us": 18.556855469142874,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1450,
+        "ratio": 2.8248275862068963,
+        "saved_bytes": 2646,
+        "compress_us": 55.03323864886056,
+        "decompress_us": 10.444513946161749,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1122,
+        "ratio": 3.6506238859180034,
+        "saved_bytes": 2974,
+        "compress_us": 3262.9748516228574,
+        "decompress_us": 12.357131621953954,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-4K",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 2076,
+        "ratio": 1.9730250481695568,
+        "saved_bytes": 2020,
+        "compress_us": 78.73836523941691,
+        "decompress_us": 97.71236425848429,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1644,
+        "ratio": 2.491484184914842,
+        "saved_bytes": 2452,
+        "compress_us": 220.59374511229635,
+        "decompress_us": 20.16890210043698,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1895,
+        "ratio": 2.1614775725593667,
+        "saved_bytes": 2201,
+        "compress_us": 30.285263060036982,
+        "decompress_us": 18.780568481702176,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1225,
+        "ratio": 3.3436734693877552,
+        "saved_bytes": 2871,
+        "compress_us": 57.01320007034383,
+        "decompress_us": 9.79291122416015,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1050,
+        "ratio": 3.900952380952381,
+        "saved_bytes": 3046,
+        "compress_us": 3747.61556258818,
+        "decompress_us": 14.813216521858408,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-8K",
+    "payload_bytes": 8192,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 8260,
+        "ratio": 0.9917675544794189,
+        "saved_bytes": -68,
+        "compress_us": 284.3915302719324,
+        "decompress_us": 184.7804516614815,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 9215,
+        "ratio": 0.8889853499728704,
+        "saved_bytes": -1023,
+        "compress_us": 364.6358750017953,
+        "decompress_us": 100.58190673589706,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 8217,
+        "ratio": 0.996957527078009,
+        "saved_bytes": -25,
+        "compress_us": 92.08283739781109,
+        "decompress_us": 1.1227619628462193,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 8197,
+        "ratio": 0.9993900207392948,
+        "saved_bytes": -5,
+        "compress_us": 83.23256176367977,
+        "decompress_us": 0.781112411529783,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 8196,
+        "ratio": 0.9995119570522206,
+        "saved_bytes": -4,
+        "compress_us": 11616.61296919192,
+        "decompress_us": 0.6906101112091889,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-8K",
+    "payload_bytes": 8192,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1691,
+        "ratio": 4.844470727380249,
+        "saved_bytes": 6501,
+        "compress_us": 74.97866308625589,
+        "decompress_us": 193.86761962891796,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1650,
+        "ratio": 4.964848484848485,
+        "saved_bytes": 6542,
+        "compress_us": 1610.918171877529,
+        "decompress_us": 30.831120724883476,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1848,
+        "ratio": 4.432900432900433,
+        "saved_bytes": 6344,
+        "compress_us": 45.351606935639666,
+        "decompress_us": 30.50935107395958,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 980,
+        "ratio": 8.359183673469389,
+        "saved_bytes": 7212,
+        "compress_us": 72.18317675494745,
+        "decompress_us": 14.935887634237588,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 925,
+        "ratio": 8.856216216216216,
+        "saved_bytes": 7267,
+        "compress_us": 9824.985344494053,
+        "decompress_us": 24.16562396234667,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-8K",
+    "payload_bytes": 8192,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 6179,
+        "ratio": 1.3257808706910503,
+        "saved_bytes": 2013,
+        "compress_us": 244.89751169198826,
+        "decompress_us": 197.68999706570867,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 6011,
+        "ratio": 1.3628348028614208,
+        "saved_bytes": 2181,
+        "compress_us": 300.4507949242452,
+        "decompress_us": 60.09871166767766,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 5539,
+        "ratio": 1.4789673226214117,
+        "saved_bytes": 2653,
+        "compress_us": 77.87871020781267,
+        "decompress_us": 50.99972412025977,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 2289,
+        "ratio": 3.578855395369157,
+        "saved_bytes": 5903,
+        "compress_us": 111.82312012181228,
+        "decompress_us": 26.33430792364777,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 2288,
+        "ratio": 3.5804195804195804,
+        "saved_bytes": 5904,
+        "compress_us": 4081.9335936248535,
+        "decompress_us": 37.715078981648276,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-8K",
+    "payload_bytes": 8192,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 3835,
+        "ratio": 2.136114732724902,
+        "saved_bytes": 4357,
+        "compress_us": 139.6537270608178,
+        "decompress_us": 189.69535840085427,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1890,
+        "ratio": 4.334391534391535,
+        "saved_bytes": 6302,
+        "compress_us": 175.21603857062473,
+        "decompress_us": 32.36390442040715,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 3515,
+        "ratio": 2.3305832147937413,
+        "saved_bytes": 4677,
+        "compress_us": 51.08446752899454,
+        "decompress_us": 30.11893908677621,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1838,
+        "ratio": 4.457018498367791,
+        "saved_bytes": 6354,
+        "compress_us": 79.65613036731156,
+        "decompress_us": 14.193450592614454,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 582,
+        "ratio": 14.075601374570446,
+        "saved_bytes": 7610,
+        "compress_us": 8388.203124923166,
+        "decompress_us": 7.544124923430928,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-8K",
+    "payload_bytes": 8192,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 4553,
+        "ratio": 1.7992532396222272,
+        "saved_bytes": 3639,
+        "compress_us": 160.62983202402847,
+        "decompress_us": 198.0964917009942,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 2494,
+        "ratio": 3.284683239775461,
+        "saved_bytes": 5698,
+        "compress_us": 259.4742334167677,
+        "decompress_us": 50.439999878193476,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 4495,
+        "ratio": 1.8224694104560624,
+        "saved_bytes": 3697,
+        "compress_us": 73.03432470706639,
+        "decompress_us": 42.128473875635564,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 2670,
+        "ratio": 3.0681647940074908,
+        "saved_bytes": 5522,
+        "compress_us": 139.75321483883363,
+        "decompress_us": 21.878979980627378,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1855,
+        "ratio": 4.416172506738545,
+        "saved_bytes": 6337,
+        "compress_us": 9623.484718758846,
+        "decompress_us": 21.73638659641597,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-8K",
+    "payload_bytes": 8192,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 4110,
+        "ratio": 1.9931873479318736,
+        "saved_bytes": 4082,
+        "compress_us": 235.66284180276398,
+        "decompress_us": 279.3887831842312,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 3092,
+        "ratio": 2.6494178525226393,
+        "saved_bytes": 5100,
+        "compress_us": 677.3576855607644,
+        "decompress_us": 55.40159228445418,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 3791,
+        "ratio": 2.1609074122922713,
+        "saved_bytes": 4401,
+        "compress_us": 73.70141332785352,
+        "decompress_us": 43.52964404219506,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 2332,
+        "ratio": 3.5128644939965694,
+        "saved_bytes": 5860,
+        "compress_us": 145.32839452385815,
+        "decompress_us": 19.924224181622208,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1849,
+        "ratio": 4.430502974580855,
+        "saved_bytes": 6343,
+        "compress_us": 9620.952124350879,
+        "decompress_us": 27.646891297194998,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-16K",
+    "payload_bytes": 16384,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 16516,
+        "ratio": 0.9920077500605473,
+        "saved_bytes": -132,
+        "compress_us": 865.2925605474593,
+        "decompress_us": 511.38671875605723,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 18430,
+        "ratio": 0.8889853499728704,
+        "saved_bytes": -2046,
+        "compress_us": 987.5911446215468,
+        "decompress_us": 408.2317099403099,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 16433,
+        "ratio": 0.9970181950952351,
+        "saved_bytes": -49,
+        "compress_us": 251.7459618900375,
+        "decompress_us": 3.3388209303986116,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 16389,
+        "ratio": 0.9996949173225944,
+        "saved_bytes": -5,
+        "compress_us": 169.08678661309295,
+        "decompress_us": 1.4784425468317153,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 16388,
+        "ratio": 0.9997559189650964,
+        "saved_bytes": -4,
+        "compress_us": 36661.32812577416,
+        "decompress_us": 1.2720111999264816,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-16K",
+    "payload_bytes": 16384,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 3491,
+        "ratio": 4.693211114293899,
+        "saved_bytes": 12893,
+        "compress_us": 227.41404198711734,
+        "decompress_us": 535.3081249950264,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 3299,
+        "ratio": 4.966353440436496,
+        "saved_bytes": 13085,
+        "compress_us": 3650.213617220288,
+        "decompress_us": 78.78510791670124,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 3747,
+        "ratio": 4.37256471844142,
+        "saved_bytes": 12637,
+        "compress_us": 117.50778173791332,
+        "decompress_us": 75.59417724678497,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1951,
+        "ratio": 8.397744746283957,
+        "saved_bytes": 14433,
+        "compress_us": 218.3079018607259,
+        "decompress_us": 33.884258300531656,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1820,
+        "ratio": 9.002197802197802,
+        "saved_bytes": 14564,
+        "compress_us": 31820.11062745005,
+        "decompress_us": 43.789119750670125,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-16K",
+    "payload_bytes": 16384,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 12294,
+        "ratio": 1.332682609402961,
+        "saved_bytes": 4090,
+        "compress_us": 743.8248691755689,
+        "decompress_us": 550.4264316300578,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 12018,
+        "ratio": 1.363288400732235,
+        "saved_bytes": 4366,
+        "compress_us": 800.3772988445235,
+        "decompress_us": 216.99976610989324,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 11096,
+        "ratio": 1.476568132660418,
+        "saved_bytes": 5288,
+        "compress_us": 208.55634082295182,
+        "decompress_us": 118.8301340349085,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 4545,
+        "ratio": 3.6048404840484047,
+        "saved_bytes": 11839,
+        "compress_us": 297.45702147465636,
+        "decompress_us": 75.94401049715316,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 4545,
+        "ratio": 3.6048404840484047,
+        "saved_bytes": 11839,
+        "compress_us": 15773.242186696734,
+        "decompress_us": 74.29481494369838,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-16K",
+    "payload_bytes": 16384,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 7509,
+        "ratio": 2.181915035290984,
+        "saved_bytes": 8875,
+        "compress_us": 402.7626034996956,
+        "decompress_us": 514.9068183527561,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 3609,
+        "ratio": 4.5397617068440015,
+        "saved_bytes": 12775,
+        "compress_us": 555.5274453286074,
+        "decompress_us": 78.24784594845369,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 7096,
+        "ratio": 2.3089064261555805,
+        "saved_bytes": 9288,
+        "compress_us": 134.5581308527244,
+        "decompress_us": 71.82908373692953,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 3282,
+        "ratio": 4.992078001218769,
+        "saved_bytes": 13102,
+        "compress_us": 177.67990136974277,
+        "decompress_us": 28.791290892726806,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 721,
+        "ratio": 22.723994452149793,
+        "saved_bytes": 15663,
+        "compress_us": 28049.124313838547,
+        "decompress_us": 10.13779479919208,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-16K",
+    "payload_bytes": 16384,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 8898,
+        "ratio": 1.8413126545291076,
+        "saved_bytes": 7486,
+        "compress_us": 495.7817079969118,
+        "decompress_us": 543.9613847215696,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 4677,
+        "ratio": 3.5031002779559546,
+        "saved_bytes": 11707,
+        "compress_us": 617.415162139423,
+        "decompress_us": 100.08463549837643,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 8968,
+        "ratio": 1.8269402319357717,
+        "saved_bytes": 7416,
+        "compress_us": 164.35681641269184,
+        "decompress_us": 85.76493554812714,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 5172,
+        "ratio": 3.1678267594740914,
+        "saved_bytes": 11212,
+        "compress_us": 262.2220869170633,
+        "decompress_us": 39.618816405351254,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 3242,
+        "ratio": 5.053670573719926,
+        "saved_bytes": 13142,
+        "compress_us": 19243.35612420691,
+        "decompress_us": 33.295313478731714,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-16K",
+    "payload_bytes": 16384,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 8010,
+        "ratio": 2.0454431960049937,
+        "saved_bytes": 8374,
+        "compress_us": 468.71993944819224,
+        "decompress_us": 535.0748691625995,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 5976,
+        "ratio": 2.7416331994645247,
+        "saved_bytes": 10408,
+        "compress_us": 1603.7032070244095,
+        "decompress_us": 111.84242260497967,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 7509,
+        "ratio": 2.181915035290984,
+        "saved_bytes": 8875,
+        "compress_us": 149.95285059171692,
+        "decompress_us": 84.0312065477633,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 4468,
+        "ratio": 3.666965085049239,
+        "saved_bytes": 11916,
+        "compress_us": 295.1079814579316,
+        "decompress_us": 38.47582495097868,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 3285,
+        "ratio": 4.987519025875191,
+        "saved_bytes": 13099,
+        "compress_us": 21156.669938136474,
+        "decompress_us": 47.59705224799404,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-32K",
+    "payload_bytes": 32768,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 33028,
+        "ratio": 0.9921278914860119,
+        "saved_bytes": -260,
+        "compress_us": 1636.1458359597236,
+        "decompress_us": 964.8016347796329,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 36860,
+        "ratio": 0.8889853499728704,
+        "saved_bytes": -4092,
+        "compress_us": 2132.7429219581973,
+        "decompress_us": 916.1074824532989,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 32865,
+        "ratio": 0.9970485318728131,
+        "saved_bytes": -97,
+        "compress_us": 497.73528905916464,
+        "decompress_us": 6.049804672336734,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 32773,
+        "ratio": 0.9998474353888872,
+        "saved_bytes": -5,
+        "compress_us": 55.70899328333212,
+        "decompress_us": 3.0175038145952016,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 32772,
+        "ratio": 0.9998779445868424,
+        "saved_bytes": -4,
+        "compress_us": 9872.416968391917,
+        "decompress_us": 3.8455367126211115,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-32K",
+    "payload_bytes": 32768,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 7218,
+        "ratio": 4.5397617068440015,
+        "saved_bytes": 25550,
+        "compress_us": 451.1178584039044,
+        "decompress_us": 989.4696054288943,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 6653,
+        "ratio": 4.925296858560048,
+        "saved_bytes": 26115,
+        "compress_us": 7867.733562761714,
+        "decompress_us": 159.21427393550402,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 7654,
+        "ratio": 4.28116017768487,
+        "saved_bytes": 25114,
+        "compress_us": 263.3410644534706,
+        "decompress_us": 142.69322704763,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 3961,
+        "ratio": 8.272658419591012,
+        "saved_bytes": 28807,
+        "compress_us": 402.52538084928347,
+        "decompress_us": 62.87699365259414,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 3667,
+        "ratio": 8.935914916825743,
+        "saved_bytes": 29101,
+        "compress_us": 57188.313752703834,
+        "decompress_us": 72.7173742660625,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-32K",
+    "payload_bytes": 32768,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 24523,
+        "ratio": 1.3362149818537699,
+        "saved_bytes": 8245,
+        "compress_us": 1614.0631133794159,
+        "decompress_us": 1013.349605386793,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 24066,
+        "ratio": 1.3615889636832046,
+        "saved_bytes": 8702,
+        "compress_us": 1637.381996147269,
+        "decompress_us": 391.22553516790504,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 22194,
+        "ratio": 1.4764350725421285,
+        "saved_bytes": 10574,
+        "compress_us": 438.9718115476171,
+        "decompress_us": 230.4600781286581,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 9057,
+        "ratio": 3.6179750469250305,
+        "saved_bytes": 23711,
+        "compress_us": 524.2948398631597,
+        "decompress_us": 138.09992481128575,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 9061,
+        "ratio": 3.6163778832358457,
+        "saved_bytes": 23707,
+        "compress_us": 30092.4739385664,
+        "decompress_us": 148.67716504340933,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-32K",
+    "payload_bytes": 32768,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 14440,
+        "ratio": 2.269252077562327,
+        "saved_bytes": 18328,
+        "compress_us": 789.7827148894976,
+        "decompress_us": 980.9953828039397,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 6534,
+        "ratio": 5.014998469543924,
+        "saved_bytes": 26234,
+        "compress_us": 1055.0343827162578,
+        "decompress_us": 148.20053125674804,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 14368,
+        "ratio": 2.2806236080178173,
+        "saved_bytes": 18400,
+        "compress_us": 264.98260447738176,
+        "decompress_us": 133.60593163724843,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 6075,
+        "ratio": 5.3939094650205766,
+        "saved_bytes": 26693,
+        "compress_us": 322.90084863006996,
+        "decompress_us": 56.0567282725799,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 971,
+        "ratio": 33.74665293511843,
+        "saved_bytes": 31797,
+        "compress_us": 65774.05600182828,
+        "decompress_us": 13.023406647327818,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-32K",
+    "payload_bytes": 32768,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 17644,
+        "ratio": 1.8571752437089095,
+        "saved_bytes": 15124,
+        "compress_us": 999.9918613061709,
+        "decompress_us": 1033.0975351280358,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 8994,
+        "ratio": 3.643317767400489,
+        "saved_bytes": 23774,
+        "compress_us": 1229.2588281752614,
+        "decompress_us": 221.32301319288672,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 17912,
+        "ratio": 1.829388119696293,
+        "saved_bytes": 14856,
+        "compress_us": 366.24069238655466,
+        "decompress_us": 180.00116992311632,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 10073,
+        "ratio": 3.2530527151791917,
+        "saved_bytes": 22695,
+        "compress_us": 526.667074211673,
+        "decompress_us": 79.52611303352342,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 5742,
+        "ratio": 5.706722396377569,
+        "saved_bytes": 27026,
+        "compress_us": 39942.4218776403,
+        "decompress_us": 59.8026148672659,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-32K",
+    "payload_bytes": 32768,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 16041,
+        "ratio": 2.0427654136275795,
+        "saved_bytes": 16727,
+        "compress_us": 1008.2802305078076,
+        "decompress_us": 1017.672324223895,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 11719,
+        "ratio": 2.796143015615667,
+        "saved_bytes": 21049,
+        "compress_us": 3092.8605156077538,
+        "decompress_us": 258.0461122931865,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 15026,
+        "ratio": 2.1807533608412086,
+        "saved_bytes": 17742,
+        "compress_us": 350.0900273536445,
+        "decompress_us": 198.3273569408084,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 8939,
+        "ratio": 3.6657344221948764,
+        "saved_bytes": 23829,
+        "compress_us": 583.1462597711834,
+        "decompress_us": 79.30942528844298,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 6126,
+        "ratio": 5.349004244205028,
+        "saved_bytes": 26642,
+        "compress_us": 44074.73312312504,
+        "decompress_us": 90.31935351799802,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-128K",
+    "payload_bytes": 131072,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 132108,
+        "ratio": 0.9921579313894692,
+        "saved_bytes": -1036,
+        "compress_us": 6764.785156065045,
+        "decompress_us": 4225.429672260361,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 147436,
+        "ratio": 0.8890094685151524,
+        "saved_bytes": -16364,
+        "compress_us": 10487.237968845875,
+        "decompress_us": 3783.0464609669434,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 131457,
+        "ratio": 0.9970712856675567,
+        "saved_bytes": -385,
+        "compress_us": 2211.133218679606,
+        "decompress_us": 22.059335693214166,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 131077,
+        "ratio": 0.9999618544824798,
+        "saved_bytes": -5,
+        "compress_us": 209.94674706287242,
+        "decompress_us": 11.500240966633157,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 131077,
+        "ratio": 0.9999618544824798,
+        "saved_bytes": -5,
+        "compress_us": 34697.39587671938,
+        "decompress_us": 12.839037567324851,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-128K",
+    "payload_bytes": 131072,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 28141,
+        "ratio": 4.6576880707863975,
+        "saved_bytes": 102931,
+        "compress_us": 1992.4361172343197,
+        "decompress_us": 4155.545250341675,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 26236,
+        "ratio": 4.99588351882909,
+        "saved_bytes": 104836,
+        "compress_us": 29471.735062543303,
+        "decompress_us": 709.8166914261128,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 30090,
+        "ratio": 4.355998670654703,
+        "saved_bytes": 100982,
+        "compress_us": 1255.9303788748366,
+        "decompress_us": 644.2474375489837,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 15321,
+        "ratio": 8.555055153057895,
+        "saved_bytes": 115751,
+        "compress_us": 1745.7493086112663,
+        "decompress_us": 267.06502245588126,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 13926,
+        "ratio": 9.412035042366796,
+        "saved_bytes": 117146,
+        "compress_us": 262455.5730144493,
+        "decompress_us": 238.66666161609373,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-128K",
+    "payload_bytes": 131072,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 97726,
+        "ratio": 1.341219327507521,
+        "saved_bytes": 33346,
+        "compress_us": 6002.774250191578,
+        "decompress_us": 4325.4305001028115,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 96152,
+        "ratio": 1.3631749729594809,
+        "saved_bytes": 34920,
+        "compress_us": 7111.974281087896,
+        "decompress_us": 1718.4006758270698,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 88745,
+        "ratio": 1.4769508141303735,
+        "saved_bytes": 42327,
+        "compress_us": 2029.762781376121,
+        "decompress_us": 1017.3732499652033,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 36075,
+        "ratio": 3.633319473319473,
+        "saved_bytes": 94997,
+        "compress_us": 2175.7934532615764,
+        "decompress_us": 589.653931626799,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 36072,
+        "ratio": 3.6336216455976933,
+        "saved_bytes": 95000,
+        "compress_us": 131249.24449948594,
+        "decompress_us": 611.7823281215351,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-128K",
+    "payload_bytes": 131072,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 56061,
+        "ratio": 2.338024651718664,
+        "saved_bytes": 75011,
+        "compress_us": 3746.5144844190945,
+        "decompress_us": 4693.290202794742,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 24488,
+        "ratio": 5.35249918327344,
+        "saved_bytes": 106584,
+        "compress_us": 4788.229968653468,
+        "decompress_us": 700.7975253827681,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 57603,
+        "ratio": 2.275437043209555,
+        "saved_bytes": 73469,
+        "compress_us": 1426.5629063174856,
+        "decompress_us": 696.847839833481,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 22042,
+        "ratio": 5.94646583794574,
+        "saved_bytes": 109030,
+        "compress_us": 1362.3099765709412,
+        "decompress_us": 233.86416114590247,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 2350,
+        "ratio": 55.77531914893617,
+        "saved_bytes": 128722,
+        "compress_us": 308774.2190109566,
+        "decompress_us": 37.271995481091835,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-128K",
+    "payload_bytes": 131072,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 70483,
+        "ratio": 1.8596257253522126,
+        "saved_bytes": 60589,
+        "compress_us": 4934.8543279847945,
+        "decompress_us": 4816.408687474905,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 35266,
+        "ratio": 3.716667611864118,
+        "saved_bytes": 95806,
+        "compress_us": 5878.289390693681,
+        "decompress_us": 1042.5469961319322,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 71651,
+        "ratio": 1.8293115239145301,
+        "saved_bytes": 59421,
+        "compress_us": 1812.3313399200924,
+        "decompress_us": 835.2121992629691,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 39708,
+        "ratio": 3.300896544776871,
+        "saved_bytes": 91364,
+        "compress_us": 2379.9035625415854,
+        "decompress_us": 358.4032177741392,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 19579,
+        "ratio": 6.694519638388069,
+        "saved_bytes": 111493,
+        "compress_us": 187971.874998766,
+        "decompress_us": 200.061467779733,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-128K",
+    "payload_bytes": 131072,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 63937,
+        "ratio": 2.050017986455417,
+        "saved_bytes": 67135,
+        "compress_us": 4913.2096251014445,
+        "decompress_us": 4822.583828172355,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 46146,
+        "ratio": 2.840376197286872,
+        "saved_bytes": 84926,
+        "compress_us": 14453.217750087788,
+        "decompress_us": 1228.5921210377637,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 60186,
+        "ratio": 2.1777822084870238,
+        "saved_bytes": 70886,
+        "compress_us": 1633.3451328591764,
+        "decompress_us": 934.2612714817733,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 35101,
+        "ratio": 3.734138628529102,
+        "saved_bytes": 95971,
+        "compress_us": 2531.721187324365,
+        "decompress_us": 461.6293339836375,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 22222,
+        "ratio": 5.89829898298983,
+        "saved_bytes": 108850,
+        "compress_us": 207958.64600222558,
+        "decompress_us": 335.37475584921594,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-512K",
+    "payload_bytes": 524288,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 528420,
+        "ratio": 0.9921804625108815,
+        "saved_bytes": -4132,
+        "compress_us": 32133.0013757688,
+        "decompress_us": 20124.166687310208,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 589735,
+        "ratio": 0.8890230357703036,
+        "saved_bytes": -65447,
+        "compress_us": 40319.12099890178,
+        "decompress_us": 18628.30731261056,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 525825,
+        "ratio": 0.9970769742785147,
+        "saved_bytes": -1537,
+        "compress_us": 11002.827156517014,
+        "decompress_us": 79.64202856669544,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 524302,
+        "ratio": 0.9999732978321655,
+        "saved_bytes": -14,
+        "compress_us": 878.1767773484717,
+        "decompress_us": 48.474140257326326,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 524293,
+        "ratio": 0.9999904633477845,
+        "saved_bytes": -5,
+        "compress_us": 254638.4370070882,
+        "decompress_us": 53.86529284479025,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-512K",
+    "payload_bytes": 524288,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 112131,
+        "ratio": 4.675673988459926,
+        "saved_bytes": 412157,
+        "compress_us": 9530.644530968857,
+        "decompress_us": 19930.182250391226,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 105190,
+        "ratio": 4.9842000190132145,
+        "saved_bytes": 419098,
+        "compress_us": 135546.84900736902,
+        "decompress_us": 3266.6975937445386,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 120470,
+        "ratio": 4.3520212501037605,
+        "saved_bytes": 403818,
+        "compress_us": 5561.372875035886,
+        "decompress_us": 2912.0642032012256,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 61606,
+        "ratio": 8.510339901957602,
+        "saved_bytes": 462682,
+        "compress_us": 8052.294906519819,
+        "decompress_us": 1292.7524804808854,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 54911,
+        "ratio": 9.54795942525177,
+        "saved_bytes": 469377,
+        "compress_us": 1144912.7079977188,
+        "decompress_us": 1113.197835934443,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-512K",
+    "payload_bytes": 524288,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 391434,
+        "ratio": 1.3394033221437074,
+        "saved_bytes": 132854,
+        "compress_us": 25068.486374948407,
+        "decompress_us": 18431.47462568595,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 384608,
+        "ratio": 1.3631749729594809,
+        "saved_bytes": 139680,
+        "compress_us": 29646.425751707284,
+        "decompress_us": 8517.96467168242,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 354787,
+        "ratio": 1.477754258188716,
+        "saved_bytes": 169501,
+        "compress_us": 10040.887032118917,
+        "decompress_us": 5075.177406524745,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 144325,
+        "ratio": 3.6326901091287027,
+        "saved_bytes": 379963,
+        "compress_us": 8469.64353149815,
+        "decompress_us": 2303.7756327539682,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 144198,
+        "ratio": 3.6358895407703296,
+        "saved_bytes": 380090,
+        "compress_us": 785403.6980133969,
+        "decompress_us": 2817.7526874060277,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-512K",
+    "payload_bytes": 524288,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 219454,
+        "ratio": 2.389056476528111,
+        "saved_bytes": 304834,
+        "compress_us": 13571.725250585587,
+        "decompress_us": 16533.36262643279,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 99563,
+        "ratio": 5.265891947811938,
+        "saved_bytes": 424725,
+        "compress_us": 18289.208999703988,
+        "decompress_us": 2554.1573045302357,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 227992,
+        "ratio": 2.299589459279273,
+        "saved_bytes": 296296,
+        "compress_us": 5190.086265429272,
+        "decompress_us": 2451.481929711008,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 85897,
+        "ratio": 6.103682317193848,
+        "saved_bytes": 438391,
+        "compress_us": 4792.87353118707,
+        "decompress_us": 859.3498730533611,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 7916,
+        "ratio": 66.23143001515918,
+        "saved_bytes": 516372,
+        "compress_us": 1154514.8949953727,
+        "decompress_us": 105.67523950300028,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-512K",
+    "payload_bytes": 524288,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 281334,
+        "ratio": 1.8635785223257766,
+        "saved_bytes": 242954,
+        "compress_us": 20202.780000545317,
+        "decompress_us": 19598.06318882329,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 139778,
+        "ratio": 3.7508620813003475,
+        "saved_bytes": 384510,
+        "compress_us": 24130.644562319503,
+        "decompress_us": 3556.278070391272,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 286087,
+        "ratio": 1.8326173506660561,
+        "saved_bytes": 238201,
+        "compress_us": 6253.505046970531,
+        "decompress_us": 2920.8573359937873,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 158960,
+        "ratio": 3.298238550578762,
+        "saved_bytes": 365328,
+        "compress_us": 8084.850250270392,
+        "decompress_us": 1493.5978164203334,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 70570,
+        "ratio": 7.429332577582542,
+        "saved_bytes": 453718,
+        "compress_us": 691848.0199819896,
+        "decompress_us": 606.7175292514548,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-512K",
+    "payload_bytes": 524288,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 255069,
+        "ratio": 2.0554751851459803,
+        "saved_bytes": 269219,
+        "compress_us": 17134.75581163948,
+        "decompress_us": 17035.976563420263,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 184422,
+        "ratio": 2.842871240958237,
+        "saved_bytes": 339866,
+        "compress_us": 49683.495999488514,
+        "decompress_us": 4138.7475466763135,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 240755,
+        "ratio": 2.1776827064858466,
+        "saved_bytes": 283533,
+        "compress_us": 6114.1568908169575,
+        "decompress_us": 3168.952640635325,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 140710,
+        "ratio": 3.7260180513112076,
+        "saved_bytes": 383578,
+        "compress_us": 8589.612624746223,
+        "decompress_us": 1452.546386758513,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 84586,
+        "ratio": 6.198283403872981,
+        "saved_bytes": 439702,
+        "compress_us": 761644.2709986586,
+        "decompress_us": 1081.3663710678156,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "random-1024K",
+    "payload_bytes": 1048576,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1056836,
+        "ratio": 0.9921842177972742,
+        "saved_bytes": -8260,
+        "compress_us": 51540.065123845125,
+        "decompress_us": 30382.672499399632,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1179467,
+        "ratio": 0.8890252970197555,
+        "saved_bytes": -130891,
+        "compress_us": 62852.629998815246,
+        "decompress_us": 28932.421875651926,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1051649,
+        "ratio": 0.9970779223866518,
+        "saved_bytes": -3073,
+        "compress_us": 16862.291624420322,
+        "decompress_us": 122.81272900338536,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 1048602,
+        "ratio": 0.9999752050825766,
+        "saved_bytes": -26,
+        "compress_us": 1644.3548593088053,
+        "decompress_us": 79.4502766154892,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 1048581,
+        "ratio": 0.9999952316511552,
+        "saved_bytes": -5,
+        "compress_us": 436386.7179781664,
+        "decompress_us": 89.55888110762089,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "sparse-1024K",
+    "payload_bytes": 1048576,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 222400,
+        "ratio": 4.714820143884892,
+        "saved_bytes": 826176,
+        "compress_us": 17111.194655626605,
+        "decompress_us": 32334.993375116028,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 209689,
+        "ratio": 5.000624734726189,
+        "saved_bytes": 838887,
+        "compress_us": 232046.952995006,
+        "decompress_us": 5686.526687895821,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 239379,
+        "ratio": 4.380400954135492,
+        "saved_bytes": 809197,
+        "compress_us": 9790.190405510657,
+        "decompress_us": 5109.50276566291,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 122241,
+        "ratio": 8.577940298263266,
+        "saved_bytes": 926335,
+        "compress_us": 13535.525718907593,
+        "decompress_us": 2313.9831562275504,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 108687,
+        "ratio": 9.647667154305482,
+        "saved_bytes": 939889,
+        "compress_us": 2155324.4259848725,
+        "decompress_us": 1656.6035976666171,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uint32-1024K",
+    "payload_bytes": 1048576,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 784908,
+        "ratio": 1.3359221717704495,
+        "saved_bytes": 263668,
+        "compress_us": 44987.04424986499,
+        "decompress_us": 32504.02999765356,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 769755,
+        "ratio": 1.3622204467655292,
+        "saved_bytes": 278821,
+        "compress_us": 68380.48174540745,
+        "decompress_us": 13180.455749534303,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 710117,
+        "ratio": 1.4766242745913702,
+        "saved_bytes": 338459,
+        "compress_us": 15455.073218618054,
+        "decompress_us": 8106.3899688160745,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 288959,
+        "ratio": 3.62880547067231,
+        "saved_bytes": 759617,
+        "compress_us": 16580.338562562247,
+        "decompress_us": 4536.380218723934,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 288536,
+        "ratio": 3.634125377769152,
+        "saved_bytes": 760040,
+        "compress_us": 1113214.3740251195,
+        "decompress_us": 4662.529297092988,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "utf8-prose-1024K",
+    "payload_bytes": 1048576,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 438502,
+        "ratio": 2.3912684548759184,
+        "saved_bytes": 610074,
+        "compress_us": 29038.645874607028,
+        "decompress_us": 31577.682249917416,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 197909,
+        "ratio": 5.298273448908336,
+        "saved_bytes": 850667,
+        "compress_us": 34604.726497491356,
+        "decompress_us": 4671.966953537776,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 455358,
+        "ratio": 2.3027508026651557,
+        "saved_bytes": 593218,
+        "compress_us": 9904.458000164595,
+        "decompress_us": 4674.563812386623,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 157526,
+        "ratio": 6.656526541650267,
+        "saved_bytes": 891050,
+        "compress_us": 10315.05531318544,
+        "decompress_us": 2164.242757999091,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 15333,
+        "ratio": 68.38687797560817,
+        "saved_bytes": 1033243,
+        "compress_us": 2312746.352981776,
+        "decompress_us": 201.59746826209357,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "uk-addr-1024K",
+    "payload_bytes": 1048576,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 562536,
+        "ratio": 1.8640158140990088,
+        "saved_bytes": 486040,
+        "compress_us": 38485.38400052348,
+        "decompress_us": 38193.111999135,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 279839,
+        "ratio": 3.74706885030321,
+        "saved_bytes": 768737,
+        "compress_us": 46100.130126433214,
+        "decompress_us": 7818.650718945719,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 571618,
+        "ratio": 1.834399896434332,
+        "saved_bytes": 476958,
+        "compress_us": 14421.46646877518,
+        "decompress_us": 6689.885250125371,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 285137,
+        "ratio": 3.6774462802091628,
+        "saved_bytes": 763439,
+        "compress_us": 20313.681625339086,
+        "decompress_us": 4262.417000063579,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 136568,
+        "ratio": 7.678050494991506,
+        "saved_bytes": 912008,
+        "compress_us": 1644117.7079977933,
+        "decompress_us": 1287.6617422534764,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "order-pos-1024K",
+    "payload_bytes": 1048576,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 511270,
+        "ratio": 2.0509241692256537,
+        "saved_bytes": 537306,
+        "compress_us": 35587.34375110362,
+        "decompress_us": 36024.93487778702,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 368971,
+        "ratio": 2.841892723276355,
+        "saved_bytes": 679605,
+        "compress_us": 105312.29149637511,
+        "decompress_us": 8839.801437716233,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 481828,
+        "ratio": 2.176245465186747,
+        "saved_bytes": 566748,
+        "compress_us": 12904.065749353322,
+        "decompress_us": 6710.265296987927,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 252930,
+        "ratio": 4.145716206064919,
+        "saved_bytes": 795646,
+        "compress_us": 20608.479811926372,
+        "decompress_us": 4110.107421638531,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 166582,
+        "ratio": 6.294653684071508,
+        "saved_bytes": 881994,
+        "compress_us": 1758892.5519958138,
+        "decompress_us": 2356.3903828289767,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  }
+]

@@ -282,6 +282,8 @@ static void pc_head_insert(
     head[0][hash] = pos;
 }
 
+#if PC_DICT_COUNT > 0
+
 typedef struct {
     const uint8_t *data;
     uint8_t len;
@@ -308,8 +310,8 @@ static const uint8_t pc_d06[] = { '"', ':' };              /* ":   */
 static const uint8_t pc_d07[] = { ',', '"' };              /* ,"   */
 /* 8-15: three-byte patterns */
 static const uint8_t pc_d08[] = { '"', ':', '"' };         /* ":"  ← JSON money pattern */
-static const uint8_t pc_d09[] = "000";
-static const uint8_t pc_d10[] = "ORD";
+static const uint8_t pc_d09[] = { '<', '/' };              /* </  closing tag */
+static const uint8_t pc_d10[] = { '=', '"' };              /* ="  attribute value */
 static const uint8_t pc_d11[] = "the";
 static const uint8_t pc_d12[] = "ing";
 static const uint8_t pc_d13[] = { ',', '"', ',' };         /* ","  JSON string separator */
@@ -320,7 +322,7 @@ static const uint8_t pc_d16[] = "ion";
 static const uint8_t pc_d17[] = "ent";
 static const uint8_t pc_d18[] = "ter";
 static const uint8_t pc_d19[] = "and";
-static const uint8_t pc_d20[] = "00";                      /* ASCII "00" */
+static const uint8_t pc_d20[] = { '/', '>' };              /* />  self-closing tag */
 static const uint8_t pc_d21[] = { '"', '}', ',' };         /* "},  */
 static const uint8_t pc_d22[] = { '"', ']', ',' };         /* "],  */
 static const uint8_t pc_d23[] = "  ";                      /* double space */
@@ -389,15 +391,19 @@ static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
     /* 60-63:8B */  { pc_d60,8 }, { pc_d61,8 }, { pc_d62,8 }, { pc_d63,8 },
 };
 
+#endif /* PC_DICT_COUNT > 0 */
+
 /* Find best savings among repeat-cache, dict, and LZ at a virtual position.
  * Order: repeat-cache → dictionary → hash-chain LZ.
  * good_match: threshold to stop probing early (adaptive per block region).
+ * skip_dict: when true, skip dictionary probing (self-disabled after probe window).
  * Returns net savings (bytes saved vs literal). Fills out_* params. */
 static int pc_find_best(
     const uint8_t *vbuf, uint16_t vbuf_len, uint16_t vpos,
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE],
     const uint16_t rep_offsets[PC_REPEAT_CACHE_SIZE],
     uint16_t good_match,
+    int skip_dict,
     uint16_t *out_len, uint16_t *out_off, uint16_t *out_dict,
     int *out_is_repeat
 ) {
@@ -447,7 +453,8 @@ static int pc_find_best(
 
     /* 2. Dictionary match (1-byte token → savings = len - 1).
      * First-byte filter + early bail on good-enough (idea #3, #10). */
-    {
+#if PC_DICT_COUNT > 0
+    if (!skip_dict) {
         uint8_t first_byte = vbuf[vpos];
         for (d = 0; d < (int)PC_DICT_COUNT; ++d) {
             uint8_t dlen = pc_static_dict[d].len;
@@ -465,6 +472,9 @@ static int pc_find_best(
             if (dlen >= good_match) return best_savings; /* #10 */
         }
     }
+#else
+    (void)skip_dict;
+#endif
 
     /* 3. LZ hash-chain match — with early reject (#9), offset scoring (#5),
      * good-enough bail (#10). */
@@ -558,6 +568,35 @@ static uint16_t pc_compress_block(
 
     anchor = hist_len;
     vpos = hist_len;
+
+    /* Self-disabling dictionary: check first bytes of the block.
+     * If byte[0] is a structured-data opener ({, [, <, BOM lead 0xEF)
+     * → keep dict active.  Otherwise, if any of the first 4 bytes is
+     * outside printable ASCII (0x20..0x7E) → binary data, skip dict.
+     * This is a single cheap check per block, not per position. */
+    {
+        int dict_skip = 0;
+#if PC_DICT_COUNT > 0
+        if (block_len >= 1u) {
+            uint8_t b0 = vbuf[hist_len];
+            if (b0 == '{' || b0 == '[' || b0 == '<' || b0 == 0xEFu) {
+                dict_skip = 0; /* structured data — keep dict */
+            } else {
+                /* check first 4 bytes for non-printable ASCII */
+                uint16_t check_len = block_len < 4u ? block_len : 4u;
+                uint16_t ci;
+                dict_skip = 0;
+                for (ci = 0; ci < check_len; ++ci) {
+                    uint8_t c = vbuf[hist_len + ci];
+                    if (c < 0x20u || c > 0x7Eu) {
+                        dict_skip = 1;
+                        break;
+                    }
+                }
+            }
+        }
+#endif
+
     while (vpos < vbuf_len) {
         uint16_t best_len, best_off, best_dict;
         int best_is_repeat, best_savings;
@@ -571,6 +610,7 @@ retry_pos:
 
         best_savings = pc_find_best(
             vbuf, vbuf_len, vpos, head, rep_offsets, PC_GOOD_MATCH,
+            dict_skip,
             &best_len, &best_off, &best_dict, &best_is_repeat);
 
         /* insert current position into hash table (needs 3 bytes) */
@@ -602,6 +642,7 @@ retry_pos:
                     int n_rep;
                     int n_sav = pc_find_best(
                         vbuf, vbuf_len, npos, head, rep_offsets, PC_GOOD_MATCH,
+                        dict_skip,
                         &n_len, &n_off, &n_dict, &n_rep);
                     if (n_sav > best_savings) {
                         uint16_t s;
@@ -689,6 +730,8 @@ retry_pos:
         }
     }
 
+    } /* end dict_skip scope */
+
     return op;
 }
 
@@ -748,6 +791,7 @@ static pc_result pc_decompress_block(
 
         /* 0x40..0x7F: dictionary reference (0..63) */
         if (token < 0x80u) {
+#if PC_DICT_COUNT > 0
             uint16_t idx = (uint16_t)(token & 0x3Fu);
             uint8_t dlen;
             if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
@@ -756,6 +800,9 @@ static pc_result pc_decompress_block(
             memcpy(out + op, pc_static_dict[idx].data, dlen);
             op = (uint16_t)(op + dlen);
             continue;
+#else
+            return PC_ERR_CORRUPT; /* no dictionary compiled in */
+#endif
         }
 
         /* 0x80..0xBF: LZ match with explicit offset */
