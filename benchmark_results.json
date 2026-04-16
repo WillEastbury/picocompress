@@ -8,8 +8,8 @@
         "compressed_bytes": 115,
         "ratio": 4.417391304347826,
         "saved_bytes": 393,
-        "compress_us": 9.105911255247179,
-        "decompress_us": 15.41190795961711,
+        "compress_us": 10.870095825194632,
+        "decompress_us": 14.0749114990249,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -18,8 +18,8 @@
         "compressed_bytes": 143,
         "ratio": 3.5524475524475525,
         "saved_bytes": 365,
-        "compress_us": 7.4024612426448755,
-        "decompress_us": 4.6013061525407295,
+        "compress_us": 7.419798278809203,
+        "decompress_us": 4.664915466310108,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -28,8 +28,8 @@
         "compressed_bytes": 169,
         "ratio": 3.0059171597633134,
         "saved_bytes": 339,
-        "compress_us": 5.15641937237632,
-        "decompress_us": 2.6562240600380704,
+        "compress_us": 5.074867248534148,
+        "decompress_us": 2.6440284729006835,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -38,8 +38,8 @@
         "compressed_bytes": 121,
         "ratio": 4.198347107438017,
         "saved_bytes": 387,
-        "compress_us": 18.332470704152115,
-        "decompress_us": 3.031948852427746,
+        "compress_us": 18.189196777346204,
+        "decompress_us": 2.9823928833008773,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -48,8 +48,8 @@
         "compressed_bytes": 119,
         "ratio": 4.26890756302521,
         "saved_bytes": 389,
-        "compress_us": 907.4480468598267,
-        "decompress_us": 3.193092346087667,
+        "compress_us": 873.328906250137,
+        "decompress_us": 3.1471343994136927,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -61,11 +61,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 393,
-        "ratio": 1.2926208651399491,
-        "saved_bytes": 115,
-        "compress_us": 23.326037597470872,
-        "decompress_us": 15.493908691155411,
+        "compressed_bytes": 418,
+        "ratio": 1.215311004784689,
+        "saved_bytes": 90,
+        "compress_us": 31.246264648440714,
+        "decompress_us": 14.137554931639706,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -74,8 +74,8 @@
         "compressed_bytes": 460,
         "ratio": 1.1043478260869566,
         "saved_bytes": 48,
-        "compress_us": 89.20012206914407,
-        "decompress_us": 8.849243164021914,
+        "compress_us": 90.02380371092578,
+        "decompress_us": 9.336154174807016,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -84,8 +84,8 @@
         "compressed_bytes": 391,
         "ratio": 1.29923273657289,
         "saved_bytes": 117,
-        "compress_us": 6.114378356958383,
-        "decompress_us": 4.1498840332998554,
+        "compress_us": 6.352291870117751,
+        "decompress_us": 4.097703552245758,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -94,8 +94,8 @@
         "compressed_bytes": 334,
         "ratio": 1.5209580838323353,
         "saved_bytes": 174,
-        "compress_us": 22.74416503844634,
-        "decompress_us": 3.9486862184467952,
+        "compress_us": 21.353082275396563,
+        "decompress_us": 3.965319824217328,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -104,8 +104,8 @@
         "compressed_bytes": 298,
         "ratio": 1.7046979865771812,
         "saved_bytes": 210,
-        "compress_us": 986.5425781754311,
-        "decompress_us": 5.76212463387904,
+        "compress_us": 940.0083984374419,
+        "decompress_us": 5.765084838866424,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -120,8 +120,8 @@
         "compressed_bytes": 512,
         "ratio": 0.9921875,
         "saved_bytes": -4,
-        "compress_us": 28.98959960973002,
-        "decompress_us": 15.452313231634207,
+        "compress_us": 37.2762207031252,
+        "decompress_us": 14.351251220703215,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -130,8 +130,8 @@
         "compressed_bytes": 572,
         "ratio": 0.8881118881118881,
         "saved_bytes": -64,
-        "compress_us": 19.05183105499475,
-        "decompress_us": 9.952709961069672,
+        "compress_us": 19.266619873045677,
+        "decompress_us": 9.969180297851599,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -140,8 +140,8 @@
         "compressed_bytes": 512,
         "ratio": 0.9921875,
         "saved_bytes": -4,
-        "compress_us": 7.626585388553764,
-        "decompress_us": 0.6081766129040211,
+        "compress_us": 7.668765258789234,
+        "decompress_us": 0.6652193069458211,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -150,8 +150,8 @@
         "compressed_bytes": 513,
         "ratio": 0.9902534113060428,
         "saved_bytes": -5,
-        "compress_us": 17.801220703717036,
-        "decompress_us": 0.6128250121806289,
+        "compress_us": 19.38864135742069,
+        "decompress_us": 0.9224760055541893,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -160,8 +160,8 @@
         "compressed_bytes": 512,
         "ratio": 0.9921875,
         "saved_bytes": -4,
-        "compress_us": 1444.8210937416661,
-        "decompress_us": 0.6158016204738104,
+        "compress_us": 2213.110156249698,
+        "decompress_us": 1.0308502197266083,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -173,11 +173,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 105,
-        "ratio": 2.419047619047619,
-        "saved_bytes": 149,
-        "compress_us": 8.138104248267553,
-        "decompress_us": 8.65486450241093,
+        "compressed_bytes": 116,
+        "ratio": 2.189655172413793,
+        "saved_bytes": 138,
+        "compress_us": 19.272332763671518,
+        "decompress_us": 13.700384521486002,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -186,8 +186,8 @@
         "compressed_bytes": 156,
         "ratio": 1.6282051282051282,
         "saved_bytes": 98,
-        "compress_us": 6.860859679935771,
-        "decompress_us": 4.266130066099549,
+        "compress_us": 11.032785034181119,
+        "decompress_us": 4.558367919921952,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -196,8 +196,8 @@
         "compressed_bytes": 127,
         "ratio": 2.0,
         "saved_bytes": 127,
-        "compress_us": 4.0123794553537095,
-        "decompress_us": 2.254947662372331,
+        "compress_us": 4.133778381348874,
+        "decompress_us": 2.4121109008790054,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -206,8 +206,8 @@
         "compressed_bytes": 104,
         "ratio": 2.4423076923076925,
         "saved_bytes": 150,
-        "compress_us": 15.367175292269053,
-        "decompress_us": 2.1509826659826814,
+        "compress_us": 14.375152587890739,
+        "decompress_us": 2.159591674804479,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -216,8 +216,344 @@
         "compressed_bytes": 91,
         "ratio": 2.791208791208791,
         "saved_bytes": 163,
-        "compress_us": 446.0208984369274,
-        "decompress_us": 2.1847297666521825,
+        "compress_us": 444.63222656254686,
+        "decompress_us": 2.130141448974422,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "json-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 268,
+        "ratio": 1.8955223880597014,
+        "saved_bytes": 240,
+        "compress_us": 21.97749023437334,
+        "decompress_us": 14.663308715818363,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 312,
+        "ratio": 1.6282051282051282,
+        "saved_bytes": 196,
+        "compress_us": 12.841540527344652,
+        "decompress_us": 7.450325012207243,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 303,
+        "ratio": 1.6765676567656767,
+        "saved_bytes": 205,
+        "compress_us": 5.850009155273714,
+        "decompress_us": 3.571759796142625,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 248,
+        "ratio": 2.0483870967741935,
+        "saved_bytes": 260,
+        "compress_us": 20.131072998051668,
+        "decompress_us": 3.3855407714847296,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 225,
+        "ratio": 2.2577777777777777,
+        "saved_bytes": 283,
+        "compress_us": 941.219531249926,
+        "decompress_us": 6.9028381347660535,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "lorem-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 443,
+        "ratio": 1.146726862302483,
+        "saved_bytes": 65,
+        "compress_us": 34.157971191398076,
+        "decompress_us": 21.30755615234459,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 448,
+        "ratio": 1.1339285714285714,
+        "saved_bytes": 60,
+        "compress_us": 33.71682128905373,
+        "decompress_us": 16.161114501950237,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 317,
+        "ratio": 1.6025236593059937,
+        "saved_bytes": 191,
+        "compress_us": 10.241839599609698,
+        "decompress_us": 5.411618041992888,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 308,
+        "ratio": 1.6493506493506493,
+        "saved_bytes": 200,
+        "compress_us": 42.447656249999795,
+        "decompress_us": 5.392137145995846,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 299,
+        "ratio": 1.6989966555183946,
+        "saved_bytes": 209,
+        "compress_us": 1215.646874999976,
+        "decompress_us": 6.780401611328895,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "rgb-icon-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 271,
+        "ratio": 1.8745387453874538,
+        "saved_bytes": 237,
+        "compress_us": 34.366394042972814,
+        "decompress_us": 26.024365234376955,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 301,
+        "ratio": 1.6877076411960132,
+        "saved_bytes": 207,
+        "compress_us": 37.88360595703699,
+        "decompress_us": 11.850775146482473,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 178,
+        "ratio": 2.853932584269663,
+        "saved_bytes": 330,
+        "compress_us": 9.144262695312545,
+        "decompress_us": 4.386888122558455,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 115,
+        "ratio": 4.417391304347826,
+        "saved_bytes": 393,
+        "compress_us": 36.08784179687241,
+        "decompress_us": 4.6162033081054155,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 111,
+        "ratio": 4.576576576576577,
+        "saved_bytes": 397,
+        "compress_us": 1191.0070312497467,
+        "decompress_us": 5.58278350830041,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "jpeg-508",
+    "payload_bytes": 508,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 63.15480957030939,
+        "decompress_us": 25.847521972655052,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 571,
+        "ratio": 0.8896672504378283,
+        "saved_bytes": -63,
+        "compress_us": 77.3875000000257,
+        "decompress_us": 15.845104980469205,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 14.245541381838201,
+        "decompress_us": 1.0237270355226666,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 513,
+        "ratio": 0.9902534113060428,
+        "saved_bytes": -5,
+        "compress_us": 41.07725830078402,
+        "decompress_us": 1.0460968017577885,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 512,
+        "ratio": 0.9921875,
+        "saved_bytes": -4,
+        "compress_us": 2600.0796875003116,
+        "decompress_us": 1.0555950164799037,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "json-4K-pretty",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1259,
+        "ratio": 3.2533756949960284,
+        "saved_bytes": 2837,
+        "compress_us": 173.92431640628203,
+        "decompress_us": 174.96352539064785,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 916,
+        "ratio": 4.471615720524017,
+        "saved_bytes": 3180,
+        "compress_us": 128.660351562504,
+        "decompress_us": 35.36674804686945,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1233,
+        "ratio": 3.321978913219789,
+        "saved_bytes": 2863,
+        "compress_us": 35.136145019529216,
+        "decompress_us": 18.99044189453136,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 559,
+        "ratio": 7.32737030411449,
+        "saved_bytes": 3537,
+        "compress_us": 77.12780761717775,
+        "decompress_us": 9.249688720704835,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 465,
+        "ratio": 8.808602150537634,
+        "saved_bytes": 3631,
+        "compress_us": 7946.281249999743,
+        "decompress_us": 9.367651367185593,
+        "encode_ram": 739451,
+        "decode_ram": 33667
+      }
+    ]
+  },
+  {
+    "payload": "json-4K-minified",
+    "payload_bytes": 4096,
+    "results": [
+      {
+        "codec": "picocompress",
+        "compressed_bytes": 1245,
+        "ratio": 3.28995983935743,
+        "saved_bytes": 2851,
+        "compress_us": 184.30957031245754,
+        "decompress_us": 177.72548828121072,
+        "encode_ram": 3085,
+        "decode_ram": 1028
+      },
+      {
+        "codec": "heatshrink(w11,l4)",
+        "compressed_bytes": 1039,
+        "ratio": 3.9422521655437923,
+        "saved_bytes": 3057,
+        "compress_us": 130.60527343750073,
+        "decompress_us": 37.097521972659365,
+        "encode_ram": 12834,
+        "decode_ram": 2098
+      },
+      {
+        "codec": "brotli(q1,lgwin10)",
+        "compressed_bytes": 1252,
+        "ratio": 3.2715654952076676,
+        "saved_bytes": 2844,
+        "compress_us": 34.710107421870305,
+        "decompress_us": 20.88947753906001,
+        "encode_ram": 17140,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(q5,lgwin10)",
+        "compressed_bytes": 629,
+        "ratio": 6.511923688394277,
+        "saved_bytes": 3467,
+        "compress_us": 77.1011474609562,
+        "decompress_us": 10.054550170897347,
+        "encode_ram": 566915,
+        "decode_ram": 32291
+      },
+      {
+        "codec": "brotli(default)",
+        "compressed_bytes": 557,
+        "ratio": 7.353680430879713,
+        "saved_bytes": 3539,
+        "compress_us": 6297.2562499989945,
+        "decompress_us": 11.037533569336484,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -232,8 +568,8 @@
         "compressed_bytes": 1036,
         "ratio": 0.9884169884169884,
         "saved_bytes": -12,
-        "compress_us": 56.07808838092865,
-        "decompress_us": 28.324493408504736,
+        "compress_us": 77.89304199218306,
+        "decompress_us": 30.94488525390293,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -242,8 +578,8 @@
         "compressed_bytes": 1152,
         "ratio": 0.8888888888888888,
         "saved_bytes": -128,
-        "compress_us": 39.52694091680087,
-        "decompress_us": 17.856689453310537,
+        "compress_us": 75.31508789063169,
+        "decompress_us": 26.597814941409226,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -252,8 +588,8 @@
         "compressed_bytes": 1028,
         "ratio": 0.9961089494163424,
         "saved_bytes": -4,
-        "compress_us": 9.531060791267976,
-        "decompress_us": 0.6214496612311216,
+        "compress_us": 17.910522460938548,
+        "decompress_us": 1.0290752410890143,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -262,8 +598,8 @@
         "compressed_bytes": 1029,
         "ratio": 0.9951409135082604,
         "saved_bytes": -5,
-        "compress_us": 22.597003173530084,
-        "decompress_us": 0.6295623778962423,
+        "compress_us": 49.23349609374517,
+        "decompress_us": 1.0858577728272214,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -272,8 +608,8 @@
         "compressed_bytes": 1028,
         "ratio": 0.9961089494163424,
         "saved_bytes": -4,
-        "compress_us": 1954.4757813036995,
-        "decompress_us": 0.6192930221415871,
+        "compress_us": 3247.026562499755,
+        "decompress_us": 1.0342205047607356,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -285,11 +621,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 240,
-        "ratio": 4.266666666666667,
-        "saved_bytes": 784,
-        "compress_us": 20.386114503168073,
-        "decompress_us": 29.194940186272333,
+        "compressed_bytes": 247,
+        "ratio": 4.145748987854251,
+        "saved_bytes": 777,
+        "compress_us": 43.81315917968698,
+        "decompress_us": 48.53112792968517,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -298,8 +634,8 @@
         "compressed_bytes": 231,
         "ratio": 4.432900432900433,
         "saved_bytes": 793,
-        "compress_us": 222.66938475468123,
-        "decompress_us": 6.441822814728937,
+        "compress_us": 290.4623046875443,
+        "decompress_us": 12.609512329102984,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -308,8 +644,8 @@
         "compressed_bytes": 254,
         "ratio": 4.031496062992126,
         "saved_bytes": 770,
-        "compress_us": 6.630239868243848,
-        "decompress_us": 4.186386108440132,
+        "compress_us": 11.570532226563845,
+        "decompress_us": 6.612934875487378,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -318,8 +654,8 @@
         "compressed_bytes": 172,
         "ratio": 5.953488372093023,
         "saved_bytes": 852,
-        "compress_us": 24.44559936520818,
-        "decompress_us": 3.685008239662224,
+        "compress_us": 47.67130126953623,
+        "decompress_us": 5.824501037596589,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -328,8 +664,8 @@
         "compressed_bytes": 169,
         "ratio": 6.059171597633136,
         "saved_bytes": 855,
-        "compress_us": 1687.1949218284499,
-        "decompress_us": 3.914263916104943,
+        "compress_us": 2959.9320312501122,
+        "decompress_us": 6.1444656372072055,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -344,8 +680,8 @@
         "compressed_bytes": 740,
         "ratio": 1.3837837837837839,
         "saved_bytes": 284,
-        "compress_us": 42.43913574342173,
-        "decompress_us": 30.312908936735994,
+        "compress_us": 95.50109863282196,
+        "decompress_us": 50.34051513672089,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -354,8 +690,8 @@
         "compressed_bytes": 758,
         "ratio": 1.3509234828496042,
         "saved_bytes": 266,
-        "compress_us": 55.720971680273124,
-        "decompress_us": 14.20863952628082,
+        "compress_us": 83.3687011718709,
+        "decompress_us": 23.242700195311162,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -364,8 +700,8 @@
         "compressed_bytes": 684,
         "ratio": 1.4970760233918128,
         "saved_bytes": 340,
-        "compress_us": 9.18952331474543,
-        "decompress_us": 6.37153778093591,
+        "compress_us": 16.64339599609377,
+        "decompress_us": 9.054589843748156,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -374,8 +710,8 @@
         "compressed_bytes": 310,
         "ratio": 3.303225806451613,
         "saved_bytes": 714,
-        "compress_us": 26.835937498859153,
-        "decompress_us": 5.7615280151246395,
+        "compress_us": 57.12597656250262,
+        "decompress_us": 9.609841918944984,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -384,8 +720,8 @@
         "compressed_bytes": 316,
         "ratio": 3.240506329113924,
         "saved_bytes": 708,
-        "compress_us": 761.9894531103455,
-        "decompress_us": 6.948390197880627,
+        "compress_us": 1502.0171875002043,
+        "decompress_us": 9.62089233398633,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -397,11 +733,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 637,
-        "ratio": 1.6075353218210362,
-        "saved_bytes": 387,
-        "compress_us": 36.56779785288222,
-        "decompress_us": 29.07088012626957,
+        "compressed_bytes": 650,
+        "ratio": 1.5753846153846154,
+        "saved_bytes": 374,
+        "compress_us": 87.72229003906062,
+        "decompress_us": 47.68002929687876,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -410,8 +746,8 @@
         "compressed_bytes": 616,
         "ratio": 1.6623376623376624,
         "saved_bytes": 408,
-        "compress_us": 29.584277344341103,
-        "decompress_us": 11.600799560973485,
+        "compress_us": 54.355090332039445,
+        "decompress_us": 19.004003906246403,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -420,8 +756,8 @@
         "compressed_bytes": 436,
         "ratio": 2.3486238532110093,
         "saved_bytes": 588,
-        "compress_us": 6.38830413812741,
-        "decompress_us": 4.0686737059481,
+        "compress_us": 11.679067993163732,
+        "decompress_us": 6.179525756835891,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -430,8 +766,8 @@
         "compressed_bytes": 382,
         "ratio": 2.680628272251309,
         "saved_bytes": 642,
-        "compress_us": 26.24276733520503,
-        "decompress_us": 4.26590423563411,
+        "compress_us": 51.97015380860315,
+        "decompress_us": 6.558346557617931,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -440,8 +776,8 @@
         "compressed_bytes": 343,
         "ratio": 2.9854227405247813,
         "saved_bytes": 681,
-        "compress_us": 1305.1152343450667,
-        "decompress_us": 4.925456237536707,
+        "compress_us": 2261.3421875004037,
+        "decompress_us": 7.154450988769434,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -453,11 +789,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 721,
-        "ratio": 1.420249653259362,
-        "saved_bytes": 303,
-        "compress_us": 39.9363891609994,
-        "decompress_us": 29.14433593836918,
+        "compressed_bytes": 718,
+        "ratio": 1.426183844011142,
+        "saved_bytes": 306,
+        "compress_us": 92.55561523438539,
+        "decompress_us": 47.70047607421945,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -466,8 +802,8 @@
         "compressed_bytes": 603,
         "ratio": 1.6981757877280266,
         "saved_bytes": 421,
-        "compress_us": 22.40332641711973,
-        "decompress_us": 11.769067382871867,
+        "compress_us": 42.56988525390415,
+        "decompress_us": 19.410357666012345,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -476,8 +812,8 @@
         "compressed_bytes": 530,
         "ratio": 1.9320754716981132,
         "saved_bytes": 494,
-        "compress_us": 7.510543823308069,
-        "decompress_us": 4.588665771354528,
+        "compress_us": 13.818908691409087,
+        "decompress_us": 6.818154907228119,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -486,8 +822,8 @@
         "compressed_bytes": 485,
         "ratio": 2.111340206185567,
         "saved_bytes": 539,
-        "compress_us": 26.8258789049014,
-        "decompress_us": 4.632223510547817,
+        "compress_us": 54.07827148437572,
+        "decompress_us": 6.6525772094722795,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -496,8 +832,8 @@
         "compressed_bytes": 434,
         "ratio": 2.359447004608295,
         "saved_bytes": 590,
-        "compress_us": 1149.786718769974,
-        "decompress_us": 6.057122802882731,
+        "compress_us": 1874.0652343747222,
+        "decompress_us": 8.480136108397069,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -509,11 +845,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 640,
-        "ratio": 1.6,
-        "saved_bytes": 384,
-        "compress_us": 36.22542724457389,
-        "decompress_us": 29.20135498030163,
+        "compressed_bytes": 638,
+        "ratio": 1.6050156739811912,
+        "saved_bytes": 386,
+        "compress_us": 86.34035644530802,
+        "decompress_us": 48.12255859375225,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -522,8 +858,8 @@
         "compressed_bytes": 530,
         "ratio": 1.9320754716981132,
         "saved_bytes": 494,
-        "compress_us": 33.301086425296944,
-        "decompress_us": 10.880825805692496,
+        "compress_us": 56.87940673827774,
+        "decompress_us": 18.24067382812794,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -532,8 +868,8 @@
         "compressed_bytes": 456,
         "ratio": 2.245614035087719,
         "saved_bytes": 568,
-        "compress_us": 7.153045654462176,
-        "decompress_us": 4.687826538063433,
+        "compress_us": 12.827859497070715,
+        "decompress_us": 7.111805725098369,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -542,8 +878,8 @@
         "compressed_bytes": 384,
         "ratio": 2.6666666666666665,
         "saved_bytes": 640,
-        "compress_us": 26.913879395351614,
-        "decompress_us": 4.516345214700124,
+        "compress_us": 54.658312988287165,
+        "decompress_us": 6.881362915038547,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -552,8 +888,8 @@
         "compressed_bytes": 369,
         "ratio": 2.7750677506775068,
         "saved_bytes": 655,
-        "compress_us": 1327.979687403058,
-        "decompress_us": 5.689027404720548,
+        "compress_us": 2148.8195312500125,
+        "decompress_us": 8.18384399414035,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -568,8 +904,8 @@
         "compressed_bytes": 2068,
         "ratio": 0.9903288201160542,
         "saved_bytes": -20,
-        "compress_us": 187.70390624922584,
-        "decompress_us": 94.15732422013434,
+        "compress_us": 238.18281250004293,
+        "decompress_us": 87.71184082032035,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -578,8 +914,8 @@
         "compressed_bytes": 2304,
         "ratio": 0.8888888888888888,
         "saved_bytes": -256,
-        "compress_us": 176.14614257865924,
-        "decompress_us": 50.97528076092317,
+        "compress_us": 168.04233398437506,
+        "decompress_us": 49.53365478514715,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -588,8 +924,8 @@
         "compressed_bytes": 2055,
         "ratio": 0.9965936739659368,
         "saved_bytes": -7,
-        "compress_us": 33.59176025341526,
-        "decompress_us": 1.4090923310394743,
+        "compress_us": 33.41907958984147,
+        "decompress_us": 1.6327342987061504,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -598,8 +934,8 @@
         "compressed_bytes": 2053,
         "ratio": 0.997564539698003,
         "saved_bytes": -5,
-        "compress_us": 61.30754394462201,
-        "decompress_us": 1.2389041901261777,
+        "compress_us": 60.45952148438227,
+        "decompress_us": 1.1976696014403578,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -608,8 +944,8 @@
         "compressed_bytes": 2052,
         "ratio": 0.9980506822612085,
         "saved_bytes": -4,
-        "compress_us": 5152.032812475227,
-        "decompress_us": 1.1751743316246177,
+        "compress_us": 5072.531250000622,
+        "decompress_us": 1.311740875244334,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -621,11 +957,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 445,
-        "ratio": 4.602247191011236,
-        "saved_bytes": 1603,
-        "compress_us": 65.95690917521324,
-        "decompress_us": 96.19423828155504,
+        "compressed_bytes": 457,
+        "ratio": 4.481400437636761,
+        "saved_bytes": 1591,
+        "compress_us": 75.44758300781496,
+        "decompress_us": 91.0190917968734,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -634,8 +970,8 @@
         "compressed_bytes": 437,
         "ratio": 4.68649885583524,
         "saved_bytes": 1611,
-        "compress_us": 514.3025390452749,
-        "decompress_us": 20.704943848315338,
+        "compress_us": 497.31796874996627,
+        "decompress_us": 19.939050292967774,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -644,8 +980,8 @@
         "compressed_bytes": 490,
         "ratio": 4.179591836734694,
         "saved_bytes": 1558,
-        "compress_us": 20.20214233411366,
-        "decompress_us": 12.312554932059072,
+        "compress_us": 20.291442871092634,
+        "decompress_us": 7.457803344726455,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -654,8 +990,8 @@
         "compressed_bytes": 289,
         "ratio": 7.086505190311419,
         "saved_bytes": 1759,
-        "compress_us": 66.95549316759752,
-        "decompress_us": 7.640780640194578,
+        "compress_us": 31.135571289059307,
+        "decompress_us": 5.3106094360360485,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -664,8 +1000,8 @@
         "compressed_bytes": 281,
         "ratio": 7.288256227758007,
         "saved_bytes": 1767,
-        "compress_us": 5529.931249839137,
-        "decompress_us": 10.789706420766265,
+        "compress_us": 3302.877343749344,
+        "decompress_us": 7.793212890627732,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -680,8 +1016,8 @@
         "compressed_bytes": 1466,
         "ratio": 1.3969986357435198,
         "saved_bytes": 582,
-        "compress_us": 142.52456054464346,
-        "decompress_us": 98.50898437946398,
+        "compress_us": 105.44313964844233,
+        "decompress_us": 52.821594238278145,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -690,8 +1026,8 @@
         "compressed_bytes": 1497,
         "ratio": 1.3680694722778892,
         "saved_bytes": 551,
-        "compress_us": 144.90507813036402,
-        "decompress_us": 39.92415771492119,
+        "compress_us": 96.90600585937625,
+        "decompress_us": 26.28057861327887,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -700,8 +1036,8 @@
         "compressed_bytes": 1362,
         "ratio": 1.5036710719530102,
         "saved_bytes": 686,
-        "compress_us": 31.11212157946852,
-        "decompress_us": 16.83436889621248,
+        "compress_us": 17.006652832031456,
+        "decompress_us": 12.225729370117511,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -710,8 +1046,8 @@
         "compressed_bytes": 588,
         "ratio": 3.4829931972789114,
         "saved_bytes": 1460,
-        "compress_us": 78.37687988399011,
-        "decompress_us": 15.688409424896577,
+        "compress_us": 37.12293701171876,
+        "decompress_us": 8.873724365233981,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -720,8 +1056,8 @@
         "compressed_bytes": 592,
         "ratio": 3.4594594594594597,
         "saved_bytes": 1456,
-        "compress_us": 2484.878125187606,
-        "decompress_us": 14.332522582982676,
+        "compress_us": 1238.4296875000978,
+        "decompress_us": 10.307791137694617,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -733,11 +1069,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 1242,
-        "ratio": 1.6489533011272142,
-        "saved_bytes": 806,
-        "compress_us": 129.15952147807275,
-        "decompress_us": 93.3901611332999,
+        "compressed_bytes": 1259,
+        "ratio": 1.6266878474980142,
+        "saved_bytes": 789,
+        "compress_us": 96.27719726562623,
+        "decompress_us": 51.114172363281305,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -746,8 +1082,8 @@
         "compressed_bytes": 923,
         "ratio": 2.218851570964247,
         "saved_bytes": 1125,
-        "compress_us": 115.91860351245487,
-        "decompress_us": 28.5324096687134,
+        "compress_us": 77.77343750001164,
+        "decompress_us": 17.422204589841172,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -756,8 +1092,8 @@
         "compressed_bytes": 937,
         "ratio": 2.185699039487727,
         "saved_bytes": 1111,
-        "compress_us": 21.433367919598822,
-        "decompress_us": 11.450106812027627,
+        "compress_us": 12.153964233398845,
+        "decompress_us": 7.824188232422729,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -766,8 +1102,8 @@
         "compressed_bytes": 635,
         "ratio": 3.2251968503937007,
         "saved_bytes": 1413,
-        "compress_us": 70.59396973119192,
-        "decompress_us": 9.148052978247279,
+        "compress_us": 33.44372558594655,
+        "decompress_us": 6.027268981934411,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -776,8 +1112,8 @@
         "compressed_bytes": 458,
         "ratio": 4.471615720524017,
         "saved_bytes": 1590,
-        "compress_us": 3995.1617186488875,
-        "decompress_us": 8.520373535603198,
+        "compress_us": 2325.7242187497695,
+        "decompress_us": 5.868351745605752,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -789,11 +1125,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 1440,
-        "ratio": 1.4222222222222223,
-        "saved_bytes": 608,
-        "compress_us": 139.3797363249405,
-        "decompress_us": 96.33247070439666,
+        "compressed_bytes": 1433,
+        "ratio": 1.4291695743196091,
+        "saved_bytes": 615,
+        "compress_us": 105.87875976561523,
+        "decompress_us": 51.33310546874548,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -802,8 +1138,8 @@
         "compressed_bytes": 924,
         "ratio": 2.2164502164502164,
         "saved_bytes": 1124,
-        "compress_us": 94.67258301043557,
-        "decompress_us": 29.739434815212462,
+        "compress_us": 55.92724609373989,
+        "decompress_us": 17.65948486327773,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -812,8 +1148,8 @@
         "compressed_bytes": 1097,
         "ratio": 1.8669097538742023,
         "saved_bytes": 951,
-        "compress_us": 24.482403564007882,
-        "decompress_us": 12.905062866330752,
+        "compress_us": 13.495239257813735,
+        "decompress_us": 8.864065551759253,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -822,8 +1158,8 @@
         "compressed_bytes": 804,
         "ratio": 2.5472636815920398,
         "saved_bytes": 1244,
-        "compress_us": 77.44184570412926,
-        "decompress_us": 9.256637573784587,
+        "compress_us": 64.7121093750036,
+        "decompress_us": 6.958580017091265,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -832,8 +1168,8 @@
         "compressed_bytes": 693,
         "ratio": 2.9552669552669553,
         "saved_bytes": 1355,
-        "compress_us": 3569.0960937699856,
-        "decompress_us": 11.163049316031959,
+        "compress_us": 2045.246875000295,
+        "decompress_us": 8.16383056640585,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -845,11 +1181,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 1264,
-        "ratio": 1.620253164556962,
-        "saved_bytes": 784,
-        "compress_us": 124.95981445681537,
-        "decompress_us": 94.01257324270773,
+        "compressed_bytes": 1262,
+        "ratio": 1.6228209191759113,
+        "saved_bytes": 786,
+        "compress_us": 91.23942871094859,
+        "decompress_us": 51.57041015625696,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -858,8 +1194,8 @@
         "compressed_bytes": 929,
         "ratio": 2.2045209903121634,
         "saved_bytes": 1119,
-        "compress_us": 149.74726562400065,
-        "decompress_us": 30.815356442559505,
+        "compress_us": 106.57326660157284,
+        "decompress_us": 17.97906494140078,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -868,8 +1204,8 @@
         "compressed_bytes": 938,
         "ratio": 2.183368869936034,
         "saved_bytes": 1110,
-        "compress_us": 22.73758544824034,
-        "decompress_us": 13.094067382368735,
+        "compress_us": 13.120089721679884,
+        "decompress_us": 9.022882080076538,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -878,8 +1214,8 @@
         "compressed_bytes": 659,
         "ratio": 3.1077389984825494,
         "saved_bytes": 1389,
-        "compress_us": 79.17851561956013,
-        "decompress_us": 9.561547851255625,
+        "compress_us": 36.04985351562951,
+        "decompress_us": 6.269174194335758,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -888,8 +1224,8 @@
         "compressed_bytes": 605,
         "ratio": 3.3851239669421487,
         "saved_bytes": 1443,
-        "compress_us": 3753.9078125519154,
-        "decompress_us": 11.4585327146699,
+        "compress_us": 2316.1921875001212,
+        "decompress_us": 7.762243652342793,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -904,8 +1240,8 @@
         "compressed_bytes": 4132,
         "ratio": 0.9912875121006777,
         "saved_bytes": -36,
-        "compress_us": 377.9633789235959,
-        "decompress_us": 180.18315429912946,
+        "compress_us": 297.05117187495136,
+        "decompress_us": 107.87612304688498,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -914,8 +1250,8 @@
         "compressed_bytes": 4608,
         "ratio": 0.8888888888888888,
         "saved_bytes": -512,
-        "compress_us": 350.32802733780954,
-        "decompress_us": 101.73210448982672,
+        "compress_us": 251.91767578125467,
+        "decompress_us": 67.05822753905188,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -924,8 +1260,8 @@
         "compressed_bytes": 4109,
         "ratio": 0.9968362131905573,
         "saved_bytes": -13,
-        "compress_us": 66.33532714772628,
-        "decompress_us": 1.9741714478715977,
+        "compress_us": 35.347497558596565,
+        "decompress_us": 0.9562347412111517,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -934,8 +1270,8 @@
         "compressed_bytes": 4101,
         "ratio": 0.9987807851743478,
         "saved_bytes": -5,
-        "compress_us": 86.76823730269234,
-        "decompress_us": 1.4008361817197112,
+        "compress_us": 38.655322265615524,
+        "decompress_us": 0.6982791900633605,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -944,8 +1280,8 @@
         "compressed_bytes": 4100,
         "ratio": 0.9990243902439024,
         "saved_bytes": -4,
-        "compress_us": 7936.662500469538,
-        "decompress_us": 1.412502288800077,
+        "compress_us": 5034.467187501335,
+        "decompress_us": 0.6853868484495932,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -957,11 +1293,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 820,
-        "ratio": 4.995121951219512,
-        "saved_bytes": 3276,
-        "compress_us": 115.46040038723504,
-        "decompress_us": 183.90004882462563,
+        "compressed_bytes": 841,
+        "ratio": 4.87039239001189,
+        "saved_bytes": 3255,
+        "compress_us": 77.08295898437024,
+        "decompress_us": 99.13244628906304,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -970,8 +1306,8 @@
         "compressed_bytes": 822,
         "ratio": 4.982968369829684,
         "saved_bytes": 3274,
-        "compress_us": 847.177148443734,
-        "decompress_us": 34.37773437653391,
+        "compress_us": 678.0582031249427,
+        "decompress_us": 19.067120361322687,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -980,8 +1316,8 @@
         "compressed_bytes": 918,
         "ratio": 4.461873638344227,
         "saved_bytes": 3178,
-        "compress_us": 38.66072998093273,
-        "decompress_us": 22.41918335066373,
+        "compress_us": 21.066925048829344,
+        "decompress_us": 13.844100952148386,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -990,8 +1326,8 @@
         "compressed_bytes": 496,
         "ratio": 8.258064516129032,
         "saved_bytes": 3600,
-        "compress_us": 89.39143066299948,
-        "decompress_us": 13.35444946271025,
+        "compress_us": 44.53045654297105,
+        "decompress_us": 8.136358642579777,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1000,8 +1336,8 @@
         "compressed_bytes": 477,
         "ratio": 8.58700209643606,
         "saved_bytes": 3619,
-        "compress_us": 9859.475000666862,
-        "decompress_us": 15.603988647860945,
+        "compress_us": 6110.907812498567,
+        "decompress_us": 9.717761230466914,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1016,8 +1352,8 @@
         "compressed_bytes": 2916,
         "ratio": 1.4046639231824416,
         "saved_bytes": 1180,
-        "compress_us": 274.7320312437296,
-        "decompress_us": 190.47558592433234,
+        "compress_us": 208.54365234374006,
+        "decompress_us": 100.96555175781452,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1026,8 +1362,8 @@
         "compressed_bytes": 2976,
         "ratio": 1.3763440860215055,
         "saved_bytes": 1120,
-        "compress_us": 265.30615235742516,
-        "decompress_us": 75.46904296873436,
+        "compress_us": 187.37631835941127,
+        "decompress_us": 51.42983398437329,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1036,8 +1372,8 @@
         "compressed_bytes": 2744,
         "ratio": 1.4927113702623906,
         "saved_bytes": 1352,
-        "compress_us": 60.61104736332368,
-        "decompress_us": 34.50761718681861,
+        "compress_us": 33.04045410157386,
+        "decompress_us": 24.01939697265626,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1046,8 +1382,8 @@
         "compressed_bytes": 1147,
         "ratio": 3.5710549258936357,
         "saved_bytes": 2949,
-        "compress_us": 119.08806152405305,
-        "decompress_us": 27.483618165291546,
+        "compress_us": 58.341455078131375,
+        "decompress_us": 15.490985107419197,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1056,8 +1392,8 @@
         "compressed_bytes": 1146,
         "ratio": 3.574171029668412,
         "saved_bytes": 2950,
-        "compress_us": 4509.104687258514,
-        "decompress_us": 24.16407470740012,
+        "compress_us": 2246.755468749306,
+        "decompress_us": 17.023675537110318,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1069,11 +1405,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 2441,
-        "ratio": 1.6780008193363376,
-        "saved_bytes": 1655,
-        "compress_us": 252.6382812391148,
-        "decompress_us": 183.96699218214962,
+        "compressed_bytes": 2493,
+        "ratio": 1.6430004011231447,
+        "saved_bytes": 1603,
+        "compress_us": 199.1615234374633,
+        "decompress_us": 99.67783203124192,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1082,8 +1418,8 @@
         "compressed_bytes": 1195,
         "ratio": 3.427615062761506,
         "saved_bytes": 2901,
-        "compress_us": 167.34013671282355,
-        "decompress_us": 40.0495483390273,
+        "compress_us": 114.44035644531114,
+        "decompress_us": 23.411651611328356,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1092,8 +1428,8 @@
         "compressed_bytes": 1801,
         "ratio": 2.2742920599666854,
         "saved_bytes": 2295,
-        "compress_us": 39.72552489983627,
-        "decompress_us": 21.101971436010558,
+        "compress_us": 22.088244628910847,
+        "decompress_us": 15.197418212889445,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1102,8 +1438,8 @@
         "compressed_bytes": 1122,
         "ratio": 3.6506238859180034,
         "saved_bytes": 2974,
-        "compress_us": 98.94218749906258,
-        "decompress_us": 14.118539428231713,
+        "compress_us": 47.41458740234461,
+        "decompress_us": 8.922979736328273,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1112,8 +1448,8 @@
         "compressed_bytes": 502,
         "ratio": 8.159362549800797,
         "saved_bytes": 3594,
-        "compress_us": 7698.671875004948,
-        "decompress_us": 10.026583862732252,
+        "compress_us": 4458.6999999989275,
+        "decompress_us": 6.482502746582575,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1125,11 +1461,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 2869,
-        "ratio": 1.4276751481352388,
-        "saved_bytes": 1227,
-        "compress_us": 287.41191408698796,
-        "decompress_us": 184.15659179993327,
+        "compressed_bytes": 2858,
+        "ratio": 1.4331700489853043,
+        "saved_bytes": 1238,
+        "compress_us": 221.234570312534,
+        "decompress_us": 99.11735839845947,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1138,8 +1474,8 @@
         "compressed_bytes": 1471,
         "ratio": 2.7845003399048265,
         "saved_bytes": 2625,
-        "compress_us": 193.29892577957253,
-        "decompress_us": 47.91113281399362,
+        "compress_us": 132.3845214843966,
+        "decompress_us": 28.231329345707046,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1148,8 +1484,8 @@
         "compressed_bytes": 2232,
         "ratio": 1.8351254480286738,
         "saved_bytes": 1864,
-        "compress_us": 47.7126464843991,
-        "decompress_us": 25.36075439429908,
+        "compress_us": 25.600976562498158,
+        "decompress_us": 17.376477050780327,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1158,8 +1494,8 @@
         "compressed_bytes": 1450,
         "ratio": 2.8248275862068963,
         "saved_bytes": 2646,
-        "compress_us": 121.23220214732555,
-        "decompress_us": 14.60499267569304,
+        "compress_us": 52.33934326172307,
+        "decompress_us": 10.188665771484334,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1168,8 +1504,8 @@
         "compressed_bytes": 1122,
         "ratio": 3.6506238859180034,
         "saved_bytes": 2974,
-        "compress_us": 6357.043750085722,
-        "decompress_us": 15.42657165565231,
+        "compress_us": 3833.088281250063,
+        "decompress_us": 11.547412109375044,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1181,11 +1517,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 2485,
-        "ratio": 1.6482897384305835,
-        "saved_bytes": 1611,
-        "compress_us": 240.7954589784822,
-        "decompress_us": 183.26499022691678,
+        "compressed_bytes": 2480,
+        "ratio": 1.6516129032258065,
+        "saved_bytes": 1616,
+        "compress_us": 185.11416015626335,
+        "decompress_us": 99.1143066406408,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1194,8 +1530,8 @@
         "compressed_bytes": 1644,
         "ratio": 2.491484184914842,
         "saved_bytes": 2452,
-        "compress_us": 371.5670898429835,
-        "decompress_us": 53.31048583911979,
+        "compress_us": 285.34326171880673,
+        "decompress_us": 31.285314941412178,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1204,8 +1540,8 @@
         "compressed_bytes": 1895,
         "ratio": 2.1614775725593667,
         "saved_bytes": 2201,
-        "compress_us": 44.89482422087576,
-        "decompress_us": 26.243487548427424,
+        "compress_us": 26.464685058590064,
+        "decompress_us": 19.923937988282347,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1214,8 +1550,8 @@
         "compressed_bytes": 1225,
         "ratio": 3.3436734693877552,
         "saved_bytes": 2871,
-        "compress_us": 129.40019530560676,
-        "decompress_us": 15.303134155431053,
+        "compress_us": 65.09399414061923,
+        "decompress_us": 9.964273071288998,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1224,8 +1560,8 @@
         "compressed_bytes": 1050,
         "ratio": 3.900952380952381,
         "saved_bytes": 3046,
-        "compress_us": 7147.0515626970155,
-        "decompress_us": 17.91591796873604,
+        "compress_us": 4452.599999998696,
+        "decompress_us": 12.617877197265702,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1240,8 +1576,8 @@
         "compressed_bytes": 8260,
         "ratio": 0.9917675544794189,
         "saved_bytes": -68,
-        "compress_us": 755.2162109618621,
-        "decompress_us": 352.35136718370086,
+        "compress_us": 602.561328124862,
+        "decompress_us": 190.015185546899,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1250,8 +1586,8 @@
         "compressed_bytes": 9215,
         "ratio": 0.8889853499728704,
         "saved_bytes": -1023,
-        "compress_us": 694.6374999756699,
-        "decompress_us": 192.73486329041134,
+        "compress_us": 516.1294921873782,
+        "decompress_us": 132.02744140622391,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1260,8 +1596,8 @@
         "compressed_bytes": 8217,
         "ratio": 0.996957527078009,
         "saved_bytes": -25,
-        "compress_us": 138.56933593103804,
-        "decompress_us": 3.354720306436576,
+        "compress_us": 86.47255859375869,
+        "decompress_us": 1.3772506713867483,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1270,8 +1606,8 @@
         "compressed_bytes": 8197,
         "ratio": 0.9993900207392948,
         "saved_bytes": -5,
-        "compress_us": 118.86315918019363,
-        "decompress_us": 1.9307907104249011,
+        "compress_us": 59.49168701172014,
+        "decompress_us": 0.8864450454712514,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1280,8 +1616,8 @@
         "compressed_bytes": 8196,
         "ratio": 0.9995119570522206,
         "saved_bytes": -4,
-        "compress_us": 18805.98124989774,
-        "decompress_us": 2.281822204519557,
+        "compress_us": 12422.884375002497,
+        "decompress_us": 0.8669267654419239,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1293,11 +1629,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 1667,
-        "ratio": 4.914217156568686,
-        "saved_bytes": 6525,
-        "compress_us": 224.18012694913614,
-        "decompress_us": 359.8482421978133,
+        "compressed_bytes": 1699,
+        "ratio": 4.821659799882283,
+        "saved_bytes": 6493,
+        "compress_us": 157.8462890625132,
+        "decompress_us": 196.0984375000141,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1306,8 +1642,8 @@
         "compressed_bytes": 1650,
         "ratio": 4.964848484848485,
         "saved_bytes": 6542,
-        "compress_us": 1693.2246094256698,
-        "decompress_us": 64.26396484471297,
+        "compress_us": 1364.0402343750857,
+        "decompress_us": 36.11555175780934,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1316,8 +1652,8 @@
         "compressed_bytes": 1848,
         "ratio": 4.432900432900433,
         "saved_bytes": 6344,
-        "compress_us": 80.94199218788845,
-        "decompress_us": 46.23242187307142,
+        "compress_us": 44.84298095702721,
+        "decompress_us": 27.481353759767345,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1326,8 +1662,8 @@
         "compressed_bytes": 980,
         "ratio": 8.359183673469389,
         "saved_bytes": 7212,
-        "compress_us": 173.12646484413108,
-        "decompress_us": 23.44273681664788,
+        "compress_us": 93.02292480467544,
+        "decompress_us": 14.178097534178757,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1336,8 +1672,8 @@
         "compressed_bytes": 925,
         "ratio": 8.856216216216216,
         "saved_bytes": 7267,
-        "compress_us": 19782.806250077556,
-        "decompress_us": 30.003100587094877,
+        "compress_us": 11643.512500000952,
+        "decompress_us": 21.08515624999613,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1352,8 +1688,8 @@
         "compressed_bytes": 5894,
         "ratio": 1.3898880217170004,
         "saved_bytes": 2298,
-        "compress_us": 596.8531249891385,
-        "decompress_us": 375.3184570314261,
+        "compress_us": 431.8699218749389,
+        "decompress_us": 201.66879882810295,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1362,8 +1698,8 @@
         "compressed_bytes": 6011,
         "ratio": 1.3628348028614208,
         "saved_bytes": 2181,
-        "compress_us": 520.9097656120321,
-        "decompress_us": 152.0441406341888,
+        "compress_us": 379.9374023437663,
+        "decompress_us": 101.68430175783172,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1372,8 +1708,8 @@
         "compressed_bytes": 5539,
         "ratio": 1.4789673226214117,
         "saved_bytes": 2653,
-        "compress_us": 130.82153320453926,
-        "decompress_us": 72.7364257784302,
+        "compress_us": 75.60944824216986,
+        "decompress_us": 47.883300781245694,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1382,8 +1718,8 @@
         "compressed_bytes": 2289,
         "ratio": 3.578855395369157,
         "saved_bytes": 5903,
-        "compress_us": 210.0749511697586,
-        "decompress_us": 52.270837400669734,
+        "compress_us": 109.71420898436834,
+        "decompress_us": 28.962213134760272,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1392,8 +1728,8 @@
         "compressed_bytes": 2288,
         "ratio": 3.5804195804195804,
         "saved_bytes": 5904,
-        "compress_us": 8618.25312495057,
-        "decompress_us": 43.497888182031375,
+        "compress_us": 4298.193749999513,
+        "decompress_us": 31.209851074229245,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1405,11 +1741,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 4921,
-        "ratio": 1.6647022962812437,
-        "saved_bytes": 3271,
-        "compress_us": 535.6873046480359,
-        "decompress_us": 362.11572265187897,
+        "compressed_bytes": 5042,
+        "ratio": 1.6247520825069417,
+        "saved_bytes": 3150,
+        "compress_us": 419.92207031249507,
+        "decompress_us": 194.4491699218953,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1418,8 +1754,8 @@
         "compressed_bytes": 1890,
         "ratio": 4.334391534391535,
         "saved_bytes": 6302,
-        "compress_us": 304.2565429609567,
-        "decompress_us": 64.51098632709318,
+        "compress_us": 221.49951171873684,
+        "decompress_us": 38.12402343750243,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1428,8 +1764,8 @@
         "compressed_bytes": 3515,
         "ratio": 2.3305832147937413,
         "saved_bytes": 4677,
-        "compress_us": 84.40468749881802,
-        "decompress_us": 41.90968017425689,
+        "compress_us": 44.564599609372976,
+        "decompress_us": 28.94397583007996,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1438,8 +1774,8 @@
         "compressed_bytes": 1838,
         "ratio": 4.457018498367791,
         "saved_bytes": 6354,
-        "compress_us": 151.08437500543914,
-        "decompress_us": 24.308843993736673,
+        "compress_us": 70.38449707030824,
+        "decompress_us": 13.962054443358852,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1448,8 +1784,8 @@
         "compressed_bytes": 582,
         "ratio": 14.075601374570446,
         "saved_bytes": 7610,
-        "compress_us": 17348.32500005723,
-        "decompress_us": 11.330706787049394,
+        "compress_us": 9908.36874999701,
+        "decompress_us": 7.190246582031504,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1461,11 +1797,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 5640,
-        "ratio": 1.4524822695035462,
-        "saved_bytes": 2552,
-        "compress_us": 626.6408203146057,
-        "decompress_us": 363.1458984330038,
+        "compressed_bytes": 5620,
+        "ratio": 1.4576512455516015,
+        "saved_bytes": 2572,
+        "compress_us": 449.41953125010593,
+        "decompress_us": 194.0748535156356,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1474,8 +1810,8 @@
         "compressed_bytes": 2494,
         "ratio": 3.284683239775461,
         "saved_bytes": 5698,
-        "compress_us": 362.66347655100617,
-        "decompress_us": 86.85419921761195,
+        "compress_us": 271.68583984371605,
+        "decompress_us": 50.79010009767515,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1484,8 +1820,8 @@
         "compressed_bytes": 4495,
         "ratio": 1.8224694104560624,
         "saved_bytes": 3697,
-        "compress_us": 108.8175781234213,
-        "decompress_us": 53.207617188633094,
+        "compress_us": 59.62354736327447,
+        "decompress_us": 34.70363769531026,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1494,8 +1830,8 @@
         "compressed_bytes": 2670,
         "ratio": 3.0681647940074908,
         "saved_bytes": 5522,
-        "compress_us": 213.5072753901568,
-        "decompress_us": 25.06644897337651,
+        "compress_us": 103.2801757812618,
+        "decompress_us": 17.312158203136583,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1504,8 +1840,8 @@
         "compressed_bytes": 1855,
         "ratio": 4.416172506738545,
         "saved_bytes": 6337,
-        "compress_us": 12455.76562541828,
-        "decompress_us": 21.71905517656114,
+        "compress_us": 7388.31406249929,
+        "decompress_us": 16.129211425783275,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1517,11 +1853,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 4906,
-        "ratio": 1.669792091316755,
-        "saved_bytes": 3286,
-        "compress_us": 483.0465820191421,
-        "decompress_us": 367.65156249884967,
+        "compressed_bytes": 4887,
+        "ratio": 1.6762840188254553,
+        "saved_bytes": 3305,
+        "compress_us": 378.11865234371743,
+        "decompress_us": 196.5975585938029,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1530,8 +1866,8 @@
         "compressed_bytes": 3092,
         "ratio": 2.6494178525226393,
         "saved_bytes": 5100,
-        "compress_us": 783.2580078002138,
-        "decompress_us": 99.5305908162436,
+        "compress_us": 626.6710937499198,
+        "decompress_us": 60.64819335938054,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1540,8 +1876,8 @@
         "compressed_bytes": 3791,
         "ratio": 2.1609074122922713,
         "saved_bytes": 4401,
-        "compress_us": 100.44208984538727,
-        "decompress_us": 54.36571045080996,
+        "compress_us": 61.48146972656532,
+        "decompress_us": 34.028735351576685,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1550,8 +1886,8 @@
         "compressed_bytes": 2332,
         "ratio": 3.5128644939965694,
         "saved_bytes": 5860,
-        "compress_us": 253.49033202815008,
-        "decompress_us": 26.636352538744745,
+        "compress_us": 141.32958984369725,
+        "decompress_us": 16.876623535166946,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1560,8 +1896,8 @@
         "compressed_bytes": 1849,
         "ratio": 4.430502974580855,
         "saved_bytes": 6343,
-        "compress_us": 14014.049999786948,
-        "decompress_us": 30.231634521982187,
+        "compress_us": 8383.221875000401,
+        "decompress_us": 21.173510742183986,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1576,8 +1912,8 @@
         "compressed_bytes": 16516,
         "ratio": 0.9920077500605473,
         "saved_bytes": -132,
-        "compress_us": 1452.2058594366172,
-        "decompress_us": 704.9224608977056,
+        "compress_us": 1199.31523437522,
+        "decompress_us": 373.9456054687729,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1586,8 +1922,8 @@
         "compressed_bytes": 18430,
         "ratio": 0.8889853499728704,
         "saved_bytes": -2046,
-        "compress_us": 1404.1312499557534,
-        "decompress_us": 358.72519532631486,
+        "compress_us": 1036.7996093743059,
+        "decompress_us": 262.5662109374538,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1596,8 +1932,8 @@
         "compressed_bytes": 16433,
         "ratio": 0.9970181950952351,
         "saved_bytes": -49,
-        "compress_us": 314.9803710869037,
-        "decompress_us": 5.955009460212324,
+        "compress_us": 188.83754882814685,
+        "decompress_us": 2.377503204345835,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1606,8 +1942,8 @@
         "compressed_bytes": 16389,
         "ratio": 0.9996949173225944,
         "saved_bytes": -5,
-        "compress_us": 196.05878905792906,
-        "decompress_us": 3.186986541781067,
+        "compress_us": 92.12873535158207,
+        "decompress_us": 1.38983192443827,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1616,8 +1952,8 @@
         "compressed_bytes": 16388,
         "ratio": 0.9997559189650964,
         "saved_bytes": -4,
-        "compress_us": 47276.29999979399,
-        "decompress_us": 3.955857849291533,
+        "compress_us": 31725.33749997797,
+        "decompress_us": 3.5809917449955777,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1629,11 +1965,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 3401,
-        "ratio": 4.817406645104381,
-        "saved_bytes": 12983,
-        "compress_us": 443.22158203158324,
-        "decompress_us": 717.1482421881592,
+        "compressed_bytes": 3450,
+        "ratio": 4.748985507246377,
+        "saved_bytes": 12934,
+        "compress_us": 570.425195312474,
+        "decompress_us": 767.8140624998164,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1642,8 +1978,8 @@
         "compressed_bytes": 3299,
         "ratio": 4.966353440436496,
         "saved_bytes": 13085,
-        "compress_us": 3415.512499941542,
-        "decompress_us": 133.0519531279606,
+        "compress_us": 3400.4937500000665,
+        "decompress_us": 125.32177734370097,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1652,8 +1988,8 @@
         "compressed_bytes": 3747,
         "ratio": 4.37256471844142,
         "saved_bytes": 12637,
-        "compress_us": 191.206201165528,
-        "decompress_us": 95.11977538778638,
+        "compress_us": 189.16035156246735,
+        "decompress_us": 98.56618652348547,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1662,8 +1998,8 @@
         "compressed_bytes": 1951,
         "ratio": 8.397744746283957,
         "saved_bytes": 14433,
-        "compress_us": 342.6149413883195,
-        "decompress_us": 44.45043945366933,
+        "compress_us": 315.11162109376653,
+        "decompress_us": 43.232958984368295,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1672,8 +2008,8 @@
         "compressed_bytes": 1820,
         "ratio": 9.002197802197802,
         "saved_bytes": 14564,
-        "compress_us": 38094.18749733595,
-        "decompress_us": 50.75052490255416,
+        "compress_us": 37952.77500000793,
+        "decompress_us": 51.005883789062565,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1688,8 +2024,8 @@
         "compressed_bytes": 11790,
         "ratio": 1.3896522476675148,
         "saved_bytes": 4594,
-        "compress_us": 1115.0476562988842,
-        "decompress_us": 745.7849609409095,
+        "compress_us": 1422.1621093755132,
+        "decompress_us": 708.9486328126782,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1698,8 +2034,8 @@
         "compressed_bytes": 12018,
         "ratio": 1.363288400732235,
         "saved_bytes": 4366,
-        "compress_us": 1050.8074218478214,
-        "decompress_us": 296.0982421882363,
+        "compress_us": 1027.5441406255582,
+        "decompress_us": 291.60869140620883,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1708,8 +2044,8 @@
         "compressed_bytes": 11096,
         "ratio": 1.476568132660418,
         "saved_bytes": 5288,
-        "compress_us": 295.29091796121065,
-        "decompress_us": 154.98012696468777,
+        "compress_us": 292.7193359374414,
+        "decompress_us": 144.68281249990778,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1718,8 +2054,8 @@
         "compressed_bytes": 4545,
         "ratio": 3.6048404840484047,
         "saved_bytes": 11839,
-        "compress_us": 385.5088867226186,
-        "decompress_us": 102.93383788706478,
+        "compress_us": 377.3865234373286,
+        "decompress_us": 101.37668457033122,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1728,8 +2064,8 @@
         "compressed_bytes": 4545,
         "ratio": 3.6048404840484047,
         "saved_bytes": 11839,
-        "compress_us": 18595.04374988319,
-        "decompress_us": 105.58723144526994,
+        "compress_us": 21600.899999995705,
+        "decompress_us": 115.66979980470737,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1741,11 +2077,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 9586,
-        "ratio": 1.7091591904861256,
-        "saved_bytes": 6798,
-        "compress_us": 1002.0617187365133,
-        "decompress_us": 709.6451171832996,
+        "compressed_bytes": 9860,
+        "ratio": 1.6616632860040568,
+        "saved_bytes": 6524,
+        "compress_us": 1580.6828124995675,
+        "decompress_us": 990.2867187507879,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1754,8 +2090,8 @@
         "compressed_bytes": 3609,
         "ratio": 4.5397617068440015,
         "saved_bytes": 12775,
-        "compress_us": 677.5732422283909,
-        "decompress_us": 127.03920899070908,
+        "compress_us": 852.4505859375254,
+        "decompress_us": 380.1215820313786,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1764,8 +2100,8 @@
         "compressed_bytes": 7096,
         "ratio": 2.3089064261555805,
         "saved_bytes": 9288,
-        "compress_us": 182.85830078923482,
-        "decompress_us": 94.51308594066177,
+        "compress_us": 636.6751953121864,
+        "decompress_us": 275.80722656250776,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1774,8 +2110,8 @@
         "compressed_bytes": 3282,
         "ratio": 4.992078001218769,
         "saved_bytes": 13102,
-        "compress_us": 265.8921875138276,
-        "decompress_us": 40.549780273124725,
+        "compress_us": 783.1843749999123,
+        "decompress_us": 58.37634277344739,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1784,8 +2120,8 @@
         "compressed_bytes": 721,
         "ratio": 22.723994452149793,
         "saved_bytes": 15663,
-        "compress_us": 40050.94999956782,
-        "decompress_us": 14.414923095174004,
+        "compress_us": 51179.68749999591,
+        "decompress_us": 15.541937255864058,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1797,11 +2133,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 11041,
-        "ratio": 1.4839235576487637,
-        "saved_bytes": 5343,
-        "compress_us": 1098.634765639872,
-        "decompress_us": 777.6238281280712,
+        "compressed_bytes": 11002,
+        "ratio": 1.489183784766406,
+        "saved_bytes": 5382,
+        "compress_us": 1443.2277343745525,
+        "decompress_us": 601.3367187502894,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1810,8 +2146,8 @@
         "compressed_bytes": 4677,
         "ratio": 3.5031002779559546,
         "saved_bytes": 11707,
-        "compress_us": 831.932421874626,
-        "decompress_us": 163.69394531068338,
+        "compress_us": 785.1886718750478,
+        "decompress_us": 161.69936523446893,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1820,8 +2156,8 @@
         "compressed_bytes": 8968,
         "ratio": 1.8269402319357717,
         "saved_bytes": 7416,
-        "compress_us": 248.57929687982505,
-        "decompress_us": 113.46445312909736,
+        "compress_us": 152.64687499993988,
+        "decompress_us": 72.20803222651728,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1830,8 +2166,8 @@
         "compressed_bytes": 5172,
         "ratio": 3.1678267594740914,
         "saved_bytes": 11212,
-        "compress_us": 424.86347655312784,
-        "decompress_us": 54.57017822152466,
+        "compress_us": 221.8840820312762,
+        "decompress_us": 30.89729003907804,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1840,8 +2176,8 @@
         "compressed_bytes": 3242,
         "ratio": 5.053670573719926,
         "saved_bytes": 13142,
-        "compress_us": 26375.19999916549,
-        "decompress_us": 38.273205568373214,
+        "compress_us": 15247.262499997305,
+        "decompress_us": 31.093170166016094,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1853,11 +2189,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 9581,
-        "ratio": 1.7100511428869638,
-        "saved_bytes": 6803,
-        "compress_us": 988.1357422045767,
-        "decompress_us": 738.1003906630212,
+        "compressed_bytes": 9543,
+        "ratio": 1.7168605260400294,
+        "saved_bytes": 6841,
+        "compress_us": 981.7390625004307,
+        "decompress_us": 390.39531250018024,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1866,8 +2202,8 @@
         "compressed_bytes": 5976,
         "ratio": 2.7416331994645247,
         "saved_bytes": 10408,
-        "compress_us": 1703.7203124345979,
-        "decompress_us": 201.65932616578175,
+        "compress_us": 1341.8871093744401,
+        "decompress_us": 120.9849609374869,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1876,8 +2212,8 @@
         "compressed_bytes": 7509,
         "ratio": 2.181915035290984,
         "saved_bytes": 8875,
-        "compress_us": 228.7231933593148,
-        "decompress_us": 119.48867187072665,
+        "compress_us": 147.87182617181927,
+        "decompress_us": 71.08395996097138,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1886,8 +2222,8 @@
         "compressed_bytes": 4468,
         "ratio": 3.666965085049239,
         "saved_bytes": 11916,
-        "compress_us": 472.10830078370236,
-        "decompress_us": 57.26494140745331,
+        "compress_us": 287.1125000001307,
+        "decompress_us": 31.16187744139909,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1896,8 +2232,8 @@
         "compressed_bytes": 3285,
         "ratio": 4.987519025875191,
         "saved_bytes": 13099,
-        "compress_us": 27407.037499870057,
-        "decompress_us": 52.335437011663544,
+        "compress_us": 17813.406249999276,
+        "decompress_us": 34.90213623047467,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1912,8 +2248,8 @@
         "compressed_bytes": 33028,
         "ratio": 0.9921278914860119,
         "saved_bytes": -260,
-        "compress_us": 2914.0460937924217,
-        "decompress_us": 1404.3316406286976,
+        "compress_us": 2395.0125000009593,
+        "decompress_us": 748.4716796875013,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1922,8 +2258,8 @@
         "compressed_bytes": 36860,
         "ratio": 0.8889853499728704,
         "saved_bytes": -4092,
-        "compress_us": 2794.4164062319032,
-        "decompress_us": 772.409179717215,
+        "compress_us": 2077.4640625003117,
+        "decompress_us": 524.463867187297,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1932,8 +2268,8 @@
         "compressed_bytes": 32865,
         "ratio": 0.9970485318728131,
         "saved_bytes": -97,
-        "compress_us": 643.037890654341,
-        "decompress_us": 10.900885009768047,
+        "compress_us": 392.4096679686073,
+        "decompress_us": 4.518247985838691,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1942,8 +2278,8 @@
         "compressed_bytes": 32773,
         "ratio": 0.9998474353888872,
         "saved_bytes": -5,
-        "compress_us": 96.16611328766567,
-        "decompress_us": 5.436639404443611,
+        "compress_us": 44.830249023436465,
+        "decompress_us": 2.542662048340971,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -1952,8 +2288,8 @@
         "compressed_bytes": 32772,
         "ratio": 0.9998779445868424,
         "saved_bytes": -4,
-        "compress_us": 12811.175000024377,
-        "decompress_us": 5.952676391363099,
+        "compress_us": 5881.690624999436,
+        "decompress_us": 2.841257476805456,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -1965,11 +2301,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 6953,
-        "ratio": 4.712785847835467,
-        "saved_bytes": 25815,
-        "compress_us": 915.3734374649503,
-        "decompress_us": 1543.6402344448652,
+        "compressed_bytes": 7057,
+        "ratio": 4.643332860989089,
+        "saved_bytes": 25711,
+        "compress_us": 652.0013671873493,
+        "decompress_us": 767.5166015626012,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -1978,8 +2314,8 @@
         "compressed_bytes": 6653,
         "ratio": 4.925296858560048,
         "saved_bytes": 26115,
-        "compress_us": 6918.224999935774,
-        "decompress_us": 256.55175781480466,
+        "compress_us": 5597.437500000524,
+        "decompress_us": 174.90249023432992,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -1988,8 +2324,8 @@
         "compressed_bytes": 7654,
         "ratio": 4.28116017768487,
         "saved_bytes": 25114,
-        "compress_us": 412.46562500418804,
-        "decompress_us": 207.7496582018057,
+        "compress_us": 288.44501953129156,
+        "decompress_us": 131.04887695303267,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -1998,8 +2334,8 @@
         "compressed_bytes": 3961,
         "ratio": 8.272658419591012,
         "saved_bytes": 28807,
-        "compress_us": 624.6482421943256,
-        "decompress_us": 97.2087402359989,
+        "compress_us": 387.40136718740104,
+        "decompress_us": 48.02276611329259,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2008,8 +2344,8 @@
         "compressed_bytes": 3667,
         "ratio": 8.935914916825743,
         "saved_bytes": 29101,
-        "compress_us": 77884.77500434965,
-        "decompress_us": 89.86767578278432,
+        "compress_us": 50089.73750000223,
+        "decompress_us": 59.974609374985334,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2024,8 +2360,8 @@
         "compressed_bytes": 23611,
         "ratio": 1.3878277074245056,
         "saved_bytes": 9157,
-        "compress_us": 2389.1570310752286,
-        "decompress_us": 1500.8945313184086,
+        "compress_us": 1707.2925781249637,
+        "decompress_us": 797.0259765626154,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2034,8 +2370,8 @@
         "compressed_bytes": 24066,
         "ratio": 1.3615889636832046,
         "saved_bytes": 8702,
-        "compress_us": 2101.952343764424,
-        "decompress_us": 614.5275390281313,
+        "compress_us": 1574.6832031249269,
+        "decompress_us": 402.4914062499274,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2044,8 +2380,8 @@
         "compressed_bytes": 22194,
         "ratio": 1.4764350725421285,
         "saved_bytes": 10574,
-        "compress_us": 606.1677734692239,
-        "decompress_us": 303.7459960921751,
+        "compress_us": 391.76044921873654,
+        "decompress_us": 225.176318359388,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2054,8 +2390,8 @@
         "compressed_bytes": 9057,
         "ratio": 3.6179750469250305,
         "saved_bytes": 23711,
-        "compress_us": 717.8988280998055,
-        "decompress_us": 202.380517578149,
+        "compress_us": 368.80615234369253,
+        "decompress_us": 110.00566406249578,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2064,8 +2400,8 @@
         "compressed_bytes": 9061,
         "ratio": 3.6163778832358457,
         "saved_bytes": 23707,
-        "compress_us": 40709.225002501626,
-        "decompress_us": 157.0728515503106,
+        "compress_us": 22429.687500007843,
+        "decompress_us": 115.29482421879234,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2077,11 +2413,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 19814,
-        "ratio": 1.6537801554456444,
-        "saved_bytes": 12954,
-        "compress_us": 2056.9789062392374,
-        "decompress_us": 1421.6531250212938,
+        "compressed_bytes": 20402,
+        "ratio": 1.606117047348299,
+        "saved_bytes": 12366,
+        "compress_us": 1732.9554687499638,
+        "decompress_us": 773.8583984373548,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2090,8 +2426,8 @@
         "compressed_bytes": 6534,
         "ratio": 5.014998469543924,
         "saved_bytes": 26234,
-        "compress_us": 1333.6902344462942,
-        "decompress_us": 243.56713866779955,
+        "compress_us": 971.0078124998133,
+        "decompress_us": 137.95034179686638,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2100,8 +2436,8 @@
         "compressed_bytes": 14368,
         "ratio": 2.2806236080178173,
         "saved_bytes": 18400,
-        "compress_us": 391.35126954192856,
-        "decompress_us": 184.64809569707086,
+        "compress_us": 247.25566406247344,
+        "decompress_us": 119.99401855466996,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2110,8 +2446,8 @@
         "compressed_bytes": 6075,
         "ratio": 5.3939094650205766,
         "saved_bytes": 26693,
-        "compress_us": 463.41376952341307,
-        "decompress_us": 84.72675781234784,
+        "compress_us": 235.105468750052,
+        "decompress_us": 42.54176025392242,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2120,8 +2456,8 @@
         "compressed_bytes": 971,
         "ratio": 33.74665293511843,
         "saved_bytes": 31797,
-        "compress_us": 88750.25000452297,
-        "decompress_us": 18.793560791152686,
+        "compress_us": 51622.500000007676,
+        "decompress_us": 10.719949340820545,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2133,11 +2469,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 22064,
-        "ratio": 1.4851341551849166,
-        "saved_bytes": 10704,
-        "compress_us": 2262.338281298071,
-        "decompress_us": 1609.1023436501928,
+        "compressed_bytes": 21987,
+        "ratio": 1.4903351980715878,
+        "saved_bytes": 10781,
+        "compress_us": 1789.9261718747894,
+        "decompress_us": 777.4509765625659,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2146,8 +2482,8 @@
         "compressed_bytes": 8994,
         "ratio": 3.643317767400489,
         "saved_bytes": 23774,
-        "compress_us": 1476.3996093734022,
-        "decompress_us": 317.9240234487679,
+        "compress_us": 1149.2417968748114,
+        "decompress_us": 208.01088867195006,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2156,8 +2492,8 @@
         "compressed_bytes": 17912,
         "ratio": 1.829388119696293,
         "saved_bytes": 14856,
-        "compress_us": 499.03847656196376,
-        "decompress_us": 236.66909180519724,
+        "compress_us": 332.44472656246415,
+        "decompress_us": 151.56103515623354,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2166,8 +2502,8 @@
         "compressed_bytes": 10073,
         "ratio": 3.2530527151791917,
         "saved_bytes": 22695,
-        "compress_us": 753.0644531357211,
-        "decompress_us": 121.42500000322798,
+        "compress_us": 427.90781250001686,
+        "decompress_us": 75.37170410154559,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2176,8 +2512,8 @@
         "compressed_bytes": 5742,
         "ratio": 5.706722396377569,
         "saved_bytes": 27026,
-        "compress_us": 51808.58750100015,
-        "decompress_us": 64.7893798841892,
+        "compress_us": 31318.0750000015,
+        "decompress_us": 42.1316406249983,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2189,11 +2525,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 19256,
-        "ratio": 1.7017033651848774,
-        "saved_bytes": 13512,
-        "compress_us": 1920.6062499961263,
-        "decompress_us": 1461.6242187912576,
+        "compressed_bytes": 19162,
+        "ratio": 1.7100511428869638,
+        "saved_bytes": 13606,
+        "compress_us": 1519.5281250006688,
+        "decompress_us": 783.4576171874552,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2202,8 +2538,8 @@
         "compressed_bytes": 11719,
         "ratio": 2.796143015615667,
         "saved_bytes": 21049,
-        "compress_us": 3393.8046874482097,
-        "decompress_us": 393.17216797485344,
+        "compress_us": 2706.281249999165,
+        "decompress_us": 243.86674804688369,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2212,8 +2548,8 @@
         "compressed_bytes": 15026,
         "ratio": 2.1807533608412086,
         "saved_bytes": 17742,
-        "compress_us": 469.6594726567582,
-        "decompress_us": 277.35302734299694,
+        "compress_us": 309.0404296874905,
+        "decompress_us": 163.82543945314688,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2222,8 +2558,8 @@
         "compressed_bytes": 8939,
         "ratio": 3.6657344221948764,
         "saved_bytes": 23829,
-        "compress_us": 879.3539062708078,
-        "decompress_us": 133.60664061679017,
+        "compress_us": 499.4390625001621,
+        "decompress_us": 79.96704101564944,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2232,8 +2568,8 @@
         "compressed_bytes": 6126,
         "ratio": 5.349004244205028,
         "saved_bytes": 26642,
-        "compress_us": 56545.78749818029,
-        "decompress_us": 103.65534667755583,
+        "compress_us": 34990.625000006046,
+        "decompress_us": 61.8405517577858,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2248,8 +2584,8 @@
         "compressed_bytes": 132108,
         "ratio": 0.9921579313894692,
         "saved_bytes": -1036,
-        "compress_us": 12337.356250100129,
-        "decompress_us": 5754.249999881722,
+        "compress_us": 9525.24374999797,
+        "decompress_us": 2991.9476562501045,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2258,8 +2594,8 @@
         "compressed_bytes": 147436,
         "ratio": 0.8890094685151524,
         "saved_bytes": -16364,
-        "compress_us": 11241.299999710463,
-        "decompress_us": 3752.115625047736,
+        "compress_us": 8312.778125002751,
+        "decompress_us": 2140.849999999972,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2268,8 +2604,8 @@
         "compressed_bytes": 131457,
         "ratio": 0.9970712856675567,
         "saved_bytes": -385,
-        "compress_us": 2821.753906118829,
-        "decompress_us": 36.90141601353503,
+        "compress_us": 1560.797656249946,
+        "decompress_us": 15.26192626953582,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2278,8 +2614,8 @@
         "compressed_bytes": 131077,
         "ratio": 0.9999618544824798,
         "saved_bytes": -5,
-        "compress_us": 370.55703123201056,
-        "decompress_us": 20.04110717734875,
+        "compress_us": 300.32978515626144,
+        "decompress_us": 7.699053955076418,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2288,8 +2624,8 @@
         "compressed_bytes": 131077,
         "ratio": 0.9999618544824798,
         "saved_bytes": -5,
-        "compress_us": 52173.78750239732,
-        "decompress_us": 17.859228515604286,
+        "compress_us": 25705.662499987626,
+        "decompress_us": 8.76372070312409,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2301,11 +2637,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 27212,
-        "ratio": 4.81669851536087,
-        "saved_bytes": 103860,
-        "compress_us": 3527.92734383911,
-        "decompress_us": 5992.353125293448,
+        "compressed_bytes": 27697,
+        "ratio": 4.732353684514568,
+        "saved_bytes": 103375,
+        "compress_us": 2554.5906249995196,
+        "decompress_us": 3158.111718750689,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2314,8 +2650,8 @@
         "compressed_bytes": 26236,
         "ratio": 4.99588351882909,
         "saved_bytes": 104836,
-        "compress_us": 26691.131250117905,
-        "decompress_us": 980.8203125203363,
+        "compress_us": 21708.61250000655,
+        "decompress_us": 599.2414062498951,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2324,8 +2660,8 @@
         "compressed_bytes": 30090,
         "ratio": 4.355998670654703,
         "saved_bytes": 100982,
-        "compress_us": 1666.5019530819336,
-        "decompress_us": 868.3464843670663,
+        "compress_us": 1205.9347656245834,
+        "decompress_us": 595.6937500002368,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2334,8 +2670,8 @@
         "compressed_bytes": 15321,
         "ratio": 8.555055153057895,
         "saved_bytes": 115751,
-        "compress_us": 2389.839843772279,
-        "decompress_us": 413.6346679786129,
+        "compress_us": 1580.843359374917,
+        "decompress_us": 252.94296874989186,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2344,8 +2680,8 @@
         "compressed_bytes": 13926,
         "ratio": 9.412035042366796,
         "saved_bytes": 117146,
-        "compress_us": 328576.89997763373,
-        "decompress_us": 312.94101563617005,
+        "compress_us": 211734.35000002882,
+        "decompress_us": 210.73803710935923,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2360,8 +2696,8 @@
         "compressed_bytes": 94352,
         "ratio": 1.3891809394607428,
         "saved_bytes": 36720,
-        "compress_us": 8821.849999549158,
-        "decompress_us": 6017.592187163245,
+        "compress_us": 6802.134375000434,
+        "decompress_us": 3223.189062500964,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2370,8 +2706,8 @@
         "compressed_bytes": 96152,
         "ratio": 1.3631749729594809,
         "saved_bytes": 34920,
-        "compress_us": 8490.584375067556,
-        "decompress_us": 2420.608593865836,
+        "compress_us": 6269.481250001263,
+        "decompress_us": 1604.2714843749195,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2380,8 +2716,8 @@
         "compressed_bytes": 88745,
         "ratio": 1.4769508141303735,
         "saved_bytes": 42327,
-        "compress_us": 2551.5781248941494,
-        "decompress_us": 1308.7863280816237,
+        "compress_us": 1624.4593749998871,
+        "decompress_us": 982.6634765626175,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2390,8 +2726,8 @@
         "compressed_bytes": 36075,
         "ratio": 3.633319473319473,
         "saved_bytes": 94997,
-        "compress_us": 2681.3367185241077,
-        "decompress_us": 786.3837890909053,
+        "compress_us": 1426.4589843753229,
+        "decompress_us": 427.9477539061993,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2400,8 +2736,8 @@
         "compressed_bytes": 36072,
         "ratio": 3.6336216455976933,
         "saved_bytes": 95000,
-        "compress_us": 172698.2499967562,
-        "decompress_us": 611.103710923544,
+        "compress_us": 92899.92499998334,
+        "decompress_us": 451.6244140624348,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2413,11 +2749,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 80218,
-        "ratio": 1.6339474930813533,
-        "saved_bytes": 50854,
-        "compress_us": 8378.337499379995,
-        "decompress_us": 6029.24843724395,
+        "compressed_bytes": 82786,
+        "ratio": 1.583262870533665,
+        "saved_bytes": 48286,
+        "compress_us": 6966.312500001237,
+        "decompress_us": 3203.482812500269,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2426,8 +2762,8 @@
         "compressed_bytes": 24488,
         "ratio": 5.35249918327344,
         "saved_bytes": 106584,
-        "compress_us": 4918.906249713473,
-        "decompress_us": 897.8025390433686,
+        "compress_us": 3803.0054687503425,
+        "decompress_us": 526.0226562500136,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2436,8 +2772,8 @@
         "compressed_bytes": 57603,
         "ratio": 2.275437043209555,
         "saved_bytes": 73469,
-        "compress_us": 1639.5785156646525,
-        "decompress_us": 766.1728515131472,
+        "compress_us": 1062.313671875259,
+        "decompress_us": 537.9925781250349,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2446,8 +2782,8 @@
         "compressed_bytes": 22042,
         "ratio": 5.94646583794574,
         "saved_bytes": 109030,
-        "compress_us": 1749.3449219045942,
-        "decompress_us": 355.52099609503784,
+        "compress_us": 1042.2210937495179,
+        "decompress_us": 220.24902343753539,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2456,8 +2792,8 @@
         "compressed_bytes": 2350,
         "ratio": 55.77531914893617,
         "saved_bytes": 128722,
-        "compress_us": 401781.59999777563,
-        "decompress_us": 45.10795898227116,
+        "compress_us": 226285.10000004098,
+        "decompress_us": 22.40090942383366,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2469,11 +2805,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 88334,
-        "ratio": 1.4838227636017842,
-        "saved_bytes": 42738,
-        "compress_us": 8889.499999895634,
-        "decompress_us": 6014.501562731311,
+        "compressed_bytes": 87967,
+        "ratio": 1.4900133004422114,
+        "saved_bytes": 43105,
+        "compress_us": 7187.709375003237,
+        "decompress_us": 3285.3999999993275,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2482,8 +2818,8 @@
         "compressed_bytes": 35266,
         "ratio": 3.716667611864118,
         "saved_bytes": 95806,
-        "compress_us": 6136.209374744794,
-        "decompress_us": 1277.6769531228638,
+        "compress_us": 4721.149999998175,
+        "decompress_us": 801.3988281252438,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2492,8 +2828,8 @@
         "compressed_bytes": 71651,
         "ratio": 1.8293115239145301,
         "saved_bytes": 59421,
-        "compress_us": 2012.1187499171356,
-        "decompress_us": 936.5285156377468,
+        "compress_us": 1343.8757812496149,
+        "decompress_us": 664.6728515624645,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2502,8 +2838,8 @@
         "compressed_bytes": 39708,
         "ratio": 3.300896544776871,
         "saved_bytes": 91364,
-        "compress_us": 3013.7953126541106,
-        "decompress_us": 521.831054697941,
+        "compress_us": 1836.8906249994766,
+        "decompress_us": 387.01220703130093,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2512,8 +2848,8 @@
         "compressed_bytes": 19579,
         "ratio": 6.694519638388069,
         "saved_bytes": 111493,
-        "compress_us": 219079.4000052847,
-        "decompress_us": 221.20092772581756,
+        "compress_us": 132259.35000002664,
+        "decompress_us": 138.8707031250158,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2525,11 +2861,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 76915,
-        "ratio": 1.704114932067867,
-        "saved_bytes": 54157,
-        "compress_us": 7598.706249609677,
-        "decompress_us": 6184.629687140841,
+        "compressed_bytes": 76633,
+        "ratio": 1.7103858650972819,
+        "saved_bytes": 54439,
+        "compress_us": 6021.760937500176,
+        "decompress_us": 3254.6328124993806,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2538,8 +2874,8 @@
         "compressed_bytes": 46146,
         "ratio": 2.840376197286872,
         "saved_bytes": 84926,
-        "compress_us": 13361.356249333767,
-        "decompress_us": 1524.4855468381502,
+        "compress_us": 10786.60625000083,
+        "decompress_us": 983.8128906247689,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2548,8 +2884,8 @@
         "compressed_bytes": 60186,
         "ratio": 2.1777822084870238,
         "saved_bytes": 70886,
-        "compress_us": 1934.5226562563766,
-        "decompress_us": 1041.8132812901604,
+        "compress_us": 1294.9957031249683,
+        "decompress_us": 727.4023437497945,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2558,8 +2894,8 @@
         "compressed_bytes": 35101,
         "ratio": 3.734138628529102,
         "saved_bytes": 95971,
-        "compress_us": 3080.172656382274,
-        "decompress_us": 563.1078124679334,
+        "compress_us": 1996.4445312510293,
+        "decompress_us": 415.31972656261297,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2568,8 +2904,8 @@
         "compressed_bytes": 22222,
         "ratio": 5.89829898298983,
         "saved_bytes": 108850,
-        "compress_us": 239865.85000238847,
-        "decompress_us": 381.8205078118808,
+        "compress_us": 152948.40000001388,
+        "decompress_us": 265.52744140628806,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2584,8 +2920,8 @@
         "compressed_bytes": 528420,
         "ratio": 0.9921804625108815,
         "saved_bytes": -4132,
-        "compress_us": 47095.71249986766,
-        "decompress_us": 22755.956249966403,
+        "compress_us": 38483.6249999978,
+        "decompress_us": 12036.934375004193,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2594,8 +2930,8 @@
         "compressed_bytes": 589735,
         "ratio": 0.8890230357703036,
         "saved_bytes": -65447,
-        "compress_us": 45206.8375016097,
-        "decompress_us": 11604.612500377698,
+        "compress_us": 34127.02500000364,
+        "decompress_us": 8584.240624998074,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2604,8 +2940,8 @@
         "compressed_bytes": 525825,
         "ratio": 0.9970769742785147,
         "saved_bytes": -1537,
-        "compress_us": 10980.815624861862,
-        "decompress_us": 162.27807617497092,
+        "compress_us": 6604.901562496934,
+        "decompress_us": 77.07182617183727,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2614,8 +2950,8 @@
         "compressed_bytes": 524302,
         "ratio": 0.9999732978321655,
         "saved_bytes": -14,
-        "compress_us": 1555.0644531003854,
-        "decompress_us": 90.03530273332672,
+        "compress_us": 703.6117187499968,
+        "decompress_us": 41.419897460925895,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2624,8 +2960,8 @@
         "compressed_bytes": 524293,
         "ratio": 0.9999904633477845,
         "saved_bytes": -5,
-        "compress_us": 251897.39998313598,
-        "decompress_us": 369.3555664199266,
+        "compress_us": 134557.24999994345,
+        "decompress_us": 73.56054687501779,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2637,11 +2973,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 109251,
-        "ratio": 4.7989309022343045,
-        "saved_bytes": 415037,
-        "compress_us": 14563.921875378583,
-        "decompress_us": 24756.500000876258,
+        "compressed_bytes": 111066,
+        "ratio": 4.720508526461743,
+        "saved_bytes": 413222,
+        "compress_us": 10842.756249999751,
+        "decompress_us": 12578.099999998925,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2650,8 +2986,8 @@
         "compressed_bytes": 105190,
         "ratio": 4.9842000190132145,
         "saved_bytes": 419098,
-        "compress_us": 108879.45000285981,
-        "decompress_us": 3931.7515625043598,
+        "compress_us": 88512.27500002779,
+        "decompress_us": 3842.109374998515,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2660,8 +2996,8 @@
         "compressed_bytes": 120470,
         "ratio": 4.3520212501037605,
         "saved_bytes": 403818,
-        "compress_us": 6766.196875105379,
-        "decompress_us": 3560.7671875368396,
+        "compress_us": 6812.237500000151,
+        "decompress_us": 3567.5140624995547,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2670,8 +3006,8 @@
         "compressed_bytes": 61606,
         "ratio": 8.510339901957602,
         "saved_bytes": 462682,
-        "compress_us": 9507.14999999036,
-        "decompress_us": 1689.495312461986,
+        "compress_us": 9316.940624998439,
+        "decompress_us": 1821.9746093750543,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2680,8 +3016,8 @@
         "compressed_bytes": 54911,
         "ratio": 9.54795942525177,
         "saved_bytes": 469377,
-        "compress_us": 1409163.7000092305,
-        "decompress_us": 1130.8457031873331,
+        "compress_us": 1416595.7000000163,
+        "decompress_us": 804.0351562499382,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2696,8 +3032,8 @@
         "compressed_bytes": 377411,
         "ratio": 1.3891698970088313,
         "saved_bytes": 146877,
-        "compress_us": 36896.17499912856,
-        "decompress_us": 23885.337499450543,
+        "compress_us": 27272.55000000639,
+        "decompress_us": 12867.350000000499,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2706,8 +3042,8 @@
         "compressed_bytes": 384608,
         "ratio": 1.3631749729594809,
         "saved_bytes": 139680,
-        "compress_us": 33552.46250066557,
-        "decompress_us": 9616.281250600878,
+        "compress_us": 25307.743749991118,
+        "decompress_us": 6459.764062501705,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2716,8 +3052,8 @@
         "compressed_bytes": 354787,
         "ratio": 1.477754258188716,
         "saved_bytes": 169501,
-        "compress_us": 10041.528124929755,
-        "decompress_us": 5076.003124941053,
+        "compress_us": 6599.685937498379,
+        "decompress_us": 4174.935937498958,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2726,8 +3062,8 @@
         "compressed_bytes": 144325,
         "ratio": 3.6326901091287027,
         "saved_bytes": 379963,
-        "compress_us": 10703.23437488696,
-        "decompress_us": 2190.2320313529344,
+        "compress_us": 5734.818749999704,
+        "decompress_us": 1730.1339843749374,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2736,8 +3072,8 @@
         "compressed_bytes": 144198,
         "ratio": 3.6358895407703296,
         "saved_bytes": 380090,
-        "compress_us": 557108.9999866672,
-        "decompress_us": 1846.6062499555846,
+        "compress_us": 550419.3000001578,
+        "decompress_us": 1836.675390625153,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2749,11 +3085,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 313736,
-        "ratio": 1.6711120177474055,
-        "saved_bytes": 210552,
-        "compress_us": 21535.15624922875,
-        "decompress_us": 14559.65937475412,
+        "compressed_bytes": 323696,
+        "ratio": 1.6196925510355396,
+        "saved_bytes": 200592,
+        "compress_us": 27824.556249996134,
+        "decompress_us": 12840.403124997123,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2762,8 +3098,8 @@
         "compressed_bytes": 99563,
         "ratio": 5.265891947811938,
         "saved_bytes": 424725,
-        "compress_us": 16027.281249989755,
-        "decompress_us": 2146.867187548196,
+        "compress_us": 15861.91250000013,
+        "decompress_us": 2200.098437500131,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2772,8 +3108,8 @@
         "compressed_bytes": 227992,
         "ratio": 2.299589459279273,
         "saved_bytes": 296296,
-        "compress_us": 4289.028125185723,
-        "decompress_us": 2227.0148435836745,
+        "compress_us": 4293.978125001985,
+        "decompress_us": 2213.1203125006496,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2782,8 +3118,8 @@
         "compressed_bytes": 85897,
         "ratio": 6.103682317193848,
         "saved_bytes": 438391,
-        "compress_us": 3511.8609375786036,
-        "decompress_us": 1013.994921891026,
+        "compress_us": 3537.589062499791,
+        "decompress_us": 963.8230468751452,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2792,8 +3128,8 @@
         "compressed_bytes": 7916,
         "ratio": 66.23143001515918,
         "saved_bytes": 516372,
-        "compress_us": 978623.2000042219,
-        "decompress_us": 104.39934082029367,
+        "compress_us": 1010388.7000000214,
+        "decompress_us": 145.54609374994865,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2805,11 +3141,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 353774,
-        "ratio": 1.4819856744701418,
-        "saved_bytes": 170514,
-        "compress_us": 23304.031248699175,
-        "decompress_us": 14901.90625008836,
+        "compressed_bytes": 352340,
+        "ratio": 1.488017256059488,
+        "saved_bytes": 171948,
+        "compress_us": 28893.268749996536,
+        "decompress_us": 13530.937500000562,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2818,8 +3154,8 @@
         "compressed_bytes": 139778,
         "ratio": 3.7508620813003475,
         "saved_bytes": 384510,
-        "compress_us": 18901.906250903266,
-        "decompress_us": 3251.063281140887,
+        "compress_us": 18879.44374999506,
+        "decompress_us": 3251.6375000000153,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2828,8 +3164,8 @@
         "compressed_bytes": 286087,
         "ratio": 1.8326173506660561,
         "saved_bytes": 238201,
-        "compress_us": 5405.4906249803025,
-        "decompress_us": 2745.5507813556324,
+        "compress_us": 5382.6140625012895,
+        "decompress_us": 2763.5742187506194,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2838,8 +3174,8 @@
         "compressed_bytes": 158960,
         "ratio": 3.298238550578762,
         "saved_bytes": 365328,
-        "compress_us": 6765.5078128154855,
-        "decompress_us": 1622.745312488405,
+        "compress_us": 6765.057812501141,
+        "decompress_us": 1627.3914062496785,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2848,8 +3184,8 @@
         "compressed_bytes": 70570,
         "ratio": 7.429332577582542,
         "saved_bytes": 453718,
-        "compress_us": 579589.9000077043,
-        "decompress_us": 533.3464843602087,
+        "compress_us": 579824.3000001549,
+        "decompress_us": 525.5250000000267,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2861,11 +3197,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 306322,
-        "ratio": 1.7115584254477314,
-        "saved_bytes": 217966,
-        "compress_us": 19391.931251448113,
-        "decompress_us": 14688.840625240118,
+        "compressed_bytes": 305338,
+        "ratio": 1.717074193189187,
+        "saved_bytes": 218950,
+        "compress_us": 24723.71250000549,
+        "decompress_us": 13436.721875002888,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2874,8 +3210,8 @@
         "compressed_bytes": 184422,
         "ratio": 2.842871240958237,
         "saved_bytes": 339866,
-        "compress_us": 43179.625001357635,
-        "decompress_us": 4032.845312394784,
+        "compress_us": 44339.06250000064,
+        "decompress_us": 3940.625000002029,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2884,8 +3220,8 @@
         "compressed_bytes": 240755,
         "ratio": 2.1776827064858466,
         "saved_bytes": 283533,
-        "compress_us": 5223.20781237795,
-        "decompress_us": 3010.9695312603435,
+        "compress_us": 5221.124999998494,
+        "decompress_us": 3015.3171874989225,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2894,8 +3230,8 @@
         "compressed_bytes": 140710,
         "ratio": 3.7260180513112076,
         "saved_bytes": 383578,
-        "compress_us": 7290.779687536997,
-        "decompress_us": 1734.6421874435691,
+        "compress_us": 7332.192187497811,
+        "decompress_us": 1736.9535156248617,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2904,8 +3240,8 @@
         "compressed_bytes": 84586,
         "ratio": 6.198283403872981,
         "saved_bytes": 439702,
-        "compress_us": 683529.1000024881,
-        "decompress_us": 1022.407421828575,
+        "compress_us": 686010.0000001239,
+        "decompress_us": 1016.4160156245216,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2920,8 +3256,8 @@
         "compressed_bytes": 1056836,
         "ratio": 0.9921842177972742,
         "saved_bytes": -8260,
-        "compress_us": 58582.48750155326,
-        "decompress_us": 27670.46249937266,
+        "compress_us": 76735.1000000076,
+        "decompress_us": 24545.450000005076,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2930,8 +3266,8 @@
         "compressed_bytes": 1179467,
         "ratio": 0.8890252970197555,
         "saved_bytes": -130891,
-        "compress_us": 68009.39999811817,
-        "decompress_us": 17518.075001135003,
+        "compress_us": 69431.150000014,
+        "decompress_us": 18799.61250000406,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2940,8 +3276,8 @@
         "compressed_bytes": 1051649,
         "ratio": 0.9970779223866518,
         "saved_bytes": -3073,
-        "compress_us": 13510.487500752788,
-        "decompress_us": 394.7605468965776,
+        "compress_us": 13516.440624997016,
+        "decompress_us": 409.7228515624885,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -2950,8 +3286,8 @@
         "compressed_bytes": 1048602,
         "ratio": 0.9999752050825766,
         "saved_bytes": -26,
-        "compress_us": 1698.708593835363,
-        "decompress_us": 353.168066425269,
+        "compress_us": 1848.3453125002213,
+        "decompress_us": 361.95380859394,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -2960,8 +3296,8 @@
         "compressed_bytes": 1048581,
         "ratio": 0.9999952316511552,
         "saved_bytes": -5,
-        "compress_us": 311060.300009558,
-        "decompress_us": 650.6679687277028,
+        "compress_us": 314097.20000010566,
+        "decompress_us": 655.0808593748236,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -2973,11 +3309,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 217198,
-        "ratio": 4.827742428567483,
-        "saved_bytes": 831378,
-        "compress_us": 17154.39374856942,
-        "decompress_us": 28895.306249978603,
+        "compressed_bytes": 220666,
+        "ratio": 4.751869340994988,
+        "saved_bytes": 827910,
+        "compress_us": 21032.937499995794,
+        "decompress_us": 25828.13749999957,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -2986,8 +3322,8 @@
         "compressed_bytes": 209689,
         "ratio": 5.000624734726189,
         "saved_bytes": 838887,
-        "compress_us": 174449.60000284482,
-        "decompress_us": 5804.97968758209,
+        "compress_us": 174235.04999999295,
+        "decompress_us": 5650.370312501707,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -2996,8 +3332,8 @@
         "compressed_bytes": 239379,
         "ratio": 4.380400954135492,
         "saved_bytes": 809197,
-        "compress_us": 9521.190624582232,
-        "decompress_us": 5165.140625194908,
+        "compress_us": 9470.171875001653,
+        "decompress_us": 5183.275000000265,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -3006,8 +3342,8 @@
         "compressed_bytes": 122241,
         "ratio": 8.577940298263266,
         "saved_bytes": 926335,
-        "compress_us": 11779.543749980803,
-        "decompress_us": 2468.9664062407246,
+        "compress_us": 11841.41875000222,
+        "decompress_us": 2493.8296875003375,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -3016,8 +3352,8 @@
         "compressed_bytes": 108687,
         "ratio": 9.647667154305482,
         "saved_bytes": 939889,
-        "compress_us": 1935216.3999865297,
-        "decompress_us": 2037.9906250127533,
+        "compress_us": 1943734.1999998807,
+        "decompress_us": 2023.5898437501733,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -3032,8 +3368,8 @@
         "compressed_bytes": 755371,
         "ratio": 1.388160255027,
         "saved_bytes": 293205,
-        "compress_us": 44385.975001205225,
-        "decompress_us": 29344.781250983942,
+        "compress_us": 55350.01250001414,
+        "decompress_us": 26691.67499999503,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -3042,8 +3378,8 @@
         "compressed_bytes": 769755,
         "ratio": 1.3622204467655292,
         "saved_bytes": 278821,
-        "compress_us": 50651.962501433445,
-        "decompress_us": 14811.993750299735,
+        "compress_us": 50763.28749998993,
+        "decompress_us": 13586.803125001268,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -3052,8 +3388,8 @@
         "compressed_bytes": 710117,
         "ratio": 1.4766242745913702,
         "saved_bytes": 338459,
-        "compress_us": 13468.134375216323,
-        "decompress_us": 8266.45937468129,
+        "compress_us": 13244.415625003114,
+        "decompress_us": 8272.975000004124,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -3062,8 +3398,8 @@
         "compressed_bytes": 288959,
         "ratio": 3.62880547067231,
         "saved_bytes": 759617,
-        "compress_us": 12525.475000074948,
-        "decompress_us": 3940.9953124049935,
+        "compress_us": 12284.740624998847,
+        "decompress_us": 3830.478124999814,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -3072,8 +3408,8 @@
         "compressed_bytes": 288536,
         "ratio": 3.634125377769152,
         "saved_bytes": 760040,
-        "compress_us": 1537228.3999749925,
-        "decompress_us": 5634.47812510276,
+        "compress_us": 850126.9000000776,
+        "decompress_us": 4105.220312499824,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -3085,11 +3421,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 630850,
-        "ratio": 1.6621637473250377,
-        "saved_bytes": 417726,
-        "compress_us": 67645.27499763062,
-        "decompress_us": 47889.587498502806,
+        "compressed_bytes": 650568,
+        "ratio": 1.6117853936867477,
+        "saved_bytes": 398008,
+        "compress_us": 55714.837500005386,
+        "decompress_us": 26591.09374999957,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -3098,8 +3434,8 @@
         "compressed_bytes": 197909,
         "ratio": 5.298273448908336,
         "saved_bytes": 850667,
-        "compress_us": 40456.86250174185,
-        "decompress_us": 8435.053125140257,
+        "compress_us": 31632.13749999727,
+        "decompress_us": 4731.012499998855,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -3108,8 +3444,8 @@
         "compressed_bytes": 455358,
         "ratio": 2.3027508026651557,
         "saved_bytes": 593218,
-        "compress_us": 13121.015625074506,
-        "decompress_us": 6519.746874801058,
+        "compress_us": 8620.468750002885,
+        "decompress_us": 4671.47343750085,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -3118,8 +3454,8 @@
         "compressed_bytes": 157526,
         "ratio": 6.656526541650267,
         "saved_bytes": 891050,
-        "compress_us": 14468.524999756482,
-        "decompress_us": 3365.0234374817956,
+        "compress_us": 8238.550000001509,
+        "decompress_us": 2468.0718750005326,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -3128,8 +3464,8 @@
         "compressed_bytes": 15333,
         "ratio": 68.38687797560817,
         "saved_bytes": 1033243,
-        "compress_us": 1961665.799986804,
-        "decompress_us": 639.157617172259,
+        "compress_us": 1988700.2999998913,
+        "decompress_us": 666.7361328123178,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -3141,11 +3477,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 706808,
-        "ratio": 1.4835372548131882,
-        "saved_bytes": 341768,
-        "compress_us": 47167.92500039446,
-        "decompress_us": 30198.54999911331,
+        "compressed_bytes": 703977,
+        "ratio": 1.4895032082014044,
+        "saved_bytes": 344599,
+        "compress_us": 58255.27499999339,
+        "decompress_us": 27030.7562499994,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -3154,8 +3490,8 @@
         "compressed_bytes": 279839,
         "ratio": 3.74706885030321,
         "saved_bytes": 768737,
-        "compress_us": 38066.41250048415,
-        "decompress_us": 7188.264062278904,
+        "compress_us": 38102.82499998152,
+        "decompress_us": 7015.376562499398,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -3164,8 +3500,8 @@
         "compressed_bytes": 571618,
         "ratio": 1.834399896434332,
         "saved_bytes": 476958,
-        "compress_us": 10803.768749610754,
-        "decompress_us": 5716.554687751341,
+        "compress_us": 11027.884374996687,
+        "decompress_us": 5840.168750001595,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -3174,8 +3510,8 @@
         "compressed_bytes": 285137,
         "ratio": 3.6774462802091628,
         "saved_bytes": 763439,
-        "compress_us": 15152.540624512767,
-        "decompress_us": 3888.86875020944,
+        "compress_us": 15366.309374996945,
+        "decompress_us": 4115.14062500018,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -3184,8 +3520,8 @@
         "compressed_bytes": 136568,
         "ratio": 7.678050494991506,
         "saved_bytes": 912008,
-        "compress_us": 1222579.6999991871,
-        "decompress_us": 1425.3796874754698,
+        "compress_us": 1222941.199999923,
+        "decompress_us": 1447.1265624997898,
         "encode_ram": 739451,
         "decode_ram": 33667
       }
@@ -3197,11 +3533,11 @@
     "results": [
       {
         "codec": "picocompress",
-        "compressed_bytes": 613865,
-        "ratio": 1.7081540729639253,
-        "saved_bytes": 434711,
-        "compress_us": 39160.77500252868,
-        "decompress_us": 29788.012499921024,
+        "compressed_bytes": 611870,
+        "ratio": 1.7137235033585565,
+        "saved_bytes": 436706,
+        "compress_us": 48798.66249999054,
+        "decompress_us": 26559.412500006372,
         "encode_ram": 3085,
         "decode_ram": 1028
       },
@@ -3210,8 +3546,8 @@
         "compressed_bytes": 368971,
         "ratio": 2.841892723276355,
         "saved_bytes": 679605,
-        "compress_us": 86844.55000184244,
-        "decompress_us": 8491.759374919639,
+        "compress_us": 86997.69999998352,
+        "decompress_us": 8463.468750001368,
         "encode_ram": 12834,
         "decode_ram": 2098
       },
@@ -3220,8 +3556,8 @@
         "compressed_bytes": 481828,
         "ratio": 2.176245465186747,
         "saved_bytes": 566748,
-        "compress_us": 10600.250000607048,
-        "decompress_us": 6340.273437217547,
+        "compress_us": 10509.97812500043,
+        "decompress_us": 6259.912499999132,
         "encode_ram": 17140,
         "decode_ram": 32291
       },
@@ -3230,8 +3566,8 @@
         "compressed_bytes": 252930,
         "ratio": 4.145716206064919,
         "saved_bytes": 795646,
-        "compress_us": 16222.793748966069,
-        "decompress_us": 3973.6140624881955,
+        "compress_us": 16401.024999993297,
+        "decompress_us": 3986.843749999025,
         "encode_ram": 566915,
         "decode_ram": 32291
       },
@@ -3240,8 +3576,8 @@
         "compressed_bytes": 166582,
         "ratio": 6.294653684071508,
         "saved_bytes": 881994,
-        "compress_us": 1415196.7999932822,
-        "decompress_us": 2451.8843749774533,
+        "compress_us": 1415993.0000000712,
+        "decompress_us": 2392.6078125011686,
         "encode_ram": 739451,
         "decode_ram": 33667
       }

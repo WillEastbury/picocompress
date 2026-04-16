@@ -47,7 +47,8 @@ pattern, utf8+int, random, ASCII, JSON, lorem ipsum, RGB icon, JPEG,
 pretty/minified JSON, UK addresses, order records, sparse, uint32 arrays,
 and scaled sizes from 254 bytes to 1 MB.
 
-See `TEST_METHODS.md` and `PERFORMANCE_SUMMARY.md` for methodology and results.
+See [`TEST_METHODS.md`](TEST_METHODS.md) and [`PERFORMANCE_SUMMARY.md`](PERFORMANCE_SUMMARY.md) for methodology and results.
+Full data: [`benchmark_results.json`](benchmark_results.json) and [`benchmark_tables.txt`](benchmark_tables.txt).
 
 ## Public API
 
