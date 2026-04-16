@@ -3,6 +3,20 @@
 #include <stdio.h>
 #include <string.h>
 
+static uint32_t pc_crc32(const uint8_t *data, size_t len) {
+    uint32_t crc = 0xFFFFFFFFu;
+    size_t i;
+    for (i = 0; i < len; ++i) {
+        uint32_t byte = data[i];
+        int j;
+        crc ^= byte;
+        for (j = 0; j < 8; ++j) {
+            crc = (crc >> 1) ^ (0xEDB88320u & (0u - (crc & 1u)));
+        }
+    }
+    return ~crc;
+}
+
 typedef struct buffer_writer {
     uint8_t *data;
     size_t cap;
@@ -81,6 +95,10 @@ static int test_raw_fallback(void) {
     rc = pc_decompress_buffer(compressed, compressed_len, restored, sizeof(restored), &restored_len);
     if (rc != PC_OK || restored_len != sizeof(input) || memcmp(input, restored, sizeof(input)) != 0) {
         fprintf(stderr, "raw fallback roundtrip failed\n");
+        return 0;
+    }
+    if (pc_crc32(input, sizeof(input)) != pc_crc32(restored, restored_len)) {
+        fprintf(stderr, "raw fallback CRC32 mismatch\n");
         return 0;
     }
 
@@ -188,6 +206,10 @@ static int test_streaming_roundtrip_508(void) {
 
     if (rw.len != sizeof(input) || memcmp(input, rw.data, sizeof(input)) != 0) {
         fprintf(stderr, "streaming 508 roundtrip mismatch\n");
+        return 0;
+    }
+    if (pc_crc32(input, sizeof(input)) != pc_crc32(rw.data, rw.len)) {
+        fprintf(stderr, "streaming 508 CRC32 mismatch\n");
         return 0;
     }
 

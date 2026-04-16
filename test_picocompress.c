@@ -3,6 +3,20 @@
 #include <stdio.h>
 #include <string.h>
 
+static uint32_t pc_crc32(const uint8_t *data, size_t len) {
+    uint32_t crc = 0xFFFFFFFFu;
+    size_t i;
+    for (i = 0; i < len; ++i) {
+        uint32_t byte = data[i];
+        int j;
+        crc ^= byte;
+        for (j = 0; j < 8; ++j) {
+            crc = (crc >> 1) ^ (0xEDB88320u & (0u - (crc & 1u)));
+        }
+    }
+    return ~crc;
+}
+
 typedef struct buffer_writer {
     uint8_t *data;
     size_t cap;
@@ -50,6 +64,14 @@ int main(void) {
     if (restored_len != sizeof(input) || memcmp(input, restored, sizeof(input)) != 0) {
         fprintf(stderr, "one-shot roundtrip mismatch\n");
         return 1;
+    }
+    {
+        uint32_t crc_in = pc_crc32(input, sizeof(input));
+        uint32_t crc_out = pc_crc32(restored, restored_len);
+        if (crc_in != crc_out) {
+            fprintf(stderr, "one-shot CRC32 mismatch: 0x%08X vs 0x%08X\n", crc_in, crc_out);
+            return 1;
+        }
     }
 
     {
@@ -107,6 +129,14 @@ int main(void) {
         if (rw.len != sizeof(input) || memcmp(input, rw.data, sizeof(input)) != 0) {
             fprintf(stderr, "streaming roundtrip mismatch\n");
             return 1;
+        }
+        {
+            uint32_t crc_in = pc_crc32(input, sizeof(input));
+            uint32_t crc_out = pc_crc32(rw.data, rw.len);
+            if (crc_in != crc_out) {
+                fprintf(stderr, "streaming CRC32 mismatch: 0x%08X vs 0x%08X\n", crc_in, crc_out);
+                return 1;
+            }
         }
     }
 
