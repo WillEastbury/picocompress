@@ -191,15 +191,19 @@ uniform keys).
 ## Memory budget
 
 With default configuration (`PC_BLOCK_SIZE=508`, `PC_HASH_BITS=9`,
-`PC_HASH_CHAIN_DEPTH=2`, `PC_HISTORY_SIZE=128`):
+`PC_HASH_CHAIN_DEPTH=2`, `PC_HISTORY_SIZE=504`):
 
 | Component | Encode | Decode |
 |---|---:|---:|
 | Block buffer | 508 B | 508 B |
-| History buffer | 128 B | 128 B |
+| History buffer | 504 B | 504 B |
 | Hash table (stack) | 2048 B | — |
-| Combined virtual buffer (stack) | 636 B | — |
+| Combined virtual buffer (stack) | 1012 B | — |
 | Compressed scratch (stack) | 528 B | — |
 | Payload buffer | — | 508 B |
 | Static dictionary (ROM) | ~350 B | ~350 B |
-| **Total RAM** | **~3.2 KB** | **~1.2 KB** |
+| **Total RAM** | **~4.6 KB** | **~1.5 KB** |
+
+The hash configuration is encoder-only. Changing `PC_HASH_BITS` or
+`PC_HASH_CHAIN_DEPTH` does not affect the compressed format — any
+decoder build can decompress streams from any encoder configuration.

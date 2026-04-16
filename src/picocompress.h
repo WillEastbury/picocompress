@@ -58,7 +58,7 @@ extern "C" {
 #endif
 
 #ifndef PC_HISTORY_SIZE
-#define PC_HISTORY_SIZE 128u
+#define PC_HISTORY_SIZE 504u
 #endif
 
 #define PC_DECODER_PAYLOAD_SIZE PC_BLOCK_SIZE

@@ -60,6 +60,29 @@ The [`tests/`](tests/) directory contains all 64 deterministic payload files use
 
 See [`src/picocompress.h`](src/picocompress.h) for all constants, result codes, and function signatures.
 
+## Configuration
+
+Hash and history parameters are **encoder-only** — the decoder never sees them.
+Any encoder config produces streams that **any decoder build can decompress**.
+Override at compile time with `-D`:
+
+```powershell
+# Balanced default (512 buckets × 2 deep, 504B history)
+cl /O2 /TC src/picocompress.c ...
+
+# Aggressive ratio (256 buckets × 4 deep — ~10% better, ~15% slower)
+cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=4u src/picocompress.c ...
+
+# Minimal RAM (256 buckets × 1 deep, 128B history)
+cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src/picocompress.c ...
+```
+
+| Config | Enc RAM | Dec RAM | Ratio | Speed |
+|---|---:|---:|---|---|
+| Default (512×2, h504) | ~4.6 KB | ~1.5 KB | Balanced | Balanced |
+| Aggressive (256×4, h504) | ~4.6 KB | ~1.5 KB | Best | ~15% slower |
+| Minimal (256×1, h128) | ~1.8 KB | ~0.7 KB | Lower | Fastest |
+
 ## Algorithm
 
 See [`docs/ALGORITHM.md`](docs/ALGORITHM.md) for a detailed description of the compression
