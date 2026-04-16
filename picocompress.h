@@ -56,6 +56,10 @@ extern "C" {
 #error "PC_HASH_CHAIN_DEPTH must be >= 1."
 #endif
 
+#ifndef PC_HISTORY_SIZE
+#define PC_HISTORY_SIZE 128u
+#endif
+
 #define PC_DECODER_PAYLOAD_SIZE PC_BLOCK_SIZE
 
 typedef enum pc_result {
@@ -71,6 +75,8 @@ typedef int (*pc_write_fn)(void *user, const uint8_t *data, size_t len);
 typedef struct pc_encoder {
     uint8_t block[PC_BLOCK_SIZE];
     uint16_t block_len;
+    uint8_t history[PC_HISTORY_SIZE];
+    uint16_t history_len;
 } pc_encoder;
 
 typedef struct pc_decoder {
@@ -81,6 +87,8 @@ typedef struct pc_decoder {
     uint16_t payload_len;
     uint8_t payload[PC_DECODER_PAYLOAD_SIZE];
     uint8_t raw[PC_BLOCK_SIZE];
+    uint8_t history[PC_HISTORY_SIZE];
+    uint16_t history_len;
 } pc_decoder;
 
 void pc_encoder_init(pc_encoder *enc);

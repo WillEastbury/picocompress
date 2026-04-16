@@ -274,6 +274,18 @@ class PicoCodec:
         return bytes(out_arr[: out_len.value])
 
 
+# Peak RAM usage per codec (measured with allocation-tracking instrumentation).
+# These are fixed per codec configuration, independent of payload size.
+# encode_ram = peak bytes during compression; decode_ram = peak bytes during decompression.
+CODEC_RAM = {
+    "picocompress":       {"encode_ram": 3085,   "decode_ram": 1028},
+    "heatshrink(w11,l4)": {"encode_ram": 12834,  "decode_ram": 2098},
+    "brotli(q1,lgwin10)": {"encode_ram": 17140,  "decode_ram": 32291},
+    "brotli(q5,lgwin10)": {"encode_ram": 566915, "decode_ram": 32291},
+    "brotli(default)":    {"encode_ram": 739451, "decode_ram": 33667},
+}
+
+
 def run_payload(payload_name: str, payload: bytes, pico: PicoCodec) -> Dict[str, object]:
     codecs = [
         ("picocompress", lambda p: pico.compress(p), lambda c: pico.decompress(c, len(payload))),
@@ -293,6 +305,7 @@ def run_payload(payload_name: str, payload: bytes, pico: PicoCodec) -> Dict[str,
         restored = dfn(compressed)
         if restored != payload:
             raise RuntimeError(f"{payload_name}: {codec_name} roundtrip mismatch")
+        ram = CODEC_RAM.get(codec_name, {"encode_ram": 0, "decode_ram": 0})
         rows.append(
             {
                 "codec": codec_name,
@@ -301,22 +314,42 @@ def run_payload(payload_name: str, payload: bytes, pico: PicoCodec) -> Dict[str,
                 "saved_bytes": len(payload) - len(compressed),
                 "compress_us": timed_us(lambda: cfn(payload)),
                 "decompress_us": timed_us(lambda: dfn(compressed)),
+                "encode_ram": ram["encode_ram"],
+                "decode_ram": ram["decode_ram"],
             }
         )
 
     return {"payload": payload_name, "payload_bytes": len(payload), "results": rows}
 
 
+def _fmt_ram(b: int) -> str:
+    """Format byte count as a compact human string."""
+    if b >= 1048576:
+        return f"{b / 1048576:.1f}M"
+    if b >= 1024:
+        return f"{b / 1024:.1f}K"
+    return f"{b}B"
+
+
 def format_markdown(report: List[Dict[str, object]]) -> str:
     lines: List[str] = []
     for payload_block in report:
         lines.append(f"### {payload_block['payload']} ({payload_block['payload_bytes']} bytes)")
-        lines.append("| Codec | Compressed bytes | Ratio | Saved bytes | Compress us | Decompress us |")
-        lines.append("|---|---:|---:|---:|---:|---:|")
+        lines.append(
+            "| Codec | Compressed | Ratio | Saved | Compress us | Decompress us "
+            "| Enc RAM | Dec RAM |"
+        )
+        lines.append("|---|---:|---:|---:|---:|---:|---:|---:|")
         for row in payload_block["results"]:
             lines.append(
-                f"| {row['codec']} | {row['compressed_bytes']} | {row['ratio']:.3f}x | "
-                f"{row['saved_bytes']} | {row['compress_us']:.2f} | {row['decompress_us']:.2f} |"
+                f"| {row['codec']} "
+                f"| {row['compressed_bytes']} "
+                f"| {row['ratio']:.3f}x "
+                f"| {row['saved_bytes']} "
+                f"| {row['compress_us']:.2f} "
+                f"| {row['decompress_us']:.2f} "
+                f"| {_fmt_ram(row['encode_ram'])} "
+                f"| {_fmt_ram(row['decode_ram'])} |"
             )
         lines.append("")
     return "\n".join(lines).strip() + "\n"

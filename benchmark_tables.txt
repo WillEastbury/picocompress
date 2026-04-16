@@ -1,0 +1,464 @@
+### pattern-508 (508 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 115 | 4.417x | 393 | 9.11 | 15.41 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 143 | 3.552x | 365 | 7.40 | 4.60 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 169 | 3.006x | 339 | 5.16 | 2.66 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 121 | 4.198x | 387 | 18.33 | 3.03 | 553.6K | 31.5K |
+| brotli(default) | 119 | 4.269x | 389 | 907.45 | 3.19 | 722.1K | 32.9K |
+### utf8-int-508 (508 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 393 | 1.293x | 115 | 23.33 | 15.49 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 460 | 1.104x | 48 | 89.20 | 8.85 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 391 | 1.299x | 117 | 6.11 | 4.15 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 334 | 1.521x | 174 | 22.74 | 3.95 | 553.6K | 31.5K |
+| brotli(default) | 298 | 1.705x | 210 | 986.54 | 5.76 | 722.1K | 32.9K |
+### random-508 (508 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 512 | 0.992x | -4 | 28.99 | 15.45 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 572 | 0.888x | -64 | 19.05 | 9.95 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 512 | 0.992x | -4 | 7.63 | 0.61 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 513 | 0.990x | -5 | 17.80 | 0.61 | 553.6K | 31.5K |
+| brotli(default) | 512 | 0.992x | -4 | 1444.82 | 0.62 | 722.1K | 32.9K |
+### ascii-254 (254 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 105 | 2.419x | 149 | 8.14 | 8.65 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 156 | 1.628x | 98 | 6.86 | 4.27 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 127 | 2.000x | 127 | 4.01 | 2.25 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 104 | 2.442x | 150 | 15.37 | 2.15 | 553.6K | 31.5K |
+| brotli(default) | 91 | 2.791x | 163 | 446.02 | 2.18 | 722.1K | 32.9K |
+### random-1K (1024 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 1036 | 0.988x | -12 | 56.08 | 28.32 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1152 | 0.889x | -128 | 39.53 | 17.86 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 1028 | 0.996x | -4 | 9.53 | 0.62 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1029 | 0.995x | -5 | 22.60 | 0.63 | 553.6K | 31.5K |
+| brotli(default) | 1028 | 0.996x | -4 | 1954.48 | 0.62 | 722.1K | 32.9K |
+### sparse-1K (1024 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 240 | 4.267x | 784 | 20.39 | 29.19 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 231 | 4.433x | 793 | 222.67 | 6.44 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 254 | 4.031x | 770 | 6.63 | 4.19 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 172 | 5.953x | 852 | 24.45 | 3.69 | 553.6K | 31.5K |
+| brotli(default) | 169 | 6.059x | 855 | 1687.19 | 3.91 | 722.1K | 32.9K |
+### uint32-1K (1024 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 740 | 1.384x | 284 | 42.44 | 30.31 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 758 | 1.351x | 266 | 55.72 | 14.21 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 684 | 1.497x | 340 | 9.19 | 6.37 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 310 | 3.303x | 714 | 26.84 | 5.76 | 553.6K | 31.5K |
+| brotli(default) | 316 | 3.241x | 708 | 761.99 | 6.95 | 722.1K | 32.9K |
+### utf8-prose-1K (1024 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 637 | 1.608x | 387 | 36.57 | 29.07 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 616 | 1.662x | 408 | 29.58 | 11.60 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 436 | 2.349x | 588 | 6.39 | 4.07 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 382 | 2.681x | 642 | 26.24 | 4.27 | 553.6K | 31.5K |
+| brotli(default) | 343 | 2.985x | 681 | 1305.12 | 4.93 | 722.1K | 32.9K |
+### uk-addr-1K (1024 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 721 | 1.420x | 303 | 39.94 | 29.14 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 603 | 1.698x | 421 | 22.40 | 11.77 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 530 | 1.932x | 494 | 7.51 | 4.59 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 485 | 2.111x | 539 | 26.83 | 4.63 | 553.6K | 31.5K |
+| brotli(default) | 434 | 2.359x | 590 | 1149.79 | 6.06 | 722.1K | 32.9K |
+### order-pos-1K (1024 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 640 | 1.600x | 384 | 36.23 | 29.20 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 530 | 1.932x | 494 | 33.30 | 10.88 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 456 | 2.246x | 568 | 7.15 | 4.69 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 384 | 2.667x | 640 | 26.91 | 4.52 | 553.6K | 31.5K |
+| brotli(default) | 369 | 2.775x | 655 | 1327.98 | 5.69 | 722.1K | 32.9K |
+### random-2K (2048 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 2068 | 0.990x | -20 | 187.70 | 94.16 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 2304 | 0.889x | -256 | 176.15 | 50.98 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 2055 | 0.997x | -7 | 33.59 | 1.41 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 2053 | 0.998x | -5 | 61.31 | 1.24 | 553.6K | 31.5K |
+| brotli(default) | 2052 | 0.998x | -4 | 5152.03 | 1.18 | 722.1K | 32.9K |
+### sparse-2K (2048 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 445 | 4.602x | 1603 | 65.96 | 96.19 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 437 | 4.686x | 1611 | 514.30 | 20.70 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 490 | 4.180x | 1558 | 20.20 | 12.31 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 289 | 7.087x | 1759 | 66.96 | 7.64 | 553.6K | 31.5K |
+| brotli(default) | 281 | 7.288x | 1767 | 5529.93 | 10.79 | 722.1K | 32.9K |
+### uint32-2K (2048 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 1466 | 1.397x | 582 | 142.52 | 98.51 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1497 | 1.368x | 551 | 144.91 | 39.92 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 1362 | 1.504x | 686 | 31.11 | 16.83 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 588 | 3.483x | 1460 | 78.38 | 15.69 | 553.6K | 31.5K |
+| brotli(default) | 592 | 3.459x | 1456 | 2484.88 | 14.33 | 722.1K | 32.9K |
+### utf8-prose-2K (2048 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 1242 | 1.649x | 806 | 129.16 | 93.39 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 923 | 2.219x | 1125 | 115.92 | 28.53 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 937 | 2.186x | 1111 | 21.43 | 11.45 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 635 | 3.225x | 1413 | 70.59 | 9.15 | 553.6K | 31.5K |
+| brotli(default) | 458 | 4.472x | 1590 | 3995.16 | 8.52 | 722.1K | 32.9K |
+### uk-addr-2K (2048 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 1440 | 1.422x | 608 | 139.38 | 96.33 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 924 | 2.216x | 1124 | 94.67 | 29.74 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 1097 | 1.867x | 951 | 24.48 | 12.91 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 804 | 2.547x | 1244 | 77.44 | 9.26 | 553.6K | 31.5K |
+| brotli(default) | 693 | 2.955x | 1355 | 3569.10 | 11.16 | 722.1K | 32.9K |
+### order-pos-2K (2048 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 1264 | 1.620x | 784 | 124.96 | 94.01 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 929 | 2.205x | 1119 | 149.75 | 30.82 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 938 | 2.183x | 1110 | 22.74 | 13.09 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 659 | 3.108x | 1389 | 79.18 | 9.56 | 553.6K | 31.5K |
+| brotli(default) | 605 | 3.385x | 1443 | 3753.91 | 11.46 | 722.1K | 32.9K |
+### random-4K (4096 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 4132 | 0.991x | -36 | 377.96 | 180.18 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 4608 | 0.889x | -512 | 350.33 | 101.73 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 4109 | 0.997x | -13 | 66.34 | 1.97 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 4101 | 0.999x | -5 | 86.77 | 1.40 | 553.6K | 31.5K |
+| brotli(default) | 4100 | 0.999x | -4 | 7936.66 | 1.41 | 722.1K | 32.9K |
+### sparse-4K (4096 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 820 | 4.995x | 3276 | 115.46 | 183.90 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 822 | 4.983x | 3274 | 847.18 | 34.38 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 918 | 4.462x | 3178 | 38.66 | 22.42 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 496 | 8.258x | 3600 | 89.39 | 13.35 | 553.6K | 31.5K |
+| brotli(default) | 477 | 8.587x | 3619 | 9859.48 | 15.60 | 722.1K | 32.9K |
+### uint32-4K (4096 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 2916 | 1.405x | 1180 | 274.73 | 190.48 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 2976 | 1.376x | 1120 | 265.31 | 75.47 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 2744 | 1.493x | 1352 | 60.61 | 34.51 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1147 | 3.571x | 2949 | 119.09 | 27.48 | 553.6K | 31.5K |
+| brotli(default) | 1146 | 3.574x | 2950 | 4509.10 | 24.16 | 722.1K | 32.9K |
+### utf8-prose-4K (4096 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 2441 | 1.678x | 1655 | 252.64 | 183.97 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1195 | 3.428x | 2901 | 167.34 | 40.05 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 1801 | 2.274x | 2295 | 39.73 | 21.10 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1122 | 3.651x | 2974 | 98.94 | 14.12 | 553.6K | 31.5K |
+| brotli(default) | 502 | 8.159x | 3594 | 7698.67 | 10.03 | 722.1K | 32.9K |
+### uk-addr-4K (4096 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 2869 | 1.428x | 1227 | 287.41 | 184.16 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1471 | 2.785x | 2625 | 193.30 | 47.91 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 2232 | 1.835x | 1864 | 47.71 | 25.36 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1450 | 2.825x | 2646 | 121.23 | 14.60 | 553.6K | 31.5K |
+| brotli(default) | 1122 | 3.651x | 2974 | 6357.04 | 15.43 | 722.1K | 32.9K |
+### order-pos-4K (4096 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 2485 | 1.648x | 1611 | 240.80 | 183.26 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1644 | 2.491x | 2452 | 371.57 | 53.31 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 1895 | 2.161x | 2201 | 44.89 | 26.24 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1225 | 3.344x | 2871 | 129.40 | 15.30 | 553.6K | 31.5K |
+| brotli(default) | 1050 | 3.901x | 3046 | 7147.05 | 17.92 | 722.1K | 32.9K |
+### random-8K (8192 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 8260 | 0.992x | -68 | 755.22 | 352.35 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 9215 | 0.889x | -1023 | 694.64 | 192.73 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 8217 | 0.997x | -25 | 138.57 | 3.35 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 8197 | 0.999x | -5 | 118.86 | 1.93 | 553.6K | 31.5K |
+| brotli(default) | 8196 | 1.000x | -4 | 18805.98 | 2.28 | 722.1K | 32.9K |
+### sparse-8K (8192 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 1667 | 4.914x | 6525 | 224.18 | 359.85 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1650 | 4.965x | 6542 | 1693.22 | 64.26 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 1848 | 4.433x | 6344 | 80.94 | 46.23 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 980 | 8.359x | 7212 | 173.13 | 23.44 | 553.6K | 31.5K |
+| brotli(default) | 925 | 8.856x | 7267 | 19782.81 | 30.00 | 722.1K | 32.9K |
+### uint32-8K (8192 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 5894 | 1.390x | 2298 | 596.85 | 375.32 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 6011 | 1.363x | 2181 | 520.91 | 152.04 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 5539 | 1.479x | 2653 | 130.82 | 72.74 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 2289 | 3.579x | 5903 | 210.07 | 52.27 | 553.6K | 31.5K |
+| brotli(default) | 2288 | 3.580x | 5904 | 8618.25 | 43.50 | 722.1K | 32.9K |
+### utf8-prose-8K (8192 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 4921 | 1.665x | 3271 | 535.69 | 362.12 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1890 | 4.334x | 6302 | 304.26 | 64.51 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 3515 | 2.331x | 4677 | 84.40 | 41.91 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1838 | 4.457x | 6354 | 151.08 | 24.31 | 553.6K | 31.5K |
+| brotli(default) | 582 | 14.076x | 7610 | 17348.33 | 11.33 | 722.1K | 32.9K |
+### uk-addr-8K (8192 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 5640 | 1.452x | 2552 | 626.64 | 363.15 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 2494 | 3.285x | 5698 | 362.66 | 86.85 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 4495 | 1.822x | 3697 | 108.82 | 53.21 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 2670 | 3.068x | 5522 | 213.51 | 25.07 | 553.6K | 31.5K |
+| brotli(default) | 1855 | 4.416x | 6337 | 12455.77 | 21.72 | 722.1K | 32.9K |
+### order-pos-8K (8192 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 4906 | 1.670x | 3286 | 483.05 | 367.65 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 3092 | 2.649x | 5100 | 783.26 | 99.53 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 3791 | 2.161x | 4401 | 100.44 | 54.37 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 2332 | 3.513x | 5860 | 253.49 | 26.64 | 553.6K | 31.5K |
+| brotli(default) | 1849 | 4.431x | 6343 | 14014.05 | 30.23 | 722.1K | 32.9K |
+### random-16K (16384 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 16516 | 0.992x | -132 | 1452.21 | 704.92 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 18430 | 0.889x | -2046 | 1404.13 | 358.73 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 16433 | 0.997x | -49 | 314.98 | 5.96 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 16389 | 1.000x | -5 | 196.06 | 3.19 | 553.6K | 31.5K |
+| brotli(default) | 16388 | 1.000x | -4 | 47276.30 | 3.96 | 722.1K | 32.9K |
+### sparse-16K (16384 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 3401 | 4.817x | 12983 | 443.22 | 717.15 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 3299 | 4.966x | 13085 | 3415.51 | 133.05 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 3747 | 4.373x | 12637 | 191.21 | 95.12 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1951 | 8.398x | 14433 | 342.61 | 44.45 | 553.6K | 31.5K |
+| brotli(default) | 1820 | 9.002x | 14564 | 38094.19 | 50.75 | 722.1K | 32.9K |
+### uint32-16K (16384 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 11790 | 1.390x | 4594 | 1115.05 | 745.78 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 12018 | 1.363x | 4366 | 1050.81 | 296.10 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 11096 | 1.477x | 5288 | 295.29 | 154.98 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 4545 | 3.605x | 11839 | 385.51 | 102.93 | 553.6K | 31.5K |
+| brotli(default) | 4545 | 3.605x | 11839 | 18595.04 | 105.59 | 722.1K | 32.9K |
+### utf8-prose-16K (16384 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 9586 | 1.709x | 6798 | 1002.06 | 709.65 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 3609 | 4.540x | 12775 | 677.57 | 127.04 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 7096 | 2.309x | 9288 | 182.86 | 94.51 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 3282 | 4.992x | 13102 | 265.89 | 40.55 | 553.6K | 31.5K |
+| brotli(default) | 721 | 22.724x | 15663 | 40050.95 | 14.41 | 722.1K | 32.9K |
+### uk-addr-16K (16384 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 11041 | 1.484x | 5343 | 1098.63 | 777.62 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 4677 | 3.503x | 11707 | 831.93 | 163.69 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 8968 | 1.827x | 7416 | 248.58 | 113.46 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 5172 | 3.168x | 11212 | 424.86 | 54.57 | 553.6K | 31.5K |
+| brotli(default) | 3242 | 5.054x | 13142 | 26375.20 | 38.27 | 722.1K | 32.9K |
+### order-pos-16K (16384 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 9581 | 1.710x | 6803 | 988.14 | 738.10 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 5976 | 2.742x | 10408 | 1703.72 | 201.66 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 7509 | 2.182x | 8875 | 228.72 | 119.49 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 4468 | 3.667x | 11916 | 472.11 | 57.26 | 553.6K | 31.5K |
+| brotli(default) | 3285 | 4.988x | 13099 | 27407.04 | 52.34 | 722.1K | 32.9K |
+### random-32K (32768 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 33028 | 0.992x | -260 | 2914.05 | 1404.33 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 36860 | 0.889x | -4092 | 2794.42 | 772.41 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 32865 | 0.997x | -97 | 643.04 | 10.90 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 32773 | 1.000x | -5 | 96.17 | 5.44 | 553.6K | 31.5K |
+| brotli(default) | 32772 | 1.000x | -4 | 12811.18 | 5.95 | 722.1K | 32.9K |
+### sparse-32K (32768 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 6953 | 4.713x | 25815 | 915.37 | 1543.64 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 6653 | 4.925x | 26115 | 6918.22 | 256.55 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 7654 | 4.281x | 25114 | 412.47 | 207.75 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 3961 | 8.273x | 28807 | 624.65 | 97.21 | 553.6K | 31.5K |
+| brotli(default) | 3667 | 8.936x | 29101 | 77884.78 | 89.87 | 722.1K | 32.9K |
+### uint32-32K (32768 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 23611 | 1.388x | 9157 | 2389.16 | 1500.89 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 24066 | 1.362x | 8702 | 2101.95 | 614.53 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 22194 | 1.476x | 10574 | 606.17 | 303.75 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 9057 | 3.618x | 23711 | 717.90 | 202.38 | 553.6K | 31.5K |
+| brotli(default) | 9061 | 3.616x | 23707 | 40709.23 | 157.07 | 722.1K | 32.9K |
+### utf8-prose-32K (32768 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 19814 | 1.654x | 12954 | 2056.98 | 1421.65 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 6534 | 5.015x | 26234 | 1333.69 | 243.57 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 14368 | 2.281x | 18400 | 391.35 | 184.65 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 6075 | 5.394x | 26693 | 463.41 | 84.73 | 553.6K | 31.5K |
+| brotli(default) | 971 | 33.747x | 31797 | 88750.25 | 18.79 | 722.1K | 32.9K |
+### uk-addr-32K (32768 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 22064 | 1.485x | 10704 | 2262.34 | 1609.10 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 8994 | 3.643x | 23774 | 1476.40 | 317.92 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 17912 | 1.829x | 14856 | 499.04 | 236.67 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 10073 | 3.253x | 22695 | 753.06 | 121.43 | 553.6K | 31.5K |
+| brotli(default) | 5742 | 5.707x | 27026 | 51808.59 | 64.79 | 722.1K | 32.9K |
+### order-pos-32K (32768 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 19256 | 1.702x | 13512 | 1920.61 | 1461.62 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 11719 | 2.796x | 21049 | 3393.80 | 393.17 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 15026 | 2.181x | 17742 | 469.66 | 277.35 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 8939 | 3.666x | 23829 | 879.35 | 133.61 | 553.6K | 31.5K |
+| brotli(default) | 6126 | 5.349x | 26642 | 56545.79 | 103.66 | 722.1K | 32.9K |
+### random-128K (131072 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 132108 | 0.992x | -1036 | 12337.36 | 5754.25 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 147436 | 0.889x | -16364 | 11241.30 | 3752.12 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 131457 | 0.997x | -385 | 2821.75 | 36.90 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 131077 | 1.000x | -5 | 370.56 | 20.04 | 553.6K | 31.5K |
+| brotli(default) | 131077 | 1.000x | -5 | 52173.79 | 17.86 | 722.1K | 32.9K |
+### sparse-128K (131072 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 27212 | 4.817x | 103860 | 3527.93 | 5992.35 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 26236 | 4.996x | 104836 | 26691.13 | 980.82 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 30090 | 4.356x | 100982 | 1666.50 | 868.35 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 15321 | 8.555x | 115751 | 2389.84 | 413.63 | 553.6K | 31.5K |
+| brotli(default) | 13926 | 9.412x | 117146 | 328576.90 | 312.94 | 722.1K | 32.9K |
+### uint32-128K (131072 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 94352 | 1.389x | 36720 | 8821.85 | 6017.59 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 96152 | 1.363x | 34920 | 8490.58 | 2420.61 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 88745 | 1.477x | 42327 | 2551.58 | 1308.79 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 36075 | 3.633x | 94997 | 2681.34 | 786.38 | 553.6K | 31.5K |
+| brotli(default) | 36072 | 3.634x | 95000 | 172698.25 | 611.10 | 722.1K | 32.9K |
+### utf8-prose-128K (131072 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 80218 | 1.634x | 50854 | 8378.34 | 6029.25 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 24488 | 5.352x | 106584 | 4918.91 | 897.80 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 57603 | 2.275x | 73469 | 1639.58 | 766.17 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 22042 | 5.946x | 109030 | 1749.34 | 355.52 | 553.6K | 31.5K |
+| brotli(default) | 2350 | 55.775x | 128722 | 401781.60 | 45.11 | 722.1K | 32.9K |
+### uk-addr-128K (131072 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 88334 | 1.484x | 42738 | 8889.50 | 6014.50 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 35266 | 3.717x | 95806 | 6136.21 | 1277.68 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 71651 | 1.829x | 59421 | 2012.12 | 936.53 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 39708 | 3.301x | 91364 | 3013.80 | 521.83 | 553.6K | 31.5K |
+| brotli(default) | 19579 | 6.695x | 111493 | 219079.40 | 221.20 | 722.1K | 32.9K |
+### order-pos-128K (131072 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 76915 | 1.704x | 54157 | 7598.71 | 6184.63 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 46146 | 2.840x | 84926 | 13361.36 | 1524.49 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 60186 | 2.178x | 70886 | 1934.52 | 1041.81 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 35101 | 3.734x | 95971 | 3080.17 | 563.11 | 553.6K | 31.5K |
+| brotli(default) | 22222 | 5.898x | 108850 | 239865.85 | 381.82 | 722.1K | 32.9K |
+### random-512K (524288 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 528420 | 0.992x | -4132 | 47095.71 | 22755.96 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 589735 | 0.889x | -65447 | 45206.84 | 11604.61 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 525825 | 0.997x | -1537 | 10980.82 | 162.28 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 524302 | 1.000x | -14 | 1555.06 | 90.04 | 553.6K | 31.5K |
+| brotli(default) | 524293 | 1.000x | -5 | 251897.40 | 369.36 | 722.1K | 32.9K |
+### sparse-512K (524288 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 109251 | 4.799x | 415037 | 14563.92 | 24756.50 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 105190 | 4.984x | 419098 | 108879.45 | 3931.75 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 120470 | 4.352x | 403818 | 6766.20 | 3560.77 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 61606 | 8.510x | 462682 | 9507.15 | 1689.50 | 553.6K | 31.5K |
+| brotli(default) | 54911 | 9.548x | 469377 | 1409163.70 | 1130.85 | 722.1K | 32.9K |
+### uint32-512K (524288 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 377411 | 1.389x | 146877 | 36896.17 | 23885.34 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 384608 | 1.363x | 139680 | 33552.46 | 9616.28 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 354787 | 1.478x | 169501 | 10041.53 | 5076.00 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 144325 | 3.633x | 379963 | 10703.23 | 2190.23 | 553.6K | 31.5K |
+| brotli(default) | 144198 | 3.636x | 380090 | 557109.00 | 1846.61 | 722.1K | 32.9K |
+### utf8-prose-512K (524288 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 313736 | 1.671x | 210552 | 21535.16 | 14559.66 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 99563 | 5.266x | 424725 | 16027.28 | 2146.87 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 227992 | 2.300x | 296296 | 4289.03 | 2227.01 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 85897 | 6.104x | 438391 | 3511.86 | 1013.99 | 553.6K | 31.5K |
+| brotli(default) | 7916 | 66.231x | 516372 | 978623.20 | 104.40 | 722.1K | 32.9K |
+### uk-addr-512K (524288 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 353774 | 1.482x | 170514 | 23304.03 | 14901.91 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 139778 | 3.751x | 384510 | 18901.91 | 3251.06 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 286087 | 1.833x | 238201 | 5405.49 | 2745.55 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 158960 | 3.298x | 365328 | 6765.51 | 1622.75 | 553.6K | 31.5K |
+| brotli(default) | 70570 | 7.429x | 453718 | 579589.90 | 533.35 | 722.1K | 32.9K |
+### order-pos-512K (524288 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 306322 | 1.712x | 217966 | 19391.93 | 14688.84 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 184422 | 2.843x | 339866 | 43179.63 | 4032.85 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 240755 | 2.178x | 283533 | 5223.21 | 3010.97 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 140710 | 3.726x | 383578 | 7290.78 | 1734.64 | 553.6K | 31.5K |
+| brotli(default) | 84586 | 6.198x | 439702 | 683529.10 | 1022.41 | 722.1K | 32.9K |
+### random-1024K (1048576 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 1056836 | 0.992x | -8260 | 58582.49 | 27670.46 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 1179467 | 0.889x | -130891 | 68009.40 | 17518.08 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 1051649 | 0.997x | -3073 | 13510.49 | 394.76 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 1048602 | 1.000x | -26 | 1698.71 | 353.17 | 553.6K | 31.5K |
+| brotli(default) | 1048581 | 1.000x | -5 | 311060.30 | 650.67 | 722.1K | 32.9K |
+### sparse-1024K (1048576 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 217198 | 4.828x | 831378 | 17154.39 | 28895.31 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 209689 | 5.001x | 838887 | 174449.60 | 5804.98 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 239379 | 4.380x | 809197 | 9521.19 | 5165.14 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 122241 | 8.578x | 926335 | 11779.54 | 2468.97 | 553.6K | 31.5K |
+| brotli(default) | 108687 | 9.648x | 939889 | 1935216.40 | 2037.99 | 722.1K | 32.9K |
+### uint32-1024K (1048576 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 755371 | 1.388x | 293205 | 44385.98 | 29344.78 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 769755 | 1.362x | 278821 | 50651.96 | 14811.99 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 710117 | 1.477x | 338459 | 13468.13 | 8266.46 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 288959 | 3.629x | 759617 | 12525.48 | 3941.00 | 553.6K | 31.5K |
+| brotli(default) | 288536 | 3.634x | 760040 | 1537228.40 | 5634.48 | 722.1K | 32.9K |
+### utf8-prose-1024K (1048576 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 630850 | 1.662x | 417726 | 67645.27 | 47889.59 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 197909 | 5.298x | 850667 | 40456.86 | 8435.05 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 455358 | 2.303x | 593218 | 13121.02 | 6519.75 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 157526 | 6.657x | 891050 | 14468.52 | 3365.02 | 553.6K | 31.5K |
+| brotli(default) | 15333 | 68.387x | 1033243 | 1961665.80 | 639.16 | 722.1K | 32.9K |
+### uk-addr-1024K (1048576 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 706808 | 1.484x | 341768 | 47167.93 | 30198.55 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 279839 | 3.747x | 768737 | 38066.41 | 7188.26 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 571618 | 1.834x | 476958 | 10803.77 | 5716.55 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 285137 | 3.677x | 763439 | 15152.54 | 3888.87 | 553.6K | 31.5K |
+| brotli(default) | 136568 | 7.678x | 912008 | 1222579.70 | 1425.38 | 722.1K | 32.9K |
+### order-pos-1024K (1048576 bytes)
+| Codec | Compressed | Ratio | Saved | Compress us | Decompress us | Enc RAM | Dec RAM |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| picocompress | 613865 | 1.708x | 434711 | 39160.78 | 29788.01 | 3.0K | 1.0K |
+| heatshrink(w11,l4) | 368971 | 2.842x | 679605 | 86844.55 | 8491.76 | 12.5K | 2.0K |
+| brotli(q1,lgwin10) | 481828 | 2.176x | 566748 | 10600.25 | 6340.27 | 16.7K | 31.5K |
+| brotli(q5,lgwin10) | 252930 | 4.146x | 795646 | 16222.79 | 3973.61 | 553.6K | 31.5K |
+| brotli(default) | 166582 | 6.295x | 881994 | 1415196.80 | 2451.88 | 722.1K | 32.9K |

@@ -59,61 +59,76 @@ typedef struct {
     uint8_t len;
 } pc_dict_entry_t;
 
-static const uint8_t pc_d00[] = { 0,0,0,0 };
-static const uint8_t pc_d01[] = "able";
-static const uint8_t pc_d02[] = "active";
-static const uint8_t pc_d03[] = "alert";
-static const uint8_t pc_d04[] = "data";
-static const uint8_t pc_d05[] = "device";
-static const uint8_t pc_d06[] = "ent";
-static const uint8_t pc_d07[] = "error";
-static const uint8_t pc_d08[] = "false";
-static const uint8_t pc_d09[] = "ing";
-static const uint8_t pc_d10[] = "ion";
-static const uint8_t pc_d11[] = "message";
-static const uint8_t pc_d12[] = "mode";
-static const uint8_t pc_d13[] = "monitor";
-static const uint8_t pc_d14[] = "name";
-static const uint8_t pc_d15[] = "none";
-static const uint8_t pc_d16[] = "note";
-static const uint8_t pc_d17[] = "null";
-static const uint8_t pc_d18[] = "operator";
-static const uint8_t pc_d19[] = "pulse";
-static const uint8_t pc_d20[] = "region";
-static const uint8_t pc_d21[] = "sensor";
-static const uint8_t pc_d22[] = "stable";
+/* ---- general-purpose static dictionary (32 entries, ROM/flash) ----
+ *  0- 3: single-byte ultra-common symbols (JSON/CSV/code)
+ *  4- 7: two-byte common pairs
+ *  8-11: three-byte patterns
+ * 12-19: four-byte common words/fields
+ * 20-25: five-six byte common words
+ * 26-31: long high-value entries                                     */
+
+/* 0-3: single-byte symbols */
+static const uint8_t pc_d00[] = "{";
+static const uint8_t pc_d01[] = "}";
+static const uint8_t pc_d02[] = ":";
+static const uint8_t pc_d03[] = ",";
+/* 4-7: two-byte pairs */
+static const uint8_t pc_d04[] = { '\r', '\n' };
+static const uint8_t pc_d05[] = "id";
+static const uint8_t pc_d06[] = { '"', ':' };              /* ":  JSON key→value */
+static const uint8_t pc_d07[] = { ',', '"' };              /* ,"  JSON separator */
+/* 8-11: three-byte */
+static const uint8_t pc_d08[] = "000";
+static const uint8_t pc_d09[] = "ORD";
+static const uint8_t pc_d10[] = "the";
+static const uint8_t pc_d11[] = "ing";
+/* 12-19: four-byte words/fields */
+static const uint8_t pc_d12[] = { 'n','o','"',':' };       /* no":  */
+static const uint8_t pc_d13[] = "true";
+static const uint8_t pc_d14[] = "null";
+static const uint8_t pc_d15[] = "name";
+static const uint8_t pc_d16[] = "data";
+static const uint8_t pc_d17[] = "time";
+static const uint8_t pc_d18[] = "type";
+static const uint8_t pc_d19[] = "mode";
+/* 20-25: five-six byte */
+static const uint8_t pc_d20[] = "false";
+static const uint8_t pc_d21[] = "error";
+static const uint8_t pc_d22[] = "value";
 static const uint8_t pc_d23[] = "state";
 static const uint8_t pc_d24[] = "status";
-static const uint8_t pc_d25[] = "telemetry";
-static const uint8_t pc_d26[] = "temp";
-static const uint8_t pc_d27[] = "ter";
-static const uint8_t pc_d28[] = "the";
-static const uint8_t pc_d29[] = "time";
-static const uint8_t pc_d30[] = "true";
-static const uint8_t pc_d31[] = "value";
+static const uint8_t pc_d25[] = "number";
+/* 26-31: long high-value entries */
+static const uint8_t pc_d26[] = "active";
+static const uint8_t pc_d27[] = "device";
+static const uint8_t pc_d28[] = "message";
+static const uint8_t pc_d29[] = { 'n','u','m','b','e','r','"',':' }; /* number": */
+static const uint8_t pc_d30[] = "operator";
+static const uint8_t pc_d31[] = "https://";
 
 static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
-    { pc_d00, 4 }, { pc_d01, 4 }, { pc_d02, 6 }, { pc_d03, 5 },
-    { pc_d04, 4 }, { pc_d05, 6 }, { pc_d06, 3 }, { pc_d07, 5 },
-    { pc_d08, 5 }, { pc_d09, 3 }, { pc_d10, 3 }, { pc_d11, 7 },
-    { pc_d12, 4 }, { pc_d13, 7 }, { pc_d14, 4 }, { pc_d15, 4 },
-    { pc_d16, 4 }, { pc_d17, 4 }, { pc_d18, 8 }, { pc_d19, 5 },
-    { pc_d20, 6 }, { pc_d21, 6 }, { pc_d22, 6 }, { pc_d23, 5 },
-    { pc_d24, 6 }, { pc_d25, 9 }, { pc_d26, 4 }, { pc_d27, 3 },
-    { pc_d28, 3 }, { pc_d29, 4 }, { pc_d30, 4 }, { pc_d31, 5 },
+    { pc_d00, 1 }, { pc_d01, 1 }, { pc_d02, 1 }, { pc_d03, 1 },
+    { pc_d04, 2 }, { pc_d05, 2 }, { pc_d06, 2 }, { pc_d07, 2 },
+    { pc_d08, 3 }, { pc_d09, 3 }, { pc_d10, 3 }, { pc_d11, 3 },
+    { pc_d12, 4 }, { pc_d13, 4 }, { pc_d14, 4 }, { pc_d15, 4 },
+    { pc_d16, 4 }, { pc_d17, 4 }, { pc_d18, 4 }, { pc_d19, 4 },
+    { pc_d20, 5 }, { pc_d21, 5 }, { pc_d22, 5 }, { pc_d23, 5 },
+    { pc_d24, 6 }, { pc_d25, 6 }, { pc_d26, 6 }, { pc_d27, 6 },
+    { pc_d28, 7 }, { pc_d29, 8 }, { pc_d30, 8 }, { pc_d31, 8 },
 };
 
-/* Find best savings among dict, LZ, and repeat-offset at a position.
+/* Find best savings among dict, LZ, and repeat-offset at a virtual position.
+ * vbuf = [history | block], vpos is the current virtual position.
  * Returns net savings (bytes saved vs literal). Fills out_* params. */
 static int pc_find_best(
-    const uint8_t *in, uint16_t in_len, uint16_t pos,
+    const uint8_t *vbuf, uint16_t vbuf_len, uint16_t vpos,
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE],
     uint16_t last_offset,
     uint16_t *out_len, uint16_t *out_off, uint16_t *out_dict,
     int *out_is_repeat
 ) {
     int best_savings = 0;
-    uint16_t remaining = (uint16_t)(in_len - pos);
+    uint16_t remaining = (uint16_t)(vbuf_len - vpos);
     int d;
 
     *out_len = 0;
@@ -121,16 +136,16 @@ static int pc_find_best(
     *out_dict = UINT16_MAX;
     *out_is_repeat = 0;
 
-    /* dictionary match (1-byte token → savings = len - 1) */
+    /* dictionary match (1-byte token -> savings = len - 1) */
     {
-        uint8_t first_byte = in[pos];
+        uint8_t first_byte = vbuf[vpos];
         for (d = 0; d < (int)PC_DICT_COUNT; ++d) {
             uint8_t dlen = pc_static_dict[d].len;
             int s;
             if (dlen > remaining) continue;
             if ((int)dlen - 1 <= best_savings) continue;
             if (pc_static_dict[d].data[0] != first_byte) continue;
-            if (memcmp(in + pos, pc_static_dict[d].data, dlen) != 0) continue;
+            if (memcmp(vbuf + vpos, pc_static_dict[d].data, dlen) != 0) continue;
             s = (int)dlen - 1;
             best_savings = s;
             *out_dict = (uint16_t)d;
@@ -140,9 +155,9 @@ static int pc_find_best(
         }
     }
 
-    /* LZ match — needs 3 bytes for hash */
+    /* LZ match -- needs 3 bytes for hash */
     if (remaining >= 3u) {
-        uint16_t hash = pc_hash3(in + pos);
+        uint16_t hash = pc_hash3(vbuf + vpos);
         uint16_t max_len = remaining > PC_MATCH_MAX ? PC_MATCH_MAX : remaining;
 
         for (d = 0; d < (int)PC_HASH_CHAIN_DEPTH; ++d) {
@@ -152,10 +167,11 @@ static int pc_find_best(
 
             if (prev < 0) continue;
             prev_pos = (uint16_t)prev;
-            off = (uint16_t)(pos - prev_pos);
-            if (off == 0u || off > PC_OFFSET_MAX) continue;
+            if (prev_pos >= vpos) continue;
+            off = (uint16_t)(vpos - prev_pos);
+            if (off > PC_OFFSET_MAX) continue;
 
-            len = pc_match_len(in + prev_pos, in + pos, max_len);
+            len = pc_match_len(vbuf + prev_pos, vbuf + vpos, max_len);
             if (len < PC_MATCH_MIN) continue;
 
             is_rep = (off == last_offset && last_offset != 0) ? 1 : 0;
@@ -174,71 +190,87 @@ static int pc_find_best(
     return best_savings;
 }
 
+/* Compress block_len bytes from vbuf starting at offset hist_len.
+ * vbuf = [history(hist_len) | block(block_len)].
+ * Returns compressed size, or UINT16_MAX on overflow. */
 static uint16_t pc_compress_block(
-    const uint8_t *in,
-    uint16_t in_len,
+    const uint8_t *vbuf,
+    uint16_t hist_len,
+    uint16_t block_len,
     uint8_t *out,
     uint16_t out_cap
 ) {
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE];
-    uint16_t i;
-    uint16_t anchor = 0;
+    uint16_t vbuf_len = (uint16_t)(hist_len + block_len);
+    uint16_t vpos;
+    uint16_t anchor;
     uint16_t op = 0;
     uint16_t last_offset = 0;
     memset(head, 0xFF, sizeof(head));
 
-    i = 0;
-    while (i < in_len) {
+    /* seed hash table from history so cross-block matches are found */
+    if (hist_len >= 3u) {
+        uint16_t p;
+        for (p = 0; (uint16_t)(p + 2u) < hist_len; ++p) {
+            pc_head_insert(head, pc_hash3(vbuf + p), (int16_t)p);
+        }
+    }
+
+    anchor = hist_len;
+    vpos = hist_len;
+    while (vpos < vbuf_len) {
         uint16_t best_len = 0, best_off = 0, best_dict = UINT16_MAX;
         int best_is_repeat = 0;
         int best_savings;
 
-        if ((uint16_t)(in_len - i) < PC_MATCH_MIN) {
-            break; /* trailing bytes handled after loop */
+        if ((uint16_t)(vbuf_len - vpos) < PC_MATCH_MIN) {
+            break;
         }
 
         best_savings = pc_find_best(
-            in, in_len, i, head, last_offset,
+            vbuf, vbuf_len, vpos, head, last_offset,
             &best_len, &best_off, &best_dict, &best_is_repeat);
 
         /* insert current position into hash table (needs 3 bytes) */
-        if ((uint16_t)(in_len - i) >= 3u) {
-            pc_head_insert(head, pc_hash3(in + i), (int16_t)i);
+        if ((uint16_t)(vbuf_len - vpos) >= 3u) {
+            pc_head_insert(head, pc_hash3(vbuf + vpos), (int16_t)vpos);
+        }
+
+        /* short dict entries save a literal-header byte when standalone */
+        if (best_dict != UINT16_MAX && best_savings == 0 && anchor == vpos) {
+            best_savings = 1;
         }
 
         /* lazy matching: if next position is better, skip current */
-        if (best_savings > 0 && (uint16_t)(i + 1u) < in_len
-            && (uint16_t)(in_len - i - 1u) >= PC_MATCH_MIN) {
+        if (best_savings > 0 && (uint16_t)(vpos + 1u) < vbuf_len
+            && (uint16_t)(vbuf_len - vpos - 1u) >= PC_MATCH_MIN) {
             uint16_t n_len, n_off, n_dict;
             int n_rep;
             int n_sav = pc_find_best(
-                in, in_len, (uint16_t)(i + 1u), head, last_offset,
+                vbuf, vbuf_len, (uint16_t)(vpos + 1u), head, last_offset,
                 &n_len, &n_off, &n_dict, &n_rep);
             if (n_sav > best_savings) {
-                ++i;
+                ++vpos;
                 continue;
             }
         }
 
         /* emit */
         if (best_savings > 0) {
-            uint16_t lit_len = (uint16_t)(i - anchor);
+            uint16_t lit_len = (uint16_t)(vpos - anchor);
             uint16_t k;
 
-            if (!pc_emit_literals(in + anchor, lit_len, out, out_cap, &op)) {
+            if (!pc_emit_literals(vbuf + anchor, lit_len, out, out_cap, &op)) {
                 return UINT16_MAX;
             }
 
             if (best_dict != UINT16_MAX) {
-                /* dictionary token: 0xE0 | index */
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(0xE0u | (best_dict & 0x1Fu));
             } else if (best_is_repeat) {
-                /* repeat-offset token: 0xC0 | (len - MIN) */
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x1Fu));
             } else {
-                /* new-offset LZ: 0x80 | (len-MIN)<<1 | offset_hi, offset_lo */
                 if ((uint32_t)op + 2u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(
                     0x80u
@@ -248,20 +280,19 @@ static uint16_t pc_compress_block(
                 last_offset = best_off;
             }
 
-            /* update hash for positions we're skipping */
-            for (k = 1; k < best_len && (uint16_t)(i + k + 2u) < in_len; ++k) {
-                pc_head_insert(head, pc_hash3(in + i + k), (int16_t)(i + k));
+            for (k = 1; k < best_len && (uint16_t)(vpos + k + 2u) < vbuf_len; ++k) {
+                pc_head_insert(head, pc_hash3(vbuf + vpos + k), (int16_t)(vpos + k));
             }
 
-            i = (uint16_t)(i + best_len);
-            anchor = i;
+            vpos = (uint16_t)(vpos + best_len);
+            anchor = vpos;
         } else {
-            ++i;
+            ++vpos;
         }
     }
 
-    if (anchor < in_len) {
-        if (!pc_emit_literals(in + anchor, (uint16_t)(in_len - anchor), out, out_cap, &op)) {
+    if (anchor < vbuf_len) {
+        if (!pc_emit_literals(vbuf + anchor, (uint16_t)(vbuf_len - anchor), out, out_cap, &op)) {
             return UINT16_MAX;
         }
     }
@@ -269,11 +300,40 @@ static uint16_t pc_compress_block(
     return op;
 }
 
+/* Copy match bytes, resolving cross-block references into history. */
+static void pc_copy_match(
+    uint8_t *out, uint16_t *op_p,
+    const uint8_t *hist, uint16_t hist_len,
+    uint16_t off, uint16_t match_len
+) {
+    uint16_t op = *op_p;
+    uint16_t j;
+    if (off <= op) {
+        /* entirely within current block output */
+        uint16_t src = (uint16_t)(op - off);
+        for (j = 0; j < match_len; ++j) {
+            out[op++] = out[src + j];
+        }
+    } else {
+        /* starts in history, may cross into current output */
+        uint16_t hist_back = (uint16_t)(off - op);
+        uint16_t hist_start = (uint16_t)(hist_len - hist_back);
+        for (j = 0; j < match_len; ++j) {
+            uint16_t src = (uint16_t)(hist_start + j);
+            if (src < hist_len) {
+                out[op++] = hist[src];
+            } else {
+                out[op++] = out[src - hist_len];
+            }
+        }
+    }
+    *op_p = op;
+}
+
 static pc_result pc_decompress_block(
-    const uint8_t *in,
-    uint16_t in_len,
-    uint8_t *out,
-    uint16_t out_len
+    const uint8_t *hist, uint16_t hist_len,
+    const uint8_t *in, uint16_t in_len,
+    uint8_t *out, uint16_t out_len
 ) {
     uint16_t ip = 0;
     uint16_t op = 0;
@@ -309,13 +369,10 @@ static pc_result pc_decompress_block(
         /* 0xC0..0xDF: repeat-offset match */
         if ((token & 0xE0u) == 0xC0u) {
             uint16_t match_len = (uint16_t)((token & 0x1Fu) + PC_MATCH_MIN);
-            uint16_t src, j;
-            if (last_offset == 0u || last_offset > op) return PC_ERR_CORRUPT;
+            if (last_offset == 0u) return PC_ERR_CORRUPT;
+            if (last_offset > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
             if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
-            src = (uint16_t)(op - last_offset);
-            for (j = 0; j < match_len; ++j) {
-                out[op++] = out[src + j];
-            }
+            pc_copy_match(out, &op, hist, hist_len, last_offset, match_len);
             continue;
         }
 
@@ -324,15 +381,12 @@ static pc_result pc_decompress_block(
         {
             uint16_t match_len = (uint16_t)(((token >> 1u) & 0x1Fu) + PC_MATCH_MIN);
             uint16_t off = (uint16_t)(((uint16_t)(token & 0x01u) << 8u) | (uint16_t)in[ip++]);
-            uint16_t src, j;
 
-            if (off == 0u || off > op) return PC_ERR_CORRUPT;
+            if (off == 0u) return PC_ERR_CORRUPT;
+            if (off > (uint16_t)(op + hist_len)) return PC_ERR_CORRUPT;
             if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
 
-            src = (uint16_t)(op - off);
-            for (j = 0; j < match_len; ++j) {
-                out[op++] = out[src + j];
-            }
+            pc_copy_match(out, &op, hist, hist_len, off, match_len);
             last_offset = off;
         }
     }
@@ -353,10 +407,28 @@ static pc_result pc_write_all(pc_write_fn write_fn, void *user, const uint8_t *d
     return write_fn(user, data, len) == 0 ? PC_OK : PC_ERR_WRITE;
 }
 
+static void pc_update_history(uint8_t *hist, uint16_t *hist_len, const uint8_t *data, uint16_t len) {
+    if (len >= (uint16_t)PC_HISTORY_SIZE) {
+        memcpy(hist, data + len - (uint16_t)PC_HISTORY_SIZE, PC_HISTORY_SIZE);
+        *hist_len = (uint16_t)PC_HISTORY_SIZE;
+    } else if ((uint16_t)(*hist_len + len) <= (uint16_t)PC_HISTORY_SIZE) {
+        memcpy(hist + *hist_len, data, len);
+        *hist_len = (uint16_t)(*hist_len + len);
+    } else {
+        uint16_t keep = (uint16_t)(PC_HISTORY_SIZE - len);
+        if (keep > *hist_len) keep = *hist_len;
+        memmove(hist, hist + *hist_len - keep, keep);
+        memcpy(hist + keep, data, len);
+        *hist_len = (uint16_t)(keep + len);
+    }
+}
+
 static pc_result pc_encoder_flush(pc_encoder *enc, pc_write_fn write_fn, void *user) {
+    uint8_t combined[PC_HISTORY_SIZE + PC_BLOCK_SIZE];
     uint8_t tmp[PC_BLOCK_MAX_COMPRESSED];
     uint8_t header[4];
     uint16_t raw_len;
+    uint16_t hist_len;
     uint16_t comp_len;
     pc_result rc;
 
@@ -365,7 +437,15 @@ static pc_result pc_encoder_flush(pc_encoder *enc, pc_write_fn write_fn, void *u
     }
 
     raw_len = enc->block_len;
-    comp_len = pc_compress_block(enc->block, raw_len, tmp, (uint16_t)sizeof(tmp));
+    hist_len = enc->history_len;
+
+    memcpy(combined, enc->history, hist_len);
+    memcpy(combined + hist_len, enc->block, raw_len);
+
+    comp_len = pc_compress_block(combined, hist_len, raw_len, tmp, (uint16_t)sizeof(tmp));
+
+    /* update history for next block */
+    pc_update_history(enc->history, &enc->history_len, enc->block, raw_len);
 
     header[0] = (uint8_t)(raw_len & 0xFFu);
     header[1] = (uint8_t)(raw_len >> 8u);
@@ -401,6 +481,7 @@ static pc_result pc_encoder_flush(pc_encoder *enc, pc_write_fn write_fn, void *u
 void pc_encoder_init(pc_encoder *enc) {
     if (enc != NULL) {
         enc->block_len = 0u;
+        enc->history_len = 0u;
     }
 }
 
@@ -453,14 +534,25 @@ void pc_decoder_init(pc_decoder *dec) {
 
 static pc_result pc_decoder_emit_block(pc_decoder *dec, pc_write_fn write_fn, void *user) {
     if (dec->comp_len == 0u) {
-        return pc_write_all(write_fn, user, dec->payload, dec->raw_len);
+        pc_result rc = pc_write_all(write_fn, user, dec->payload, dec->raw_len);
+        if (rc == PC_OK) {
+            pc_update_history(dec->history, &dec->history_len, dec->payload, dec->raw_len);
+        }
+        return rc;
     }
     {
-        pc_result rc = pc_decompress_block(dec->payload, dec->comp_len, dec->raw, dec->raw_len);
+        pc_result rc = pc_decompress_block(
+            dec->history, dec->history_len,
+            dec->payload, dec->comp_len,
+            dec->raw, dec->raw_len);
         if (rc != PC_OK) {
             return rc;
         }
-        return pc_write_all(write_fn, user, dec->raw, dec->raw_len);
+        rc = pc_write_all(write_fn, user, dec->raw, dec->raw_len);
+        if (rc == PC_OK) {
+            pc_update_history(dec->history, &dec->history_len, dec->raw, dec->raw_len);
+        }
+        return rc;
     }
 }
 
