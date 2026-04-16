@@ -88,7 +88,7 @@ static const uint8_t pc_d09[] = "000";
 static const uint8_t pc_d10[] = "ORD";
 static const uint8_t pc_d11[] = "the";
 static const uint8_t pc_d12[] = "ing";
-static const uint8_t pc_d13[] = "00";                      /* ASCII "00" */
+static const uint8_t pc_d13[] = { ',', '"', ',' };         /* ","  JSON string separator */
 static const uint8_t pc_d14[] = { '"', ':', '{' };         /* ":{  nested obj  */
 static const uint8_t pc_d15[] = { '"', ':', '[' };         /* ":[  nested arr  */
 /* 16-23: more three-byte */
@@ -96,7 +96,7 @@ static const uint8_t pc_d16[] = "ion";
 static const uint8_t pc_d17[] = "ent";
 static const uint8_t pc_d18[] = "ter";
 static const uint8_t pc_d19[] = "and";
-static const uint8_t pc_d20[] = "for";
+static const uint8_t pc_d20[] = "00";                      /* ASCII "00" */
 static const uint8_t pc_d21[] = { '"', '}', ',' };         /* "},  */
 static const uint8_t pc_d22[] = { '"', ']', ',' };         /* "],  */
 static const uint8_t pc_d23[] = "  ";                      /* double space */
@@ -150,9 +150,9 @@ static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
     /* 0-3:  1B */  { pc_d00,1 }, { pc_d01,1 }, { pc_d02,1 }, { pc_d03,1 },
     /* 4-7:  2B */  { pc_d04,2 }, { pc_d05,2 }, { pc_d06,2 }, { pc_d07,2 },
     /* 8-15: 3B */  { pc_d08,3 }, { pc_d09,3 }, { pc_d10,3 }, { pc_d11,3 },
-                    { pc_d12,3 }, { pc_d13,2 }, { pc_d14,3 }, { pc_d15,3 },
+                    { pc_d12,3 }, { pc_d13,3 }, { pc_d14,3 }, { pc_d15,3 },
     /* 16-23:3B */  { pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
-                    { pc_d20,3 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,2 },
+                    { pc_d20,2 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,2 },
     /* 24-39:4B */  { pc_d24,4 }, { pc_d25,4 }, { pc_d26,4 }, { pc_d27,4 },
                     { pc_d28,4 }, { pc_d29,4 }, { pc_d30,4 }, { pc_d31,4 },
                     { pc_d32,4 }, { pc_d33,4 }, { pc_d34,4 }, { pc_d35,4 },
