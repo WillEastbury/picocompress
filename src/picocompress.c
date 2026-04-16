@@ -4,6 +4,8 @@
 
 #define PC_HASH_SIZE (1u << PC_HASH_BITS)
 #define PC_INVALID_POS (-1)
+#define PC_GOOD_MATCH 8u
+#define PC_REPEAT_CACHE_SIZE 3u
 
 static uint16_t pc_hash3(const uint8_t *p) {
     uint32_t v = ((uint32_t)p[0] * 251u) + ((uint32_t)p[1] * 11u) + ((uint32_t)p[2] * 3u);
@@ -165,13 +167,13 @@ static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
     /* 60-63:8B */  { pc_d60,8 }, { pc_d61,8 }, { pc_d62,8 }, { pc_d63,8 },
 };
 
-/* Find best savings among dict, LZ, and repeat-offset at a virtual position.
- * vbuf = [history | block], vpos is the current virtual position.
+/* Find best savings among repeat-cache, dict, and LZ at a virtual position.
+ * Order: repeat-cache → dictionary → hash-chain LZ.
  * Returns net savings (bytes saved vs literal). Fills out_* params. */
 static int pc_find_best(
     const uint8_t *vbuf, uint16_t vbuf_len, uint16_t vpos,
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE],
-    uint16_t last_offset,
+    const uint16_t rep_offsets[PC_REPEAT_CACHE_SIZE],
     uint16_t *out_len, uint16_t *out_off, uint16_t *out_dict,
     int *out_is_repeat
 ) {
@@ -184,7 +186,43 @@ static int pc_find_best(
     *out_dict = UINT16_MAX;
     *out_is_repeat = 0;
 
-    /* dictionary match (1-byte token -> savings = len - 1) */
+    /* 1. Repeat-offset cache — try recent offsets first (1-byte token each).
+     * These fire constantly on structured data. Check first byte before
+     * full compare (idea #9: early reject).
+     * NOTE: only rep_offsets[0] can emit as a repeat token (decoder tracks
+     * only last_offset). Matches on [1]/[2] are scored as normal LZ. */
+    if (remaining >= PC_MATCH_MIN) {
+        uint16_t max_rep = remaining > PC_MATCH_MAX ? PC_MATCH_MAX : remaining;
+        for (d = 0; d < (int)PC_REPEAT_CACHE_SIZE; ++d) {
+            uint16_t off = rep_offsets[d];
+            uint16_t len;
+            int is_rep, token_cost, s;
+            if (off == 0u || off > vpos) continue;
+            /* early reject: check first byte */
+            if (vbuf[vpos] != vbuf[vpos - off]) continue;
+            /* fast path for len 2-3 (idea #2) */
+            if (remaining >= 2u && vbuf[vpos + 1u] != vbuf[vpos - off + 1u]) continue;
+            len = pc_match_len(vbuf + vpos - off, vbuf + vpos, max_rep);
+            if (len < PC_MATCH_MIN) continue;
+
+            /* only slot 0 can use the cheap repeat token */
+            is_rep = (d == 0) ? 1 : 0;
+            token_cost = is_rep ? 1 : (off <= PC_OFFSET_SHORT_MAX ? 2 : 3);
+            s = (int)len - token_cost;
+
+            if (s > best_savings) {
+                best_savings = s;
+                *out_len = len;
+                *out_off = off;
+                *out_dict = UINT16_MAX;
+                *out_is_repeat = is_rep;
+                if (len >= PC_GOOD_MATCH) return best_savings; /* #10: good enough */
+            }
+        }
+    }
+
+    /* 2. Dictionary match (1-byte token → savings = len - 1).
+     * First-byte filter + early bail on good-enough (idea #3, #10). */
     {
         uint8_t first_byte = vbuf[vpos];
         for (d = 0; d < (int)PC_DICT_COUNT; ++d) {
@@ -200,19 +238,22 @@ static int pc_find_best(
             *out_len = dlen;
             *out_off = 0;
             *out_is_repeat = 0;
+            if (dlen >= PC_GOOD_MATCH) return best_savings; /* #10 */
         }
     }
 
-    /* LZ match -- needs 3 bytes for hash */
+    /* 3. LZ hash-chain match — with early reject (#9), offset scoring (#5),
+     * good-enough bail (#10). */
     if (remaining >= 3u) {
         uint16_t hash = pc_hash3(vbuf + vpos);
         uint16_t max_len_short = remaining > PC_MATCH_MAX ? PC_MATCH_MAX : remaining;
         uint16_t max_len_long = remaining > PC_LONG_MATCH_MAX ? PC_LONG_MATCH_MAX : remaining;
+        uint8_t first_byte = vbuf[vpos];
 
         for (d = 0; d < (int)PC_HASH_CHAIN_DEPTH; ++d) {
             int16_t prev = head[d][hash];
             uint16_t prev_pos, off, len, max_len;
-            int is_rep, s, token_cost;
+            int s, token_cost;
 
             if (prev < 0) continue;
             prev_pos = (uint16_t)prev;
@@ -220,22 +261,26 @@ static int pc_find_best(
             off = (uint16_t)(vpos - prev_pos);
             if (off == 0u || off > PC_OFFSET_LONG_MAX) continue;
 
-            /* pick max match length based on which token can encode it */
+            /* #9: early reject — check first byte before full compare */
+            if (vbuf[prev_pos] != first_byte) continue;
+
             max_len = (off <= PC_OFFSET_SHORT_MAX) ? max_len_short : max_len_long;
             len = pc_match_len(vbuf + prev_pos, vbuf + vpos, max_len);
             if (len < PC_MATCH_MIN) continue;
 
-            is_rep = (off == last_offset && last_offset != 0) ? 1 : 0;
-            /* token cost: repeat=1, short-offset=2, long-offset=3 */
-            token_cost = is_rep ? 1 : (off <= PC_OFFSET_SHORT_MAX ? 2 : 3);
+            token_cost = (off <= PC_OFFSET_SHORT_MAX) ? 2 : 3;
             s = (int)len - token_cost;
 
-            if (s > best_savings || (s == best_savings && len > *out_len)) {
+            /* #5: offset scoring — prefer nearer matches at equal savings */
+            if (s > best_savings
+                || (s == best_savings && len > *out_len)
+                || (s == best_savings && len == *out_len && off < *out_off)) {
                 best_savings = s;
                 *out_len = len;
                 *out_off = off;
                 *out_dict = UINT16_MAX;
-                *out_is_repeat = is_rep;
+                *out_is_repeat = 0;
+                if (len >= PC_GOOD_MATCH) return best_savings; /* #10 */
             }
         }
     }
@@ -254,11 +299,11 @@ static uint16_t pc_compress_block(
     uint16_t out_cap
 ) {
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE];
+    uint16_t rep_offsets[PC_REPEAT_CACHE_SIZE] = {0, 0, 0};
     uint16_t vbuf_len = (uint16_t)(hist_len + block_len);
     uint16_t vpos;
     uint16_t anchor;
     uint16_t op = 0;
-    uint16_t last_offset = 0;
     memset(head, 0xFF, sizeof(head));
 
     /* seed hash table from history — use normal insert so chain works */
@@ -267,18 +312,14 @@ static uint16_t pc_compress_block(
         for (p = 0; (uint16_t)(p + 2u) < hist_len; ++p) {
             pc_head_insert(head, pc_hash3(vbuf + p), (int16_t)p);
         }
-        /* Re-inject positions near the block boundary into slot 0.
-         * These are the highest-value history matches ("just out of block")
-         * and would otherwise be buried by earlier history inserts. */
+        /* Re-inject positions near the block boundary into slot 0 */
         {
             uint16_t tail_start = hist_len > 64u ? (uint16_t)(hist_len - 64u) : 0u;
             for (p = tail_start; (uint16_t)(p + 2u) < hist_len; ++p) {
                 uint16_t h = pc_hash3(vbuf + p);
-                /* only re-inject if this position isn't already in slot 0 */
                 if (head[0][h] != (int16_t)p) {
                     int16_t save = head[PC_HASH_CHAIN_DEPTH - 1u][h];
                     pc_head_insert(head, h, (int16_t)p);
-                    /* restore the deepest slot so we don't lose an older entry */
                     head[PC_HASH_CHAIN_DEPTH - 1u][h] = save;
                 }
             }
@@ -299,7 +340,7 @@ retry_pos:
         }
 
         best_savings = pc_find_best(
-            vbuf, vbuf_len, vpos, head, last_offset,
+            vbuf, vbuf_len, vpos, head, rep_offsets,
             &best_len, &best_off, &best_dict, &best_is_repeat);
 
         /* insert current position into hash table (needs 3 bytes) */
@@ -307,13 +348,21 @@ retry_pos:
             pc_head_insert(head, pc_hash3(vbuf + vpos), (int16_t)vpos);
         }
 
-        /* short dict entries save a literal-header byte when standalone */
+        /* #3: short dict entries save a literal-header byte when standalone */
         if (best_dict != UINT16_MAX && best_savings == 0 && anchor == vpos) {
             best_savings = 1;
         }
 
-        /* lazy matching: if a nearby position is better, skip current */
-        if (best_savings > 0) {
+        /* #7: literal run extension — skip weak matches (savings <= 1) when
+         * we're mid-literal-run, because the match token overhead isn't
+         * worth breaking the run for a tiny gain. */
+        if (best_savings <= 1 && best_dict == UINT16_MAX && anchor < vpos) {
+            best_savings = 0;
+        }
+
+        /* #4: lazy matching — only if current match is short.
+         * Long matches (>= GOOD_MATCH) are rarely beaten; accept immediately. */
+        if (best_savings > 0 && best_len < PC_GOOD_MATCH) {
             uint16_t step;
             for (step = 1; step <= (uint16_t)PC_LAZY_STEPS; ++step) {
                 uint16_t npos = (uint16_t)(vpos + step);
@@ -323,17 +372,14 @@ retry_pos:
                     uint16_t n_len, n_off, n_dict;
                     int n_rep;
                     int n_sav = pc_find_best(
-                        vbuf, vbuf_len, npos, head, last_offset,
+                        vbuf, vbuf_len, npos, head, rep_offsets,
                         &n_len, &n_off, &n_dict, &n_rep);
                     if (n_sav > best_savings) {
-                        /* insert positions we're skipping */
-                        {
-                            uint16_t s;
-                            for (s = 0; s < step; ++s) {
-                                uint16_t sp = (uint16_t)(vpos + s);
-                                if ((uint16_t)(vbuf_len - sp) >= 3u)
-                                    pc_head_insert(head, pc_hash3(vbuf + sp), (int16_t)sp);
-                            }
+                        uint16_t s;
+                        for (s = 0; s < step; ++s) {
+                            uint16_t sp = (uint16_t)(vpos + s);
+                            if ((uint16_t)(vbuf_len - sp) >= 3u)
+                                pc_head_insert(head, pc_hash3(vbuf + sp), (int16_t)sp);
                         }
                         vpos = npos;
                         goto retry_pos;
@@ -365,7 +411,6 @@ retry_pos:
                     | (((best_len - PC_MATCH_MIN) & 0x1Fu) << 1u)
                     | ((best_off >> 8u) & 0x01u));
                 out[op++] = (uint8_t)(best_off & 0xFFu);
-                last_offset = best_off;
             } else {
                 /* long-offset LZ: 3-byte token (0xF0..0xFF) */
                 uint16_t elen = best_len > PC_LONG_MATCH_MAX ? PC_LONG_MATCH_MAX : best_len;
@@ -373,8 +418,14 @@ retry_pos:
                 out[op++] = (uint8_t)(0xF0u | ((elen - PC_LONG_MATCH_MIN) & 0x0Fu));
                 out[op++] = (uint8_t)((best_off >> 8u) & 0xFFu);
                 out[op++] = (uint8_t)(best_off & 0xFFu);
-                last_offset = best_off;
-                best_len = elen; /* cap for hash-insert loop */
+                best_len = elen;
+            }
+
+            /* update repeat-offset cache (#1) */
+            if (!best_is_repeat && best_off != 0u && best_dict == UINT16_MAX) {
+                rep_offsets[2] = rep_offsets[1];
+                rep_offsets[1] = rep_offsets[0];
+                rep_offsets[0] = best_off;
             }
 
             for (k = 1; k < best_len && (uint16_t)(vpos + k + 2u) < vbuf_len; ++k) {
