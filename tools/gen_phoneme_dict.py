@@ -75,30 +75,45 @@ def extract_byte_patterns(
     min_len: int = 2,
     max_len: int = 8,
     early_window: int = 512,
+    sample_stride: int = 1,
+    max_corpus: int = 256_000,
 ) -> List[Tuple[bytes, float]]:
-    """Extract and score frequent byte patterns from corpus."""
+    """Extract and score frequent byte patterns from corpus.
+
+    For large corpora (>max_corpus), samples every Nth position to keep
+    runtime bounded while preserving frequency ranking.
+    """
+    corpus_len = len(corpus)
+    if corpus_len > max_corpus:
+        sample_stride = max(1, corpus_len // max_corpus)
+
     pattern_freq: Dict[bytes, int] = collections.Counter()
     pattern_early: Dict[bytes, int] = collections.Counter()
 
-    corpus_len = len(corpus)
-    for length in range(min_len, max_len + 1):
-        for pos in range(corpus_len - length + 1):
-            pat = corpus[pos:pos + length]
-            if len(set(pat)) <= 1:
+    for pos in range(0, corpus_len - max_len, sample_stride):
+        window = corpus[pos:pos + max_len]
+        block_offset = pos % 508
+        is_early = block_offset < early_window
+        for length in range(min_len, max_len + 1):
+            pat = window[:length]
+            if pat[0] == pat[-1] and len(set(pat)) <= 1:
                 continue
             pattern_freq[pat] += 1
-            block_offset = pos % 508
-            if block_offset < early_window:
+            if is_early:
                 pattern_early[pat] += 1
+
+    # Scale frequencies back up if we sampled
+    scale = sample_stride
 
     scored: List[Tuple[bytes, float]] = []
     for pat, freq in pattern_freq.items():
-        if freq < 3:
+        real_freq = freq * scale
+        if real_freq < 3:
             continue
         length = len(pat)
-        early_count = pattern_early.get(pat, 0)
-        early_weight = 1.0 + (early_count / max(freq, 1)) * 0.5
-        score = freq * (length ** 2) * early_weight
+        early_count = pattern_early.get(pat, 0) * scale
+        early_weight = 1.0 + (early_count / max(real_freq, 1)) * 0.5
+        score = real_freq * (length ** 2) * early_weight
         scored.append((pat, score))
 
     scored.sort(key=lambda x: -x[1])
@@ -255,9 +270,10 @@ def main() -> None:
     for pat, score in phoneme_patterns:
         all_scores[pat] = all_scores.get(pat, 0) + score * 1.5
 
-    # Count raw frequencies
+    # Count raw frequencies — only for top candidates (not all patterns)
+    ranked_pre = sorted(all_scores.items(), key=lambda x: -x[1])[:args.entries * 4]
     all_freqs: Dict[bytes, int] = {}
-    for pat in all_scores:
+    for pat, _score in ranked_pre:
         count = 0
         start = 0
         while True:
