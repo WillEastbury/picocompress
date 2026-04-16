@@ -96,6 +96,9 @@ def extract_byte_patterns(
         is_early = block_offset < early_window
         for length in range(min_len, max_len + 1):
             pat = window[:length]
+            # Skip patterns containing newlines/CR or all-same-byte runs
+            if 0x0A in pat or 0x0D in pat:
+                continue
             if pat[0] == pat[-1] and len(set(pat)) <= 1:
                 continue
             pattern_freq[pat] += 1
@@ -164,8 +167,15 @@ def deduplicate_patterns(
             break
         if total_bytes + len(pat) > size_budget:
             continue
-        is_redundant = any(pat in sel for sel in selected)
-        if is_redundant:
+        # Skip if this is a substring of an already-selected pattern
+        if any(pat in sel for sel in selected):
+            continue
+        # Skip if an already-selected pattern is a substring of this one
+        # (the shorter one scored higher, so it's more general)
+        if any(sel in pat for sel in selected):
+            continue
+        # Skip near-duplicates: if shifting by 1 byte yields a selected pattern
+        if any(pat[1:] == sel[:-1] or pat[:-1] == sel[1:] for sel in selected if len(sel) == len(pat)):
             continue
         selected.append(pat)
         total_bytes += len(pat)
