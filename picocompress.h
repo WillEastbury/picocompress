@@ -13,11 +13,13 @@ extern "C" {
 #endif
 
 #define PC_LITERAL_MAX 128u
-#define PC_MATCH_MIN 3u
-#define PC_MATCH_CODE_BITS 6u
+#define PC_MATCH_MIN 2u
+#define PC_MATCH_CODE_BITS 5u
 #define PC_MATCH_MAX (PC_MATCH_MIN + ((1u << PC_MATCH_CODE_BITS) - 1u))
 #define PC_OFFSET_BITS 9u
 #define PC_OFFSET_MAX ((1u << PC_OFFSET_BITS) - 1u)
+#define PC_DICT_COUNT 32u
+#define PC_DICT_MAX_LEN 9u
 #define PC_BLOCK_MAX_COMPRESSED (PC_BLOCK_SIZE + (PC_BLOCK_SIZE / PC_LITERAL_MAX) + 16u)
 
 #if PC_BLOCK_SIZE == 0u || PC_BLOCK_SIZE > PC_OFFSET_MAX

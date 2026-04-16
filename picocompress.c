@@ -54,6 +54,126 @@ static void pc_head_insert(
     head[0][hash] = pos;
 }
 
+typedef struct {
+    const uint8_t *data;
+    uint8_t len;
+} pc_dict_entry_t;
+
+static const uint8_t pc_d00[] = { 0,0,0,0 };
+static const uint8_t pc_d01[] = "able";
+static const uint8_t pc_d02[] = "active";
+static const uint8_t pc_d03[] = "alert";
+static const uint8_t pc_d04[] = "data";
+static const uint8_t pc_d05[] = "device";
+static const uint8_t pc_d06[] = "ent";
+static const uint8_t pc_d07[] = "error";
+static const uint8_t pc_d08[] = "false";
+static const uint8_t pc_d09[] = "ing";
+static const uint8_t pc_d10[] = "ion";
+static const uint8_t pc_d11[] = "message";
+static const uint8_t pc_d12[] = "mode";
+static const uint8_t pc_d13[] = "monitor";
+static const uint8_t pc_d14[] = "name";
+static const uint8_t pc_d15[] = "none";
+static const uint8_t pc_d16[] = "note";
+static const uint8_t pc_d17[] = "null";
+static const uint8_t pc_d18[] = "operator";
+static const uint8_t pc_d19[] = "pulse";
+static const uint8_t pc_d20[] = "region";
+static const uint8_t pc_d21[] = "sensor";
+static const uint8_t pc_d22[] = "stable";
+static const uint8_t pc_d23[] = "state";
+static const uint8_t pc_d24[] = "status";
+static const uint8_t pc_d25[] = "telemetry";
+static const uint8_t pc_d26[] = "temp";
+static const uint8_t pc_d27[] = "ter";
+static const uint8_t pc_d28[] = "the";
+static const uint8_t pc_d29[] = "time";
+static const uint8_t pc_d30[] = "true";
+static const uint8_t pc_d31[] = "value";
+
+static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
+    { pc_d00, 4 }, { pc_d01, 4 }, { pc_d02, 6 }, { pc_d03, 5 },
+    { pc_d04, 4 }, { pc_d05, 6 }, { pc_d06, 3 }, { pc_d07, 5 },
+    { pc_d08, 5 }, { pc_d09, 3 }, { pc_d10, 3 }, { pc_d11, 7 },
+    { pc_d12, 4 }, { pc_d13, 7 }, { pc_d14, 4 }, { pc_d15, 4 },
+    { pc_d16, 4 }, { pc_d17, 4 }, { pc_d18, 8 }, { pc_d19, 5 },
+    { pc_d20, 6 }, { pc_d21, 6 }, { pc_d22, 6 }, { pc_d23, 5 },
+    { pc_d24, 6 }, { pc_d25, 9 }, { pc_d26, 4 }, { pc_d27, 3 },
+    { pc_d28, 3 }, { pc_d29, 4 }, { pc_d30, 4 }, { pc_d31, 5 },
+};
+
+/* Find best savings among dict, LZ, and repeat-offset at a position.
+ * Returns net savings (bytes saved vs literal). Fills out_* params. */
+static int pc_find_best(
+    const uint8_t *in, uint16_t in_len, uint16_t pos,
+    int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE],
+    uint16_t last_offset,
+    uint16_t *out_len, uint16_t *out_off, uint16_t *out_dict,
+    int *out_is_repeat
+) {
+    int best_savings = 0;
+    uint16_t remaining = (uint16_t)(in_len - pos);
+    int d;
+
+    *out_len = 0;
+    *out_off = 0;
+    *out_dict = UINT16_MAX;
+    *out_is_repeat = 0;
+
+    /* dictionary match (1-byte token → savings = len - 1) */
+    {
+        uint8_t first_byte = in[pos];
+        for (d = 0; d < (int)PC_DICT_COUNT; ++d) {
+            uint8_t dlen = pc_static_dict[d].len;
+            int s;
+            if (dlen > remaining) continue;
+            if ((int)dlen - 1 <= best_savings) continue;
+            if (pc_static_dict[d].data[0] != first_byte) continue;
+            if (memcmp(in + pos, pc_static_dict[d].data, dlen) != 0) continue;
+            s = (int)dlen - 1;
+            best_savings = s;
+            *out_dict = (uint16_t)d;
+            *out_len = dlen;
+            *out_off = 0;
+            *out_is_repeat = 0;
+        }
+    }
+
+    /* LZ match — needs 3 bytes for hash */
+    if (remaining >= 3u) {
+        uint16_t hash = pc_hash3(in + pos);
+        uint16_t max_len = remaining > PC_MATCH_MAX ? PC_MATCH_MAX : remaining;
+
+        for (d = 0; d < (int)PC_HASH_CHAIN_DEPTH; ++d) {
+            int16_t prev = head[d][hash];
+            uint16_t prev_pos, off, len;
+            int is_rep, s;
+
+            if (prev < 0) continue;
+            prev_pos = (uint16_t)prev;
+            off = (uint16_t)(pos - prev_pos);
+            if (off == 0u || off > PC_OFFSET_MAX) continue;
+
+            len = pc_match_len(in + prev_pos, in + pos, max_len);
+            if (len < PC_MATCH_MIN) continue;
+
+            is_rep = (off == last_offset && last_offset != 0) ? 1 : 0;
+            s = is_rep ? (int)len - 1 : (int)len - 2;
+
+            if (s > best_savings || (s == best_savings && len > *out_len)) {
+                best_savings = s;
+                *out_len = len;
+                *out_off = off;
+                *out_dict = UINT16_MAX;
+                *out_is_repeat = is_rep;
+            }
+        }
+    }
+
+    return best_savings;
+}
+
 static uint16_t pc_compress_block(
     const uint8_t *in,
     uint16_t in_len,
@@ -64,114 +184,76 @@ static uint16_t pc_compress_block(
     uint16_t i;
     uint16_t anchor = 0;
     uint16_t op = 0;
+    uint16_t last_offset = 0;
     memset(head, 0xFF, sizeof(head));
 
     i = 0;
-    while ((uint16_t)(i + PC_MATCH_MIN) <= in_len) {
-        uint16_t match_len = 0;
-        uint16_t match_off = 0;
-        uint16_t hash = pc_hash3(in + i);
-        uint16_t max_len = (uint16_t)(in_len - i);
-        int d;
+    while (i < in_len) {
+        uint16_t best_len = 0, best_off = 0, best_dict = UINT16_MAX;
+        int best_is_repeat = 0;
+        int best_savings;
 
-        if (max_len > PC_MATCH_MAX) {
-            max_len = PC_MATCH_MAX;
+        if ((uint16_t)(in_len - i) < PC_MATCH_MIN) {
+            break; /* trailing bytes handled after loop */
         }
 
-        if (max_len >= PC_MATCH_MIN) {
-            for (d = 0; d < (int)PC_HASH_CHAIN_DEPTH; ++d) {
-                int16_t prev = head[d][hash];
-                uint16_t off;
-                uint16_t prev_pos;
-                uint16_t len;
+        best_savings = pc_find_best(
+            in, in_len, i, head, last_offset,
+            &best_len, &best_off, &best_dict, &best_is_repeat);
 
-                if (prev < 0) {
-                    continue;
-                }
-
-                prev_pos = (uint16_t)prev;
-                off = (uint16_t)(i - prev_pos);
-                if (off == 0u || off > PC_OFFSET_MAX) {
-                    continue;
-                }
-
-                len = pc_match_len(in + prev_pos, in + i, max_len);
-                if (len > match_len) {
-                    match_len = len;
-                    match_off = off;
-                    if (match_len == max_len) {
-                        break;
-                    }
-                }
-            }
+        /* insert current position into hash table (needs 3 bytes) */
+        if ((uint16_t)(in_len - i) >= 3u) {
+            pc_head_insert(head, pc_hash3(in + i), (int16_t)i);
         }
 
-        pc_head_insert(head, hash, (int16_t)i);
-
-        if (match_len >= PC_MATCH_MIN && (uint16_t)(i + PC_MATCH_MIN + 1u) <= in_len) {
-            uint16_t next_pos = (uint16_t)(i + 1u);
-            uint16_t next_max = (uint16_t)(in_len - next_pos);
-            uint16_t next_len = 0;
-            if (next_max > PC_MATCH_MAX) {
-                next_max = PC_MATCH_MAX;
-            }
-            if (next_max >= PC_MATCH_MIN) {
-                uint16_t next_hash = pc_hash3(in + next_pos);
-                for (d = 0; d < (int)PC_HASH_CHAIN_DEPTH; ++d) {
-                    int16_t next_prev = head[d][next_hash];
-                    uint16_t prev_pos;
-                    uint16_t next_off;
-                    uint16_t len;
-
-                    if (next_prev < 0) {
-                        continue;
-                    }
-
-                    prev_pos = (uint16_t)next_prev;
-                    next_off = (uint16_t)(next_pos - prev_pos);
-                    if (next_off == 0u || next_off > PC_OFFSET_MAX) {
-                        continue;
-                    }
-
-                    len = pc_match_len(in + prev_pos, in + next_pos, next_max);
-                    if (len > next_len) {
-                        next_len = len;
-                        if (next_len == next_max) {
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if (next_len >= (uint16_t)(match_len + 1u)) {
+        /* lazy matching: if next position is better, skip current */
+        if (best_savings > 0 && (uint16_t)(i + 1u) < in_len
+            && (uint16_t)(in_len - i - 1u) >= PC_MATCH_MIN) {
+            uint16_t n_len, n_off, n_dict;
+            int n_rep;
+            int n_sav = pc_find_best(
+                in, in_len, (uint16_t)(i + 1u), head, last_offset,
+                &n_len, &n_off, &n_dict, &n_rep);
+            if (n_sav > best_savings) {
                 ++i;
                 continue;
             }
         }
 
-        if (match_len >= PC_MATCH_MIN) {
+        /* emit */
+        if (best_savings > 0) {
             uint16_t lit_len = (uint16_t)(i - anchor);
             uint16_t k;
 
             if (!pc_emit_literals(in + anchor, lit_len, out, out_cap, &op)) {
                 return UINT16_MAX;
             }
-            if ((uint32_t)op + 2u > out_cap) {
-                return UINT16_MAX;
+
+            if (best_dict != UINT16_MAX) {
+                /* dictionary token: 0xE0 | index */
+                if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
+                out[op++] = (uint8_t)(0xE0u | (best_dict & 0x1Fu));
+            } else if (best_is_repeat) {
+                /* repeat-offset token: 0xC0 | (len - MIN) */
+                if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
+                out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x1Fu));
+            } else {
+                /* new-offset LZ: 0x80 | (len-MIN)<<1 | offset_hi, offset_lo */
+                if ((uint32_t)op + 2u > out_cap) return UINT16_MAX;
+                out[op++] = (uint8_t)(
+                    0x80u
+                    | (((best_len - PC_MATCH_MIN) & 0x1Fu) << 1u)
+                    | ((best_off >> 8u) & 0x01u));
+                out[op++] = (uint8_t)(best_off & 0xFFu);
+                last_offset = best_off;
             }
 
-            out[op++] = (uint8_t)(
-                0x80u
-                | ((uint8_t)(match_len - PC_MATCH_MIN) << 1u)
-                | ((match_off >> 8u) & 0x01u)
-            );
-            out[op++] = (uint8_t)(match_off & 0xFFu);
-
-            for (k = 1; k < match_len && (uint16_t)(i + k + 2u) < in_len; ++k) {
+            /* update hash for positions we're skipping */
+            for (k = 1; k < best_len && (uint16_t)(i + k + 2u) < in_len; ++k) {
                 pc_head_insert(head, pc_hash3(in + i + k), (int16_t)(i + k));
             }
 
-            i = (uint16_t)(i + match_len);
+            i = (uint16_t)(i + best_len);
             anchor = i;
         } else {
             ++i;
@@ -195,9 +277,12 @@ static pc_result pc_decompress_block(
 ) {
     uint16_t ip = 0;
     uint16_t op = 0;
+    uint16_t last_offset = 0;
 
     while (ip < in_len) {
         uint8_t token = in[ip++];
+
+        /* 0x00..0x7F: literal run */
         if ((token & 0x80u) == 0u) {
             uint16_t lit_len = (uint16_t)((token & 0x7Fu) + 1u);
             if ((uint32_t)ip + lit_len > in_len || (uint32_t)op + lit_len > out_len) {
@@ -209,26 +294,46 @@ static pc_result pc_decompress_block(
             continue;
         }
 
-        if (ip >= in_len) {
-            return PC_ERR_CORRUPT;
+        /* 0xE0..0xFF: dictionary reference */
+        if ((token & 0xE0u) == 0xE0u) {
+            uint16_t idx = (uint16_t)(token & 0x1Fu);
+            uint8_t dlen;
+            if (idx >= PC_DICT_COUNT) return PC_ERR_CORRUPT;
+            dlen = pc_static_dict[idx].len;
+            if ((uint32_t)op + dlen > out_len) return PC_ERR_CORRUPT;
+            memcpy(out + op, pc_static_dict[idx].data, dlen);
+            op = (uint16_t)(op + dlen);
+            continue;
         }
-        {
-            uint16_t match_len = (uint16_t)(((token >> 1u) & ((1u << PC_MATCH_CODE_BITS) - 1u)) + PC_MATCH_MIN);
-            uint16_t off = (uint16_t)(((uint16_t)(token & 0x01u) << 8u) | (uint16_t)in[ip++]);
-            uint16_t src;
-            uint16_t j;
 
-            if (off == 0u || off > op) {
-                return PC_ERR_CORRUPT;
+        /* 0xC0..0xDF: repeat-offset match */
+        if ((token & 0xE0u) == 0xC0u) {
+            uint16_t match_len = (uint16_t)((token & 0x1Fu) + PC_MATCH_MIN);
+            uint16_t src, j;
+            if (last_offset == 0u || last_offset > op) return PC_ERR_CORRUPT;
+            if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
+            src = (uint16_t)(op - last_offset);
+            for (j = 0; j < match_len; ++j) {
+                out[op++] = out[src + j];
             }
-            if ((uint32_t)op + match_len > out_len) {
-                return PC_ERR_CORRUPT;
-            }
+            continue;
+        }
+
+        /* 0x80..0xBF: LZ match with explicit offset */
+        if (ip >= in_len) return PC_ERR_CORRUPT;
+        {
+            uint16_t match_len = (uint16_t)(((token >> 1u) & 0x1Fu) + PC_MATCH_MIN);
+            uint16_t off = (uint16_t)(((uint16_t)(token & 0x01u) << 8u) | (uint16_t)in[ip++]);
+            uint16_t src, j;
+
+            if (off == 0u || off > op) return PC_ERR_CORRUPT;
+            if ((uint32_t)op + match_len > out_len) return PC_ERR_CORRUPT;
 
             src = (uint16_t)(op - off);
             for (j = 0; j < match_len; ++j) {
                 out[op++] = out[src + j];
             }
+            last_offset = off;
         }
     }
 
