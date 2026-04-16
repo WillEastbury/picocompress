@@ -261,11 +261,27 @@ static uint16_t pc_compress_block(
     uint16_t last_offset = 0;
     memset(head, 0xFF, sizeof(head));
 
-    /* seed hash table from history so cross-block matches are found */
+    /* seed hash table from history — use normal insert so chain works */
     if (hist_len >= 3u) {
         uint16_t p;
         for (p = 0; (uint16_t)(p + 2u) < hist_len; ++p) {
             pc_head_insert(head, pc_hash3(vbuf + p), (int16_t)p);
+        }
+        /* Re-inject positions near the block boundary into slot 0.
+         * These are the highest-value history matches ("just out of block")
+         * and would otherwise be buried by earlier history inserts. */
+        {
+            uint16_t tail_start = hist_len > 64u ? (uint16_t)(hist_len - 64u) : 0u;
+            for (p = tail_start; (uint16_t)(p + 2u) < hist_len; ++p) {
+                uint16_t h = pc_hash3(vbuf + p);
+                /* only re-inject if this position isn't already in slot 0 */
+                if (head[0][h] != (int16_t)p) {
+                    int16_t save = head[PC_HASH_CHAIN_DEPTH - 1u][h];
+                    pc_head_insert(head, h, (int16_t)p);
+                    /* restore the deepest slot so we don't lose an older entry */
+                    head[PC_HASH_CHAIN_DEPTH - 1u][h] = save;
+                }
+            }
         }
     }
 
