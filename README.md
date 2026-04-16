@@ -10,8 +10,11 @@ Tiny dependency-free C compression library for embedded targets.
 - **Cross-block history**: 128-byte sliding window across blocks for improved multi-block ratio
 - **64-entry static dictionary**: common JSON, CSV, HTTP, English, and binary patterns (ROM-resident)
 - **Repeat-offset tokens**: 1-byte match for recurring struct strides
+- **Hardware acceleration** via conditional compilation (NEON, MVE, RISC-V V, CRC32, CLZ/CTZ)
+- **Encoder instrumentation** counters (`-DPC_ENABLE_STATS`)
 - **CRC32 roundtrip verification** in all test paths
 - Tuned for short payloads (default block size: 508 bytes)
+- Cortex-M0 safe (no unaligned loads, pure portable fallback)
 
 ## Token format (v3)
 
@@ -34,6 +37,24 @@ cl /nologo /O2 /W4 /TC picocompress.c test_picocompress.c /Fe:test_picocompress.
 cl /nologo /O2 /W4 /TC picocompress.c test_picocompress_additional.c /Fe:test_picocompress_additional.exe
 .\test_picocompress_additional.exe
 ```
+
+## Build and test (GCC / Clang)
+
+```sh
+cd src
+gcc -O2 -Wall -Wextra -std=c99 picocompress.c test_picocompress.c -o test_picocompress
+./test_picocompress
+
+gcc -O2 -Wall -Wextra -std=c99 picocompress.c test_picocompress_additional.c -o test_picocompress_additional
+./test_picocompress_additional
+
+# With encoder stats
+gcc -O2 -Wall -Wextra -std=c99 -DPC_ENABLE_STATS picocompress.c test_picocompress_stats.c -o test_stats
+./test_stats
+```
+
+Hardware acceleration is auto-detected. Override with `-DPC_NO_*` flags
+(see [`docs/PLATFORM_SUPPORT.md`](docs/PLATFORM_SUPPORT.md)).
 
 Both suites verify compress→decompress roundtrips with **CRC32 checksums**.
 
@@ -103,3 +124,9 @@ cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src
 
 See [`docs/ALGORITHM.md`](docs/ALGORITHM.md) for a detailed description of the compression
 pipeline, token format, cross-block history, static dictionary, and performance tricks.
+
+## Platform support & hardware acceleration
+
+See [`docs/PLATFORM_SUPPORT.md`](docs/PLATFORM_SUPPORT.md) for hardware acceleration paths
+(NEON, MVE, RISC-V V, CRC32, CLZ/CTZ), Cortex-M0 minimum profile, encoder
+instrumentation counters, and override flags.

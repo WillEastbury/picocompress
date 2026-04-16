@@ -80,11 +80,31 @@ typedef enum pc_result {
 
 typedef int (*pc_write_fn)(void *user, const uint8_t *data, size_t len);
 
+/* ---- Encoder instrumentation (compile with -DPC_ENABLE_STATS) -------- */
+#ifdef PC_ENABLE_STATS
+typedef struct pc_encoder_stats {
+    uint32_t bytes_in;
+    uint32_t bytes_out;
+    uint32_t blocks;
+    uint32_t literal_bytes;
+    uint32_t match_count;
+    uint32_t repeat_hits;
+    uint32_t dict_hits;
+    uint32_t lz_short_hits;
+    uint32_t lz_long_hits;
+    uint32_t good_enough_hits;
+    uint32_t lazy_improvements;
+} pc_encoder_stats;
+#endif
+
 typedef struct pc_encoder {
     uint8_t block[PC_BLOCK_SIZE];
     uint16_t block_len;
     uint8_t history[PC_HISTORY_SIZE];
     uint16_t history_len;
+#ifdef PC_ENABLE_STATS
+    pc_encoder_stats stats;
+#endif
 } pc_encoder;
 
 typedef struct pc_decoder {
@@ -108,6 +128,10 @@ pc_result pc_encoder_sink(
     void *user
 );
 pc_result pc_encoder_finish(pc_encoder *enc, pc_write_fn write_fn, void *user);
+
+#ifdef PC_ENABLE_STATS
+void pc_encoder_get_stats(const pc_encoder *enc, pc_encoder_stats *out);
+#endif
 
 void pc_decoder_init(pc_decoder *dec);
 pc_result pc_decoder_sink(

@@ -2,16 +2,205 @@
 
 #include <string.h>
 
+/* ================================================================
+ * Platform feature detection (private to this translation unit).
+ *
+ * Capability macros (auto-detected, user-overridable with PC_NO_*):
+ *   PC_HAS_HW_CRC32     — ARM CRC32 intrinsic (__crc32b)
+ *   PC_HAS_BITSCAN       — CLZ/CTZ bit-scan (word-at-a-time match)
+ *   PC_CAN_UNALIGNED     — safe unaligned word loads
+ *   PC_HAS_NEON          — ARM NEON 64/128-bit SIMD
+ *   PC_HAS_MVE           — ARM Helium (M-Profile Vector Extension)
+ *   PC_HAS_RVV           — RISC-V Vector extension
+ *
+ * Disable any path with -DPC_NO_HW_CRC32, -DPC_NO_BITSCAN, etc.
+ * ================================================================ */
+
+/* --- ARM CRC32 (Cortex-M33+, A-class with +crc) --- */
+#if !defined(PC_NO_HW_CRC32) && defined(__ARM_FEATURE_CRC32)
+#  include <arm_acle.h>
+#  define PC_HAS_HW_CRC32 1
+#else
+#  define PC_HAS_HW_CRC32 0
+#endif
+
+/* --- NEON (A-class, some R-class) --- */
+#if !defined(PC_NO_NEON) && defined(__ARM_NEON)
+#  include <arm_neon.h>
+#  define PC_HAS_NEON 1
+#else
+#  define PC_HAS_NEON 0
+#endif
+
+/* --- Helium / MVE (Cortex-M55+) --- */
+#if !defined(PC_NO_MVE) && defined(__ARM_FEATURE_MVE) && (__ARM_FEATURE_MVE >= 1)
+#  include <arm_mve.h>
+#  define PC_HAS_MVE 1
+#else
+#  define PC_HAS_MVE 0
+#endif
+
+/* --- RISC-V Vector --- */
+#if !defined(PC_NO_RVV) && defined(__riscv_vector)
+#  include <riscv_vector.h>
+#  define PC_HAS_RVV 1
+#else
+#  define PC_HAS_RVV 0
+#endif
+
+/* --- Bit-scan (CLZ/CTZ) for word-at-a-time matching --- */
+#if !defined(PC_NO_BITSCAN)
+#  if defined(__GNUC__) || defined(__clang__)
+#    define PC_HAS_BITSCAN 1
+#  elif defined(_MSC_VER)
+#    include <intrin.h>
+#    define PC_HAS_BITSCAN 1
+#  else
+#    define PC_HAS_BITSCAN 0
+#  endif
+#else
+#  define PC_HAS_BITSCAN 0
+#endif
+
+/* --- Unaligned word loads (safe on M3+, A-class, x86; NOT on M0) --- */
+#if !defined(PC_NO_UNALIGNED)
+#  if defined(__ARM_ARCH) && (__ARM_ARCH >= 7)
+#    define PC_CAN_UNALIGNED 1
+#  elif defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86)
+#    define PC_CAN_UNALIGNED 1
+#  elif defined(__aarch64__) || defined(_M_ARM64)
+#    define PC_CAN_UNALIGNED 1
+#  else
+#    define PC_CAN_UNALIGNED 0
+#  endif
+#else
+#  define PC_CAN_UNALIGNED 0
+#endif
+
 #define PC_HASH_SIZE (1u << PC_HASH_BITS)
 #define PC_INVALID_POS (-1)
 #define PC_GOOD_MATCH 8u
 #define PC_REPEAT_CACHE_SIZE 3u
 
+/* ---- Hash function --------------------------------------------------- */
+
+#if PC_HAS_HW_CRC32
+/* Hardware CRC32 hash — 1-cycle on M33+, excellent distribution. */
+static uint16_t pc_hash3(const uint8_t *p) {
+    uint32_t h = __crc32b(__crc32b(__crc32b(0u, p[0]), p[1]), p[2]);
+    return (uint16_t)(h & (PC_HASH_SIZE - 1u));
+}
+#else
+/* Portable multiply hash — good distribution, 3 multiplies. */
 static uint16_t pc_hash3(const uint8_t *p) {
     uint32_t v = ((uint32_t)p[0] * 251u) + ((uint32_t)p[1] * 11u) + ((uint32_t)p[2] * 3u);
     return (uint16_t)(v & (PC_HASH_SIZE - 1u));
 }
+#endif
 
+/* ---- Match length comparison ----------------------------------------- */
+
+/* Helper: count first-difference byte position in a 32-bit XOR word.
+ * Uses CTZ on little-endian, CLZ on big-endian. Never called with xor==0.
+ * Only used by the word-at-a-time match path (when no SIMD is available). */
+#if PC_HAS_BITSCAN && PC_CAN_UNALIGNED && !PC_HAS_NEON && !PC_HAS_MVE && !PC_HAS_RVV
+static uint16_t pc_first_diff_bytes(uint32_t xor_val) {
+#  if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
+#    if defined(__GNUC__) || defined(__clang__)
+    return (uint16_t)((unsigned)__builtin_clz(xor_val) >> 3u);
+#    elif defined(_MSC_VER)
+    unsigned long idx;
+    _BitScanReverse(&idx, xor_val);
+    return (uint16_t)((31u - idx) >> 3u);
+#    endif
+#  else /* little-endian (default for ARM, x86, RISC-V) */
+#    if defined(__GNUC__) || defined(__clang__)
+    return (uint16_t)((unsigned)__builtin_ctz(xor_val) >> 3u);
+#    elif defined(_MSC_VER)
+    unsigned long idx;
+    _BitScanForward(&idx, xor_val);
+    return (uint16_t)(idx >> 3u);
+#    endif
+#  endif
+}
+#endif /* PC_HAS_BITSCAN && PC_CAN_UNALIGNED && !SIMD */
+
+#if PC_HAS_NEON
+/* NEON: compare up to 8 bytes at a time. */
+static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit) {
+    uint16_t m = 0;
+    /* 8-byte NEON loop — only if enough bytes remain */
+    while ((uint16_t)(limit - m) >= 8u) {
+        uint8x8_t va = vld1_u8(a + m);
+        uint8x8_t vb = vld1_u8(b + m);
+        uint8x8_t cmp = vceq_u8(va, vb);
+        uint64_t mask;
+        vst1_u8((uint8_t *)&mask, cmp);
+        if (mask != 0xFFFFFFFFFFFFFFFFULL) {
+            /* find first zero byte in comparison result */
+            uint16_t k;
+            for (k = 0; k < 8u; ++k) {
+                if (a[m + k] != b[m + k]) return (uint16_t)(m + k);
+            }
+        }
+        m = (uint16_t)(m + 8u);
+    }
+    /* scalar tail */
+    while (m < limit && a[m] == b[m]) ++m;
+    return m;
+}
+#elif PC_HAS_MVE
+/* Helium/MVE: compare up to 16 bytes at a time. */
+static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit) {
+    uint16_t m = 0;
+    while ((uint16_t)(limit - m) >= 16u) {
+        uint8x16_t va = vld1q_u8(a + m);
+        uint8x16_t vb = vld1q_u8(b + m);
+        mve_pred16_t pred = vcmpeqq_u8(va, vb);
+        if (pred != 0xFFFFu) {
+            /* find first non-matching byte */
+            uint16_t k;
+            for (k = 0; k < 16u; ++k) {
+                if (a[m + k] != b[m + k]) return (uint16_t)(m + k);
+            }
+        }
+        m = (uint16_t)(m + 16u);
+    }
+    while (m < limit && a[m] == b[m]) ++m;
+    return m;
+}
+#elif PC_HAS_RVV
+/* RISC-V Vector: compare vl bytes per iteration. */
+static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit) {
+    uint16_t m = 0;
+    while (m < limit) {
+        size_t vl = __riscv_vsetvl_e8m1((size_t)(limit - m));
+        vuint8m1_t va = __riscv_vle8_v_u8m1(a + m, vl);
+        vuint8m1_t vb = __riscv_vle8_v_u8m1(b + m, vl);
+        vbool8_t neq = __riscv_vmsne_vv_u8m1_b8(va, vb, vl);
+        long first = __riscv_vfirst_m_b8(neq, vl);
+        if (first >= 0) return (uint16_t)(m + (uint16_t)first);
+        m = (uint16_t)(m + (uint16_t)vl);
+    }
+    return m;
+}
+#elif PC_HAS_BITSCAN && PC_CAN_UNALIGNED
+/* Word-at-a-time with CLZ/CTZ — 4 bytes per compare (M3+, x86, AArch64). */
+static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit) {
+    uint16_t m = 0;
+    while ((uint16_t)(limit - m) >= 4u) {
+        uint32_t wa, wb, x;
+        memcpy(&wa, a + m, 4);
+        memcpy(&wb, b + m, 4);
+        x = wa ^ wb;
+        if (x != 0u) return (uint16_t)(m + pc_first_diff_bytes(x));
+        m = (uint16_t)(m + 4u);
+    }
+    while (m < limit && a[m] == b[m]) ++m;
+    return m;
+}
+#else
+/* Portable byte-at-a-time (M0, unknown targets). */
 static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit) {
     uint16_t m = 0;
     while (m < limit && a[m] == b[m]) {
@@ -19,6 +208,16 @@ static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit)
     }
     return m;
 }
+#endif
+
+/* ---- Stats accumulation macros (zero-overhead when disabled) ---------- */
+#ifdef PC_ENABLE_STATS
+#  define PC_STAT_INC(st, field)       do { if (st) (st)->field++; } while(0)
+#  define PC_STAT_ADD(st, field, n)    do { if (st) (st)->field += (uint32_t)(n); } while(0)
+#else
+#  define PC_STAT_INC(st, field)       ((void)0)
+#  define PC_STAT_ADD(st, field, n)    ((void)0)
+#endif
 
 static int pc_emit_literals(
     const uint8_t *src,
@@ -302,6 +501,9 @@ static uint16_t pc_compress_block(
     uint16_t block_len,
     uint8_t *out,
     uint16_t out_cap
+#ifdef PC_ENABLE_STATS
+    , pc_encoder_stats *stats
+#endif
 ) {
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE];
     uint16_t rep_offsets[PC_REPEAT_CACHE_SIZE] = {0, 0, 0};
@@ -385,6 +587,7 @@ retry_pos:
                             if ((uint16_t)(vbuf_len - sp) >= 3u)
                                 pc_head_insert(head, pc_hash3(vbuf + sp), (int16_t)sp);
                         }
+                        PC_STAT_INC(stats, lazy_improvements);
                         vpos = npos;
                         goto retry_pos;
                     }
@@ -397,6 +600,11 @@ retry_pos:
             uint16_t lit_len = (uint16_t)(vpos - anchor);
             uint16_t k;
 
+            PC_STAT_ADD(stats, literal_bytes, lit_len);
+            if (best_len >= PC_GOOD_MATCH) {
+                PC_STAT_INC(stats, good_enough_hits);
+            }
+
             if (!pc_emit_literals(vbuf + anchor, lit_len, out, out_cap, &op)) {
                 return UINT16_MAX;
             }
@@ -404,9 +612,13 @@ retry_pos:
             if (best_dict != UINT16_MAX) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(0x40u | (best_dict & 0x3Fu));
+                PC_STAT_INC(stats, dict_hits);
+                PC_STAT_INC(stats, match_count);
             } else if (best_is_repeat) {
                 if ((uint32_t)op + 1u > out_cap) return UINT16_MAX;
                 out[op++] = (uint8_t)(0xC0u | ((best_len - PC_MATCH_MIN) & 0x1Fu));
+                PC_STAT_INC(stats, repeat_hits);
+                PC_STAT_INC(stats, match_count);
             } else if (best_off <= PC_OFFSET_SHORT_MAX && best_len <= PC_MATCH_MAX) {
                 /* short-offset LZ: 2-byte token */
                 if ((uint32_t)op + 2u > out_cap) return UINT16_MAX;
@@ -415,6 +627,8 @@ retry_pos:
                     | (((best_len - PC_MATCH_MIN) & 0x1Fu) << 1u)
                     | ((best_off >> 8u) & 0x01u));
                 out[op++] = (uint8_t)(best_off & 0xFFu);
+                PC_STAT_INC(stats, lz_short_hits);
+                PC_STAT_INC(stats, match_count);
             } else {
                 /* long-offset LZ: 3-byte token (0xF0..0xFF) */
                 uint16_t elen = best_len > PC_LONG_MATCH_MAX ? PC_LONG_MATCH_MAX : best_len;
@@ -423,6 +637,8 @@ retry_pos:
                 out[op++] = (uint8_t)((best_off >> 8u) & 0xFFu);
                 out[op++] = (uint8_t)(best_off & 0xFFu);
                 best_len = elen;
+                PC_STAT_INC(stats, lz_long_hits);
+                PC_STAT_INC(stats, match_count);
             }
 
             /* update repeat-offset cache (#1) */
@@ -444,6 +660,7 @@ retry_pos:
     }
 
     if (anchor < vbuf_len) {
+        PC_STAT_ADD(stats, literal_bytes, (uint16_t)(vbuf_len - anchor));
         if (!pc_emit_literals(vbuf + anchor, (uint16_t)(vbuf_len - anchor), out, out_cap, &op)) {
             return UINT16_MAX;
         }
@@ -624,10 +841,17 @@ static pc_result pc_encoder_flush(pc_encoder *enc, pc_write_fn write_fn, void *u
     memcpy(combined, enc->history, hist_len);
     memcpy(combined + hist_len, enc->block, raw_len);
 
-    comp_len = pc_compress_block(combined, hist_len, raw_len, tmp, (uint16_t)sizeof(tmp));
+    comp_len = pc_compress_block(combined, hist_len, raw_len, tmp, (uint16_t)sizeof(tmp)
+#ifdef PC_ENABLE_STATS
+        , &enc->stats
+#endif
+    );
 
     /* update history for next block */
     pc_update_history(enc->history, &enc->history_len, enc->block, raw_len);
+
+    PC_STAT_ADD(&enc->stats, bytes_in, raw_len);
+    PC_STAT_INC(&enc->stats, blocks);
 
     header[0] = (uint8_t)(raw_len & 0xFFu);
     header[1] = (uint8_t)(raw_len >> 8u);
@@ -643,6 +867,7 @@ static pc_result pc_encoder_flush(pc_encoder *enc, pc_write_fn write_fn, void *u
         if (rc != PC_OK) {
             return rc;
         }
+        PC_STAT_ADD(&enc->stats, bytes_out, 4u + raw_len);
     } else {
         header[2] = (uint8_t)(comp_len & 0xFFu);
         header[3] = (uint8_t)(comp_len >> 8u);
@@ -654,6 +879,7 @@ static pc_result pc_encoder_flush(pc_encoder *enc, pc_write_fn write_fn, void *u
         if (rc != PC_OK) {
             return rc;
         }
+        PC_STAT_ADD(&enc->stats, bytes_out, 4u + comp_len);
     }
 
     enc->block_len = 0u;
@@ -664,6 +890,9 @@ void pc_encoder_init(pc_encoder *enc) {
     if (enc != NULL) {
         enc->block_len = 0u;
         enc->history_len = 0u;
+#ifdef PC_ENABLE_STATS
+        memset(&enc->stats, 0, sizeof(enc->stats));
+#endif
     }
 }
 
@@ -707,6 +936,14 @@ pc_result pc_encoder_finish(pc_encoder *enc, pc_write_fn write_fn, void *user) {
     }
     return pc_encoder_flush(enc, write_fn, user);
 }
+
+#ifdef PC_ENABLE_STATS
+void pc_encoder_get_stats(const pc_encoder *enc, pc_encoder_stats *out) {
+    if (enc != NULL && out != NULL) {
+        *out = enc->stats;
+    }
+}
+#endif
 
 void pc_decoder_init(pc_decoder *dec) {
     if (dec != NULL) {
