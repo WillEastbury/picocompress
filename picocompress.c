@@ -88,7 +88,7 @@ static const uint8_t pc_d09[] = "000";
 static const uint8_t pc_d10[] = "ORD";
 static const uint8_t pc_d11[] = "the";
 static const uint8_t pc_d12[] = "ing";
-static const uint8_t pc_d13[] = { 0x00, 0x00 };           /* \0\0  binary padding */
+static const uint8_t pc_d13[] = "00";                      /* ASCII "00" */
 static const uint8_t pc_d14[] = { '"', ':', '{' };         /* ":{  nested obj  */
 static const uint8_t pc_d15[] = { '"', ':', '[' };         /* ":[  nested arr  */
 /* 16-23: more three-byte */
