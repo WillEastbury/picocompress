@@ -67,21 +67,29 @@ Any encoder config produces streams that **any decoder build can decompress**.
 Override at compile time with `-D`:
 
 ```powershell
-# Balanced default (512 buckets × 2 deep, 504B history)
+# Balanced default (~5K encode)
 cl /O2 /TC src/picocompress.c ...
 
-# Aggressive ratio (256 buckets × 4 deep — ~10% better, ~15% slower)
+# Aggressive ratio (~5K encode — deeper chain, same RAM)
 cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=4u src/picocompress.c ...
 
-# Minimal RAM (256 buckets × 1 deep, 128B history)
+# Super-aggressive 10K encode
+cl /O2 /TC /DPC_HASH_BITS=9u /DPC_HASH_CHAIN_DEPTH=7u src/picocompress.c ...
+
+# Ultra 15K encode
+cl /O2 /TC /DPC_HASH_BITS=10u /DPC_HASH_CHAIN_DEPTH=6u src/picocompress.c ...
+
+# Minimal RAM (~2K encode)
 cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src/picocompress.c ...
 ```
 
-| Config | Enc RAM | Dec RAM | Ratio | Speed |
-|---|---:|---:|---|---|
-| Default (512×2, h504) | ~4.6 KB | ~1.5 KB | Balanced | Balanced |
-| Aggressive (256×4, h504) | ~4.6 KB | ~1.5 KB | Best | ~15% slower |
-| Minimal (256×1, h128) | ~1.8 KB | ~0.7 KB | Lower | Fastest |
+| Profile | Flags | Enc RAM | Dec RAM | Ratio | Speed |
+|---|---|---:|---:|---|---|
+| Minimal | `b8 d1 h128` | ~1.8 KB | ~0.7 KB | Baseline | Fastest |
+| Balanced | (default) | ~4.6 KB | ~1.5 KB | Good | Good |
+| Aggressive | `b8 d4` | ~4.6 KB | ~1.5 KB | +10% | −15% |
+| Super 10K | `b9 d7` | ~9.7 KB | ~1.5 KB | +20% | −20% |
+| Ultra 15K | `b10 d6` | ~14.8 KB | ~1.5 KB | +22% | −25% |
 
 ## Algorithm
 
