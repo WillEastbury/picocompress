@@ -21,7 +21,8 @@ Tiny dependency-free C compression library for embedded targets.
 | `0x40..0x7F` | Dictionary ref | 1 | Emit predefined sequence (64 entries) |
 | `0x80..0xBF` | LZ match | 2 | 5-bit length + 9-bit offset |
 | `0xC0..0xDF` | Repeat-offset | 1 | Reuse last LZ offset |
-| `0xE0..0xFF` | Extended literal | 1 + N | Run of 65–96 raw bytes |
+| `0xE0..0xEF` | Extended literal | 1 + N | Run of 65–80 raw bytes |
+| `0xF0..0xFF` | Long-offset LZ | 3 | 4-bit length + 16-bit offset |
 
 ## Build and test (MSVC)
 
