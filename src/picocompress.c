@@ -126,22 +126,45 @@ static uint16_t pc_first_diff_bytes(uint32_t xor_val) {
 #endif /* PC_HAS_BITSCAN && PC_CAN_UNALIGNED && !SIMD */
 
 #if PC_HAS_NEON
-/* NEON: compare up to 8 bytes at a time. */
+/* NEON: compare 16 bytes at a time using 128-bit vectors.
+ * On mismatch, use CLZ on the inverted comparison mask to find
+ * the first differing byte without a scalar loop. */
 static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit) {
     uint16_t m = 0;
-    /* 8-byte NEON loop — only if enough bytes remain */
-    while ((uint16_t)(limit - m) >= 8u) {
+    /* 16-byte NEON loop */
+    while ((uint16_t)(limit - m) >= 16u) {
+        uint8x16_t va = vld1q_u8(a + m);
+        uint8x16_t vb = vld1q_u8(b + m);
+        uint8x16_t cmp = vceqq_u8(va, vb);
+        /* Narrow to 8-bit bitmask: shift each lane's MSB into a packed u64 pair */
+        uint8x16_t msb = vshrq_n_u8(cmp, 7);           /* 0x01 or 0x00 per lane */
+        uint64_t lo = vgetq_lane_u64(vreinterpretq_u64_u8(msb), 0);
+        uint64_t hi = vgetq_lane_u64(vreinterpretq_u64_u8(msb), 1);
+        if (lo != 0x0101010101010101ULL) {
+            /* mismatch in first 8 bytes — find which lane */
+            uint64_t diff = lo ^ 0x0101010101010101ULL;
+            uint16_t k = (uint16_t)(__builtin_ctzll(diff) >> 3u);
+            return (uint16_t)(m + k);
+        }
+        if (hi != 0x0101010101010101ULL) {
+            uint64_t diff = hi ^ 0x0101010101010101ULL;
+            uint16_t k = (uint16_t)(__builtin_ctzll(diff) >> 3u);
+            return (uint16_t)(m + 8u + k);
+        }
+        m = (uint16_t)(m + 16u);
+    }
+    /* 8-byte NEON tail */
+    if ((uint16_t)(limit - m) >= 8u) {
         uint8x8_t va = vld1_u8(a + m);
         uint8x8_t vb = vld1_u8(b + m);
         uint8x8_t cmp = vceq_u8(va, vb);
+        uint8x8_t msb = vshr_n_u8(cmp, 7);
         uint64_t mask;
-        vst1_u8((uint8_t *)&mask, cmp);
-        if (mask != 0xFFFFFFFFFFFFFFFFULL) {
-            /* find first zero byte in comparison result */
-            uint16_t k;
-            for (k = 0; k < 8u; ++k) {
-                if (a[m + k] != b[m + k]) return (uint16_t)(m + k);
-            }
+        vst1_u8((uint8_t *)&mask, msb);
+        if (mask != 0x0101010101010101ULL) {
+            uint64_t diff = mask ^ 0x0101010101010101ULL;
+            uint16_t k = (uint16_t)(__builtin_ctzll(diff) >> 3u);
+            return (uint16_t)(m + k);
         }
         m = (uint16_t)(m + 8u);
     }
@@ -150,7 +173,8 @@ static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit)
     return m;
 }
 #elif PC_HAS_MVE
-/* Helium/MVE: compare up to 16 bytes at a time. */
+/* Helium/MVE: compare 16 bytes at a time using predicated vector ops.
+ * On mismatch, use __builtin_ctz on the inverted predicate mask. */
 static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit) {
     uint16_t m = 0;
     while ((uint16_t)(limit - m) >= 16u) {
@@ -158,11 +182,10 @@ static uint16_t pc_match_len(const uint8_t *a, const uint8_t *b, uint16_t limit)
         uint8x16_t vb = vld1q_u8(b + m);
         mve_pred16_t pred = vcmpeqq_u8(va, vb);
         if (pred != 0xFFFFu) {
-            /* find first non-matching byte */
-            uint16_t k;
-            for (k = 0; k < 16u; ++k) {
-                if (a[m + k] != b[m + k]) return (uint16_t)(m + k);
-            }
+            /* pred has 1 bit per matching lane; invert to find first mismatch */
+            uint16_t mismatch = (uint16_t)(~pred & 0xFFFFu);
+            uint16_t k = (uint16_t)__builtin_ctz((unsigned)mismatch);
+            return (uint16_t)(m + k);
         }
         m = (uint16_t)(m + 16u);
     }

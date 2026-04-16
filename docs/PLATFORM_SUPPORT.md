@@ -53,13 +53,13 @@ the wire format is identical regardless of hash function.
 
 Priority cascade (first matching path wins):
 
-| Priority | Path | Guard | Bytes/iter |
-|---|---|---|---|
-| 1 | **NEON** | `PC_HAS_NEON` | 8 |
-| 2 | **Helium/MVE** | `PC_HAS_MVE` | 16 |
-| 3 | **RISC-V Vector** | `PC_HAS_RVV` | VLEN/8 |
-| 4 | **CLZ word-at-a-time** | `PC_HAS_BITSCAN && PC_CAN_UNALIGNED` | 4 |
-| 5 | **Portable byte loop** | fallback | 1 |
+| Priority | Path | Guard | Bytes/iter | Mismatch detection |
+|---|---|---|---|---|
+| 1 | **NEON** | `PC_HAS_NEON` | 16 | `__builtin_ctzll` on XOR mask |
+| 2 | **Helium/MVE** | `PC_HAS_MVE` | 16 | `__builtin_ctz` on inverted predicate |
+| 3 | **RISC-V Vector** | `PC_HAS_RVV` | VLEN/8 | `vfirst` on not-equal mask |
+| 4 | **CLZ word-at-a-time** | `PC_HAS_BITSCAN && PC_CAN_UNALIGNED` | 4 | `__builtin_ctz` on XOR word |
+| 5 | **Portable byte loop** | fallback | 1 | byte compare |
 
 All paths produce identical match lengths — only speed differs.
 
