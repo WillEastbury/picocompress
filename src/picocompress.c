@@ -169,11 +169,13 @@ static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
 
 /* Find best savings among repeat-cache, dict, and LZ at a virtual position.
  * Order: repeat-cache → dictionary → hash-chain LZ.
+ * good_match: threshold to stop probing early (adaptive per block region).
  * Returns net savings (bytes saved vs literal). Fills out_* params. */
 static int pc_find_best(
     const uint8_t *vbuf, uint16_t vbuf_len, uint16_t vpos,
     int16_t head[PC_HASH_CHAIN_DEPTH][PC_HASH_SIZE],
     const uint16_t rep_offsets[PC_REPEAT_CACHE_SIZE],
+    uint16_t good_match,
     uint16_t *out_len, uint16_t *out_off, uint16_t *out_dict,
     int *out_is_repeat
 ) {
@@ -216,7 +218,7 @@ static int pc_find_best(
                 *out_off = off;
                 *out_dict = UINT16_MAX;
                 *out_is_repeat = is_rep;
-                if (len >= PC_GOOD_MATCH) return best_savings; /* #10: good enough */
+                if (len >= good_match) return best_savings; /* #10: good enough */
             }
         }
     }
@@ -238,7 +240,7 @@ static int pc_find_best(
             *out_len = dlen;
             *out_off = 0;
             *out_is_repeat = 0;
-            if (dlen >= PC_GOOD_MATCH) return best_savings; /* #10 */
+            if (dlen >= good_match) return best_savings; /* #10 */
         }
     }
 
@@ -271,16 +273,19 @@ static int pc_find_best(
             token_cost = (off <= PC_OFFSET_SHORT_MAX) ? 2 : 3;
             s = (int)len - token_cost;
 
-            /* #5: offset scoring — prefer nearer matches at equal savings */
+            /* #5: offset scoring — prefer nearer matches at equal savings.
+             * #A: long-offset length bonus — when a far match is 2+ bytes
+             * longer, prefer it even though the token costs 1 more byte. */
             if (s > best_savings
                 || (s == best_savings && len > *out_len)
-                || (s == best_savings && len == *out_len && off < *out_off)) {
-                best_savings = s;
+                || (s == best_savings && len == *out_len && off < *out_off)
+                || (s == best_savings - 1 && len >= *out_len + 2u)) {
+                best_savings = (int)len - token_cost;
                 *out_len = len;
                 *out_off = off;
                 *out_dict = UINT16_MAX;
                 *out_is_repeat = 0;
-                if (len >= PC_GOOD_MATCH) return best_savings; /* #10 */
+                if (len >= good_match) return best_savings; /* #10 */
             }
         }
     }
@@ -340,7 +345,7 @@ retry_pos:
         }
 
         best_savings = pc_find_best(
-            vbuf, vbuf_len, vpos, head, rep_offsets,
+            vbuf, vbuf_len, vpos, head, rep_offsets, PC_GOOD_MATCH,
             &best_len, &best_off, &best_dict, &best_is_repeat);
 
         /* insert current position into hash table (needs 3 bytes) */
@@ -354,8 +359,7 @@ retry_pos:
         }
 
         /* #7: literal run extension — skip weak matches (savings <= 1) when
-         * we're mid-literal-run, because the match token overhead isn't
-         * worth breaking the run for a tiny gain. */
+         * mid-literal-run. The token overhead isn't worth breaking the run. */
         if (best_savings <= 1 && best_dict == UINT16_MAX && anchor < vpos) {
             best_savings = 0;
         }
@@ -372,7 +376,7 @@ retry_pos:
                     uint16_t n_len, n_off, n_dict;
                     int n_rep;
                     int n_sav = pc_find_best(
-                        vbuf, vbuf_len, npos, head, rep_offsets,
+                        vbuf, vbuf_len, npos, head, rep_offsets, PC_GOOD_MATCH,
                         &n_len, &n_off, &n_dict, &n_rep);
                     if (n_sav > best_savings) {
                         uint16_t s;
