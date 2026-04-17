@@ -6,7 +6,7 @@
  * Platform feature detection (private to this translation unit).
  *
  * Capability macros (auto-detected, user-overridable with PC_NO_*):
- *   PC_HAS_HW_CRC32     — ARM CRC32 intrinsic (__crc32b)
+ *   PC_HAS_HW_CRC32     — Hardware CRC32 (ARM __crc32b / x86 _mm_crc32_u8)
  *   PC_HAS_BITSCAN       — CLZ/CTZ bit-scan (word-at-a-time match)
  *   PC_CAN_UNALIGNED     — safe unaligned word loads
  *   PC_HAS_NEON          — ARM NEON 64/128-bit SIMD
@@ -16,10 +16,38 @@
  * Disable any path with -DPC_NO_HW_CRC32, -DPC_NO_BITSCAN, etc.
  * ================================================================ */
 
-/* --- ARM CRC32 (Cortex-M33+, A-class with +crc) --- */
-#if !defined(PC_NO_HW_CRC32) && defined(__ARM_FEATURE_CRC32)
-#  include <arm_acle.h>
-#  define PC_HAS_HW_CRC32 1
+/* --- Hardware CRC32 -------------------------------------------------- *
+ *  ARM AArch64 / ARMv8-A with +crc  (__ARM_FEATURE_CRC32 → __crc32b)
+ *  x86/x64 with SSE4.2              (_mm_crc32_u8 via <nmmintrin.h>)
+ *  Cortex-M33 (RP2350) — no CRC ISA, stays OFF.
+ *  Xtensa (ESP32-S3)   — no CRC ISA, stays OFF.
+ *  Disable with -DPC_NO_HW_CRC32.
+ * --------------------------------------------------------------------- */
+#if !defined(PC_NO_HW_CRC32)
+#  if defined(__ARM_FEATURE_CRC32)
+#    include <arm_acle.h>
+#    define PC_HAS_HW_CRC32 1
+#    define PC_CRC32_ARM     1
+#  elif defined(__SSE4_2__)
+     /* GCC / Clang with -msse4.2 (or implied by -march) */
+#    include <nmmintrin.h>
+#    define PC_HAS_HW_CRC32 1
+#    define PC_CRC32_X86     1
+#  elif defined(_MSC_VER) && defined(_M_X64)
+     /* MSVC x64 — SSE4.2 intrinsics always available; virtually all
+      * x64 CPUs since Nehalem (2008) support CRC32.  Build with
+      * -DPC_NO_HW_CRC32 if you must target ancient hardware. */
+#    include <nmmintrin.h>
+#    define PC_HAS_HW_CRC32 1
+#    define PC_CRC32_X86     1
+#  elif defined(_MSC_VER) && defined(_M_IX86) && defined(__AVX__)
+     /* MSVC 32-bit with /arch:AVX — SSE4.2 is guaranteed. */
+#    include <nmmintrin.h>
+#    define PC_HAS_HW_CRC32 1
+#    define PC_CRC32_X86     1
+#  else
+#    define PC_HAS_HW_CRC32 0
+#  endif
 #else
 #  define PC_HAS_HW_CRC32 0
 #endif
@@ -49,32 +77,46 @@
 #endif
 
 /* --- Bit-scan (CLZ/CTZ) for word-at-a-time matching --- */
-#if !defined(PC_NO_BITSCAN)
-#  if defined(__GNUC__) || defined(__clang__)
-#    define PC_HAS_BITSCAN 1
-#  elif defined(_MSC_VER)
-#    include <intrin.h>
-#    define PC_HAS_BITSCAN 1
+#ifndef PC_HAS_BITSCAN
+#  if !defined(PC_NO_BITSCAN)
+#    if defined(__GNUC__) || defined(__clang__)
+#      define PC_HAS_BITSCAN 1
+#    elif defined(_MSC_VER)
+#      include <intrin.h>
+#      define PC_HAS_BITSCAN 1
+#    else
+#      define PC_HAS_BITSCAN 0
+#    endif
 #  else
 #    define PC_HAS_BITSCAN 0
 #  endif
-#else
-#  define PC_HAS_BITSCAN 0
 #endif
 
-/* --- Unaligned word loads (safe on M3+, A-class, x86; NOT on M0) --- */
-#if !defined(PC_NO_UNALIGNED)
-#  if defined(__ARM_ARCH) && (__ARM_ARCH >= 7)
-#    define PC_CAN_UNALIGNED 1
-#  elif defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86)
-#    define PC_CAN_UNALIGNED 1
-#  elif defined(__aarch64__) || defined(_M_ARM64)
-#    define PC_CAN_UNALIGNED 1
+/* --- Unaligned word loads (safe on M3+, A-class, x86; NOT on M0/M23) --- */
+#ifndef PC_CAN_UNALIGNED
+#  if !defined(PC_NO_UNALIGNED)
+#    if defined(__ARM_FEATURE_UNALIGNED)
+       /* ACLE standard macro — most reliable when available. */
+#      define PC_CAN_UNALIGNED 1
+#    elif defined(__ARM_ARCH) && (__ARM_ARCH >= 7)
+#      define PC_CAN_UNALIGNED 1
+#    elif defined(__ARM_ARCH_8M_MAIN__)
+       /* ARMv8-M Mainline (Cortex-M33/M55) — supports unaligned access.
+        * Some toolchains define this without setting __ARM_ARCH >= 8. */
+#      define PC_CAN_UNALIGNED 1
+#    elif defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
+       /* Cortex-M3 / M4 / M7 fallback for toolchains that omit __ARM_ARCH. */
+#      define PC_CAN_UNALIGNED 1
+#    elif defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86)
+#      define PC_CAN_UNALIGNED 1
+#    elif defined(__aarch64__) || defined(_M_ARM64)
+#      define PC_CAN_UNALIGNED 1
+#    else
+#      define PC_CAN_UNALIGNED 0
+#    endif
 #  else
 #    define PC_CAN_UNALIGNED 0
 #  endif
-#else
-#  define PC_CAN_UNALIGNED 0
 #endif
 
 #define PC_HASH_SIZE (1u << PC_HASH_BITS)
@@ -84,10 +126,18 @@
 
 /* ---- Hash function --------------------------------------------------- */
 
-#if PC_HAS_HW_CRC32
-/* Hardware CRC32 hash — 1-cycle on M33+, excellent distribution. */
+#if PC_HAS_HW_CRC32 && defined(PC_CRC32_ARM)
+/* Hardware CRC32 hash — 1-cycle on AArch64 with +crc, excellent distribution. */
 static uint16_t pc_hash3(const uint8_t *p) {
     uint32_t h = __crc32b(__crc32b(__crc32b(0u, p[0]), p[1]), p[2]);
+    return (uint16_t)(h & (PC_HASH_SIZE - 1u));
+}
+#elif PC_HAS_HW_CRC32 && defined(PC_CRC32_X86)
+/* Hardware CRC32 hash — single-uop on x86 with SSE4.2, excellent distribution. */
+static uint16_t pc_hash3(const uint8_t *p) {
+    uint32_t h = (uint32_t)_mm_crc32_u8(
+                    (uint32_t)_mm_crc32_u8(
+                        (uint32_t)_mm_crc32_u8(0u, p[0]), p[1]), p[2]);
     return (uint16_t)(h & (PC_HASH_SIZE - 1u));
 }
 #else
