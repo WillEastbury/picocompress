@@ -20,6 +20,30 @@ Runs on **Arduino**, **ESP32**, **Pico W/2W**, and **Raspberry Pi 3/4/5** — fr
 | **json-508 decode** | **202 MB/s** | 57 MB/s | 106 MB/s | 106 MB/s |
 | Fits on Arduino Uno? | ✅ (Micro profile) | ⚠️ Tight | ❌ | ❌ |
 
+## Encoder profiles — one codec, every device
+
+picocompress scales from **1 KB total RAM** to **17 KB** via compile-time profiles.
+All profiles produce **decoder-compatible streams** — any encoder, any decoder, always interoperable.
+
+| Profile | Enc RAM | Dec RAM | Total | json-508 ratio | Target |
+|---|---:|---:|---:|---:|---|
+| **Micro** | **1.0 KB** | **0.5 KB** | **1.5 KB** | 1.95x | Cortex-M0, ATmega328P, **2K SRAM** |
+| Minimal | 1.8 KB | 0.7 KB | 2.5 KB | 2.30x | ATmega2560, small MCUs |
+| **Balanced** | **4.6 KB** | **1.5 KB** | **6.1 KB** | **2.87x** | Pico W, ESP32-C3, general embedded |
+| Aggressive | 4.6 KB | 1.5 KB | 6.1 KB | 2.90x | Same RAM as balanced, +10% ratio |
+| Q3 | 7.7 KB | 2.0 KB | 9.7 KB | 2.90x | Pico 2W, ESP32, medium MCUs |
+| Q4 | 13.8 KB | 3.0 KB | 16.8 KB | 2.90x | Pi 3/4/5, ESP32-S3, Linux SBCs |
+
+```powershell
+# Micro — fits on ATmega328P / Cortex-M0 with 2K SRAM
+-DPC_BLOCK_SIZE=192u -DPC_HASH_BITS=8u -DPC_HASH_CHAIN_DEPTH=1u -DPC_HISTORY_SIZE=64u
+
+# Balanced — the default, no flags needed
+
+# Q4 — maximum ratio for boards with 16K+ spare RAM
+-DPC_HASH_BITS=11u -DPC_HASH_CHAIN_DEPTH=2u -DPC_HISTORY_SIZE=2048u -DPC_LAZY_STEPS=2u
+```
+
 ## Features
 
 - **Streaming** encoder/decoder APIs (`pc_encoder_*`, `pc_decoder_*`)
