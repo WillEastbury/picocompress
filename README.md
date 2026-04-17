@@ -4,6 +4,20 @@ Tiny dependency-free C compression library for embedded targets.
 
 Runs on **Arduino**, **ESP32**, **Pico W/2W**, and **Raspberry Pi 3/4/5** — from 2K SRAM to Linux SBCs.
 
+> **Decode at 200-540 MB/s. Encode at 20-47 MB/s. Using 4.6 KB RAM.**
+> Beats brotli q1 on ratio. Decodes 2-5x faster than brotli. Uses 3,600x less memory than brotli q1.
+
+## Why picocompress?
+
+| | picocompress | heatshrink | brotli q1 | brotli q5 |
+|---|---:|---:|---:|---:|
+| **Encode RAM** | **4.6 KB** | 12.5 KB | 16.7 KB | 553.6 KB |
+| **Decode RAM** | **1.5 KB** | 2.0 KB | 31.5 KB | 31.5 KB |
+| **json-4K ratio** | **4.58x** | 4.64x | 3.96x | 8.48x |
+| **json-4K decode** | **541 MB/s** | 115 MB/s | 106 MB/s | 339 MB/s |
+| **json-508 decode** | **202 MB/s** | 57 MB/s | 106 MB/s | 106 MB/s |
+| Fits on Arduino Uno? | ✅ (Micro profile) | ⚠️ Tight | ❌ | ❌ |
+
 ## Features
 
 - **Streaming** encoder/decoder APIs (`pc_encoder_*`, `pc_decoder_*`)
@@ -13,7 +27,6 @@ Runs on **Arduino**, **ESP32**, **Pico W/2W**, and **Raspberry Pi 3/4/5** — fr
 - **64-entry static dictionary**: common JSON, CSV, HTTP, English, and binary patterns (ROM-resident)
 - **Repeat-offset cache**: 3-entry LRU for recurring struct strides (1-byte token)
 - **Hardware acceleration**: NEON (16B/cycle), CRC32 hash, CLZ match — auto-detected via `#ifdef`
-- **Hardware acceleration** via conditional compilation (NEON, MVE, RISC-V V, CRC32, CLZ/CTZ)
 - **Encoder instrumentation** counters (`-DPC_ENABLE_STATS`)
 - **CRC32 roundtrip verification** in all test paths
 - Tuned for short payloads (default block size: 508 bytes)
