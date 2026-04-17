@@ -1,0 +1,29 @@
+#######################################
+# Picocompress — Arduino IDE keywords
+#######################################
+
+#######################################
+# Classes (KEYWORD1)
+#######################################
+Picocompress	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+compress	KEYWORD2
+decompress	KEYWORD2
+compressBound	KEYWORD2
+blockSize	KEYWORD2
+Micro	KEYWORD2
+Balanced	KEYWORD2
+Q4	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+PC_OK	LITERAL1
+PC_ERR_WRITE	LITERAL1
+PC_ERR_INPUT	LITERAL1
+PC_ERR_CORRUPT	LITERAL1
+PC_ERR_OUTPUT_TOO_SMALL	LITERAL1
+PC_BLOCK_SIZE	LITERAL1

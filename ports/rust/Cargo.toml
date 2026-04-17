@@ -1,0 +1,14 @@
+[package]
+name = "picocompress"
+version = "0.1.0"
+edition = "2021"
+description = "Pure Rust port of the picocompress block-based LZ compressor"
+license = "MIT"
+
+[features]
+default = ["std"]
+std = []
+
+[[test]]
+name = "roundtrip"
+path = "tests/roundtrip.rs"

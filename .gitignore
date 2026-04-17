@@ -11,3 +11,7 @@ __pycache__/
 third_party/
 
 boards/pico2w/build/
+ports/java/target/
+ports/rust/target/
+ports/csharp/bin/
+ports/csharp/obj/
