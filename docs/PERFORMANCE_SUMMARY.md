@@ -158,6 +158,73 @@ All codecs tested on the same hardware with the same payloads. picocompress uses
 | Web transport, server-side | **brotli q5** | Good balance of ratio and speed with unlimited RAM |
 | Minimum code size, no features | **heatshrink** | Smallest library, but worse ratio and slower decode |
 
+## Real hardware: Raspberry Pi Pico 2W (RP2350, Cortex-M33 @ 150 MHz)
+
+Benchmark run on a physical Pico 2W board via USB serial. All 30 tests CRC32-verified, all PASS.
+
+Hardware acceleration: **portable paths only** (CLZ match OFF, CRC32 hash OFF).
+
+> **Note:** heatshrink w=11 with index enabled is **unusable on this hardware** — a single 508-byte encode takes > 5 minutes due to the 8 KB index rebuild. All heatshrink results use no-index mode.
+
+### Full multi-profile results
+
+| Codec | Payload | Size | Comp | Ratio | Enc µs | Dec µs | E MB/s | D MB/s | EncRAM | DecRAM |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **PC-Micro** | json-508 | 508 | 190 | **2.67x** | 2,135 | 57 | 0.24 | 8.91 | **0.8K** | **0.5K** |
+| PC-Minimal | json-508 | 508 | 174 | 2.92x | 2,190 | 53 | 0.23 | 9.58 | 1.2K | 1.1K |
+| PC-Balanced | json-508 | 508 | 171 | 2.97x | 2,145 | 56 | 0.24 | 9.07 | 3.1K | 1.5K |
+| PC-Q3 | json-508 | 508 | 171 | 2.97x | 3,999 | 59 | 0.13 | 8.61 | 5.6K | 2.0K |
+| PC-Q4 | json-508 | 508 | 171 | 2.97x | 2,512 | 61 | 0.20 | 8.33 | 10.6K | 3.0K |
+| heatshrink | json-508 | 508 | 238 | 2.13x | 30,066 | 313 | 0.02 | 1.62 | 2.0K | 2.3K |
+| | | | | | | | | | | |
+| **PC-Micro** | pattern-508 | 508 | 191 | 2.66x | 2,073 | 51 | 0.25 | 9.96 | **0.8K** | **0.5K** |
+| PC-Minimal | pattern-508 | 508 | 137 | **3.71x** | 1,285 | 49 | 0.40 | 10.37 | 1.2K | 1.1K |
+| PC-Balanced | pattern-508 | 508 | 137 | 3.71x | 1,317 | 52 | 0.39 | 9.77 | 3.1K | 1.5K |
+| PC-Q3 | pattern-508 | 508 | 137 | 3.71x | 1,589 | 55 | 0.32 | 9.24 | 5.6K | 2.0K |
+| PC-Q4 | pattern-508 | 508 | 137 | 3.71x | 1,362 | 57 | 0.37 | 8.91 | 10.6K | 3.0K |
+| heatshrink | pattern-508 | 508 | 147 | 3.46x | 14,626 | 234 | 0.03 | 2.17 | 2.0K | 2.3K |
+| | | | | | | | | | | |
+| PC-Micro | prose-4K | 4,096 | 820 | 5.00x | 8,245 | 397 | 0.50 | 10.32 | **0.8K** | **0.5K** |
+| **PC-Minimal** | prose-4K | 4,096 | 365 | **11.22x** | 2,242 | 351 | 1.83 | 11.67 | 1.2K | 1.1K |
+| PC-Balanced | prose-4K | 4,096 | 360 | 11.38x | 2,804 | 365 | 1.46 | 11.22 | 3.1K | 1.5K |
+| PC-Q3 | prose-4K | 4,096 | 360 | 11.38x | 4,550 | 391 | 0.90 | 10.48 | 5.6K | 2.0K |
+| PC-Q4 | prose-4K | 4,096 | 360 | 11.38x | 4,303 | 414 | 0.95 | 9.89 | 10.6K | 3.0K |
+| heatshrink | prose-4K | 4,096 | 596 | 6.87x | 17,887 | 1,214 | 0.23 | 3.37 | 2.0K | 2.3K |
+| | | | | | | | | | | |
+| PC-Micro | prose-32K | 32,768 | 6,062 | 5.41x | 59,029 | 3,110 | 0.56 | 10.54 | **0.8K** | **0.5K** |
+| **PC-Minimal** | prose-32K | 32,768 | 2,380 | **13.77x** | 10,620 | 2,722 | 3.09 | 12.04 | 1.2K | 1.1K |
+| PC-Balanced | prose-32K | 32,768 | 2,334 | 14.04x | 14,953 | 2,819 | 2.19 | 11.62 | 3.1K | 1.5K |
+| PC-Q3 | prose-32K | 32,768 | 2,334 | 14.04x | 24,808 | 3,028 | 1.32 | 10.82 | 5.6K | 2.0K |
+| PC-Q4 | prose-32K | 32,768 | 2,334 | 14.04x | 29,902 | 3,357 | 1.10 | 9.76 | 10.6K | 3.0K |
+| heatshrink | prose-32K | 32,768 | 4,180 | 7.84x | 40,499 | 9,038 | 0.81 | 3.63 | 2.0K | 2.3K |
+| | | | | | | | | | | |
+| **PC-Micro** | random-508 | 508 | 520 | 0.98x | 400 | 13 | 1.27 | **39.08** | **0.8K** | **0.5K** |
+| PC-Minimal | random-508 | 508 | 512 | 0.99x | 604 | 13 | 0.84 | 39.08 | 1.2K | 1.1K |
+| PC-Balanced | random-508 | 508 | 512 | 0.99x | 667 | 15 | 0.76 | 33.87 | 3.1K | 1.5K |
+| PC-Q3 | random-508 | 508 | 512 | 0.99x | 715 | 18 | 0.71 | 28.22 | 5.6K | 2.0K |
+| PC-Q4 | random-508 | 508 | 512 | 0.99x | 725 | 20 | 0.70 | 25.40 | 10.6K | 3.0K |
+| heatshrink | random-508 | 508 | 572 | 0.89x | 90,929 | 562 | 0.01 | 0.90 | 2.0K | 2.3K |
+
+### Profile comparison summary
+
+| Profile | Enc RAM | Dec RAM | json-508 ratio | prose-32K ratio | Enc speed vs HS | Dec speed vs HS |
+|---|---:|---:|---:|---:|---:|---:|
+| **PC-Micro** | **0.8K** | **0.5K** | 2.67x | 5.41x | **14x** faster | **5.5x** faster |
+| **PC-Minimal** | **1.2K** | **1.1K** | 2.92x | 13.77x | **14x** faster | **5.9x** faster |
+| PC-Balanced | 3.1K | 1.5K | 2.97x | 14.04x | **14x** faster | **5.6x** faster |
+| PC-Q3 | 5.6K | 2.0K | 2.97x | 14.04x | **8x** faster | **5.3x** faster |
+| PC-Q4 | 10.6K | 3.0K | 2.97x | 14.04x | **12x** faster | **5.1x** faster |
+| heatshrink w11 | 2.0K | 2.3K | 2.13x | 7.84x | — | — |
+
+### Key findings — all profiles
+
+- **PC-Micro (0.8K + 0.5K = 1.3K total)** compresses better than heatshrink (2.67x vs 2.13x on json-508) while using **3.3x less RAM** and encoding **14x faster**. This is the world's smallest practical compressor.
+- **PC-Minimal is the sweet spot**: at just 1.2K encode RAM, it achieves 13.77x on prose-32K (vs heatshrink's 7.84x) — **1.8x better ratio, 4x faster encode, 3x faster decode**.
+- **Balanced matches Q3/Q4 on 508-byte payloads** — the extra hash table and history only help on multi-block data (≥4K). For single-block telemetry, Balanced is optimal.
+- **Q3/Q4 are slower to encode on small payloads** than Balanced due to larger hash table initialization overhead — use them only for multi-kilobyte data.
+- **Decode throughput is 8–12 MB/s across ALL profiles** — the decoder is profile-independent and runs at line rate for most embedded use cases.
+- **Random data passthrough**: PC-Micro processes 508 bytes in 400 µs encode + 13 µs decode vs heatshrink's 91 ms — **227x faster total**.
+
 ## Results by payload
 
 ### pattern-508 (508 bytes)

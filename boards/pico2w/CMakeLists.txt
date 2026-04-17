@@ -9,18 +9,24 @@ pico_sdk_init()
 
 add_executable(picocompress_bench
     main.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../src/picocompress.c
+    pc_micro.c
+    pc_minimal.c
+    pc_balanced.c
+    pc_q3.c
+    pc_q4.c
+    heatshrink_encoder.c
+    heatshrink_decoder.c
 )
 
 target_include_directories(picocompress_bench PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../src
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_compile_definitions(picocompress_bench PRIVATE
-    PC_HASH_BITS=11u
-    PC_HASH_CHAIN_DEPTH=2u
-    PC_HISTORY_SIZE=2048u
-    PC_LAZY_STEPS=2u
+    HEATSHRINK_DYNAMIC_ALLOC=1
+    HEATSHRINK_USE_INDEX=0
+    PC_NO_BITSCAN=1
+    PC_NO_HW_CRC32=1
 )
 
 target_compile_options(picocompress_bench PRIVATE -O2 -Wall)

@@ -9,3 +9,5 @@
 __pycache__/
 
 third_party/
+
+boards/pico2w/build/
