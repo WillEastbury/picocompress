@@ -62,6 +62,29 @@ All profiles produce **decoder-compatible** streams. Any encoder, any decoder.
 9. **Early reject**: check first byte before pc_match_len
 10. **Good-enough threshold**: stop probing at 8+ byte match
 
+## x64 throughput benchmark
+
+**Hardware:** Intel Core i9-12900H (Alder Lake), 64 GB RAM
+**OS:** Windows 11
+**Compiler:** MSVC /O2 x64
+**Active HW paths:** CLZ/CTZ word-at-a-time match (4 bytes/cycle), unaligned loads
+
+| Payload | Size | Compressed | Ratio | Enc us | Dec us | Enc MB/s | Dec MB/s |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| json-508 | 508 | 175 | 2.90x | 31.3 | 5.1 | **16.2** | **99.0** |
+| pattern-508 | 508 | 133 | 3.82x | 25.4 | 4.0 | **20.0** | **126.1** |
+| json-4K | 4096 | 842 | 4.86x | 120.6 | 6.7 | **34.0** | **607.0** |
+| prose-4K | 4096 | 573 | 7.15x | 58.1 | 5.2 | **70.5** | **789.9** |
+| prose-32K | 32768 | 4299 | 7.62x | 797.0 | 110.0 | **41.1** | **298.0** |
+| prose-128K | 131072 | 16944 | 7.74x | 2304.7 | 271.0 | **56.9** | **483.7** |
+| random-32K | 32768 | 1359 | 24.11x | 216.3 | 38.4 | **151.5** | **852.5** |
+
+**Key observations:**
+- Decode throughput is **100-850 MB/s** — the token dispatch loop is very tight on x64 with CLZ
+- Encode throughput scales from **16 MB/s** (small JSON) to **150+ MB/s** (highly compressible)
+- The CLZ word-at-a-time match path gives a significant speedup over byte-at-a-time on this hardware
+- On ARM targets with NEON (Pi 3/4/5), expect 16 bytes/cycle match comparison instead of 4
+
 ## Results by payload
 
 ### pattern-508 (508 bytes)
