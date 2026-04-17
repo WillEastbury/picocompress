@@ -6,6 +6,8 @@ Runs on **Arduino**, **ESP32**, **Pico W/2W**, and **Raspberry Pi 3/4/5** — fr
 
 > **Decode at 200-540 MB/s. Encode at 20-47 MB/s. Using 4.6 KB RAM.**
 > Beats brotli q1 on ratio. Decodes 2-5x faster than brotli. Uses 3,600x less memory than brotli q1.
+>
+> **Runs on a Cortex-M0 with just 2K SRAM.** No other compression library in its class can compress there.
 
 ## Why picocompress?
 
