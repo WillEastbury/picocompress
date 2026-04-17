@@ -158,6 +158,31 @@ All codecs tested on the same hardware with the same payloads. picocompress uses
 | Web transport, server-side | **brotli q5** | Good balance of ratio and speed with unlimited RAM |
 | Minimum code size, no features | **heatshrink** | Smallest library, but worse ratio and slower decode |
 
+## Real hardware: ESP32-CAM (Xtensa LX6 dual-core @ 240 MHz)
+
+Benchmark run on a physical AI Thinker ESP32-CAM board via USB serial. Profile: **Balanced** (default). All CRC32-verified, all PASS.
+
+| Payload | Size | Compressed | Ratio | Encode µs | Decode µs | Enc MB/s | Dec MB/s | CRC |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| json-508 | 508 | 171 | **2.97x** | 2,127 | 62 | 0.24 | **8.19** | PASS |
+| pattern-508 | 508 | 137 | **3.71x** | 1,334 | 49 | 0.38 | **10.37** | PASS |
+| prose-4K | 4,096 | 360 | **11.38x** | 4,343 | 411 | 0.94 | **9.97** | PASS |
+| prose-32K | 32,768 | 2,334 | **14.04x** | 28,106 | 3,725 | 1.17 | **8.80** | PASS |
+| random-508 | 508 | 512 | 0.99x | 785 | 9 | 0.65 | **56.44** | PASS |
+
+### Cross-platform comparison (Balanced profile)
+
+| Metric | Pico 2W (M33 @ 150 MHz) | ESP32-CAM (LX6 @ 240 MHz) |
+|---|---:|---:|
+| json-508 decode | 9.07 MB/s | 8.19 MB/s |
+| prose-4K decode | 11.22 MB/s | 9.97 MB/s |
+| prose-32K ratio | 14.04x | 14.04x |
+| random passthrough decode | 33.87 MB/s | 56.44 MB/s |
+
+Both platforms achieve 8–11 MB/s decode on compressible data — confirming picocompress is fast across architectures.
+
+---
+
 ## Real hardware: Raspberry Pi Pico 2W (RP2350, Cortex-M33 @ 150 MHz)
 
 Benchmark run on a physical Pico 2W board via USB serial. All 30 tests CRC32-verified, all PASS.
