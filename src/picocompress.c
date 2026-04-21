@@ -335,156 +335,162 @@ typedef struct {
     uint8_t len;
 } pc_dict_entry_t;
 
-/* ---- general-purpose static dictionary (64 entries, ROM/flash) --------
- * Token format v3 — clean 2-bit type prefix:
- *   0x00..0x3F  short literal   (len 1..64)
- *   0x40..0x7F  dictionary ref  (index 0..63)
- *   0x80..0xBF  LZ match        (5-bit len + 1-bit offset_hi)
- *   0xC0..0xDF  repeat-offset   (5-bit len)
- *   0xE0..0xFF  extended literal (len 65..96)
+/* ---- Context-biased static dictionary (96 entries, ROM/flash) ----------
+ * Turing crib mode: entries are partitioned into three contiguous regions.
+ * The encoder probes the context-appropriate region first (8 entries),
+ * then falls through to the full dict only if needed.
+ *
+ * Region layout:
+ *   START    [0..15]   — stream/block openers, format signatures
+ *   BOUNDARY [16..47]  — patterns after structural delimiters
+ *   BODY     [48..95]  — English phonemes, common words, keywords
+ *
+ * Token encoding (unchanged):
+ *   entries  0..63  → 0x40 | idx
+ *   entries 64..79  → 0xE0 | (idx - 64)
+ *   entries 80..95  → 0xD0 | (idx - 80)
  * -------------------------------------------------------------------- */
 
-/* 0-3: high-value multi-byte patterns (replaced single-byte waste) */
-static const uint8_t pc_d00[] = { '"', ':', ' ', '"' };    /* ": "  JSON key-value */
-static const uint8_t pc_d01[] = { '}', ',', '\n', '"' };   /* },\n" JSON object sep */
-static const uint8_t pc_d02[] = { '<', '/', 'd', 'i', 'v' }; /* </div  HTML close */
-static const uint8_t pc_d03[] = "tion";
-/* 4-7: common English suffixes (4B, replacing 2B waste) */
-static const uint8_t pc_d04[] = "ment";
-static const uint8_t pc_d05[] = "ness";
-static const uint8_t pc_d06[] = "able";
-static const uint8_t pc_d07[] = "ight";
-/* 8-15: three-byte patterns */
-static const uint8_t pc_d08[] = { '"', ':', '"' };         /* ":"  ← JSON money pattern */
-static const uint8_t pc_d09[] = { '<', '/', 'd', 'i' };    /* </di  closing tag start */
-static const uint8_t pc_d10[] = { '=', '"', 'h', 't' };    /* ="ht  attr+http start */
-static const uint8_t pc_d11[] = "the";
-static const uint8_t pc_d12[] = "ing";
-static const uint8_t pc_d13[] = { ',', '"', ',' };         /* ","  JSON string separator */
-static const uint8_t pc_d14[] = { '"', ':', '{' };         /* ":{  nested obj  */
-static const uint8_t pc_d15[] = { '"', ':', '[' };         /* ":[  nested arr  */
-/* 16-23: more three-byte */
-static const uint8_t pc_d16[] = "ion";
-static const uint8_t pc_d17[] = "ent";
-static const uint8_t pc_d18[] = "ter";
-static const uint8_t pc_d19[] = "and";
-static const uint8_t pc_d20[] = { '/', '>', '\r', '\n' };  /* />\r\n self-close + CRLF */
-static const uint8_t pc_d21[] = { '"', '}', ',' };         /* "},  */
-static const uint8_t pc_d22[] = { '"', ']', ',' };         /* "],  */
-static const uint8_t pc_d23[] = "have";
-/* 24-39: four-byte */
-static const uint8_t pc_d24[] = { 'n','o','"',':' };       /* no": */
-static const uint8_t pc_d25[] = "true";
-static const uint8_t pc_d26[] = "null";
-static const uint8_t pc_d27[] = "name";
-static const uint8_t pc_d28[] = "data";
-static const uint8_t pc_d29[] = "time";
-static const uint8_t pc_d30[] = "type";
-static const uint8_t pc_d31[] = "mode";
-static const uint8_t pc_d32[] = "http";
-static const uint8_t pc_d33[] = "tion";
-static const uint8_t pc_d34[] = "code";
-static const uint8_t pc_d35[] = "size";
-static const uint8_t pc_d36[] = "ment";
-static const uint8_t pc_d37[] = "list";
-static const uint8_t pc_d38[] = "item";
-static const uint8_t pc_d39[] = "text";
-/* 40-47: five-byte */
-static const uint8_t pc_d40[] = "false";
-static const uint8_t pc_d41[] = "error";
-static const uint8_t pc_d42[] = "value";
-static const uint8_t pc_d43[] = "state";
-static const uint8_t pc_d44[] = "alert";
-static const uint8_t pc_d45[] = "input";
-static const uint8_t pc_d46[] = "ation";
-static const uint8_t pc_d47[] = "order";
-/* 48-55: six-byte */
-static const uint8_t pc_d48[] = "status";
-static const uint8_t pc_d49[] = "number";
-static const uint8_t pc_d50[] = "active";
-static const uint8_t pc_d51[] = "device";
-static const uint8_t pc_d52[] = "region";
-static const uint8_t pc_d53[] = "string";
-static const uint8_t pc_d54[] = "result";
-static const uint8_t pc_d55[] = "length";
-/* 56-59: seven-byte */
-static const uint8_t pc_d56[] = "message";
-static const uint8_t pc_d57[] = "content";
-static const uint8_t pc_d58[] = "request";
-static const uint8_t pc_d59[] = "default";
-/* 60-63: eight-byte */
-static const uint8_t pc_d60[] = { 'n','u','m','b','e','r','"',':' }; /* number": */
-static const uint8_t pc_d61[] = "operator";
-static const uint8_t pc_d62[] = { 'h','t','t','p','s',':','/','/'}; /* https:// */
-static const uint8_t pc_d63[] = "response";
-/* 64-67: capitalized sentence starters (with leading ". " or " ") */
-static const uint8_t pc_d64[] = { '.', ' ', 'T', 'h', 'e', ' ' };  /* . The  */
-static const uint8_t pc_d65[] = { '.', ' ', 'I', 't', ' ' };        /* . It   */
-static const uint8_t pc_d66[] = { '.', ' ', 'T', 'h', 'i', 's', ' ' }; /* . This  */
-static const uint8_t pc_d67[] = { '.', ' ', 'A', ' ' };             /* . A    */
-/* 68-71: common capitalized terms */
-static const uint8_t pc_d68[] = { 'H', 'T', 'T', 'P' };            /* HTTP   */
-static const uint8_t pc_d69[] = { 'J', 'S', 'O', 'N' };            /* JSON   */
-static const uint8_t pc_d70[] = { 'T', 'h', 'e', ' ' };            /* The    */
-static const uint8_t pc_d71[] = { 'N', 'o', 'n', 'e' };            /* None   */
-/* 72-75: phoneme patterns (from generator — high freq English) */
-static const uint8_t pc_d72[] = "ment";
-static const uint8_t pc_d73[] = "ness";
-static const uint8_t pc_d74[] = "able";
-static const uint8_t pc_d75[] = "ight";
-/* 76-79: more phoneme / structural patterns */
-static const uint8_t pc_d76[] = "ation";
-static const uint8_t pc_d77[] = "ould ";                             /* would/could/should */
-static const uint8_t pc_d78[] = { '"', ':', ' ', '"' };             /* ": "  JSON kv */
-static const uint8_t pc_d79[] = { '"', ',', ' ', '"' };             /* ", "  JSON sep */
-/* 80-95: uppercase keyword primitives (BASIC/structured) */
-static const uint8_t pc_d80[] = "DIM";
-static const uint8_t pc_d81[] = "FOR";
-static const uint8_t pc_d82[] = "END";
-static const uint8_t pc_d83[] = "REL";
-static const uint8_t pc_d84[] = "EACH";
-static const uint8_t pc_d85[] = "LOAD";
-static const uint8_t pc_d86[] = "SAVE";
-static const uint8_t pc_d87[] = "CARD";
-static const uint8_t pc_d88[] = "JUMP";
-static const uint8_t pc_d89[] = "PRINT";
-static const uint8_t pc_d90[] = "INPUT";
-static const uint8_t pc_d91[] = "GOSUB";
-static const uint8_t pc_d92[] = "STREAM";
-static const uint8_t pc_d93[] = "RETURN";
-static const uint8_t pc_d94[] = "SWITCH";
-static const uint8_t pc_d95[] = "PROGRAM";
+#define PC_DICT_PRESCAN    8u
+#define PC_CTX_START       0u
+#define PC_CTX_START_END  16u
+#define PC_CTX_BOUND      16u
+#define PC_CTX_BOUND_END  48u
+#define PC_CTX_BODY       48u
+#define PC_CTX_BODY_END   96u
+
+/* --- START region [0..15]: stream openers, format signatures --- */
+static const uint8_t pc_s00[] = { 'h','t','t','p','s',':','/','/'}; /* https:// */
+static const uint8_t pc_s01[] = "http";
+static const uint8_t pc_s02[] = { 'H', 'T', 'T', 'P' };            /* HTTP */
+static const uint8_t pc_s03[] = { 'J', 'S', 'O', 'N' };            /* JSON */
+static const uint8_t pc_s04[] = { 'T', 'h', 'e', ' ' };            /* The  */
+static const uint8_t pc_s05[] = "true";
+static const uint8_t pc_s06[] = "null";
+static const uint8_t pc_s07[] = "false";
+static const uint8_t pc_s08[] = "name";
+static const uint8_t pc_s09[] = "data";
+static const uint8_t pc_s10[] = "status";
+static const uint8_t pc_s11[] = "message";
+static const uint8_t pc_s12[] = "response";
+static const uint8_t pc_s13[] = { 'N', 'o', 'n', 'e' };            /* None */
+static const uint8_t pc_s14[] = "type";
+static const uint8_t pc_s15[] = "error";
+
+/* --- BOUNDARY region [16..47]: after delimiters (} ] , ; : . \n) --- */
+static const uint8_t pc_b00[] = { '"', ':', ' ', '"' };             /* ": " */
+static const uint8_t pc_b01[] = { '"', ':', '"' };                  /* ":" */
+static const uint8_t pc_b02[] = { '"', ':', '{' };                  /* ":{ */
+static const uint8_t pc_b03[] = { '"', ':', '[' };                  /* ":[ */
+static const uint8_t pc_b04[] = { '}', ',', '\n', '"' };            /* },\n" */
+static const uint8_t pc_b05[] = { '"', '}', ',' };                  /* "}, */
+static const uint8_t pc_b06[] = { '"', ']', ',' };                  /* "], */
+static const uint8_t pc_b07[] = { ',', '"', ',' };                  /* "," */
+static const uint8_t pc_b08[] = { '"', ',', ' ', '"' };             /* ", " */
+static const uint8_t pc_b09[] = { 'n','o','"',':' };                /* no": */
+static const uint8_t pc_b10[] = { 'n','u','m','b','e','r','"',':' };/* number": */
+static const uint8_t pc_b11[] = { '<', '/', 'd', 'i', 'v' };       /* </div */
+static const uint8_t pc_b12[] = { '<', '/', 'd', 'i' };            /* </di */
+static const uint8_t pc_b13[] = { '=', '"', 'h', 't' };            /* ="ht */
+static const uint8_t pc_b14[] = { '/', '>', '\r', '\n' };           /* />\r\n */
+static const uint8_t pc_b15[] = { '.', ' ', 'T', 'h', 'e', ' ' }; /* . The  */
+static const uint8_t pc_b16[] = { '.', ' ', 'I', 't', ' ' };       /* . It  */
+static const uint8_t pc_b17[] = { '.', ' ', 'T', 'h', 'i', 's', ' ' }; /* . This  */
+static const uint8_t pc_b18[] = { '.', ' ', 'A', ' ' };            /* . A  */
+static const uint8_t pc_b19[] = "ould ";                             /* would/could/should */
+static const uint8_t pc_b20[] = "operator";
+/* keywords after delimiters */
+static const uint8_t pc_b21[] = "DIM";
+static const uint8_t pc_b22[] = "FOR";
+static const uint8_t pc_b23[] = "END";
+static const uint8_t pc_b24[] = "REL";
+static const uint8_t pc_b25[] = "EACH";
+static const uint8_t pc_b26[] = "LOAD";
+static const uint8_t pc_b27[] = "SAVE";
+static const uint8_t pc_b28[] = "CARD";
+static const uint8_t pc_b29[] = "JUMP";
+static const uint8_t pc_b30[] = "PRINT";
+static const uint8_t pc_b31[] = "INPUT";
+
+/* --- BODY region [48..95]: phonemes, common words, suffixes --- */
+static const uint8_t pc_y00[] = "tion";
+static const uint8_t pc_y01[] = "ment";
+static const uint8_t pc_y02[] = "ness";
+static const uint8_t pc_y03[] = "able";
+static const uint8_t pc_y04[] = "ight";
+static const uint8_t pc_y05[] = "ation";
+static const uint8_t pc_y06[] = "the";
+static const uint8_t pc_y07[] = "ing";
+static const uint8_t pc_y08[] = "ion";
+static const uint8_t pc_y09[] = "ent";
+static const uint8_t pc_y10[] = "ter";
+static const uint8_t pc_y11[] = "and";
+static const uint8_t pc_y12[] = "have";
+static const uint8_t pc_y13[] = "time";
+static const uint8_t pc_y14[] = "mode";
+static const uint8_t pc_y15[] = "code";
+static const uint8_t pc_y16[] = "size";
+static const uint8_t pc_y17[] = "list";
+static const uint8_t pc_y18[] = "item";
+static const uint8_t pc_y19[] = "text";
+static const uint8_t pc_y20[] = "value";
+static const uint8_t pc_y21[] = "state";
+static const uint8_t pc_y22[] = "alert";
+static const uint8_t pc_y23[] = "input";
+static const uint8_t pc_y24[] = "order";
+static const uint8_t pc_y25[] = "number";
+static const uint8_t pc_y26[] = "active";
+static const uint8_t pc_y27[] = "device";
+static const uint8_t pc_y28[] = "region";
+static const uint8_t pc_y29[] = "string";
+static const uint8_t pc_y30[] = "result";
+static const uint8_t pc_y31[] = "length";
+static const uint8_t pc_y32[] = "content";
+static const uint8_t pc_y33[] = "request";
+static const uint8_t pc_y34[] = "default";
+static const uint8_t pc_y35[] = "GOSUB";
+static const uint8_t pc_y36[] = "STREAM";
+static const uint8_t pc_y37[] = "RETURN";
+static const uint8_t pc_y38[] = "SWITCH";
+static const uint8_t pc_y39[] = "PROGRAM";
+/* duplicate phoneme slots kept for coverage */
+static const uint8_t pc_y40[] = "tion";
+static const uint8_t pc_y41[] = "ment";
+static const uint8_t pc_y42[] = "ness";
+static const uint8_t pc_y43[] = "able";
+static const uint8_t pc_y44[] = "ight";
+static const uint8_t pc_y45[] = "ation";
+static const uint8_t pc_y46[] = "ould ";
+static const uint8_t pc_y47[] = { '"', ':', ' ', '"' };             /* ": " body dup */
 
 static const pc_dict_entry_t pc_static_dict[PC_DICT_COUNT] = {
-    /* 0-3:  4-5B */ { pc_d00,4 }, { pc_d01,4 }, { pc_d02,5 }, { pc_d03,4 },
-    /* 4-7:  4B */  { pc_d04,4 }, { pc_d05,4 }, { pc_d06,4 }, { pc_d07,4 },
-    /* 8-15: 3-4B */{ pc_d08,3 }, { pc_d09,4 }, { pc_d10,4 }, { pc_d11,3 },
-                    { pc_d12,3 }, { pc_d13,3 }, { pc_d14,3 }, { pc_d15,3 },
-    /* 16-23:3-4B */{ pc_d16,3 }, { pc_d17,3 }, { pc_d18,3 }, { pc_d19,3 },
-                    { pc_d20,4 }, { pc_d21,3 }, { pc_d22,3 }, { pc_d23,4 },
-    /* 24-39:4B */  { pc_d24,4 }, { pc_d25,4 }, { pc_d26,4 }, { pc_d27,4 },
-                    { pc_d28,4 }, { pc_d29,4 }, { pc_d30,4 }, { pc_d31,4 },
-                    { pc_d32,4 }, { pc_d33,4 }, { pc_d34,4 }, { pc_d35,4 },
-                    { pc_d36,4 }, { pc_d37,4 }, { pc_d38,4 }, { pc_d39,4 },
-    /* 40-47:5B */  { pc_d40,5 }, { pc_d41,5 }, { pc_d42,5 }, { pc_d43,5 },
-                    { pc_d44,5 }, { pc_d45,5 }, { pc_d46,5 }, { pc_d47,5 },
-    /* 48-55:6B */  { pc_d48,6 }, { pc_d49,6 }, { pc_d50,6 }, { pc_d51,6 },
-                    { pc_d52,6 }, { pc_d53,6 }, { pc_d54,6 }, { pc_d55,6 },
-    /* 56-59:7B */  { pc_d56,7 }, { pc_d57,7 }, { pc_d58,7 }, { pc_d59,7 },
-    /* 60-63:8B */  { pc_d60,8 }, { pc_d61,8 }, { pc_d62,8 }, { pc_d63,8 },
-    /* 64-67: sentence starters */
-                    { pc_d64,6 }, { pc_d65,5 }, { pc_d66,7 }, { pc_d67,4 },
-    /* 68-71: capitalized terms */
-                    { pc_d68,4 }, { pc_d69,4 }, { pc_d70,4 }, { pc_d71,4 },
-    /* 72-75: phoneme */
-                    { pc_d72,4 }, { pc_d73,4 }, { pc_d74,4 }, { pc_d75,4 },
-    /* 76-79: phoneme + structural */
-                    { pc_d76,5 }, { pc_d77,5 }, { pc_d78,4 }, { pc_d79,4 },
-    /* 80-95: uppercase keywords (0xD0..0xDF tokens) */
-                    { pc_d80,3 }, { pc_d81,3 }, { pc_d82,3 }, { pc_d83,3 },
-                    { pc_d84,4 }, { pc_d85,4 }, { pc_d86,4 }, { pc_d87,4 },
-                    { pc_d88,4 }, { pc_d89,5 }, { pc_d90,5 }, { pc_d91,5 },
-                    { pc_d92,6 }, { pc_d93,6 }, { pc_d94,6 }, { pc_d95,7 },
+    /* START [0..15] */
+    { pc_s00,8 }, { pc_s01,4 }, { pc_s02,4 }, { pc_s03,4 },
+    { pc_s04,4 }, { pc_s05,4 }, { pc_s06,4 }, { pc_s07,5 },
+    { pc_s08,4 }, { pc_s09,4 }, { pc_s10,6 }, { pc_s11,7 },
+    { pc_s12,8 }, { pc_s13,4 }, { pc_s14,4 }, { pc_s15,5 },
+    /* BOUNDARY [16..47] */
+    { pc_b00,4 }, { pc_b01,3 }, { pc_b02,3 }, { pc_b03,3 },
+    { pc_b04,4 }, { pc_b05,3 }, { pc_b06,3 }, { pc_b07,3 },
+    { pc_b08,4 }, { pc_b09,4 }, { pc_b10,8 }, { pc_b11,5 },
+    { pc_b12,4 }, { pc_b13,4 }, { pc_b14,4 }, { pc_b15,6 },
+    { pc_b16,5 }, { pc_b17,7 }, { pc_b18,4 }, { pc_b19,5 },
+    { pc_b20,8 }, { pc_b21,3 }, { pc_b22,3 }, { pc_b23,3 },
+    { pc_b24,3 }, { pc_b25,4 }, { pc_b26,4 }, { pc_b27,4 },
+    { pc_b28,4 }, { pc_b29,4 }, { pc_b30,5 }, { pc_b31,5 },
+    /* BODY [48..95] */
+    { pc_y00,4 }, { pc_y01,4 }, { pc_y02,4 }, { pc_y03,4 },
+    { pc_y04,4 }, { pc_y05,5 }, { pc_y06,3 }, { pc_y07,3 },
+    { pc_y08,3 }, { pc_y09,3 }, { pc_y10,3 }, { pc_y11,3 },
+    { pc_y12,4 }, { pc_y13,4 }, { pc_y14,4 }, { pc_y15,4 },
+    { pc_y16,4 }, { pc_y17,4 }, { pc_y18,4 }, { pc_y19,4 },
+    { pc_y20,5 }, { pc_y21,5 }, { pc_y22,5 }, { pc_y23,5 },
+    { pc_y24,5 }, { pc_y25,6 }, { pc_y26,6 }, { pc_y27,6 },
+    { pc_y28,6 }, { pc_y29,6 }, { pc_y30,6 }, { pc_y31,6 },
+    { pc_y32,7 }, { pc_y33,7 }, { pc_y34,7 }, { pc_y35,5 },
+    { pc_y36,6 }, { pc_y37,6 }, { pc_y38,6 }, { pc_y39,7 },
+    { pc_y40,4 }, { pc_y41,4 }, { pc_y42,4 }, { pc_y43,4 },
+    { pc_y44,4 }, { pc_y45,5 }, { pc_y46,5 }, { pc_y47,4 },
 };
 
 #endif /* PC_DICT_COUNT > 0 */
@@ -500,6 +506,7 @@ static int pc_find_best(
     const uint16_t rep_offsets[PC_REPEAT_CACHE_SIZE],
     uint16_t good_match,
     int skip_dict,
+    uint16_t hist_len_ctx,
     uint16_t *out_len, uint16_t *out_off, uint16_t *out_dict,
     int *out_is_repeat
 ) {
@@ -547,14 +554,64 @@ static int pc_find_best(
         }
     }
 
-    /* 2. Dictionary match (1-byte token → savings = len - 1).
-     * First-byte filter + early bail on good-enough (idea #3, #10). */
+    /* 2. Context-biased dictionary search (Turing crib mode).
+     * Determine context from position and previous byte, then:
+     *   Pass 1: prescan 8 entries from the biased region
+     *   Pass 2: scan remainder if prescan didn't find a strong match
+     * No extra memory, no dynamic state — just scan order rotation. */
 #if PC_DICT_COUNT > 0
     if (!skip_dict) {
         uint8_t first_byte = vbuf[vpos];
+        uint16_t ctx_begin, ctx_end, ctx_threshold;
+        uint32_t block_pos = (uint32_t)(vpos - (uint32_t)hist_len_ctx);
+
+        /* context detection */
+        if (block_pos < 8u) {
+            ctx_begin = PC_CTX_START;
+            ctx_end   = PC_CTX_START_END;
+            ctx_threshold = 3; /* accept len >= 4 (savings 3+) */
+        } else if (vpos > 0u && (vbuf[vpos - 1u] == '\n' || vbuf[vpos - 1u] == '}'
+                || vbuf[vpos - 1u] == ']' || vbuf[vpos - 1u] == ';'
+                || vbuf[vpos - 1u] == ',' || vbuf[vpos - 1u] == ':'
+                || vbuf[vpos - 1u] == '.')) {
+            ctx_begin = PC_CTX_BOUND;
+            ctx_end   = PC_CTX_BOUND_END;
+            ctx_threshold = 3;
+        } else {
+            ctx_begin = PC_CTX_BODY;
+            ctx_end   = PC_CTX_BODY_END;
+            ctx_threshold = 5; /* body: accept len >= 6 */
+        }
+
+        /* Pass 1: prescan biased region (first PC_DICT_PRESCAN entries) */
+        {
+            uint16_t prescan_end = ctx_begin + PC_DICT_PRESCAN;
+            if (prescan_end > ctx_end) prescan_end = ctx_end;
+            for (d = (int)ctx_begin; d < (int)prescan_end; ++d) {
+                uint8_t dlen = pc_static_dict[d].len;
+                int s;
+                if (dlen > remaining) continue;
+                if ((int)dlen - 1 <= best_savings) continue;
+                if (pc_static_dict[d].data[0] != first_byte) continue;
+                if (memcmp(vbuf + vpos, pc_static_dict[d].data, dlen) != 0) continue;
+                s = (int)dlen - 1;
+                best_savings = s;
+                *out_dict = (uint16_t)d;
+                *out_len = dlen;
+                *out_off = 0;
+                *out_is_repeat = 0;
+                if (s >= (int)ctx_threshold) goto dict_done;
+            }
+        }
+
+        /* Pass 2: scan full dictionary, skipping prescan range */
         for (d = 0; d < (int)PC_DICT_COUNT; ++d) {
-            uint8_t dlen = pc_static_dict[d].len;
+            uint8_t dlen;
             int s;
+            /* skip entries already checked in prescan */
+            if ((uint16_t)d >= ctx_begin && (uint16_t)d < ctx_begin + PC_DICT_PRESCAN
+                && (uint16_t)d < ctx_end) continue;
+            dlen = pc_static_dict[d].len;
             if (dlen > remaining) continue;
             if ((int)dlen - 1 <= best_savings) continue;
             if (pc_static_dict[d].data[0] != first_byte) continue;
@@ -565,8 +622,9 @@ static int pc_find_best(
             *out_len = dlen;
             *out_off = 0;
             *out_is_repeat = 0;
-            if (dlen >= good_match) return best_savings; /* #10 */
+            if (dlen >= good_match) goto dict_done;
         }
+        dict_done: ;
     }
 #else
     (void)skip_dict;
@@ -706,7 +764,7 @@ retry_pos:
 
         best_savings = pc_find_best(
             vbuf, vbuf_len, vpos, head, rep_offsets, PC_GOOD_MATCH,
-            dict_skip,
+            dict_skip, hist_len,
             &best_len, &best_off, &best_dict, &best_is_repeat);
 
         /* insert current position into hash table (needs 3 bytes) */
@@ -733,7 +791,7 @@ retry_pos:
                     int n_rep;
                     int n_sav = pc_find_best(
                         vbuf, vbuf_len, npos, head, rep_offsets, PC_GOOD_MATCH,
-                        dict_skip,
+                        dict_skip, hist_len,
                         &n_len, &n_off, &n_dict, &n_rep);
                     if (n_sav > best_savings) {
                         uint16_t s;
