@@ -53,6 +53,8 @@ class TestDictionary(unittest.TestCase):
         self.assertEqual(pc.STATIC_DICT[1], bytes([0x7D, 0x2C, 0x0A, 0x22]))
         # Entry 20: />\r\n → 0x2F 0x3E 0x0D 0x0A
         self.assertEqual(pc.STATIC_DICT[20], bytes([0x2F, 0x3E, 0x0D, 0x0A]))
+        # Entry 13: ,", JSON string separator → 0x2C 0x22 0x2C (matches C pc_d13 / JS / Go)
+        self.assertEqual(pc.STATIC_DICT[13], bytes([0x2C, 0x22, 0x2C]))
 
 
 class TestConstants(unittest.TestCase):

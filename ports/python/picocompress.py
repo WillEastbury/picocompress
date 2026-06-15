@@ -88,7 +88,7 @@ STATIC_DICT: list[bytes] = [
     b'="ht',                    # 10
     b'the',                     # 11
     b'ing',                     # 12
-    b'","',                     # 13
+    b',",',                     # 13  ,", JSON string sep (0x2c 0x22 0x2c) — matches C/JS/Go ref
     b'":{',                     # 14
     b'":[',                     # 15
     # 16-23
