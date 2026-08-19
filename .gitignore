@@ -6,8 +6,11 @@
 *.pdb
 *.asm
 *.log
+*.so
+*.dylib
 __pycache__/
 
+dist/
 third_party/
 
 boards/pico2w/build/
