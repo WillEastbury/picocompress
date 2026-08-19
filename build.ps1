@@ -32,6 +32,13 @@ Invoke-Cl ($Common + @('/DPCX_HOST_STATIC','tests\test_modular_host.c','src\host
 & "$Dist\test_modular_host.exe"
 if ($LASTEXITCODE -ne 0) { throw 'modular host test failed' }
 
+# Prove a real codec can use the same descriptor through static registration.
+# PCX_CODEC_STATIC suppresses the generic dynamic query symbol, allowing many
+# codecs to coexist in one embedded image without duplicate symbols.
+Invoke-Cl ($Common + @('/DPCX_HOST_STATIC','/DPCX_CODEC_STATIC','/Isrc','tests\test_static_micro.c','src\host.c','src\picocompress.c','modules\micro\picocompress_micro.c',"/Fe:$Dist\test_static_micro.exe"))
+& "$Dist\test_static_micro.exe"
+if ($LASTEXITCODE -ne 0) { throw 'static micro registration test failed' }
+
 # Preserve native codec regression suites.
 Invoke-Cl ($Common + @('/Isrc','src\picocompress.c','src\test_picocompress.c',"/Fe:$Dist\test_picocompress.exe"))
 & "$Dist\test_picocompress.exe"
