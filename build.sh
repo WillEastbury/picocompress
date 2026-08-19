@@ -43,6 +43,13 @@ $CC $CFLAGS -Iinclude src/cli.c -L"$DIST" -lpicocompress_host $RPATH -o "$DIST/p
 $CC $CFLAGS -DPCX_HOST_STATIC -Iinclude tests/test_modular_host.c src/host.c -o "$DIST/test_modular_host" $DL_LIBS
 "$DIST/test_modular_host"
 
+# Prove a real codec can use the same descriptor through static registration.
+# PCX_CODEC_STATIC suppresses the generic dynamic-module query symbol so many
+# codecs can coexist in one embedded image without duplicate symbols.
+# shellcheck disable=SC2086
+$CC $CFLAGS -DPCX_HOST_STATIC -DPCX_CODEC_STATIC -Iinclude -Isrc tests/test_static_micro.c src/host.c src/picocompress.c modules/micro/picocompress_micro.c -o "$DIST/test_static_micro" $DL_LIBS
+"$DIST/test_static_micro"
+
 # Preserve the original native-codec regression suites and byte-stream contract.
 # shellcheck disable=SC2086
 $CC $CFLAGS -Isrc src/picocompress.c src/test_picocompress.c -o "$DIST/test_picocompress"
