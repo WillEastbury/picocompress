@@ -80,12 +80,32 @@ Go, Java, C#, Rust, or Arduino ports.
 
 ## Static registration
 
-Embedded builds can omit `src/host.c` dynamic-loader branches entirely at link
-time and register linked descriptors via:
+A dynamic library uses the generic `picocompress_codec_query` export because its
+symbol namespace is isolated by the loader. An embedded image may contain many
+codecs in one link, so static builds must **not** give every codec that same
+symbol.
+
+Each codec therefore exposes a codec-specific accessor for static use. The
+native module, for example, provides:
 
 ```c
-pcx_registry_register_static(&registry, codec);
+const pcx_codec_v1 *picocompress_micro_codec(void);
 ```
 
+Compile codec modules with `PCX_CODEC_STATIC` when linking them directly into an
+image. That suppresses the generic dynamic-loader export while preserving the
+same `pcx_codec_v1` descriptor and codec-specific accessor.
+
+```c
+pcx_registry registry;
+pcx_registry_init(&registry);
+pcx_registry_register_static(&registry, picocompress_micro_codec());
+```
+
+PicoZstd might analogously expose `picozstd_picocompress_codec()` (the exact
+codec-owned accessor name is intentionally outside the host ABI). Multiple
+static codecs can therefore coexist without duplicate symbols while the host
+still consumes exactly the same descriptor contract.
+
 A codec that works dynamically must therefore be usable statically without a
-second adapter contract.
+second adapter ABI.
