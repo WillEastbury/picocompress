@@ -11,8 +11,8 @@ if (-not (Get-Command cl.exe -ErrorAction SilentlyContinue)) {
 $Dist = Join-Path $Root 'dist'
 New-Item -ItemType Directory -Force -Path $Dist | Out-Null
 
-function Invoke-Cl([string[]]$Args) {
-    & cl.exe @Args
+function Invoke-Cl([string[]]$CompilerArgs) {
+    & cl.exe @CompilerArgs
     if ($LASTEXITCODE -ne 0) { throw "cl.exe failed with exit code $LASTEXITCODE" }
 }
 
