@@ -1,4 +1,5 @@
 #include "picocompress/codec.h"
+#include "picocompress/codecs/micro.h"
 #include "picocompress.h"
 
 #if defined(_MSC_VER)
@@ -108,7 +109,14 @@ static const pcx_codec_v1 micro_codec = {
     micro_decompress_buffer
 };
 
-PCX_CODEC_EXPORT const pcx_codec_v1 *picocompress_codec_query(void)
+const pcx_codec_v1 *picocompress_micro_codec(void)
 {
     return &micro_codec;
 }
+
+#ifndef PCX_CODEC_STATIC
+PCX_CODEC_EXPORT const pcx_codec_v1 *picocompress_codec_query(void)
+{
+    return picocompress_micro_codec();
+}
+#endif
