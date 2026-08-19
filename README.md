@@ -1,174 +1,168 @@
 # picocompress
 
-Tiny dependency-free C compression library for embedded targets.
+`picocompress` is a tiny codec-neutral compression shell plus the original
+PicoCompress **micro** codec.
 
-Runs on **Arduino**, **ESP32**, **Pico W/2W**, and **Raspberry Pi 3/4/5** — from 2K SRAM to Linux SBCs.
+The project is being split into independently linkable components:
 
-> **Decode at 200-540 MB/s. Encode at 20-47 MB/s. Using 4.6 KB RAM.**
-> Beats brotli q1 on ratio. Decodes 2-5x faster than brotli. Uses 3,600x less memory than brotli q1.
->
-> **Runs on a Cortex-M0 with just 2K SRAM.** No other compression library in its class can compress there.
-
-## Why picocompress?
-
-| | picocompress | heatshrink | brotli q1 | brotli q5 |
-|---|---:|---:|---:|---:|
-| **Encode RAM** | **4.6 KB** | 12.5 KB | 16.7 KB | 553.6 KB |
-| **Decode RAM** | **1.5 KB** | 2.0 KB | 31.5 KB | 31.5 KB |
-| **json-4K ratio** | **4.58x** | 4.64x | 3.96x | 8.48x |
-| **json-4K decode** | **541 MB/s** | 115 MB/s | 106 MB/s | 339 MB/s |
-| **json-508 decode** | **202 MB/s** | 57 MB/s | 106 MB/s | 106 MB/s |
-| Fits on Arduino Uno? | ✅ (Micro profile) | ⚠️ Tight | ❌ | ❌ |
-
-## Encoder profiles — one codec, every device
-
-picocompress scales from **1 KB total RAM** to **17 KB** via compile-time profiles.
-All profiles produce **decoder-compatible streams** — any encoder, any decoder, always interoperable.
-
-| Profile | Enc RAM | Dec RAM | Total | json-508 ratio | Target |
-|---|---:|---:|---:|---:|---|
-| **Micro** | **1.0 KB** | **0.5 KB** | **1.5 KB** | 1.95x | Cortex-M0, ATmega328P, **2K SRAM** |
-| Minimal | 1.8 KB | 0.7 KB | 2.5 KB | 2.30x | ATmega2560, small MCUs |
-| **Balanced** | **4.6 KB** | **1.5 KB** | **6.1 KB** | **2.87x** | Pico W, ESP32-C3, general embedded |
-| Aggressive | 4.6 KB | 1.5 KB | 6.1 KB | 2.90x | Same RAM as balanced, +10% ratio |
-| Q3 | 7.7 KB | 2.0 KB | 9.7 KB | 2.90x | Pico 2W, ESP32, medium MCUs |
-| Q4 | 13.8 KB | 3.0 KB | 16.8 KB | 2.90x | Pi 3/4/5, ESP32-S3, Linux SBCs |
-
-```powershell
-# Micro — fits on ATmega328P / Cortex-M0 with 2K SRAM
--DPC_BLOCK_SIZE=192u -DPC_HASH_BITS=8u -DPC_HASH_CHAIN_DEPTH=1u -DPC_HISTORY_SIZE=64u
-
-# Balanced — the default, no flags needed
-
-# Q4 — maximum ratio for boards with 16K+ spare RAM
--DPC_HASH_BITS=11u -DPC_HASH_CHAIN_DEPTH=2u -DPC_HISTORY_SIZE=2048u -DPC_LAZY_STEPS=2u
+```text
+picocompress shell
+        |
+        v
+picocompress host / registry
+        |
+        +-- picocodec_micro      existing PicoCompress v3 format
+        +-- picocodec_zstd       external/future PicoZstd module
+        +-- picocodec_brotli     external/future PicoBrotli module
+        +-- ...                  any codec implementing ABI v1
 ```
 
-## Features
+Desktop/server builds discover shared codec libraries at runtime. Embedded and
+bare-metal targets use the exact same codec descriptor through static
+registration, so dynamic loading is optional rather than an architectural
+requirement.
 
-- **Streaming** encoder/decoder APIs (`pc_encoder_*`, `pc_decoder_*`)
-- **Buffer-based** convenience APIs (`pc_compress_buffer`, `pc_decompress_buffer`)
-- **Scalable RAM**: 1.0 KB encode (Micro) → 13.8 KB (Q4) — pick your profile
-- **Cross-block history**: up to 2048-byte sliding window across blocks
-- **64-entry static dictionary**: common JSON, CSV, HTTP, English, and binary patterns (ROM-resident)
-- **Repeat-offset cache**: 3-entry LRU for recurring struct strides (1-byte token)
-- **Hardware acceleration**: NEON (16B/cycle), CRC32 hash, CLZ match — auto-detected via `#ifdef`
-- **Encoder instrumentation** counters (`-DPC_ENABLE_STATS`)
-- **CRC32 roundtrip verification** in all test paths
-- Tuned for short payloads (default block size: 508 bytes)
-- Cortex-M0 safe (no unaligned loads, pure portable fallback)
+## The native micro codec
 
-## Token format (v3)
+The original PicoCompress codec remains dependency-free C and keeps its existing
+wire format, profiles, ports, and performance characteristics.
 
-| Range | Type | Size | Description |
-|---|---|---|---|
-| `0x00..0x3F` | Short literal | 1 + N | Run of 1–64 raw bytes |
-| `0x40..0x7F` | Dictionary ref | 1 | Emit predefined sequence (64 entries) |
-| `0x80..0xBF` | LZ match | 2 | 5-bit length + 9-bit offset |
-| `0xC0..0xDF` | Repeat-offset | 1 | Reuse last LZ offset |
-| `0xE0..0xEF` | Extended literal | 1 + N | Run of 65–80 raw bytes |
-| `0xF0..0xFF` | Long-offset LZ | 3 | 4-bit length + 16-bit offset |
+> **Decode at roughly 200-540 MB/s. Encode at roughly 20-47 MB/s. Using only a
+> few KB of RAM depending on profile.**
 
-## Build and test (MSVC)
+It is still designed to run from Cortex-M0-class systems through Raspberry Pi
+and general-purpose x86/AArch64 hosts.
 
-```powershell
-cd src
-cl /nologo /O2 /W4 /TC picocompress.c test_picocompress.c /Fe:test_picocompress.exe
-.\test_picocompress.exe
+Existing source users can continue to use:
 
-cl /nologo /O2 /W4 /TC picocompress.c test_picocompress_additional.c /Fe:test_picocompress_additional.exe
-.\test_picocompress_additional.exe
+```c
+#include "picocompress.h"
+
+pc_compress_buffer(...);
+pc_decompress_buffer(...);
 ```
 
-## Build and test (GCC / Clang)
+The modular build simply exposes that same implementation as codec name
+`micro` (aliases: `picocompress`, `pc`). Modularisation must not change the v3
+bitstream or cross-language byte identity.
+
+## Modular shell
+
+Build on Linux/macOS:
 
 ```sh
-cd src
-gcc -O2 -Wall -Wextra -std=c99 picocompress.c test_picocompress.c -o test_picocompress
-./test_picocompress
-
-gcc -O2 -Wall -Wextra -std=c99 picocompress.c test_picocompress_additional.c -o test_picocompress_additional
-./test_picocompress_additional
-
-# With encoder stats
-gcc -O2 -Wall -Wextra -std=c99 -DPC_ENABLE_STATS picocompress.c test_picocompress_stats.c -o test_stats
-./test_stats
+sh build.sh
 ```
 
-Hardware acceleration is auto-detected. Override with `-DPC_NO_*` flags
-(see [`docs/PLATFORM_SUPPORT.md`](docs/PLATFORM_SUPPORT.md)).
-
-Both suites verify compress→decompress roundtrips with **CRC32 checksums**.
-
-## Benchmark harness
+Build on Windows from a Visual Studio developer environment:
 
 ```powershell
-python -m pip install brotli heatshrink2
-cd docs
-.\run_benchmarks.ps1 -JsonOut benchmark_results.json
+.\build.ps1
 ```
 
-Benchmarks picocompress against heatshrink and brotli (q1/q5/default) across:
-pattern, utf8+int, random, ASCII, JSON, lorem ipsum, RGB icon, JPEG,
-pretty/minified JSON, UK addresses, order records, sparse, uint32 arrays,
-and scaled sizes from 254 bytes to 1 MB.
+Desktop output is written to `dist/` and contains:
 
-See [`docs/TEST_METHODS.md`](docs/TEST_METHODS.md) and [`docs/PERFORMANCE_SUMMARY.md`](docs/PERFORMANCE_SUMMARY.md) for methodology and results.
-Full data: [`docs/benchmark_results.json`](docs/benchmark_results.json) and [`docs/benchmark_tables.txt`](docs/benchmark_tables.txt).
-
-## Test fixtures
-
-The [`tests/`](tests/) directory contains all 64 deterministic payload files used by the benchmark harness (254 bytes to 1 MB).
-
-## Public API
-
-See [`src/picocompress.h`](src/picocompress.h) for all constants, result codes, and function signatures.
-
-## Configuration
-
-Hash and history parameters are **encoder-only** — the decoder never sees them.
-Any encoder config produces streams that **any decoder build can decompress**.
-Override at compile time with `-D`:
-
-```powershell
-# Micro (~1K encode, ~0.5K decode — fits in 2K SRAM total)
-cl /O2 /TC /DPC_BLOCK_SIZE=192u /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=64u src/picocompress.c ...
-
-# Minimal (~2K encode, ~0.7K decode)
-cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src/picocompress.c ...
-
-# Balanced default (~5K encode, ~1.5K decode)
-cl /O2 /TC src/picocompress.c ...
-
-# Aggressive ratio (~5K encode — deeper chain, same RAM)
-cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=4u src/picocompress.c ...
-
-# Super-aggressive 10K encode (Q3: wider hash + larger history + 2-step lazy)
-cl /O2 /TC /DPC_HASH_BITS=10u /DPC_HASH_CHAIN_DEPTH=2u /DPC_HISTORY_SIZE=1024u /DPC_LAZY_STEPS=2u src/picocompress.c ...
-
-# Ultra 15K encode (Q4: widest hash + deepest history + 2-step lazy)
-cl /O2 /TC /DPC_HASH_BITS=11u /DPC_HASH_CHAIN_DEPTH=2u /DPC_HISTORY_SIZE=2048u /DPC_LAZY_STEPS=2u src/picocompress.c ...
-
-# Minimal RAM (~2K encode)
-cl /O2 /TC /DPC_HASH_BITS=8u /DPC_HASH_CHAIN_DEPTH=1u /DPC_HISTORY_SIZE=128u src/picocompress.c ...
+```text
+picocompress                 shell executable
+libpicocompress_host.*       codec registry / loader
+libpicocodec_micro.*         native micro codec module
 ```
 
-| Profile | Flags | Enc RAM | Dec RAM | Ratio | Speed |
-|---|---|---:|---:|---|---|
-| Micro | `b192 b8 d1 h64` | ~1.0 KB | ~0.5 KB | ~60% of balanced | Fastest |
-| Minimal | `b8 d1 h128` | ~1.8 KB | ~0.7 KB | ~75% of balanced | Fast |
-| Balanced | (default) | ~4.6 KB | ~1.5 KB | Good | Good |
-| Aggressive | `b8 d4` | ~4.6 KB | ~1.5 KB | +10% | −15% |
-| Q3 | `b10 d2 h1024 lazy2` | ~7.7 KB | ~2.0 KB | +15% | −10% |
-| Q4 | `b11 d2 h2048 lazy2` | ~13.8 KB | ~3.0 KB | +20% | −13% |
+Windows uses the corresponding `.exe` / `.dll` names.
 
-## Algorithm
+List installed codecs:
 
-See [`docs/ALGORITHM.md`](docs/ALGORITHM.md) for a detailed description of the compression
-pipeline, token format, cross-block history, static dictionary, and performance tricks.
+```text
+picocompress list
+```
 
-## Platform support & hardware acceleration
+Compress and decompress by codec name:
 
-See [`docs/PLATFORM_SUPPORT.md`](docs/PLATFORM_SUPPORT.md) for hardware acceleration paths
-(NEON, MVE, RISC-V V, CRC32, CLZ/CTZ), Cortex-M0 minimum profile, encoder
-instrumentation counters, and override flags.
+```text
+picocompress compress micro input.txt output.pc
+picocompress decompress micro output.pc restored.txt
+```
+
+Codec discovery searches `PICOCOMPRESS_CODEC_PATH`, then the current directory
+and `./codecs`. Modules can also be supplied explicitly with `--plugin` or
+`--codec-dir`.
+
+The shell uses streaming entrypoints for file conversion. It never requires an
+entire file to be materialised merely because a codec also exposes a buffer
+helper.
+
+## Codec ABI
+
+See [`docs/MODULE_ABI.md`](docs/MODULE_ABI.md).
+
+A dynamic codec exports one symbol:
+
+```c
+PCX_CODEC_EXPORT const pcx_codec_v1 *picocompress_codec_query(void);
+```
+
+The descriptor declares:
+
+- codec name and aliases;
+- compress/decompress capabilities;
+- encoder/decoder state size and alignment;
+- streaming init/sink/finish functions;
+- optional buffer convenience functions.
+
+The caller owns codec state memory. That avoids cross-DLL allocator ownership
+and keeps the same contract usable on fixed-memory embedded targets.
+
+## Embedded/static use
+
+Targets without a dynamic loader register a linked descriptor directly:
+
+```c
+pcx_registry registry;
+pcx_registry_init(&registry);
+pcx_registry_register_static(&registry, codec);
+```
+
+No codec-specific behavior belongs in the host. PicoZstd, PicoBrotli, and future
+PicoSuite codecs should be able to plug in without changing the shell.
+
+## Micro codec profiles
+
+The native codec scales from very small MCU configurations to larger embedded
+profiles through compile-time settings. All profiles emit decoder-compatible
+streams.
+
+| Profile | Typical encoder RAM | Typical decoder RAM | Target |
+|---|---:|---:|---|
+| Micro | ~1.0 KB | ~0.5 KB | Cortex-M0 / tiny MCU |
+| Minimal | ~1.8 KB | ~0.7 KB | small MCU |
+| Balanced | ~4.6 KB | ~1.5 KB | Pico W / ESP32 |
+| Q3 | ~7.7 KB | ~2.0 KB | Pico 2W / medium MCU |
+| Q4 | ~13.8 KB | ~3.0 KB | Pi / Linux SBC |
+
+The codec includes streaming APIs, cross-block history, a ROM static dictionary,
+repeat-offset caching, and optional hardware acceleration paths for NEON, MVE,
+RISC-V Vector, CRC32-assisted hashing, and CLZ/CTZ matching.
+
+See:
+
+- [`docs/ALGORITHM.md`](docs/ALGORITHM.md) for the v3 micro-codec format;
+- [`docs/PLATFORM_SUPPORT.md`](docs/PLATFORM_SUPPORT.md) for acceleration paths;
+- [`docs/PERFORMANCE_SUMMARY.md`](docs/PERFORMANCE_SUMMARY.md) for benchmarks;
+- [`docs/PORTING_GUIDE.md`](docs/PORTING_GUIDE.md) for language/board ports;
+- [`docs/MODULE_ABI.md`](docs/MODULE_ABI.md) for the modular host contract.
+
+## Repository shape
+
+```text
+include/picocompress/        host/module ABI
+src/host.c                   dynamic/static codec registry
+src/cli.c                    thin codec-neutral shell
+src/picocompress.c/.h        native v3 micro codec implementation
+modules/micro/               micro codec ABI adapter
+ports/                       existing language/board micro-codec ports
+docs/                        algorithm, ABI, platform and benchmark docs
+tests/                       host/module regressions
+```
+
+The important boundary is simple: **the shell selects codecs; codecs implement
+compression.**
